@@ -146,7 +146,8 @@ sub prerequisites {
 
     # $*
     $target ne 'Bubblegum::Environment' and eval q(
-        package bbbl'gm::env;
+        package # hide
+            bbbl'gm::env;
         no warnings 'all';
         require Bubblegum::Environment unless $ignore;
         require Tie::Scalar;

@@ -39,4 +39,4 @@ resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
   homepage: http://search.cpan.org/dist/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: 0.02
+version: 0.03
