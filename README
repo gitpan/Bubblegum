@@ -1,0 +1,56 @@
+NAME
+    Bubblegum - Opinionated Modern Perl Development Framework
+
+VERSION
+    version 0.01
+
+  Introduction
+    Bubblegum makes essential core features and common functionality readily
+    available via automation (autoloading, autoboxing, autodying, etc). It
+    promotes modern Perl best practices by automatically enabling a standard
+    configuration (utf8::all, strict, warnings, features, etc) and by
+    extending core functionality with Bubblegum::Wrapper extensions.
+    Bubblegum is an opinionated object-oriented development framework, the
+    core is designed to leverage as much of the Perl core, 5.10+, as
+    possible and uses Moo to provide a minimalistic object system
+    (compatible with Moose). This framework is modeled using object-roles
+    for a higher-level of abstraction and consistency.
+
+  Features
+        * 5.10.0 required
+        * core functions throw exceptions
+        * autoboxing with more consistent method names
+        * file and path utilities
+        * date and time utilities
+        * encoding/decoding utilities
+        * default utf-8 encoding for all IO operations
+        * modern method order resolution
+        * modern minimalistic object system
+        * strict syntax checking
+        * global utility object
+
+    Please take a look at the Bubblegum overview Bubblegum::Overview for
+    more information on it's features and usages.
+
+  Rationale
+    The TIMTOWTDI (there is more than one way to do it) motto has been a
+    gift and a curse. The Perl language (and community) has been centered
+    around this concept for quite some time, in that the language "doesn't
+    try to tell the programmer how to program" which makes it easy to write
+    concise and powerful statements but which also makes it easy to write
+    extremely messy and incoherent software (with great power comes great
+    responsibility). Another downside is that as the number of decisions a
+    programmer has to make increases, their productivity decreases. Enforced
+    consistency is a path many other programming languages and frameworks
+    have adopted to great effect, so Bubblegum is one approach towards that
+    end in Perl.
+
+AUTHOR
+    Al Newkirk <anewkirk@ana.io>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2013 by Al Newkirk.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+

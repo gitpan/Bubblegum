@@ -1,0 +1,34 @@
+use Bubblegum::Object::Hash;
+use Test::More;
+
+can_ok 'Bubblegum::Object::Hash', 'aslice';
+can_ok 'Bubblegum::Object::Hash', 'array_slice';
+can_ok 'Bubblegum::Object::Hash', 'defined';
+can_ok 'Bubblegum::Object::Hash', 'delete';
+can_ok 'Bubblegum::Object::Hash', 'each';
+can_ok 'Bubblegum::Object::Hash', 'each_key';
+can_ok 'Bubblegum::Object::Hash', 'each_n_values';
+can_ok 'Bubblegum::Object::Hash', 'each_value';
+can_ok 'Bubblegum::Object::Hash', 'empty';
+can_ok 'Bubblegum::Object::Hash', 'exists';
+can_ok 'Bubblegum::Object::Hash', 'filter_exclude';
+can_ok 'Bubblegum::Object::Hash', 'filter_include';
+can_ok 'Bubblegum::Object::Hash', 'get';
+can_ok 'Bubblegum::Object::Hash', 'hash_slice';
+can_ok 'Bubblegum::Object::Hash', 'hslice';
+can_ok 'Bubblegum::Object::Hash', 'invert';
+can_ok 'Bubblegum::Object::Hash', 'iterator';
+can_ok 'Bubblegum::Object::Hash', 'keys';
+can_ok 'Bubblegum::Object::Hash', 'lookup';
+can_ok 'Bubblegum::Object::Hash', 'pairs';
+can_ok 'Bubblegum::Object::Hash', 'pairs_array';
+can_ok 'Bubblegum::Object::Hash', 'list';
+can_ok 'Bubblegum::Object::Hash', 'merge';
+can_ok 'Bubblegum::Object::Hash', 'print';
+can_ok 'Bubblegum::Object::Hash', 'reset';
+can_ok 'Bubblegum::Object::Hash', 'reverse';
+can_ok 'Bubblegum::Object::Hash', 'say';
+can_ok 'Bubblegum::Object::Hash', 'set';
+can_ok 'Bubblegum::Object::Hash', 'values';
+
+done_testing;

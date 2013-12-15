@@ -1,0 +1,1078 @@
+=head2 Fri Dec 13 18:50:41 2013: C<Module> L<Class::Forward|Class::Forward>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.100006>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:50:42 2013: C<Module> L<DateTime::Tiny|DateTime::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.04>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:50:50 2013: C<Module> L<List::MoreUtils|List::MoreUtils>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.33>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:50:52 2013: C<Module> L<Dist::CheckConflicts|Dist::CheckConflicts>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.09>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:50:53 2013: C<Module> L<Import::Into|Import::Into>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.002000>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:02 2013: C<Module> L<Scope::Guard|Scope::Guard>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.20>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:03 2013: C<Module> L<autobox|autobox>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.82>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:08 2013: C<Module> L<Cwd|Cwd>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.40>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:08 2013: C<Module> L<Path::Tiny|Path::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.049>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:18 2013: C<Module> L<Number::Compare|Number::Compare>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:19 2013: C<Module> L<File::Find::Rule|File::Find::Rule>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.33>
+
+=item *
+
+C<EXE_FILES: findrule>
+
+=back
+
+=head2 Fri Dec 13 18:51:21 2013: C<Module> L<Try::Tiny|Try::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.18>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:27 2013: C<Module> L<Probe::Perl|Probe::Perl>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:28 2013: C<Module> L<IPC::Run3|IPC::Run3>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.046>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:28 2013: C<Module> L<Test::Script|Test::Script>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.07>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:29 2013: C<Module> L<File::Which|File::Which>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.09>
+
+=item *
+
+C<EXE_FILES: script/pwhich>
+
+=back
+
+=head2 Fri Dec 13 18:51:29 2013: C<Module> L<File::HomeDir|File::HomeDir>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.00>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:34 2013: C<Module> L<ExtUtils::MakeMaker|ExtUtils::MakeMaker>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.84>
+
+=item *
+
+C<EXE_FILES: bin/instmodsh>
+
+=back
+
+=head2 Fri Dec 13 18:51:43 2013: C<Module> L<Package::Stash::XS|Package::Stash::XS>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.28>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:44 2013: C<Module> L<Test::Fatal|Test::Fatal>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.013>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:45 2013: C<Module> L<Module::Implementation|Module::Implementation>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.07>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:46 2013: C<Module> L<Package::Stash|Package::Stash>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.36>
+
+=item *
+
+C<EXE_FILES: bin/package-stash-conflicts>
+
+=back
+
+=head2 Fri Dec 13 18:51:49 2013: C<Module> L<Params::Util|Params::Util>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.07>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:51 2013: C<Module> L<Sub::Install|Sub::Install>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.927>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:51 2013: C<Module> L<Data::OptList|Data::OptList>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.109>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:52 2013: C<Module> L<Class::Load|Class::Load>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.20>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:54 2013: C<Module> L<Sub::Exporter::Progressive|Sub::Exporter::Progressive>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.001011>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:55 2013: C<Module> L<Devel::GlobalDestruction|Devel::GlobalDestruction>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.12>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:51:57 2013: C<Module> L<indirect|indirect>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.31>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:00 2013: C<Module> L<ExtUtils::Depends|ExtUtils::Depends>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.306>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:02 2013: C<Module> L<B::Hooks::OP::Check|B::Hooks::OP::Check>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.19>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:04 2013: C<Module> L<CPAN::Meta::YAML|CPAN::Meta::YAML>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.010>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:07 2013: C<Module> L<List::Util|List::Util>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.35>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:08 2013: C<Module> L<CPAN::Meta::Requirements|CPAN::Meta::Requirements>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.125>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:09 2013: C<Module> L<CPAN::Meta|CPAN::Meta>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.133380>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:11 2013: C<Module> L<multidimensional|multidimensional>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.011>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:13 2013: C<Module> L<bareword::filehandles|bareword::filehandles>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.003>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:13 2013: C<Module> L<strictures|strictures>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.005002>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:15 2013: C<Module> L<Role::Tiny|Role::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.003002>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:19 2013: C<Module> L<Test::Harness|Test::Harness>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.30>
+
+=item *
+
+C<EXE_FILES: bin/prove>
+
+=back
+
+=head2 Fri Dec 13 18:52:20 2013: C<Module> L<ExtUtils::Helpers|ExtUtils::Helpers>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.021>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:23 2013: C<Module> L<ExtUtils::Config|ExtUtils::Config>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.007>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:23 2013: C<Module> L<ExtUtils::InstallPaths|ExtUtils::InstallPaths>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.010>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:24 2013: C<Module> L<Moo|Moo>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.003001>
+
+=item *
+
+C<EXE_FILES: bin/moo-outdated>
+
+=back
+
+=head2 Fri Dec 13 18:52:26 2013: C<Module> L<Time::ParseDate|Time::ParseDate>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2013.1113>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:29 2013: C<Module> L<Exporter::Tiny|Exporter::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.030>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:29 2013: C<Module> L<Type::Tiny|Type::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.034>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:52:31 2013: C<Module> L<Module::Find|Module::Find>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.11>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Fri Dec 13 18:53:51 2013: C<Module> L<Class::Accessor::Lite|Class::Accessor::Lite>
+
+=over 4
+
+=item *
+
+C<installed into: /home/anewkirk/workspace/alnewkirk/Bubblegum/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.05>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
