@@ -37,6 +37,6 @@ requires:
   utf8::all: 0
 resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
-  homepage: https://github.com/alnewkirk/Bubblegum
+  homepage: http://search.cpan.org/dist/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: 0.01
+version: 0.02
