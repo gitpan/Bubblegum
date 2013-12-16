@@ -26,6 +26,7 @@ requires:
   Module::Find: 0.11
   Moo: 1.003001
   Path::Tiny: 0.047
+  Syntax::Keyword::Junction: 0.003007
   Time::Format: 1.12
   Time::ParseDate: 2013.1113
   Try::Tiny: 0.18
@@ -39,4 +40,4 @@ resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
   homepage: http://search.cpan.org/dist/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: 0.03
+version: 0.04

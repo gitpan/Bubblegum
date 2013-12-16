@@ -11,6 +11,7 @@ requires "JSON::Tiny" => "0.38";
 requires "Module::Find" => "0.11";
 requires "Moo" => "1.003001";
 requires "Path::Tiny" => "0.047";
+requires "Syntax::Keyword::Junction" => "0.003007";
 requires "Time::Format" => "1.12";
 requires "Time::ParseDate" => "2013.1113";
 requires "Try::Tiny" => "0.18";

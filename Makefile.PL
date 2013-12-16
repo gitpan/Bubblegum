@@ -33,6 +33,7 @@ my %WriteMakefileArgs = (
     "Module::Find" => "0.11",
     "Moo" => "1.003001",
     "Path::Tiny" => "0.047",
+    "Syntax::Keyword::Junction" => "0.003007",
     "Time::Format" => "1.12",
     "Time::ParseDate" => "2013.1113",
     "Try::Tiny" => "0.18",
@@ -43,7 +44,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => 0
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.03",
+  "VERSION" => "0.04",
   "test" => {
     "TESTS" => "t/*.t t/bubblegum/*.t t/bubblegum/object/*.t t/bubblegum/object/role/*.t t/bubblegum/role/*.t t/bubblegum/wrapper/*.t"
   }
@@ -64,6 +65,7 @@ my %FallbackPrereqs = (
   "Module::Find" => "0.11",
   "Moo" => "1.003001",
   "Path::Tiny" => "0.047",
+  "Syntax::Keyword::Junction" => "0.003007",
   "Time::Format" => "1.12",
   "Time::ParseDate" => "2013.1113",
   "Try::Tiny" => "0.18",
