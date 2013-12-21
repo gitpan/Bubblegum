@@ -12,7 +12,6 @@ can_ok 'Bubblegum::Object::Number', 'int';
 can_ok 'Bubblegum::Object::Number', 'log';
 can_ok 'Bubblegum::Object::Number', 'mod';
 can_ok 'Bubblegum::Object::Number', 'neg';
-can_ok 'Bubblegum::Object::Number', 'oct';
 can_ok 'Bubblegum::Object::Number', 'pow';
 can_ok 'Bubblegum::Object::Number', 'sin';
 can_ok 'Bubblegum::Object::Number', 'sqrt';

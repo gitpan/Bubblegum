@@ -9,4 +9,6 @@ use base 'Exporter::Tiny';
 
 our @EXPORT_OK  = qw();
 
+our $VERSION = '0.05'; # VERSION
+
 1;

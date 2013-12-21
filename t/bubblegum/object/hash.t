@@ -24,10 +24,8 @@ can_ok 'Bubblegum::Object::Hash', 'pairs';
 can_ok 'Bubblegum::Object::Hash', 'pairs_array';
 can_ok 'Bubblegum::Object::Hash', 'list';
 can_ok 'Bubblegum::Object::Hash', 'merge';
-can_ok 'Bubblegum::Object::Hash', 'print';
 can_ok 'Bubblegum::Object::Hash', 'reset';
 can_ok 'Bubblegum::Object::Hash', 'reverse';
-can_ok 'Bubblegum::Object::Hash', 'say';
 can_ok 'Bubblegum::Object::Hash', 'set';
 can_ok 'Bubblegum::Object::Hash', 'values';
 

@@ -1,4 +1,4 @@
-package Bubblegum::Role;
+package Bubblegum::Class;
 
 use Moo 'with';
 
@@ -12,7 +12,7 @@ sub import {
     my @export = @_;
 
     $class->prerequisites($target);
-    Moo::Role->import::into($target, @export);
+    Moo->import::into($target, @export);
 }
 
 1;

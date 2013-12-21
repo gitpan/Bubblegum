@@ -11,4 +11,6 @@ requires 'sayf';
 requires 'sprintf';
 requires 'ssayf';
 
+our $VERSION = '0.05'; # VERSION
+
 1;

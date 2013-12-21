@@ -27,6 +27,8 @@ our @EXPORT_OK  = qw(
     isa_regexp
 );
 
+our $VERSION = '0.05'; # VERSION
+
 sub asa_arrayref {
     my $arrayref   = shift;
     my $constraint = Types::Standard::ArrayRef;

@@ -4,17 +4,19 @@ use Bubblegum::Role 'requires';
 
 requires 'defined';
 
+our $VERSION = '0.05'; # VERSION
+
 sub class {
     my $self = CORE::shift;
-    my $map  = bbbl'gm::mappings();
+    my $map  = bbblgm::mappings();
 
     return $map->{type($self)};
 }
 
 sub of {
     my $self = CORE::shift;
-    my $type = bbbl'gm::chkstr CORE::shift;
-    my $map  = bbbl'gm::mappings();
+    my $type = bbblgm::chkstr CORE::shift;
+    my $map  = bbblgm::mappings();
 
     my $alias = {
         arrayref => 'array',

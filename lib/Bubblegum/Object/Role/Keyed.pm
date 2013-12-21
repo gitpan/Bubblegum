@@ -4,4 +4,6 @@ use Bubblegum::Role 'with';
 
 with 'Bubblegum::Object::Role::Collection';
 
+our $VERSION = '0.05'; # VERSION
+
 1;

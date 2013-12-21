@@ -7,10 +7,12 @@ README
 README.mkdn
 cpanfile
 lib/Bubblegum.pm
+lib/Bubblegum/Class.pm
 lib/Bubblegum/Constraint.pm
 lib/Bubblegum/Environment.pm
 lib/Bubblegum/Exception.pm
 lib/Bubblegum/Function.pm
+lib/Bubblegum/Manifesto.pod
 lib/Bubblegum/Object/Array.pm
 lib/Bubblegum/Object/Code.pm
 lib/Bubblegum/Object/Float.pm
@@ -33,7 +35,6 @@ lib/Bubblegum/Object/Scalar.pm
 lib/Bubblegum/Object/String.pm
 lib/Bubblegum/Object/Undef.pm
 lib/Bubblegum/Object/Universal.pm
-lib/Bubblegum/Overview.pod
 lib/Bubblegum/Role.pm
 lib/Bubblegum/Role/Configuration.pm
 lib/Bubblegum/Wrapper/Digest.pm

@@ -2,9 +2,113 @@ NAME
     Bubblegum - Opinionated Modern Perl Development Framework
 
 VERSION
-    version 0.04
+    version 0.05
 
-  Introduction
+SYNOPSIS
+        use Bubblegum;
+
+    is equivalent to
+
+        use 5.10.0;
+        use autobox;
+        use autodie ':all';
+        use feature ':5.10';
+        use strict;
+        use warnings FATAL => 'all';
+        use utf8::all;
+        use mro 'c3';
+
+    with the exception that Bubblegum implements it's own autoboxing
+    architecture. The Bubblegum autobox classes are the foundation for this
+    development framework. The decision to re-implement many core and
+    autobox functions was based on the desire to build-in data validation
+    and design a system using object-roles for a higher level of
+    abstraction. The following functionality is made available simply by
+    using Bubblegum:
+
+        # dollar-star (global object variable)
+
+            printf 'Running %s', $*->script; # Running /opt/app/repl
+
+        # integers
+
+            my $range = 10->to(1); # [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+
+        # floats
+
+            my $strip = 3.1415927->incr->int; # 4
+
+        # strings
+
+            my $greet = 'hello world'->titlecase; # "Hello World"
+
+        # arrays
+
+            my $alpha = ['a'..'z'];
+            my $map   = $alpha->keyed(1..26); # { 1=>'a', 2='b', ...}
+
+        # hashes
+
+            my $map = { 1=>'a', 2=>'b', 3=>'c', ...};
+            $map->reset->set(1 => 'z'); # { 1=>'z', 2=undef, 3=>undef, ...}
+
+        # routines
+
+            my $code = ['a'..'z']->iterator;
+            my $char = $code->call;
+
+        # comparison operations
+
+            my $ten = "10";   # string containing the number 10
+            $ten->eqtv(10)    # false, strict comparison, type and value mismatch
+            $ten->eq(10)      # true, value comparison with coercion
+            10->eq($ten)      # true, same as above
+            "10"->type        # string
+            (10)->type        # integer
+            10->typeof('nil') # false
+            10->typeof('num') # true
+            10->typeof('str') # false
+
+        # no more $FindBin::RealBin
+
+            BEGIN {
+                use Bubblegum;
+                use lib $*->lib; # equivalent to ./bin/lib
+            }
+
+        # assuming your script is located in a bin directory one level down
+        # from where your lib directory is ...
+        # or
+
+            BEGIN {
+                use Bubblegum;
+                use lib $*->lib(1); # equivalent to ./bin/../lib
+            }
+
+        # include Moo as your default object-system
+
+            use Bubblegum::Class; # with Moo
+            use Bubblegum::Role;  # with Moo::Role
+
+        # et al
+
+            say [@INC]->join("\n");
+
+DESCRIPTION
+    Bubblegum is a modern Perl development framework, it enforces common
+    best practices and is intended to be used to enhance your Perl
+    environment and development experience. The design goal of Bubblegum is
+    to be as minimal as possible, enabling as many core features as is
+    justifiable, making the common most repetitive programming tasks simply
+    a method call away, and having all this available by simply requiring
+    this library. This framework is very opinionated and designed around
+    convention over configuration. Designed for adoption, all of the
+    techniques used in this framework are well-known by experienced Perl
+    developers and made conveniently available to programmers at all levels,
+    i.e., no experimental features used. Note: This is an early release
+    available for testing and feedback and as such is subject to change.
+
+INTRODUCTION
     Bubblegum makes essential core features and common functionality readily
     available via automation (autoloading, autoboxing, autodying, etc). It
     promotes modern Perl best practices by automatically enabling a standard
@@ -16,7 +120,7 @@ VERSION
     (compatible with Moose). This framework is modeled using object-roles
     for a higher-level of abstraction and consistency.
 
-  Features
+FEATURES
         * 5.10.0 required
         * core functions throw exceptions
         * autoboxing with more consistent method names
@@ -32,7 +136,7 @@ VERSION
     Please take a look at the Bubblegum overview Bubblegum::Overview for
     more information on it's features and usages.
 
-  Rationale
+RATIONALE
     The TIMTOWTDI (there is more than one way to do it) motto has been a
     gift and a curse. The Perl language (and community) has been centered
     around this concept for quite some time, in that the language "doesn't
@@ -44,6 +148,148 @@ VERSION
     consistency is a path many other programming languages and frameworks
     have adopted to great effect, so Bubblegum is one approach towards that
     end in Perl.
+
+  Bubblegum Manifesto
+        * develop locally, avoid system perl (try perlbrew, plenv, locallib, etc)
+        * adopt an object-system, avoid rolling your own OO
+        * always enable the strict and warnings pragmas
+        * avoid variable-length routine arguments and return values
+        * die honorably, with structured exceptions not strings
+
+  Bubblegum Global Object
+    Bubblegum has a global object, an instance of a kind-of utility class
+    containing methods which carry-out common programming tasks that are not
+    intrinsically tied to a particular data type. This global object is
+    assigned to dollar-star ($*), and is a Bubblegum::Environment object
+    which also provides information about the system and runtime
+    environment. The dollar-star object is meant to provide easy access to
+    common routines, e.g., file and path routines, date and time routines,
+    access to environment variables and user information, as well as many
+    other utility functions like dumping and encoding data. This variable
+    will be made available once Bubblegum has been loaded. There are lots of
+    handy methods which can be called on this object. The dollar-star as a
+    variable for the global object is useful for making common routines
+    available to your program without polluting the calling class'
+    namespace. By default, Bubblegum injects the Moo framework as well as
+    it's (has, with, requires, etc) methods into the calling class'
+    namespace. You can opt-out of this behavior by passing the argument
+    -base to the use statement.
+
+        use Bubblegum;
+
+        my $payday = $*->date('next friday');
+        say 'My paycheck will be deposited on', $payday;
+
+  Bubblegum Topology
+    Bubblegum type classes are built as extensions to the autobox type
+    classes. The following is the custom autobox type, subtype and roles
+    hierarchy. All native data types inherit their functionality from the
+    universal class, then whichever autobox subtype class is appropriate and
+    so on. Bubblegum overlays object-roles on top of this design to enforce
+    constraints and consistency. The following is the current layout of the
+    object roles and relationships. Note, this will likely evolve.
+
+        INSTANCE  -+
+            [ROLE] VALUE
+                   |
+        UNDEF     -+
+            [ROLE] ITEM
+                   |
+        UNIVERSAL -+
+            [ROLE] DEFINED
+                   |
+                   +- SCALAR -+
+                   |     [ROLE] VALUE
+                   |          |
+                   |          +- NUMBER -+
+                   |          |     [ROLE] VALUE
+                   |          |          |
+                   |          |          +- INTEGER
+                   |          |          |     [ROLE] VALUE
+                   |          |          |
+                   |          |          +- FLOAT
+                   |          |                [ROLE] VALUE
+                   |          |
+                   |          +- STRING
+                   |                [ROLE] VALUE
+                   |
+                   +- ARRAY
+                   |     [ROLE] REF
+                   |     [ROLE] LIST
+                   |     [ROLE] INDEXED
+                   |
+                   +- HASH
+                   |     [ROLE] REF
+                   |     [ROLE] KEYED
+                   |
+                   +- CODE
+                        [ROLE] VALUE
+
+  Bubblegum Wrappers
+    A Bubblegum::Wrapper module exists to extend Bubblegum itself and
+    further extend the functionality of native data types by letting the
+    data bless itself into wrappers (plugins) in a chainable discoverable
+    manner. It's also useful as a technique for coercion and indirect object
+    instantiation. The following is an example:
+
+        use Bubblegum;
+
+        my $hash = {1..3,{4,{5,6,7,{8,9,10,11}}}};
+        my $json = $hash->json; # load Bubblegum::Wrapper::Json dynamically
+        say $json->encode;      # encode the hash as json
+
+        # {"1":2,"3":{"4":{"7":{"8":9,"10":11},"5":6}}}
+
+    Bubblegum ships with 5 wrappers, Bubblegum::Wrapper::Digest for hashing,
+    Bubblegum::Wrapper::Dumper for Perl serialization,
+    Bubblegum::Wrapper::Encoder for content encoding,
+    Bubblegum::Wrapper::Json for JSON serialization and
+    Bubblegum::Wrapper::Yaml for YAML serialization.
+
+  Bubblegum Type Routines
+    The following routines will can be called on their associated data type
+    as if the native types were blessed objects.
+
+   Array Routines
+    Array routines work on arrays and array references. Please see
+    Bubblegum::Object::Array for more information on routines associated
+    with array references.
+
+   Code Routines
+    Code routines work on code references. Please see
+    Bubblegum::Object::Code for more information on routines associated with
+    code references.
+
+   Hash Routines
+    Hash routines work on hash and hash references. Please see
+    Bubblegum::Object::Hash for more information on routines associated with
+    hash references.
+
+   Integer Routines
+    Integer routines work on integer and number data. Please see
+    Bubblegum::Object::Integer for more information on routines associated
+    with integers.
+
+   Number Routines
+    Number routines work on data that meets the criteria for being a number.
+    Please see Bubblegum::Object::Number for more information on routines
+    associated with numbers.
+
+   String Routines
+    String routines work on data that meets the criteria for being a string.
+    Please see Bubblegum::Object::String for more information on routines
+    associated with strings.
+
+   Undef Routines
+    Undef routines work on variables whose value is undefined. Note, undef
+    routines do not work on undef directly. Please see
+    Bubblegum::Object::Undef for more information on routines associated
+    with undefined variables.
+
+   Universal Routines
+    Universal routines work on all data which meets the criteria for being
+    defined. Please see Bubblegum::Object::Universal for more information on
+    routines associated with array references.
 
 AUTHOR
     Al Newkirk <anewkirk@ana.io>

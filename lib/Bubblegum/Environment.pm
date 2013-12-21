@@ -1,6 +1,6 @@
 package Bubblegum::Environment;
 
-use Bubblegum;
+use Bubblegum::Class;
 
 use Data::Dumper ();
 use File::HomeDir ();
@@ -12,6 +12,8 @@ use Time::Format ();
 use Time::ParseDate ();
 
 extends 'Bubblegum::Object::Instance';
+
+our $VERSION = '0.05'; # VERSION
 
 has 'data' => (
     is   => 'ro',
@@ -162,7 +164,7 @@ sub AUTOLOAD {
         # almost
     }
 
-    bbbl'gm::croak
+    bbblgm::croak
         CORE::sprintf q(Can't locate object method "%s" via package "%s"),
             $method, ((ref $_[0] || $_[0]) || 'main');
 }

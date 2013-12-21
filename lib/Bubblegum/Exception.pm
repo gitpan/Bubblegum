@@ -7,4 +7,6 @@ use warnings;
 
 use base 'Exception::Tiny';
 
+our $VERSION = '0.05'; # VERSION
+
 1;

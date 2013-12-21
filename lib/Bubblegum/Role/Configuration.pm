@@ -19,68 +19,67 @@ use Class::Load 'load_class';
 use Module::Find 'usesub';
 use parent 'autobox';
 
-our $Wrapper = $ENV{'BUBBLEGUM_WRAPPER'} // 'Bubblegum::Wrapper';
-my  $loaded  = 0;
-
 requires 'import';
 
-sub bbbl'gm::chk {
-    goto &Bubblegum::check;
+our $VERSION = '0.05'; # VERSION
+
+sub bbblgm::chk {
+    goto &check;
 }
 
-sub bbbl'gm::chkarray {
+sub bbblgm::chkarray {
     unshift @_, 'arrayref';
-    goto &Bubblegum::check;
+    goto &check;
 }
 
-sub bbbl'gm::chkcode {
+sub bbblgm::chkcode {
     unshift @_, 'coderef';
-    goto &Bubblegum::check;
+    goto &check;
 }
 
-sub bbbl'gm::chkhash {
+sub bbblgm::chkhash {
     unshift @_, 'hashref';
-    goto &Bubblegum::check;
+    goto &check;
 }
 
-sub bbbl'gm::chknum {
+sub bbblgm::chknum {
     unshift @_, 'number';
-    goto &Bubblegum::check;
+    goto &check;
 }
 
-sub bbbl'gm::chkref {
+sub bbblgm::chkref {
     unshift @_, 'ref';
-    goto &Bubblegum::check;
+    goto &check;
 }
 
-sub bbbl'gm::chkre {
+sub bbblgm::chkre {
     unshift @_, 'regexp';
-    goto &Bubblegum::check;
+    goto &check;
 }
 
-sub bbbl'gm::chkstr {
+sub bbblgm::chkstr {
     unshift @_, 'string';
-    goto &Bubblegum::check;
+    goto &check;
 }
 
-sub bbbl'gm::croak {
+sub bbblgm::croak {
     goto &croak;
 }
 
-sub bbbl'gm::forward {
+sub bbblgm::forward {
     goto &forward;
 }
 
-sub bbbl'gm::instance {
-    goto &Bubblegum::instance;
+sub bbblgm::instance {
+    goto &instance;
 }
 
-sub bbbl'gm::load {
-    goto &Bubblegum::load;
+sub bbblgm::load {
+    goto &load;
 }
 
-sub bbbl'gm::mappings {
-    goto &Bubblegum::mappings;
+sub bbblgm::mappings {
+    goto &mappings;
 }
 
 sub check {
@@ -104,11 +103,14 @@ sub check {
 }
 
 sub forward {
-    load(Class::Forward->new(namespace => $Wrapper)->forward(shift));
+    my $name  = shift;
+    my $space = Class::Forward->new(namespace => 'Bubblegum::Wrapper');
+    load($space->forward($name));
 }
 
 sub instance {
-    load('Bubblegum::Object::Instance')->new(data => shift);
+    my $data = shift;
+    load('Bubblegum::Object::Instance')->new(data => $data);
 }
 
 sub load {
@@ -147,7 +149,8 @@ sub prerequisites {
     # $*
     $target ne 'Bubblegum::Environment' and eval q(
         package # hide
-            bbbl'gm::env;
+            bbblgm::env;
+
         no warnings 'all';
         require Bubblegum::Environment unless $ignore;
         require Tie::Scalar;

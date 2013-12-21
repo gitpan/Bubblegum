@@ -1,9 +1,11 @@
 package Bubblegum::Object::Float;
 
-use Bubblegum 'with';
+use Bubblegum::Class 'with';
 
 with 'Bubblegum::Object::Role::Value';
 
-# needs formatting routines, etc
+our $VERSION = '0.05'; # VERSION
+
+# needs formatting routines ... not implemented
 
 1;

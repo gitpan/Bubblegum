@@ -1,19 +1,19 @@
 use Bubblegum::Role::Configuration;
 use Test::More;
 
-can_ok 'bbbl::gm', 'chk';
-can_ok 'bbbl::gm', 'chkarray';
-can_ok 'bbbl::gm', 'chkcode';
-can_ok 'bbbl::gm', 'chkhash';
-can_ok 'bbbl::gm', 'chknum';
-can_ok 'bbbl::gm', 'chkref';
-can_ok 'bbbl::gm', 'chkre';
-can_ok 'bbbl::gm', 'chkstr';
-can_ok 'bbbl::gm', 'croak';
-can_ok 'bbbl::gm', 'forward';
-can_ok 'bbbl::gm', 'instance';
-can_ok 'bbbl::gm', 'load';
-can_ok 'bbbl::gm', 'mappings';
+can_ok 'bbblgm', 'chk';
+can_ok 'bbblgm', 'chkarray';
+can_ok 'bbblgm', 'chkcode';
+can_ok 'bbblgm', 'chkhash';
+can_ok 'bbblgm', 'chknum';
+can_ok 'bbblgm', 'chkref';
+can_ok 'bbblgm', 'chkre';
+can_ok 'bbblgm', 'chkstr';
+can_ok 'bbblgm', 'croak';
+can_ok 'bbblgm', 'forward';
+can_ok 'bbblgm', 'instance';
+can_ok 'bbblgm', 'load';
+can_ok 'bbblgm', 'mappings';
 
 can_ok 'Bubblegum::Role::Configuration', 'check';
 can_ok 'Bubblegum::Role::Configuration', 'forward';

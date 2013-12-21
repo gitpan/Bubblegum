@@ -1,15 +1,17 @@
 package Bubblegum::Wrapper::Digest;
 
-use Bubblegum;
+use Bubblegum::Class;
 use Digest::MD5 ();
 use Digest::SHA ();
 
 extends 'Bubblegum::Object::Instance';
 
+our $VERSION = '0.05'; # VERSION
+
 sub BUILD {
     my $self = shift;
 
-    $self->data->typeof('str') or bbbl'gm::croak
+    $self->data->typeof('str') or bbblgm::croak
         CORE::sprintf q(Wrapper package "%s" requires string data), ref $self;
 }
 

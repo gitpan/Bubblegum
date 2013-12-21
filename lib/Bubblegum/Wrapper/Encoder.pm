@@ -1,14 +1,16 @@
 package Bubblegum::Wrapper::Encoder;
 
-use Bubblegum;
+use Bubblegum::Class;
 use Encode 'find_encoding';
 
 extends 'Bubblegum::Object::Instance';
 
+our $VERSION = '0.05'; # VERSION
+
 sub BUILD {
     my $self = shift;
 
-    $self->data->typeof('str') or bbbl'gm::croak
+    $self->data->typeof('str') or bbblgm::croak
         CORE::sprintf q(Wrapper package "%s" requires string data), ref $self;
 }
 

@@ -1,9 +1,11 @@
 package Bubblegum::Wrapper::Json;
 
-use Bubblegum;
+use Bubblegum::Class;
 use JSON::Tiny ();
 
 extends 'Bubblegum::Object::Instance';
+
+our $VERSION = '0.05'; # VERSION
 
 sub decode {
     my $self = shift;
