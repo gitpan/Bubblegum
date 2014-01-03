@@ -21,7 +21,7 @@ use parent 'autobox';
 
 requires 'import';
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 sub bbblgm::chk {
     goto &check;
@@ -134,29 +134,27 @@ sub prerequisites {
     my ($class, $target) = @_;
     my $ignore = ($target =~ /^Bubblegum::Object/);
 
+    # gum
+    (!$ignore && !$target->can('gum') && $target ne 'Bubblegum::Environment')
+        and eval qq(
+            require Bubblegum::Environment;
+            *${target}::gum = sub{Bubblegum::Environment->new}
+        );
+
+    # config
     mro::set_mro $target, 'c3';
     usesub Bubblegum::Object unless $ignore;
 
-    'utf8::all'->import::into($target);
+    # imports
     'strict'->import::into($target);
-    'warnings'->import::into($target, qw(FATAL all));
-    'autodie'->import::into($target, qw(:all));
-    'feature'->import::into($target, qw(:5.10));
+    'warnings'->import::into($target, 'FATAL', 'all');
+    'autodie'->import::into($target, ':all');
+    'feature'->import::into($target, ':5.10');
+    'utf8::all'->import::into($target);
+    'English'->import::into($target, '-no_match_vars');
 
     # autobox
     $target->SUPER::import(%{mappings()});
-
-    # $*
-    $target ne 'Bubblegum::Environment' and eval q(
-        package # hide
-            bbblgm::env;
-
-        no warnings 'all';
-        require Bubblegum::Environment unless $ignore;
-        require Tie::Scalar;
-        $* = Bubblegum::Environment->new;
-        tie $*, 'Bubblegum::Environment';
-    );
 }
 
 1;

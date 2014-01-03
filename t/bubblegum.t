@@ -5,8 +5,8 @@ BEGIN {
 use Bubblegum;
 use Test::More;
 
-ok defined($*), 'dollar-star is defined';
-is ref($*), 'Bubblegum::Environment', 'dollar-star isa is correct';
+ok defined(gum), 'gum accessor is defined';
+is ref(gum), 'Bubblegum::Environment', 'gum accessor isa is correct';
 
 is_deeply \@ARGV, [qw(føø bar bāz)],
     'utf8::all effects observed';

@@ -6,7 +6,7 @@ use Bubblegum::Class 'with';
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 
 
@@ -69,7 +69,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -118,15 +118,15 @@ the any additional parameters and any arguments when executed.
     $code = $code->compose($code, 1,2,3);
     $code->(4,5,6); # [[1,2,3,4,5,6]]
 
+    # this can be confusing, here's what's really happening:
+    my $listing = sub {[@_]}; # produces an arrayref of args
+    $listing->($listing->(@args)); # produces a listing within a listing
+    [[@args]] # the result
+
 The compose method creates a code reference which executes the first argument
 (another code reference) using the result from executing the subject as it's
 argument, and returns a code reference which executes the created code reference
-passing it the remaining arguments when executed. This can be confusing so here
-is a simple manual demonstration to help explain what's happening:
-
-    my $listing = sub {[@_]}; # creates a listing (i.e. an arrayref of args)
-    $listing->($listing->(@args)); # create a listing within a listing
-    # [[@args]]
+passing it the remaining arguments when executed.
 
 =head2 disjoin
 

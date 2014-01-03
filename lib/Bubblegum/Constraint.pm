@@ -27,7 +27,7 @@ our @EXPORT_OK  = qw(
     isa_regexp
 );
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 sub asa_arrayref {
     my $arrayref   = shift;

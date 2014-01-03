@@ -13,7 +13,7 @@ use Time::ParseDate ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 has 'data' => (
     is   => 'ro',
@@ -169,12 +169,8 @@ sub AUTOLOAD {
             $method, ((ref $_[0] || $_[0]) || 'main');
 }
 
-{
-    no warnings 'once';
-    *DESTROY   = sub {};
-    *TIESCALAR = \&new;
-    *FETCH     = \&new;
-    *STORE     = \&new;
+sub DESTROY {
+    # noop
 }
 
 1;

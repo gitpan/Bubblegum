@@ -5,7 +5,7 @@ use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 sub refaddr {
     my $self = bbblgm::chkref CORE::shift;

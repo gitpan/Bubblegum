@@ -43,6 +43,7 @@ lib/Bubblegum/Wrapper/Encoder.pm
 lib/Bubblegum/Wrapper/Json.pm
 lib/Bubblegum/Wrapper/Yaml.pm
 t/bubblegum.t
+t/bubblegum/class.t
 t/bubblegum/constraint.t
 t/bubblegum/environment.t
 t/bubblegum/object/array.t

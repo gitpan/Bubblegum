@@ -3,7 +3,7 @@ package Bubblegum::Object::Universal;
 
 use Bubblegum::Class 'with';
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 
 
@@ -48,14 +48,14 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
     use Bubblegum;
 
     my $thing = 0;
-    $thing->instance # bless({'data' => 0}, 'Bubblegum::Object::Instance')
+    $thing->instance; # bless({'data' => 0}, 'Bubblegum::Object::Instance')
 
 =head1 DESCRIPTION
 
@@ -67,9 +67,9 @@ defined.
 =head2 instance
 
     my $thing = 0;
-    $thing->instance # bless({'data' => 0}, 'Bubblegum::Object::Instance')
+    $thing->instance; # bless({'data' => 0}, 'Bubblegum::Object::Instance')
 
-    my $data = $thing->data; # 0
+    my $data = $thing->instance->data; # 0
 
 The instance method blesses the subject into a generic container class,
 Bubblegum::Object::Instance, and returns an instance. Please see
@@ -81,7 +81,7 @@ L<Bubblegum::Object::Instance> for more information.
     $thing->wrapper('json'); # same as ...
     $thing->json; # bless({'data' => [1,0]}, 'Bubblegum::Wrapper::Json')
 
-    my $json = $thing->encode; # [1,0]
+    my $json = $thing->json->encode; # [1,0]
 
 The wrapper method blesses the subject into a Bubblegum wrapper, a container
 class, which exists as an extension to the core data type methods, and returns

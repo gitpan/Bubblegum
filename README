@@ -2,7 +2,7 @@ NAME
     Bubblegum - Opinionated Modern Perl Development Framework
 
 VERSION
-    version 0.05
+    version 0.06
 
 SYNOPSIS
         use Bubblegum;
@@ -10,11 +10,12 @@ SYNOPSIS
     is equivalent to
 
         use 5.10.0;
+        use strict;
         use autobox;
         use autodie ':all';
         use feature ':5.10';
-        use strict;
         use warnings FATAL => 'all';
+        use English -no_match_vars;
         use utf8::all;
         use mro 'c3';
 
@@ -26,9 +27,9 @@ SYNOPSIS
     abstraction. The following functionality is made available simply by
     using Bubblegum:
 
-        # dollar-star (global object variable)
+        # gum (environment object access)
 
-            printf 'Running %s', $*->script; # Running /opt/app/repl
+            printf 'Running %s', gum->script; # Running /opt/app/repl
 
         # integers
 
@@ -73,7 +74,7 @@ SYNOPSIS
 
             BEGIN {
                 use Bubblegum;
-                use lib $*->lib; # equivalent to ./bin/lib
+                use lib gum->lib; # equivalent to ./bin/lib
             }
 
         # assuming your script is located in a bin directory one level down
@@ -82,7 +83,7 @@ SYNOPSIS
 
             BEGIN {
                 use Bubblegum;
-                use lib $*->lib(1); # equivalent to ./bin/../lib
+                use lib gum->lib(1); # equivalent to ./bin/../lib
             }
 
         # include Moo as your default object-system
@@ -133,9 +134,6 @@ FEATURES
         * strict syntax checking
         * global utility object
 
-    Please take a look at the Bubblegum overview Bubblegum::Overview for
-    more information on it's features and usages.
-
 RATIONALE
     The TIMTOWTDI (there is more than one way to do it) motto has been a
     gift and a curse. The Perl language (and community) has been centered
@@ -156,28 +154,26 @@ RATIONALE
         * avoid variable-length routine arguments and return values
         * die honorably, with structured exceptions not strings
 
-  Bubblegum Global Object
-    Bubblegum has a global object, an instance of a kind-of utility class
-    containing methods which carry-out common programming tasks that are not
-    intrinsically tied to a particular data type. This global object is
-    assigned to dollar-star ($*), and is a Bubblegum::Environment object
-    which also provides information about the system and runtime
-    environment. The dollar-star object is meant to provide easy access to
-    common routines, e.g., file and path routines, date and time routines,
-    access to environment variables and user information, as well as many
-    other utility functions like dumping and encoding data. This variable
-    will be made available once Bubblegum has been loaded. There are lots of
-    handy methods which can be called on this object. The dollar-star as a
-    variable for the global object is useful for making common routines
-    available to your program without polluting the calling class'
-    namespace. By default, Bubblegum injects the Moo framework as well as
-    it's (has, with, requires, etc) methods into the calling class'
-    namespace. You can opt-out of this behavior by passing the argument
-    -base to the use statement.
+  Bubblegum Environment Object
+    Bubblegum has an environment object, an instance of a kind-of utility
+    class containing methods which carry-out common programming tasks that
+    are not intrinsically tied to a particular data type. This utility
+    object is made accessible via the automatically exported gum function
+    ("gum"), and is a Bubblegum::Environment object, which also provides
+    information about the system and runtime environment. The global gum
+    object is meant to provide easy access to common routines, e.g., file
+    and path routines, date and time routines, access to environment
+    variables and user information, as well as many other utility functions
+    like dumping and encoding data. This functions will be made available
+    once Bubblegum has been loaded unless it is already defined. There are
+    lots of handy methods which can be called on this object. The gum
+    function (i.e. the environment object) is useful for making common
+    routines available to your program without polluting the calling class'
+    namespace.
 
         use Bubblegum;
 
-        my $payday = $*->date('next friday');
+        my $payday = gum->date('next friday');
         say 'My paycheck will be deposited on', $payday;
 
   Bubblegum Topology
@@ -246,50 +242,49 @@ RATIONALE
     Bubblegum::Wrapper::Json for JSON serialization and
     Bubblegum::Wrapper::Yaml for YAML serialization.
 
-  Bubblegum Type Routines
-    The following routines will can be called on their associated data type
+  Bubblegum Type Methods
+    The following methods will can be called on their associated data type
     as if the native types were blessed objects.
 
-   Array Routines
-    Array routines work on arrays and array references. Please see
-    Bubblegum::Object::Array for more information on routines associated
-    with array references.
+   Array Methods
+    Array methods work on arrays and array references. Please see
+    Bubblegum::Object::Array for more information on methods associated with
+    array references.
 
-   Code Routines
-    Code routines work on code references. Please see
-    Bubblegum::Object::Code for more information on routines associated with
-    code references.
+   Code Methods
+    Code methods work on code references. Please see Bubblegum::Object::Code
+    for more information on methods associated with code references.
 
-   Hash Routines
-    Hash routines work on hash and hash references. Please see
-    Bubblegum::Object::Hash for more information on routines associated with
+   Hash Methods
+    Hash methods work on hash and hash references. Please see
+    Bubblegum::Object::Hash for more information on methods associated with
     hash references.
 
-   Integer Routines
-    Integer routines work on integer and number data. Please see
-    Bubblegum::Object::Integer for more information on routines associated
+   Integer Methods
+    Integer methods work on integer and number data. Please see
+    Bubblegum::Object::Integer for more information on methods associated
     with integers.
 
-   Number Routines
-    Number routines work on data that meets the criteria for being a number.
-    Please see Bubblegum::Object::Number for more information on routines
+   Number Methods
+    Number methods work on data that meets the criteria for being a number.
+    Please see Bubblegum::Object::Number for more information on methods
     associated with numbers.
 
-   String Routines
-    String routines work on data that meets the criteria for being a string.
-    Please see Bubblegum::Object::String for more information on routines
+   String Methods
+    String methods work on data that meets the criteria for being a string.
+    Please see Bubblegum::Object::String for more information on methods
     associated with strings.
 
-   Undef Routines
-    Undef routines work on variables whose value is undefined. Note, undef
-    routines do not work on undef directly. Please see
-    Bubblegum::Object::Undef for more information on routines associated
-    with undefined variables.
+   Undef Methods
+    Undef methods work on variables whose value is undefined. Note, undef
+    methods do not work on undef directly. Please see
+    Bubblegum::Object::Undef for more information on methods associated with
+    undefined variables.
 
-   Universal Routines
-    Universal routines work on all data which meets the criteria for being
+   Universal Methods
+    Universal methods work on all data which meets the criteria for being
     defined. Please see Bubblegum::Object::Universal for more information on
-    routines associated with array references.
+    methods associated with array references.
 
 AUTHOR
     Al Newkirk <anewkirk@ana.io>

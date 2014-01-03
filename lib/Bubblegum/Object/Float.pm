@@ -4,7 +4,7 @@ use Bubblegum::Class 'with';
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 # needs formatting routines ... not implemented
 

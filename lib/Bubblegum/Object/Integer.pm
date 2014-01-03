@@ -8,7 +8,7 @@ with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 
 
@@ -143,7 +143,7 @@ Bubblegum::Object::Integer - Common Methods for Operating on Integers
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -189,7 +189,7 @@ returns false.
     $int->eqtv(123); # 1; true
 
 The eqtv method returns true if the argument matches the subject's type and
-value, otherwise returns false. This                             function is akin to the strict-comparison
+value, otherwise returns false. This function is akin to the strict-comparison
 operator in other languages.
 
 =head2 format
