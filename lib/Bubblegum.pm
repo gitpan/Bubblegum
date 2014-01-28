@@ -5,7 +5,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 sub import {
     my $target = caller;
@@ -27,7 +27,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -51,10 +51,6 @@ The decision to re-implement many core and autobox functions was based on the
 desire to build-in data validation and design a system using object-roles for
 a higher level of abstraction. The following functionality is made available
 simply by using Bubblegum:
-
-    # gum (environment object access)
-
-        printf 'Running %s', gum->script; # Running /opt/app/repl
 
     # integers
 
@@ -85,21 +81,31 @@ simply by using Bubblegum:
 
     # comparison operations
 
-        my $ten = "10";   # string containing the number 10
-        $ten->eqtv(10)    # false, strict comparison, type and value mismatch
-        $ten->eq(10)      # true, value comparison with coercion
-        10->eq($ten)      # true, same as above
-        "10"->type        # string
-        (10)->type        # integer
-        10->typeof('nil') # false
-        10->typeof('num') # true
-        10->typeof('str') # false
+        my $ten = "10";             # string containing the number 10
+        $ten->eqtv(10)              # false, strict compare type/value mismatch
+        $ten->eq(10)                # true, value comparison with coercion
+        10->eq($ten)                # true, same as above
+        "10"->type                  # string
+        (10)->type                  # integer
+        10->typeof('nil')           # false
+        10->typeof('num')           # true
+        10->typeof('str')           # false
+
+    # include Moo as your default object-system
+
+        use Bubblegum::Class;       # with Moo
+        use Bubblegum::Role;        # with Moo::Role
+        use Bubblegum::Singleton;   # with Moo + Cached Instance
+
+    # the gum function (for your convenience)
+
+        say gum->script;            # Running /opt/app/repl
 
     # no more $FindBin::RealBin
 
         BEGIN {
             use Bubblegum;
-            use lib gum->lib; # equivalent to ./bin/lib
+            use lib gum->lib;       # equivalent to ./bin/lib
         }
 
     # assuming your script is located in a bin directory one level down
@@ -108,13 +114,8 @@ simply by using Bubblegum:
 
         BEGIN {
             use Bubblegum;
-            use lib gum->lib(1); # equivalent to ./bin/../lib
+            use lib gum->lib(1);    # equivalent to ./bin/../lib
         }
-
-    # include Moo as your default object-system
-
-        use Bubblegum::Class; # with Moo
-        use Bubblegum::Role;  # with Moo::Role
 
     # et al
 
@@ -312,7 +313,8 @@ with strings.
 =head3 Undef Methods
 
 Undef methods work on variables whose value is undefined. Note, undef methods
-do not work on undef directly. Please see L<Bubblegum::Object::Undef> for more information on methods associated with undefined variables.
+do not work on undef directly. Please see L<Bubblegum::Object::Undef> for more
+information on methods associated with undefined variables.
 
 =head3 Universal Methods
 

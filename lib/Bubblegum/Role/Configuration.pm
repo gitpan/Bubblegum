@@ -21,7 +21,7 @@ use parent 'autobox';
 
 requires 'import';
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 sub bbblgm::chk {
     goto &check;

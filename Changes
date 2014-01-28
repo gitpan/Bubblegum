@@ -1,49 +1,5 @@
-==================================================
-Changes from 2013-01-03 00:00:00 +0000 to present.
-==================================================
+Changelog for Bubblegum
 
------------------------------------------
-version 0.06 at 2014-01-03 03:46:03 +0000
------------------------------------------
+0.07 2014-01-28T10:48:47
+ - Initial commit.
 
-  Change: f27522ab0dd2cceb0313db7f759d4dbbdaa8d945
-  Author: Al Newkirk <anewkirk@ana.io>
-  Date : 2014-01-02 22:45:33 +0000
-
-    Resolve Perl 5.16+ conflicts. 
-
------------------------------------------
-version 0.05 at 2013-12-21 19:03:15 +0000
------------------------------------------
-
-  Change: 6987d05be07efe71498595f96f09d6f9d2e45bb0
-  Author: Al Newkirk <anewkirk@ana.io>
-  Date : 2013-12-21 14:03:15 +0000
-
-    v0.05 
-
-  Change: 0609cec89074361c5c7469c157e21cbc83ebb320
-  Author: Al Newkirk <anewkirk@ana.io>
-  Date : 2013-12-21 14:02:08 +0000
-
-    Initial documentation. 
-
------------------------------------------
-version 0.04 at 2013-12-16 09:06:32 +0000
------------------------------------------
-
-  Change: b5a0d423dd7996214c4d27934e735f2748d8d7ed
-  Author: Al Newkirk <anewkirk@ana.io>
-  Date : 2013-12-16 04:06:32 +0000
-
-    v0.04 
-
-  Change: 356d70b828373f2f0d8a5c31d01134df08720ae8
-  Author: Al Newkirk <anewkirk@ana.io>
-  Date : 2013-12-16 04:04:37 +0000
-
-    Initial commit. 
-
-================
-End of releases.
-================

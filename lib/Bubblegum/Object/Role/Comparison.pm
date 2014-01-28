@@ -12,7 +12,7 @@ requires 'lt';
 requires 'lte';
 requires 'ne';
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 sub equal {
     goto &eq;

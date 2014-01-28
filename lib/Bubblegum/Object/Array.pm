@@ -14,7 +14,7 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One  ();
 use Scalar::Util ();
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 
 
@@ -403,7 +403,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -433,7 +433,7 @@ criteria set by the operand and rvalue.
 =head2 any
 
     my $array = [2..5];
-    $array->any > 1; # 0; false
+    $array->any > 5; # 0; false
     $array->any > 3; # 1; true
 
 The any method returns true if any of the elements in the subject meet the

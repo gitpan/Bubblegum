@@ -13,7 +13,7 @@ use Time::ParseDate ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 has 'data' => (
     is   => 'ro',
@@ -91,7 +91,7 @@ sub home {
     my $self = shift;
     my $user = shift // $self->env('user');
     my $func = $user ? 'my_home' : 'users_home';
-    return $self->path(File::HomeDir->can($func)->next($user));
+    return eval { $self->path(File::HomeDir->can($func)->next($user)) };
 }
 
 sub lib {
