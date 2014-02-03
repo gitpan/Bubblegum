@@ -4,7 +4,7 @@ use Bubblegum::Role 'requires';
 
 requires 'defined';
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 sub class {
     my $self = CORE::shift;

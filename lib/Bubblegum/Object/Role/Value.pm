@@ -4,7 +4,7 @@ use Bubblegum::Role 'with';
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 sub do {
     my $self = CORE::shift;

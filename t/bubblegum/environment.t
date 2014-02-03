@@ -73,7 +73,7 @@ subtest 'testing find' => sub {
 
 subtest 'testing home' => sub {
     my $path = $env->home;
-    isa_ok $path, 'Path::Tiny';
+    isa_ok $path, 'Path::Tiny' if $path;
 };
 
 subtest 'testing lib' => sub {

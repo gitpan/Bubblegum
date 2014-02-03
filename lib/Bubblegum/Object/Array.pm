@@ -14,7 +14,7 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One  ();
 use Scalar::Util ();
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 
 
@@ -68,7 +68,7 @@ sub each_key {
     my $self = CORE::shift;
     my $code = bbblgm::chkcode CORE::shift;
 
-    $code->($_) for [0..$#{$self}];
+    $code->($_) for (0..$#{$self});
     return $self;
 }
 
@@ -88,7 +88,7 @@ sub each_value {
     my $self = CORE::shift;
     my $code = bbblgm::chkcode CORE::shift;
 
-    $code->($self->[$_]) for [0..$#{$self}];
+    $code->($self->[$_]) for (0..$#{$self});
     return $self;
 }
 
@@ -281,7 +281,7 @@ sub push {
 
 sub random {
     my $self = CORE::shift;
-    return @$self[rand(@$self)];
+    return @$self[rand(1+$#{$self})];
 }
 
 
@@ -403,7 +403,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
@@ -704,7 +704,7 @@ value of each element in the subject.
 =head2 pairs_hash
 
     my $array = [1..5];
-    $array->pairs; # {0=>1,1=>2,2=>3,3=>4,4=>5}
+    $array->pairs_hash; # {0=>1,1=>2,2=>3,3=>4,4=>5}
 
 The pairs_hash method returns a hash reference where each key and value pairs
 corresponds to the index and value of each element in the subject.

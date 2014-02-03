@@ -1,0 +1,477 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+'Bubblegum::Object::Role::Coercive'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^with 'Bubblegum::Object::Role::Coercive';$/;"	w
+'Bubblegum::Object::Role::Collection'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Indexed.pm	/^with 'Bubblegum::Object::Role::Collection';$/;"	w
+'Bubblegum::Object::Role::Collection'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Keyed.pm	/^with 'Bubblegum::Object::Role::Collection';$/;"	w
+'Bubblegum::Object::Role::Comparison'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^with 'Bubblegum::Object::Role::Comparison';$/;"	w
+'Bubblegum::Object::Role::Comparison'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^with 'Bubblegum::Object::Role::Comparison';$/;"	w
+'Bubblegum::Object::Role::Defined'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^with 'Bubblegum::Object::Role::Defined';$/;"	w
+'Bubblegum::Object::Role::Defined'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^with 'Bubblegum::Object::Role::Defined';$/;"	w
+'Bubblegum::Object::Role::Defined'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^with 'Bubblegum::Object::Role::Defined';$/;"	w
+'Bubblegum::Object::Role::Defined'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^with 'Bubblegum::Object::Role::Defined';$/;"	w
+'Bubblegum::Object::Role::Defined'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Output.pm	/^with 'Bubblegum::Object::Role::Defined';$/;"	w
+'Bubblegum::Object::Role::Defined'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Ref.pm	/^with 'Bubblegum::Object::Role::Defined';$/;"	w
+'Bubblegum::Object::Role::Defined'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Value.pm	/^with 'Bubblegum::Object::Role::Defined';$/;"	w
+'Bubblegum::Object::Role::Defined'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^with 'Bubblegum::Object::Role::Defined';$/;"	w
+'Bubblegum::Object::Role::Indexed'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^with 'Bubblegum::Object::Role::Indexed';$/;"	w
+'Bubblegum::Object::Role::Item'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Collection.pm	/^with 'Bubblegum::Object::Role::Item';$/;"	w
+'Bubblegum::Object::Role::Item'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^with 'Bubblegum::Object::Role::Item';$/;"	w
+'Bubblegum::Object::Role::Item'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Defined.pm	/^with 'Bubblegum::Object::Role::Item';$/;"	w
+'Bubblegum::Object::Role::Item'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Undef.pm	/^with 'Bubblegum::Object::Role::Item';$/;"	w
+'Bubblegum::Object::Role::Keyed'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^with 'Bubblegum::Object::Role::Keyed';$/;"	w
+'Bubblegum::Object::Role::List'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^with 'Bubblegum::Object::Role::List';$/;"	w
+'Bubblegum::Object::Role::Ref'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^with 'Bubblegum::Object::Role::Ref';$/;"	w
+'Bubblegum::Object::Role::Ref'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^with 'Bubblegum::Object::Role::Ref';$/;"	w
+'Bubblegum::Object::Role::Ref'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^with 'Bubblegum::Object::Role::Ref';$/;"	w
+'Bubblegum::Object::Role::Value'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Float.pm	/^with 'Bubblegum::Object::Role::Value';$/;"	w
+'Bubblegum::Object::Role::Value'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^with 'Bubblegum::Object::Role::Value';$/;"	w
+'Bubblegum::Object::Role::Value'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^with 'Bubblegum::Object::Role::Value';$/;"	w
+'Bubblegum::Object::Role::Value'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/List.pm	/^with 'Bubblegum::Object::Role::Value';$/;"	w
+'Bubblegum::Object::Role::Value'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^with 'Bubblegum::Object::Role::Value';$/;"	w
+'Bubblegum::Object::Role::Value'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^with 'Bubblegum::Object::Role::Value';$/;"	w
+'Bubblegum::Role::Configuration'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^with 'Bubblegum::Role::Configuration';$/;"	w
+'Bubblegum::Role::Configuration'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Class.pm	/^with 'Bubblegum::Role::Configuration';$/;"	w
+'Bubblegum::Role::Configuration'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role.pm	/^with 'Bubblegum::Role::Configuration';$/;"	w
+'Bubblegum::Role::Configuration'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Singleton.pm	/^with 'Bubblegum::Role::Configuration';$/;"	w
+-- Bubblegum Environment Object	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head2 Bubblegum Environment Object$/;"	p
+-- Bubblegum Manifesto	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head2 Bubblegum Manifesto$/;"	p
+-- Bubblegum Topology	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head2 Bubblegum Topology$/;"	p
+-- Bubblegum Type Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head2 Bubblegum Type Methods$/;"	p
+-- Bubblegum Wrappers	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head2 Bubblegum Wrappers$/;"	p
+---- Array Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head3 Array Methods$/;"	p
+---- Code Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head3 Code Methods$/;"	p
+---- Hash Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head3 Hash Methods$/;"	p
+---- Integer Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head3 Integer Methods$/;"	p
+---- Number Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head3 Number Methods$/;"	p
+---- String Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head3 String Methods$/;"	p
+---- Undef Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head3 Undef Methods$/;"	p
+---- Universal Methods	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head3 Universal Methods$/;"	p
+5.10.0	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use 5.10.0;$/;"	u
+5.10.0	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use 5.10.0;$/;"	u
+5.10.0	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Exception.pm	/^use 5.10.0;$/;"	u
+5.10.0	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use 5.10.0;$/;"	u
+AUTOLOAD	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub AUTOLOAD {$/;"	s
+AUTOLOAD	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Universal.pm	/^sub AUTOLOAD {$/;"	s
+BUILD	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Digest.pm	/^sub BUILD {$/;"	s
+BUILD	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Encoder.pm	/^sub BUILD {$/;"	s
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^            use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^package Bubblegum;$/;"	p
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Undef.pm	/^    use Bubblegum;$/;"	u
+Bubblegum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Universal.pm	/^    use Bubblegum;$/;"	u
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^        use Bubblegum::Class;       # with Moo$/;"	u
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Class.pm	/^package Bubblegum::Class;$/;"	p
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use Bubblegum::Class;$/;"	u
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Instance.pm	/^use Bubblegum::Class;$/;"	u
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Digest.pm	/^use Bubblegum::Class;$/;"	u
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Dumper.pm	/^use Bubblegum::Class;$/;"	u
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Encoder.pm	/^use Bubblegum::Class;$/;"	u
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Json.pm	/^use Bubblegum::Class;$/;"	u
+Bubblegum::Class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Yaml.pm	/^use Bubblegum::Class;$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Float.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Undef.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Class 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Universal.pm	/^use Bubblegum::Class 'with';$/;"	u
+Bubblegum::Constraint	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^package Bubblegum::Constraint;$/;"	p
+Bubblegum::Constraint	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use Bubblegum::Constraint;$/;"	u
+Bubblegum::Environment	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^package Bubblegum::Environment;$/;"	p
+Bubblegum::Environment	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^            require Bubblegum::Environment;$/;"	r
+Bubblegum::Exception	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Exception.pm	/^package Bubblegum::Exception;$/;"	p
+Bubblegum::Object::Array	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^package Bubblegum::Object::Array;$/;"	p
+Bubblegum::Object::Code	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^package Bubblegum::Object::Code;$/;"	p
+Bubblegum::Object::Float	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Float.pm	/^package Bubblegum::Object::Float;$/;"	p
+Bubblegum::Object::Hash	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^package Bubblegum::Object::Hash;$/;"	p
+Bubblegum::Object::Instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^extends 'Bubblegum::Object::Instance';$/;"	e
+Bubblegum::Object::Instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Instance.pm	/^    use Bubblegum::Object::Instance;$/;"	u
+Bubblegum::Object::Instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Instance.pm	/^package Bubblegum::Object::Instance;$/;"	p
+Bubblegum::Object::Instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Digest.pm	/^extends 'Bubblegum::Object::Instance';$/;"	e
+Bubblegum::Object::Instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Dumper.pm	/^extends 'Bubblegum::Object::Instance';$/;"	e
+Bubblegum::Object::Instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Encoder.pm	/^extends 'Bubblegum::Object::Instance';$/;"	e
+Bubblegum::Object::Instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Json.pm	/^extends 'Bubblegum::Object::Instance';$/;"	e
+Bubblegum::Object::Instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Yaml.pm	/^extends 'Bubblegum::Object::Instance';$/;"	e
+Bubblegum::Object::Integer	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^package Bubblegum::Object::Integer;$/;"	p
+Bubblegum::Object::Number	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^package Bubblegum::Object::Number;$/;"	p
+Bubblegum::Object::Role::Coercive	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Coercive.pm	/^package Bubblegum::Object::Role::Coercive;$/;"	p
+Bubblegum::Object::Role::Collection	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Collection.pm	/^package Bubblegum::Object::Role::Collection;$/;"	p
+Bubblegum::Object::Role::Comparison	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^package Bubblegum::Object::Role::Comparison;$/;"	p
+Bubblegum::Object::Role::Defined	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Defined.pm	/^package Bubblegum::Object::Role::Defined;$/;"	p
+Bubblegum::Object::Role::Indexed	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Indexed.pm	/^package Bubblegum::Object::Role::Indexed;$/;"	p
+Bubblegum::Object::Role::Item	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Item.pm	/^package Bubblegum::Object::Role::Item;$/;"	p
+Bubblegum::Object::Role::Keyed	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Keyed.pm	/^package Bubblegum::Object::Role::Keyed;$/;"	p
+Bubblegum::Object::Role::List	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/List.pm	/^package Bubblegum::Object::Role::List;$/;"	p
+Bubblegum::Object::Role::Output	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Output.pm	/^package Bubblegum::Object::Role::Output;$/;"	p
+Bubblegum::Object::Role::Ref	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Ref.pm	/^package Bubblegum::Object::Role::Ref;$/;"	p
+Bubblegum::Object::Role::Value	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Value.pm	/^package Bubblegum::Object::Role::Value;$/;"	p
+Bubblegum::Object::Scalar	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^package Bubblegum::Object::Scalar;$/;"	p
+Bubblegum::Object::String	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^package Bubblegum::Object::String;$/;"	p
+Bubblegum::Object::Undef	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Undef.pm	/^package Bubblegum::Object::Undef;$/;"	p
+Bubblegum::Object::Universal	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Universal.pm	/^package Bubblegum::Object::Universal;$/;"	p
+Bubblegum::Role	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^        use Bubblegum::Role;        # with Moo::Role$/;"	u
+Bubblegum::Role	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role.pm	/^package Bubblegum::Role;$/;"	p
+Bubblegum::Role 'requires'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Coercive.pm	/^use Bubblegum::Role 'requires';$/;"	u
+Bubblegum::Role 'requires'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Item.pm	/^use Bubblegum::Role 'requires';$/;"	u
+Bubblegum::Role 'requires', 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Collection.pm	/^use Bubblegum::Role 'requires', 'with';$/;"	u
+Bubblegum::Role 'requires', 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^use Bubblegum::Role 'requires', 'with';$/;"	u
+Bubblegum::Role 'requires', 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Indexed.pm	/^use Bubblegum::Role 'requires', 'with';$/;"	u
+Bubblegum::Role 'requires', 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/List.pm	/^use Bubblegum::Role 'requires', 'with';$/;"	u
+Bubblegum::Role 'requires', 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Output.pm	/^use Bubblegum::Role 'requires', 'with';$/;"	u
+Bubblegum::Role 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Defined.pm	/^use Bubblegum::Role 'with';$/;"	u
+Bubblegum::Role 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Keyed.pm	/^use Bubblegum::Role 'with';$/;"	u
+Bubblegum::Role 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Ref.pm	/^use Bubblegum::Role 'with';$/;"	u
+Bubblegum::Role 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Value.pm	/^use Bubblegum::Role 'with';$/;"	u
+Bubblegum::Role::Configuration	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^package Bubblegum::Role::Configuration;$/;"	p
+Bubblegum::Singleton	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^        use Bubblegum::Singleton;   # with Moo + Cached Instance$/;"	u
+Bubblegum::Singleton	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Singleton.pm	/^package Bubblegum::Singleton;$/;"	p
+Bubblegum::Wrapper::Digest	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Digest.pm	/^package Bubblegum::Wrapper::Digest;$/;"	p
+Bubblegum::Wrapper::Dumper	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Dumper.pm	/^package Bubblegum::Wrapper::Dumper;$/;"	p
+Bubblegum::Wrapper::Encoder	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Encoder.pm	/^package Bubblegum::Wrapper::Encoder;$/;"	p
+Bubblegum::Wrapper::Json	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Json.pm	/^package Bubblegum::Wrapper::Json;$/;"	p
+Bubblegum::Wrapper::Yaml	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Yaml.pm	/^package Bubblegum::Wrapper::Yaml;$/;"	p
+Carp 'croak'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use Carp 'croak';$/;"	u
+Class::Forward	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use Class::Forward;$/;"	u
+Class::Load 'load_class'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use Class::Load 'load_class';$/;"	u
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Instance.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Undef.pm	/^=head1 DESCRIPTION$/;"	p
+DESCRIPTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Universal.pm	/^=head1 DESCRIPTION$/;"	p
+DESTROY	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub DESTROY {$/;"	s
+Data::Dumper ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use Data::Dumper ();$/;"	u
+Data::Dumper ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Dumper.pm	/^use Data::Dumper ();$/;"	u
+DateTime::Tiny ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use DateTime::Tiny ();$/;"	u
+Digest::MD5 ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Digest.pm	/^use Digest::MD5 ();$/;"	u
+Digest::SHA ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Digest.pm	/^use Digest::SHA ();$/;"	u
+EXPORT_OK	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^our @EXPORT_OK  = qw($/;"	o
+Encode 'find_encoding'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Encoder.pm	/^use Encode 'find_encoding';$/;"	u
+English -no_match_vars	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use English -no_match_vars;$/;"	u
+Exception::Tiny	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Exception.pm	/^use base 'Exception::Tiny';$/;"	e
+Exporter::Tiny	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use base 'Exporter::Tiny';$/;"	e
+FEATURES	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head1 FEATURES$/;"	p
+File::Find::Rule ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use File::Find::Rule ();$/;"	u
+File::HomeDir ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use File::HomeDir ();$/;"	u
+File::Which ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use File::Which ();$/;"	u
+INTRODUCTION	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head1 INTRODUCTION$/;"	p
+Import::Into	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use Import::Into;$/;"	u
+JSON::Tiny ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Json.pm	/^use JSON::Tiny ();$/;"	u
+Module::Find 'usesub'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use Module::Find 'usesub';$/;"	u
+Moo 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^use Moo 'with';$/;"	u
+Moo 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Class.pm	/^use Moo 'with';$/;"	u
+Moo 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role.pm	/^use Moo 'with';$/;"	u
+Moo 'with'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Singleton.pm	/^use Moo 'with';$/;"	u
+Moo::Role	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use Moo::Role;$/;"	u
+Path::Tiny ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use Path::Tiny ();$/;"	u
+RATIONALE	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head1 RATIONALE$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Instance.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Undef.pm	/^=head1 SYNOPSIS$/;"	p
+SYNOPSIS	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Universal.pm	/^=head1 SYNOPSIS$/;"	p
+Scalar::Util 'blessed'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use Scalar::Util 'blessed';$/;"	u
+Scalar::Util ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^use Scalar::Util ();$/;"	u
+Scalar::Util ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Ref.pm	/^use Scalar::Util ();$/;"	u
+Scalar::Util ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^use Scalar::Util ();$/;"	u
+Scalar::Util ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^use Scalar::Util ();$/;"	u
+Syntax::Keyword::Junction::All  ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^use Syntax::Keyword::Junction::All  ();$/;"	u
+Syntax::Keyword::Junction::Any  ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^use Syntax::Keyword::Junction::Any  ();$/;"	u
+Syntax::Keyword::Junction::None ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^use Syntax::Keyword::Junction::None ();$/;"	u
+Syntax::Keyword::Junction::One  ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^use Syntax::Keyword::Junction::One  ();$/;"	u
+Time::Format ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use Time::Format ();$/;"	u
+Time::ParseDate ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^use Time::ParseDate ();$/;"	u
+Try::Tiny	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use Try::Tiny;$/;"	u
+Type::Params ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use Type::Params ();$/;"	u
+Types::Standard ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use Types::Standard ();$/;"	u
+YAML::Tiny ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Yaml.pm	/^use YAML::Tiny ();$/;"	u
+_build_data	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub _build_data {$/;"	s
+abs	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub abs {$/;"	s
+all	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub all {$/;"	s
+and	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^sub and {$/;"	s
+any	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub any {$/;"	s
+array_slice	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub array_slice {$/;"	s
+asa_arrayref	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub asa_arrayref {$/;"	s
+asa_coderef	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub asa_coderef {$/;"	s
+asa_hashref	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub asa_hashref {$/;"	s
+asa_number	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub asa_number {$/;"	s
+asa_ref	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub asa_ref {$/;"	s
+asa_regexp	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub asa_regexp {$/;"	s
+asa_string	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub asa_string {$/;"	s
+aslice	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub aslice {$/;"	s
+atan2	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub atan2 {$/;"	s
+autobox	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use autobox;$/;"	u
+autobox	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use parent 'autobox';$/;"	e
+autodie ':all'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use autodie ':all';$/;"	u
+base 'Exception::Tiny'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Exception.pm	/^use base 'Exception::Tiny';$/;"	u
+base 'Exporter::Tiny'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use base 'Exporter::Tiny';$/;"	u
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::chk {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::chkarray {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::chkcode {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::chkhash {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::chknum {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::chkre {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::chkref {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::chkstr {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::croak {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::forward {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::instance {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::load {$/;"	s
+bbblgm	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub bbblgm::mappings {$/;"	s
+call	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^sub call {$/;"	s
+camelcase	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub camelcase {$/;"	s
+check	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub check {$/;"	s
+chomp	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub chomp {$/;"	s
+chop	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub chop {$/;"	s
+class	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Item.pm	/^sub class {$/;"	s
+compose	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^sub compose {$/;"	s
+conjoin	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^sub conjoin {$/;"	s
+cos	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub cos {$/;"	s
+count	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub count {$/;"	s
+curry	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^sub curry {$/;"	s
+cwd	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub cwd {$/;"	s
+data	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^has 'data' => ($/;"	a
+data	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Instance.pm	/^has 'data' => ($/;"	a
+date	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub date {$/;"	s
+date_epoch	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub date_epoch {$/;"	s
+date_format	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub date_format {$/;"	s
+decode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Dumper.pm	/^sub decode {$/;"	s
+decode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Encoder.pm	/^sub decode {$/;"	s
+decode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Json.pm	/^sub decode {$/;"	s
+decode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Yaml.pm	/^sub decode {$/;"	s
+decr	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub decr {$/;"	s
+defined	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub defined {$/;"	s
+defined	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub defined {$/;"	s
+defined	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Defined.pm	/^sub defined {$/;"	s
+defined	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Undef.pm	/^sub defined {$/;"	s
+delete	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub delete {$/;"	s
+delete	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub delete {$/;"	s
+disjoin	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^sub disjoin {$/;"	s
+do	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Value.pm	/^sub do {$/;"	s
+downto	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub downto {$/;"	s
+dump	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub dump {$/;"	s
+each	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub each {$/;"	s
+each	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub each {$/;"	s
+each_key	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub each_key {$/;"	s
+each_key	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub each_key {$/;"	s
+each_n_values	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub each_n_values {$/;"	s
+each_n_values	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub each_n_values {$/;"	s
+each_value	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub each_value {$/;"	s
+each_value	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub each_value {$/;"	s
+empty	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub empty {$/;"	s
+empty	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub empty {$/;"	s
+encode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Digest.pm	/^sub encode {$/;"	s
+encode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Dumper.pm	/^sub encode {$/;"	s
+encode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Encoder.pm	/^sub encode {$/;"	s
+encode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Json.pm	/^sub encode {$/;"	s
+encode	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Wrapper/Yaml.pm	/^sub encode {$/;"	s
+env	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub env {$/;"	s
+eq	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub eq {$/;"	s
+eq	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub eq {$/;"	s
+eqtv	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub eqtv {$/;"	s
+eqtv	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub eqtv {$/;"	s
+equal	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^sub equal {$/;"	s
+equal_type_and_value	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^sub equal_type_and_value {$/;"	s
+exists	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub exists {$/;"	s
+exists	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub exists {$/;"	s
+exp	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub exp {$/;"	s
+feature ':5.10'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use feature ':5.10';$/;"	u
+feature ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use feature ();$/;"	u
+file	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub file {$/;"	s
+filter_exclude	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub filter_exclude {$/;"	s
+filter_include	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub filter_include {$/;"	s
+find	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub find {$/;"	s
+first	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub first {$/;"	s
+for	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^method for rounding.$/;"	m
+format	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub format {$/;"	s
+format	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub format {$/;"	s
+forward	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub forward {$/;"	s
+get	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub get {$/;"	s
+get	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub get {$/;"	s
+greater	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^sub greater {$/;"	s
+greater_or_equal	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^sub greater_or_equal {$/;"	s
+grep	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub grep {$/;"	s
+gt	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub gt {$/;"	s
+gt	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub gt {$/;"	s
+gte	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub gte {$/;"	s
+gte	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub gte {$/;"	s
+hash_slice	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub hash_slice {$/;"	s
+head	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub head {$/;"	s
+hex	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub hex {$/;"	s
+hex	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub hex {$/;"	s
+home	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub home {$/;"	s
+hslice	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub hslice {$/;"	s
+import	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^sub import {$/;"	s
+import	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Class.pm	/^sub import {$/;"	s
+import	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role.pm	/^sub import {$/;"	s
+import	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Singleton.pm	/^sub import {$/;"	s
+incr	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub incr {$/;"	s
+index	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub index {$/;"	s
+instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Universal.pm	/^sub instance {$/;"	s
+instance	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub instance {$/;"	s
+int	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub int {$/;"	s
+invert	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub invert {$/;"	s
+isa_arrayref	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub isa_arrayref {$/;"	s
+isa_classref	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub isa_classref {$/;"	s
+isa_coderef	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub isa_coderef {$/;"	s
+isa_evenlist	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub isa_evenlist {$/;"	s
+isa_hashref	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub isa_hashref {$/;"	s
+isa_regexp	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^sub isa_regexp {$/;"	s
+iterator	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub iterator {$/;"	s
+iterator	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub iterator {$/;"	s
+join	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub join {$/;"	s
+keyed	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub keyed {$/;"	s
+keys	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub keys {$/;"	s
+keys	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub keys {$/;"	s
+last	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub last {$/;"	s
+lc	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub lc {$/;"	s
+lcfirst	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub lcfirst {$/;"	s
+length	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub length {$/;"	s
+length	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub length {$/;"	s
+lesser	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^sub lesser {$/;"	s
+lesser_or_equal	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^sub lesser_or_equal {$/;"	s
+lib	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub lib {$/;"	s
+lib gum->lib	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^            use lib gum->lib;       # equivalent to .\/bin\/lib$/;"	u
+lib gum->lib(1)	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^            use lib gum->lib(1);    # equivalent to .\/bin\/..\/lib$/;"	u
+lines	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub lines {$/;"	s
+list	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub list {$/;"	s
+list	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub list {$/;"	s
+load	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub load {$/;"	s
+log	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub log {$/;"	s
+lookup	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub lookup {$/;"	s
+lowercase	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub lowercase {$/;"	s
+lt	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub lt {$/;"	s
+lt	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub lt {$/;"	s
+lte	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub lte {$/;"	s
+lte	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub lte {$/;"	s
+map	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub map {$/;"	s
+mappings	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub mappings {{$/;"	s
+max	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub max {$/;"	s
+merge	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub merge {$/;"	s
+min	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub min {$/;"	s
+mod	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub mod {$/;"	s
+modifies	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^method modifies the subject.$/;"	m
+modifies	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^method modifies and returns the subject.$/;"	m
+modifies	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^method modifies the subject.$/;"	m
+mro     ()	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use mro     ();$/;"	u
+mro 'c3'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use mro 'c3';$/;"	u
+ne	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub ne {$/;"	s
+ne	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub ne {$/;"	s
+neg	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub neg {$/;"	s
+next	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^sub next {$/;"	s
+none	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub none {$/;"	s
+not	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^sub not {$/;"	s
+not_equal	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Comparison.pm	/^sub not_equal {$/;"	s
+nsort	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub nsort {$/;"	s
+of	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Item.pm	/^sub of {$/;"	s
+one	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub one {$/;"	s
+or	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^sub or {$/;"	s
+pairs	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub pairs {$/;"	s
+pairs	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub pairs {$/;"	s
+pairs_array	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub pairs_array {$/;"	s
+pairs_array	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub pairs_array {$/;"	s
+pairs_hash	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub pairs_hash {$/;"	s
+parent 'autobox'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use parent 'autobox';$/;"	u
+path	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub path {$/;"	s
+pop	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub pop {$/;"	s
+pow	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub pow {$/;"	s
+prerequisites	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^sub prerequisites {$/;"	s
+push	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub push {$/;"	s
+quote	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub quote {$/;"	s
+random	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub random {$/;"	s
+rcurry	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Code.pm	/^sub rcurry {$/;"	s
+reduce	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/List.pm	/^sub reduce {$/;"	s
+refaddr	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Ref.pm	/^sub refaddr {$/;"	s
+reftype	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Ref.pm	/^sub reftype {$/;"	s
+repeat	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^sub repeat {$/;"	s
+reset	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub reset {$/;"	s
+reverse	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub reverse {$/;"	s
+reverse	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub reverse {$/;"	s
+reverse	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub reverse {$/;"	s
+rindex	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub rindex {$/;"	s
+rnsort	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub rnsort {$/;"	s
+rotate	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub rotate {$/;"	s
+rsort	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub rsort {$/;"	s
+script	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub script {$/;"	s
+set	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub set {$/;"	s
+set	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub set {$/;"	s
+shift	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub shift {$/;"	s
+sin	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub sin {$/;"	s
+size	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub size {$/;"	s
+slice	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub slice {$/;"	s
+snakecase	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub snakecase {$/;"	s
+sort	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub sort {$/;"	s
+split	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub split {$/;"	s
+sqrt	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Number.pm	/^sub sqrt {$/;"	s
+strict	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use strict;$/;"	u
+strict	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use strict;$/;"	u
+strict	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Exception.pm	/^use strict;$/;"	u
+strict	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use strict;$/;"	u
+strip	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub strip {$/;"	s
+sum	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub sum {$/;"	s
+tail	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub tail {$/;"	s
+titlecase	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub titlecase {$/;"	s
+to	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub to {$/;"	s
+to_array	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub to_array {$/;"	s
+to_array	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub to_array {$/;"	s
+to_code	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub to_code {$/;"	s
+to_code	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub to_code {$/;"	s
+to_hash	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub to_hash {$/;"	s
+to_hash	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub to_hash {$/;"	s
+to_integer	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub to_integer {$/;"	s
+to_integer	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub to_integer {$/;"	s
+to_string	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub to_string {$/;"	s
+to_string	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub to_string {$/;"	s
+to_undef	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Coercive.pm	/^sub to_undef {$/;"	s
+trim	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub trim {$/;"	s
+type	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Item.pm	/^sub type {$/;"	s
+typeof	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/Item.pm	/^sub typeof {$/;"	s
+uc	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub uc {$/;"	s
+ucfirst	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub ucfirst {$/;"	s
+unique	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub unique {$/;"	s
+unquote	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub unquote {$/;"	s
+unshift	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub unshift {$/;"	s
+uppercase	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub uppercase {$/;"	s
+upto	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Integer.pm	/^sub upto {$/;"	s
+user	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub user {$/;"	s
+user_info	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub user_info {$/;"	s
+utf8::all	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use utf8::all;$/;"	u
+utf8::all	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use utf8::all;$/;"	u
+utf8::all	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Exception.pm	/^use utf8::all;$/;"	u
+utf8::all	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use utf8::all;$/;"	u
+values	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Array.pm	/^sub values {$/;"	s
+values	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Hash.pm	/^sub values {$/;"	s
+warnings	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Constraint.pm	/^use warnings;$/;"	u
+warnings	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Exception.pm	/^use warnings;$/;"	u
+warnings	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Role/Configuration.pm	/^use warnings;$/;"	u
+warnings FATAL => 'all'	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum.pm	/^    use warnings FATAL => 'all';$/;"	u
+which	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Environment.pm	/^sub which {$/;"	s
+words	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/String.pm	/^sub words {$/;"	s
+wrapper	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Universal.pm	/^sub wrapper {$/;"	s
+xor	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Scalar.pm	/^sub xor {$/;"	s
+zip	/home/anewkirk/workspace/alnewkirk/Bubblegum/lib/Bubblegum/Object/Role/List.pm	/^sub zip {$/;"	s

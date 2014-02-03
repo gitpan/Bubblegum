@@ -7,7 +7,7 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Keyed';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 
 
@@ -150,7 +150,7 @@ sub invert {
 
 sub iterator {
     my $self = CORE::shift;
-    my @keys = map { bbblgm::chkstr $_ } @_;
+    my @keys = CORE::keys %{$self};
 
     my $i = 0;
     return sub {
@@ -251,7 +251,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 

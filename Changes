@@ -1,5 +1,12 @@
 Changelog for Bubblegum
 
-0.07 2014-01-28T10:48:47
+0.08 2014-02-03T01:01:35
+ - Added additional test coverage and fixes.
+ - Fixed homedir test in t/bubblegum/environment.t.
+ - Updated dist.ini.
+ - Updated gitignore.
+ - Add INSTALL file to the repo.
+
+0.07 2014-01-28T10:45:06
  - Initial commit.
 

@@ -5,7 +5,7 @@ use JSON::Tiny ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 sub decode {
     my $self = shift;
