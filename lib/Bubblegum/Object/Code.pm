@@ -6,7 +6,7 @@ use Bubblegum::Class 'with';
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 
 
@@ -69,7 +69,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -146,11 +146,11 @@ argument as the rvalue.
 
     my $code = sub { $_[0] % 2 };
     $code = $code->conjoin(sub { 1 });
-    $code->(0); # 1
+    $code->(0); # 0
     $code->(1); # 1
-    $code->(2); # 1
+    $code->(2); # 0
     $code->(3); # 1
-    $code->(4); # 1
+    $code->(4); # 0
 
 The conjoin method creates a code reference which execute the subject and the
 argument in a logical AND operation having the subject as the lvalue and the

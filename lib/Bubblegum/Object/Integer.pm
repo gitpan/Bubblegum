@@ -8,7 +8,7 @@ with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 
 
@@ -143,7 +143,7 @@ Bubblegum::Object::Integer - Common Methods for Operating on Integers
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -176,7 +176,7 @@ argument.
 
     my $int = 98765;
     $int->eq(98765); # true
-    $int->eq(098765); # true
+    $int->eq('98765'); # true
     $int->eq(987650); # false
 
 The eq method returns true if the argument matches the subject, otherwise

@@ -6,7 +6,7 @@ use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 
 
@@ -52,7 +52,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -85,10 +85,10 @@ or false.
     $variable->not; # 1
 
     $variable = 1;
-    $variable->not; # 0
+    $variable->not; # ''
 
 The not method performs a logical negation of the subject. It's the equivalent
-of using bang (!) and return true or false.
+of using bang (!) and return true (1) or false (empty string).
 
 =head2 or
 
@@ -105,6 +105,9 @@ as the lvalue and the argument as the rvalue and returns the first truthy value.
 
     my $variable = 12345;
     $variable->repeat(2); # 1234512345
+
+    $variable = 'yes';
+    $variable->repeat(2); # yesyes
 
 The repeat method returns a string consisting of the subject repeated the number
 of times specified by the argument.

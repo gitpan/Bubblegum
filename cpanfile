@@ -25,7 +25,3 @@ requires "utf8::all" => "0";
 on 'configure' => sub {
   requires "ExtUtils::MakeMaker" => "6.30";
 };
-
-on 'develop' => sub {
-  requires "Test::CPAN::Changes" => "0.19";
-};

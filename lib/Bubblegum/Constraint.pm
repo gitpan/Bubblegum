@@ -27,7 +27,7 @@ our @EXPORT_OK  = qw(
     isa_regexp
 );
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 sub asa_arrayref {
     my $arrayref   = shift;
@@ -79,7 +79,7 @@ sub asa_string {
 }
 
 sub isa_arrayref {
-    return "ARRAY" eq ref(shift) ? 1 : 0;
+    return 'ARRAY' eq ref(shift) ? 1 : 0;
 }
 
 sub isa_classref {
@@ -87,7 +87,7 @@ sub isa_classref {
 }
 
 sub isa_coderef {
-    return "CODE" eq ref(shift) ? 1 : 0;
+    return 'CODE' eq ref(shift) ? 1 : 0;
 }
 
 sub isa_evenlist {
@@ -95,11 +95,11 @@ sub isa_evenlist {
 }
 
 sub isa_hashref {
-    return "HASH" eq ref(shift) ? 1 : 0;
+    return 'HASH' eq ref(shift) ? 1 : 0;
 }
 
 sub isa_regexp {
-    return "Regexp" eq ref(shift) ? 1 : 0;
+    return 'Regexp' eq ref(shift) ? 1 : 0;
 }
 
 1;

@@ -38,7 +38,7 @@ requires:
   utf8::all: 0
 resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
-  homepage: http://search.cpan.org/dist/Bubblegum/
+  homepage: http://metacpan.org/release/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: 0.08
+version: 0.09
 x_authority: cpan:AWNCORP

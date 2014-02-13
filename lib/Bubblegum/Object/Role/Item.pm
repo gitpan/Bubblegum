@@ -4,7 +4,7 @@ use Bubblegum::Role 'requires';
 
 requires 'defined';
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 sub class {
     my $self = CORE::shift;
@@ -19,14 +19,14 @@ sub of {
     my $map  = bbblgm::mappings();
 
     my $alias = {
-        arrayref => 'array',
-        coderef  => 'code',
-        hashref  => 'hash',
-        int      => 'integer',
-        nil      => 'undef',
-        null     => 'undef',
-        num      => 'number',
-        str      => 'string',
+        aref => 'array',
+        cref => 'code',
+        href => 'hash',
+        int  => 'integer',
+        nil  => 'undef',
+        null => 'undef',
+        num  => 'number',
+        str  => 'string',
     };
 
     if ($alias->{$type}) {

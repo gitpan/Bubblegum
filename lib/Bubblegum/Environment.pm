@@ -13,7 +13,7 @@ use Time::ParseDate ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 has 'data' => (
     is   => 'ro',

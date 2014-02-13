@@ -5,7 +5,7 @@ use Bubblegum::Class 'with';
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 
 
@@ -109,7 +109,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -215,14 +215,14 @@ argment.
 =head2 neg
 
     my $number = 12345;
-    $number->neg; # -12345;
+    $number->neg; # -12345
 
 The neg method returns a negative version of the subject.
 
 =head2 pow
 
     my $number = 12345;
-    $number->pow; # 152399025
+    $number->pow(3); # 1881365963625
 
 The pow method returns a number, the result of a math operation, which is the
 subject to the power of the argument.

@@ -1,0 +1,77 @@
+sub dostuff {
+    str  my $self  = shift;
+    num  my $uid   = shift;
+    num  my $vid   = shift;
+    aref my $users = shift;
+
+    raise argument_error => 'missing parameter $uid' if !$uid;
+    raise argument_error => 'missing parameter $vid' if !$vid;
+
+    say $verify;
+}
+
+add coercion functionality across roles
+add Bubblegum::Syntax; # keywords e.g. raise, load, etc
+
+package Example;
+use Bubblegum::Class;
+use Bubblegum::Syntax -has -all;
+use Bubblegum::Syntax -has -type;
+
+has 'name';
+has 'age';
+has 'callback' => method {
+    # $self
+};
+
+# array features
+    1->to_array->push(2,3,4,5)->to_code->curry(sub {});
+    [1..5]->filter_include(0,1,2);
+    [1..5]->filter_exclude(0,1,2);
+
+# hash features
+
+# string features
+if("hello world"->contains('world')) {
+    # ...
+}
+
+# pretty ruby
+5.times do |num|
+    puts num;
+end
+
+# pretty perl
+repeat "Odelay!", 5;
+
+# pretty ruby
+5.times { print "Odelay!" }
+
+# Perl 5.14+ Bubblegum Classes
+package Person;
+
+use Bubblegum::Class;
+use Bubblegum::Syntax -has -all;
+
+has int,  'id';
+has str,  'first_name';
+has str,  'last_name';
+has aref, 'emails'
+
+sub say_hello {
+    str  my $title  = shift;
+    href my $params = shift // {};
+
+    raise 'last_name is required'
+        unless $self->last_name;
+
+    say join ', ',
+        $self->last_name->titlecase,
+        $self->first_name->titlecase // ()
+}
+
+package main;
+my $dude = Person->new(first_name => 'Doodie');
+$dude->say_hello;
+
+1;

@@ -6,6 +6,6 @@ with 'Bubblegum::Object::Role::Collection';
 
 requires 'slice';
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 1;
