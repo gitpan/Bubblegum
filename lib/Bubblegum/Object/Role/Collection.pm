@@ -17,6 +17,6 @@ requires 'get';
 requires 'set';
 requires 'values';
 
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 1;

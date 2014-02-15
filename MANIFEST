@@ -11,7 +11,6 @@ cpanfile
 lib/Bubblegum.pm
 lib/Bubblegum/Class.pm
 lib/Bubblegum/Constraint.pm
-lib/Bubblegum/Environment.pm
 lib/Bubblegum/Exception.pm
 lib/Bubblegum/Object/Array.pm
 lib/Bubblegum/Object/Code.pm
@@ -38,6 +37,7 @@ lib/Bubblegum/Object/Universal.pm
 lib/Bubblegum/Role.pm
 lib/Bubblegum/Role/Configuration.pm
 lib/Bubblegum/Singleton.pm
+lib/Bubblegum/Syntax.pm
 lib/Bubblegum/Wrapper/Digest.pm
 lib/Bubblegum/Wrapper/Dumper.pm
 lib/Bubblegum/Wrapper/Encoder.pm
@@ -46,7 +46,6 @@ lib/Bubblegum/Wrapper/Yaml.pm
 t/bubblegum.t
 t/bubblegum/class.t
 t/bubblegum/constraint.t
-t/bubblegum/environment.t
 t/bubblegum/object/array.t
 t/bubblegum/object/code.t
 t/bubblegum/object/float.t
@@ -70,6 +69,7 @@ t/bubblegum/object/universal.t
 t/bubblegum/role.t
 t/bubblegum/role/configuration.t
 t/bubblegum/singleton.t
+t/bubblegum/syntax.t
 t/bubblegum/wrapper/digest.t
 t/bubblegum/wrapper/dumper.t
 t/bubblegum/wrapper/encoder.t

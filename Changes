@@ -1,6 +1,10 @@
 Changelog for Bubblegum
 
-0.09 2014-02-13T07:20:27
+0.10 2014-02-15T15:15:03
+ - Added syntax class providing type functions.
+ - Relocated numeric coercion routines.
+
+0.09 2014-02-13T07:20:07
  - Miscellaneous cleanup, updates and documentation changes.
  - Added tests for string and scalar operations.
  - Added tests for number operations.

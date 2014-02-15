@@ -1,32 +1,34 @@
 package Bubblegum::Object::Role::Item;
 
 use Bubblegum::Role 'requires';
+use Bubblegum::Syntax -types;
 
 requires 'defined';
 
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 sub class {
     my $self = CORE::shift;
-    my $map  = bbblgm::mappings();
+    my $map  = $Bubblegum::Syntax::EXTS;
 
     return $map->{type($self)};
 }
 
 sub of {
     my $self = CORE::shift;
-    my $type = bbblgm::chkstr CORE::shift;
-    my $map  = bbblgm::mappings();
+    my $type = type_str CORE::shift;
+    my $map  = $Bubblegum::Syntax::EXTS;
 
     my $alias = {
-        aref => 'array',
-        cref => 'code',
-        href => 'hash',
-        int  => 'integer',
-        nil  => 'undef',
-        null => 'undef',
-        num  => 'number',
-        str  => 'string',
+        aref  => 'array',
+        cref  => 'code',
+        href  => 'hash',
+        int   => 'integer',
+        nil   => 'undef',
+        null  => 'undef',
+        num   => 'number',
+        str   => 'string',
+        undef => 'undef',
     };
 
     if ($alias->{$type}) {

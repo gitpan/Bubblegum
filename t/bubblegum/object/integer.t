@@ -74,37 +74,6 @@ subtest 'test the to method' => sub {
     is_deeply $int->to(0), [5,4,3,2,1,0]; # [5,4,3,2,1,0]
 };
 
-can_ok 'Bubblegum::Object::Integer', 'to_array';
-subtest 'test the to_array method' => sub {
-    my $int = 1;
-    is_deeply $int->to_array, [1]; # [1]
-};
-
-can_ok 'Bubblegum::Object::Integer', 'to_code';
-subtest 'test the to_code method' => sub {
-    my $int = 1;
-    is 'CODE', ref $int->to_code; # sub { 1 }
-    is 1, $int->to_code->();
-};
-
-can_ok 'Bubblegum::Object::Integer', 'to_hash';
-subtest 'test the to_hash method' => sub {
-    my $int = 1;
-    is_deeply $int->to_hash, { 1 => 1 }; # { 1 => 1 }
-};
-
-can_ok 'Bubblegum::Object::Integer', 'to_integer';
-subtest 'test the to_integer method' => sub {
-    my $int = 1;
-    is 1, $int->to_integer; # 1
-};
-
-can_ok 'Bubblegum::Object::Integer', 'to_string';
-subtest 'test the to_string method' => sub {
-    my $int = 1;
-    is '1', $int->to_string; # '1'
-};
-
 can_ok 'Bubblegum::Object::Integer', 'upto';
 subtest 'test the upto method' => sub {
     my $int = 0;

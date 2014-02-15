@@ -28,6 +28,7 @@ my %WriteMakefileArgs = (
     "File::Find::Rule" => 0,
     "File::HomeDir" => "1.00",
     "File::Which" => "1.09",
+    "Hash::Merge::Simple" => "0.051",
     "Import::Into" => "1.001001",
     "JSON::Tiny" => "0.38",
     "Module::Find" => "0.11",
@@ -44,7 +45,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => 0
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.09",
+  "VERSION" => "0.10",
   "test" => {
     "TESTS" => "t/*.t t/bubblegum/*.t t/bubblegum/object/*.t t/bubblegum/object/role/*.t t/bubblegum/role/*.t t/bubblegum/wrapper/*.t"
   }
@@ -60,6 +61,7 @@ my %FallbackPrereqs = (
   "File::Find::Rule" => 0,
   "File::HomeDir" => "1.00",
   "File::Which" => "1.09",
+  "Hash::Merge::Simple" => "0.051",
   "Import::Into" => "1.001001",
   "JSON::Tiny" => "0.38",
   "Module::Find" => "0.11",

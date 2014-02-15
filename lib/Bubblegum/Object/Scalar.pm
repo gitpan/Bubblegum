@@ -2,11 +2,13 @@
 package Bubblegum::Object::Scalar;
 
 use Bubblegum::Class 'with';
+use Bubblegum::Syntax -types;
+
 use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 
 
@@ -30,7 +32,7 @@ sub or {
 
 sub repeat {
     my $self   = CORE::shift;
-    my $number = bbblgm::chknum CORE::shift;
+    my $number = type_num CORE::shift;
     return $self x $number;
 }
 
@@ -52,7 +54,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 

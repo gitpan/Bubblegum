@@ -6,6 +6,7 @@ requires "Exporter::Tiny" => "0.030";
 requires "File::Find::Rule" => "0";
 requires "File::HomeDir" => "1.00";
 requires "File::Which" => "1.09";
+requires "Hash::Merge::Simple" => "0.051";
 requires "Import::Into" => "1.001001";
 requires "JSON::Tiny" => "0.38";
 requires "Module::Find" => "0.11";

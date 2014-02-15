@@ -2,10 +2,12 @@
 package Bubblegum::Object::Number;
 
 use Bubblegum::Class 'with';
+use Bubblegum::Syntax -types;
 
+with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 
 
@@ -17,7 +19,7 @@ sub abs {
 
 sub atan2 {
     my $self = CORE::shift;
-    my $x    = bbblgm::chknum CORE::shift;
+    my $x    = type_num CORE::shift;
     return CORE::atan2 $self, $x;
 }
 
@@ -30,7 +32,7 @@ sub cos {
 
 sub decr {
     my $self = CORE::shift;
-    my $n    = bbblgm::chknum CORE::shift if $_[0];
+    my $n    = type_num CORE::shift if $_[0];
     return $self - ($n || 1);
 }
 
@@ -49,7 +51,7 @@ sub hex {
 
 sub incr {
     my $self = CORE::shift;
-    my $n    = bbblgm::chknum CORE::shift if $_[0];
+    my $n    = type_num CORE::shift if $_[0];
     return $self + ($n || 1);
 }
 
@@ -68,7 +70,7 @@ sub log {
 
 sub mod {
     my $self    = CORE::shift;
-    my $divisor = bbblgm::chknum CORE::shift;
+    my $divisor = type_num CORE::shift;
     return $self % $divisor;
 }
 
@@ -81,7 +83,7 @@ sub neg {
 
 sub pow {
     my $self = CORE::shift;
-    my $n    = bbblgm::chknum CORE::shift;
+    my $n    = type_num CORE::shift;
     return $self ** $n;
 }
 
@@ -97,6 +99,36 @@ sub sqrt {
     return CORE::sqrt $self;
 }
 
+
+sub to_array {
+    my $self = CORE::shift;
+    return [$self];
+}
+
+
+sub to_code {
+    my $self = CORE::shift;
+    return sub {$self};
+}
+
+
+sub to_hash {
+    my $self = CORE::shift;
+    return {$self=>$self};
+}
+
+
+sub to_integer {
+    my $self = CORE::shift;
+    return $self;
+}
+
+
+sub to_string {
+    my $self = CORE::shift;
+    return "$self";
+}
+
 1;
 
 __END__
@@ -109,7 +141,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -240,6 +272,45 @@ The sin method returns the sine of the subject (expressed in radians).
     $number->sqrt; # 111.108055513541
 
 The sqrt method returns the positive square root of the subject.
+
+=head2 to_array
+
+    my $int = 1;
+    $int->to_array; # [1]
+
+The to_array method is used for coercion and simply returns an array reference
+where the first element contains the subject.
+
+=head2 to_code
+
+    my $int = 1;
+    $int->to_code; # sub { 1 }
+
+The to_code method is used for coercion and simply returns a code reference
+which always returns the subject when called.
+
+=head2 to_hash
+
+    my $int = 1;
+    $int->to_hash; # { 1 => 1 }
+
+The to_hash method is used for coercion and simply returns a hash reference
+with a single key and value, having the key and value both contain the subject.
+
+=head2 to_integer
+
+    my $int = 1;
+    $int->to_integer; # 1
+
+The to_integer method is used for coercion and simply returns the subject.
+
+=head2 to_string
+
+    my $int = 1;
+    $int->to_string; # '1'
+
+The to_string method is used for coercion and simply returns the stringified
+version of the subject.
 
 =head1 AUTHOR
 

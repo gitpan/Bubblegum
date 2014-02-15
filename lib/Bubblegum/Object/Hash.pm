@@ -2,12 +2,13 @@
 package Bubblegum::Object::Hash;
 
 use Bubblegum::Class 'with';
+use Bubblegum::Syntax -types;
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Keyed';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 
 
@@ -18,28 +19,28 @@ sub aslice {
 
 sub array_slice {
     my $self = CORE::shift;
-    my @keys = map { bbblgm::chkstr $_ } @_;
+    my @keys = map { type_str $_ } @_;
     return [@{$self}{@keys}];
 }
 
 
 sub defined {
     my $self = CORE::shift;
-    my $key  = bbblgm::chkstr CORE::shift;
+    my $key  = type_str CORE::shift;
     return CORE::defined $self->{$key};
 }
 
 
 sub delete {
     my $self = CORE::shift;
-    my $key  = bbblgm::chkstr CORE::shift;
+    my $key  = type_str CORE::shift;
     return CORE::delete $self->{$key};
 }
 
 
 sub each {
     my $self = CORE::shift;
-    my $code = bbblgm::chkcode CORE::shift;
+    my $code = type_cref CORE::shift;
 
     for my $key (CORE::keys %$self) {
       $code->($key, $self->{$key});
@@ -51,7 +52,7 @@ sub each {
 
 sub each_key {
     my $self = CORE::shift;
-    my $code = bbblgm::chkcode CORE::shift;
+    my $code = type_cref CORE::shift;
 
     $code->($_) for CORE::keys %$self;
     return $self;
@@ -60,8 +61,8 @@ sub each_key {
 
 sub each_n_values {
     my $self   = CORE::shift;
-    my $number = $_[0] ? bbblgm::chknum CORE::shift : 2;
-    my $code   = bbblgm::chkcode CORE::shift;
+    my $number = $_[0] ? type_num CORE::shift : 2;
+    my $code   = type_cref CORE::shift;
 
     my @values = CORE::values %$self;
     $code->(CORE::splice @values, 0, $number) while @values;
@@ -71,7 +72,7 @@ sub each_n_values {
 
 sub each_value {
     my $self = CORE::shift;
-    my $code = bbblgm::chkcode CORE::shift;
+    my $code = type_cref CORE::shift;
 
     $code->($_) for CORE::values %$self;
     return $self;
@@ -87,15 +88,15 @@ sub empty {
 
 sub exists {
     my $self = CORE::shift;
-    my $key  = bbblgm::chkstr CORE::shift;
+    my $key  = type_str CORE::shift;
     return CORE::exists $self->{$key};
 }
 
 
 sub filter_exclude {
     my $self = CORE::shift;
-    my @keys = map { bbblgm::chkstr $_ } @_;
-    my %i    = map { $_ => bbblgm::chkstr $_ } @keys;
+    my @keys = map { type_str $_ } @_;
+    my %i    = map { $_ => type_str $_ } @keys;
 
     return {CORE::map { CORE::exists $self->{$_} ? ($_ => $self->{$_}) : () }
         CORE::grep { not CORE::exists $i{$_} } CORE::keys %$self};
@@ -104,7 +105,7 @@ sub filter_exclude {
 
 sub filter_include {
     my $self = CORE::shift;
-    my @keys = map { bbblgm::chkstr $_ } @_;
+    my @keys = map { type_str $_ } @_;
 
     return {CORE::map { CORE::exists $self->{$_} ? ($_ => $self->{$_}) : () }
         @keys};
@@ -113,14 +114,14 @@ sub filter_include {
 
 sub get {
     my $self = CORE::shift;
-    my $key  = bbblgm::chkstr CORE::shift;
+    my $key  = type_str CORE::shift;
     return $self->{$key};
 }
 
 
 sub hash_slice {
     my $self = CORE::shift;
-    my @keys = map { bbblgm::chkstr $_ } @_;
+    my @keys = map { type_str $_ } @_;
     return {CORE::map { $_ => $self->{$_} } @keys};
 }
 
@@ -168,7 +169,7 @@ sub keys {
 
 sub lookup {
     my $self = CORE::shift;
-    my $key  = bbblgm::chkstr CORE::shift;
+    my $key  = type_str CORE::shift;
     my @keys = CORE::split /\./, $key;
     my $node = $self;
     for my $key (@keys) {
@@ -203,7 +204,7 @@ sub list {
 
 sub merge {
     my $self = CORE::shift;
-    my $hash = bbblgm::chkhash CORE::shift;
+    my $hash = type_href CORE::shift;
     return {%$self, %$hash};
 }
 
@@ -229,7 +230,7 @@ sub reverse {
 
 sub set {
     my $self = CORE::shift;
-    my $key  = bbblgm::chkstr CORE::shift;
+    my $key  = type_str CORE::shift;
     return $self->{$key} = CORE::shift;
 }
 
@@ -251,7 +252,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 

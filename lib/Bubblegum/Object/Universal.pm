@@ -2,21 +2,27 @@
 package Bubblegum::Object::Universal;
 
 use Bubblegum::Class 'with';
+use Bubblegum::Syntax -types, 'load', 'raise';
 
-our $VERSION = '0.09'; # VERSION
+use Class::Forward;
+
+our $VERSION = '0.10'; # VERSION
 
 
 
 sub instance {
-    my $self = CORE::shift;
-    return bbblgm::instance $self;
+    my $self  = CORE::shift;
+    my $class = load 'Bubblegum::Object::Instance';
+    return type_obj $class->new(data => $self);
 }
 
 
 sub wrapper {
-    my $self   = CORE::shift;
-    my $name   = bbblgm::chkstr CORE::shift;
-    my $plugin = bbblgm::forward $name;
+    my $self    = CORE::shift;
+    my $name    = type_str CORE::shift;
+    my $space   = 'Bubblegum::Wrapper';
+    my $wrapper = Class::Forward->new(namespace => $space)->forward($name);
+    my $plugin  = type_class(load($wrapper));
     return $plugin->new(data => $self) if $plugin;
 }
 
@@ -31,9 +37,8 @@ sub AUTOLOAD {
         return $plugin->new(@_, data => $self) if $plugin;
     }
 
-    bbblgm::croak
-        CORE::sprintf q(Can't locate object method "%s" via package "%s"),
-            $method, ((ref $_[0] || $_[0]) || 'main');
+    raise CORE::sprintf q(Can't locate object method "%s" via package "%s"),
+        $method, ((ref $_[0] || $_[0]) || 'main');
 }
 
 1;
@@ -48,7 +53,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 

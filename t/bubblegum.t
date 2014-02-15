@@ -5,17 +5,11 @@ BEGIN {
 use Bubblegum;
 use Test::More;
 
-ok defined(gum), 'gum accessor is defined';
-is ref(gum), 'Bubblegum::Environment', 'gum accessor isa is correct';
-
 is_deeply \@ARGV, [qw(føø bar bāz)],
     'utf8::all effects observed';
 
 ok $INC{'Bubblegum.pm'},
     'Bubblegum loaded';
-
-ok $INC{'Bubblegum/Environment.pm'},
-    'Bubblegum::Environment loaded';
 
 ok $INC{'Bubblegum/Role.pm'},
     'Bubblegum::Role loaded';
@@ -85,6 +79,9 @@ ok $INC{'Bubblegum/Object/Role/Indexed.pm'},
 
 ok $INC{'Bubblegum/Object/Role/Collection.pm'},
     'Bubblegum::Object::Role::Collection loaded';
+
+ok $INC{'Bubblegum/Syntax.pm'},
+    'Bubblegum::Syntax loaded';
 
 ok !$INC{'Bubblegum/Wrapper/Digest.pm'},
     'Bubblegum::Wrapper::Digest is not loaded';

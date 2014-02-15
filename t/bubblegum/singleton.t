@@ -3,11 +3,7 @@ use Test::More;
 use Scalar::Util qw (refaddr);
 
 can_ok 'main', 'has';
-can_ok 'main', 'gum';
 can_ok 'main', 'with';
-
-ok defined(gum), 'gum  accessor is defined';
-isa_ok ref(gum), 'Bubblegum::Environment', 'gum accessor isa is correct';
 
 my $obj1 = main->new;
 my $oid1 = refaddr($obj1);

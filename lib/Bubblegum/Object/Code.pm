@@ -2,11 +2,12 @@
 package Bubblegum::Object::Code;
 
 use Bubblegum::Class 'with';
+use Bubblegum::Syntax -types;
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 
 
@@ -33,7 +34,7 @@ sub rcurry {
 
 sub compose {
     my $self = CORE::shift;
-    my $next = bbblgm::chkcode CORE::shift;
+    my $next = type_cref CORE::shift;
     my @args = @_;
     return (sub { $next->($self->(@_)) })->curry(@args);
 }
@@ -41,14 +42,14 @@ sub compose {
 
 sub disjoin {
     my $self = CORE::shift;
-    my $next = bbblgm::chkcode CORE::shift;
+    my $next = type_cref CORE::shift;
     return sub { $self->(@_) || $next->(@_) };
 }
 
 
 sub conjoin {
     my $self = CORE::shift;
-    my $next = bbblgm::chkcode CORE::shift;
+    my $next = type_cref CORE::shift;
     return sub { $self->(@_) && $next->(@_) };
 }
 
@@ -69,7 +70,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 

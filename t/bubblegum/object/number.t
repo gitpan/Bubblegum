@@ -98,4 +98,35 @@ subtest 'test the sqrt method' => sub {
     is 111.108055513541, $number->sqrt; # 111.108055513541
 };
 
+can_ok 'Bubblegum::Object::Number', 'to_array';
+subtest 'test the to_array method' => sub {
+    my $int = 1;
+    is_deeply $int->to_array, [1]; # [1]
+};
+
+can_ok 'Bubblegum::Object::Number', 'to_code';
+subtest 'test the to_code method' => sub {
+    my $int = 1;
+    is 'CODE', ref $int->to_code; # sub { 1 }
+    is 1, $int->to_code->();
+};
+
+can_ok 'Bubblegum::Object::Number', 'to_hash';
+subtest 'test the to_hash method' => sub {
+    my $int = 1;
+    is_deeply $int->to_hash, { 1 => 1 }; # { 1 => 1 }
+};
+
+can_ok 'Bubblegum::Object::Number', 'to_integer';
+subtest 'test the to_integer method' => sub {
+    my $int = 1;
+    is 1, $int->to_integer; # 1
+};
+
+can_ok 'Bubblegum::Object::Number', 'to_string';
+subtest 'test the to_string method' => sub {
+    my $int = 1;
+    is '1', $int->to_string; # '1'
+};
+
 done_testing;

@@ -2,19 +2,19 @@
 package Bubblegum::Object::Integer;
 
 use Bubblegum::Class 'with';
+use Bubblegum::Syntax -types;
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Comparison';
-with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 
 
 sub downto {
     my $self = CORE::shift;
-    my $other = bbblgm::chknum CORE::shift;
+    my $other = type_num CORE::shift;
 
     return [CORE::reverse $other..$self];
 }
@@ -22,7 +22,7 @@ sub downto {
 
 sub eq {
     my $self  = CORE::shift;
-    my $other = bbblgm::chknum CORE::shift;
+    my $other = type_num CORE::shift;
 
     return $self == $other ? 1 : 0;
 }
@@ -39,7 +39,7 @@ sub eqtv {
 
 sub format {
     my $self   = CORE::shift;
-    my $format = bbblgm::chkstr CORE::shift;
+    my $format = type_str CORE::shift;
 
     return CORE::sprintf $format, $self;
 }
@@ -47,7 +47,7 @@ sub format {
 
 sub gt {
     my $self  = CORE::shift;
-    my $other = bbblgm::chknum CORE::shift;
+    my $other = type_num CORE::shift;
 
     return $self > $other ? 1 : 0;
 }
@@ -55,7 +55,7 @@ sub gt {
 
 sub gte {
     my $self  = CORE::shift;
-    my $other = bbblgm::chknum CORE::shift;
+    my $other = type_num CORE::shift;
 
     return $self >= $other ? 1 : 0;
 }
@@ -63,7 +63,7 @@ sub gte {
 
 sub lt {
     my $self  = CORE::shift;
-    my $other = bbblgm::chknum CORE::shift;
+    my $other = type_num CORE::shift;
 
     return $self < $other ? 1 : 0;
 }
@@ -71,7 +71,7 @@ sub lt {
 
 sub lte {
     my $self  = CORE::shift;
-    my $other = bbblgm::chknum CORE::shift;
+    my $other = type_num CORE::shift;
 
     return $self <= $other ? 1 : 0;
 }
@@ -79,7 +79,7 @@ sub lte {
 
 sub ne {
     my $self  = CORE::shift;
-    my $other = bbblgm::chknum CORE::shift;
+    my $other = type_num CORE::shift;
 
     return $self != $other ? 1 : 0;
 }
@@ -87,46 +87,16 @@ sub ne {
 
 sub to {
     my $self  = CORE::shift;
-    my $range = bbblgm::chknum CORE::shift;
+    my $range = type_num CORE::shift;
 
     return [$self..$range] if $self <= $range;
     return [CORE::reverse($range..$self)];
 }
 
 
-sub to_array {
-    my $self = CORE::shift;
-    return [$self];
-}
-
-
-sub to_code {
-    my $self = CORE::shift;
-    return sub {$self};
-}
-
-
-sub to_hash {
-    my $self = CORE::shift;
-    return {$self=>$self};
-}
-
-
-sub to_integer {
-    my $self = CORE::shift;
-    return $self;
-}
-
-
-sub to_string {
-    my $self = CORE::shift;
-    return "$self";
-}
-
-
 sub upto {
     my $self = CORE::shift;
-    my $other = bbblgm::chknum CORE::shift;
+    my $other = type_num CORE::shift;
 
     return [$self..$other];
 }
@@ -143,7 +113,7 @@ Bubblegum::Object::Integer - Common Methods for Operating on Integers
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -262,45 +232,6 @@ The to method returns an array reference containing a range of integers from the
 subject to the argument. If the subject is greater than the argument, the range
 generated will be from greastest to least, however, if the subject is less than
 the argument, the range generated will be from least to greatest.
-
-=head2 to_array
-
-    my $int = 1;
-    $int->to_array; # [1]
-
-The to_array method is used for coercion and simply returns an array reference
-where the first element contains the subject.
-
-=head2 to_code
-
-    my $int = 1;
-    $int->to_code; # sub { 1 }
-
-The to_code method is used for coercion and simply returns a code reference
-which always returns the subject when called.
-
-=head2 to_hash
-
-    my $int = 1;
-    $int->to_hash; # { 1 => 1 }
-
-The to_hash method is used for coercion and simply returns a hash reference
-with a single key and value, having the key and value both contain the subject.
-
-=head2 to_integer
-
-    my $int = 1;
-    $int->to_integer; # 1
-
-The to_integer method is used for coercion and simply returns the subject.
-
-=head2 to_string
-
-    my $int = 1;
-    $int->to_string; # '1'
-
-The to_string method is used for coercion and simply returns the stringified
-version of the subject.
 
 =head2 upto
 
