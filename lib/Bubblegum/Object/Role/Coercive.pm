@@ -8,7 +8,7 @@ requires 'to_hash';
 requires 'to_integer';
 requires 'to_string';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub to_undef {
     return undef;

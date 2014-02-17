@@ -3,7 +3,7 @@ package Bubblegum::Object::Instance;
 
 use Bubblegum::Class;
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 
@@ -17,13 +17,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Bubblegum::Object::Instance - Generic Container Class for Passing Data
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -35,7 +37,9 @@ version 0.10
 =head1 DESCRIPTION
 
 Bubblegum::Object::Instance is a container class which merely provides a
-consistent interface for accessing and operating on various data structures.
+consistent interface for accessing and operating on various data structures. It
+is not necessary to use this module as it is loaded automatically by the
+L<Bubblegum> class.
 
 =head1 ATTRIBUTES
 

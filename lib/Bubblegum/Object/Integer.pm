@@ -8,7 +8,7 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 
@@ -107,13 +107,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Bubblegum::Object::Integer - Common Methods for Operating on Integers
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -129,7 +131,8 @@ integer holds and manipulates an arbitrary sequence of bytes, typically
 representing numeric characters. Users of integers should be aware of the
 methods that modify the integer itself as opposed to returning a new integer.
 Unless stated, it may be safe to assume that the following methods copy, modify
-and return new integers based on their subjects.
+and return new integers based on their subjects. It is not necessary to use this
+module as it is loaded automatically by the L<Bubblegum> class.
 
 =head1 METHODS
 

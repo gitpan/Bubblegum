@@ -7,7 +7,7 @@ use Encode 'find_encoding';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub BUILD {
     my $self = shift;

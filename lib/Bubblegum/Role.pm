@@ -4,7 +4,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub import {
     my $target = caller;

@@ -5,7 +5,7 @@ use YAML::Tiny ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub decode {
     my $self = shift;

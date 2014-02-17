@@ -5,7 +5,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub import {
     my $target = caller;
@@ -21,13 +21,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -39,12 +41,6 @@ version 0.10
     has typeof_num, 'id';
     has typeof_str, 'firstname';
     has typeof_str, 'lastname';
-
-    has business => (
-        is   => 'ro',
-        isa  => typeof_object,
-        lazy => 1
-    );
 
     sub say_hello {
         my $self    = shift;

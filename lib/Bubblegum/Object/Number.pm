@@ -7,7 +7,7 @@ use Bubblegum::Syntax -types;
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 
@@ -135,13 +135,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -154,7 +156,8 @@ version 0.10
 
 Number methods work on data that meets the criteria for being a number. A number
 holds and manipulates an arbitrary sequence of bytes, typically representing
-numberic characters (0-9).
+numberic characters (0-9). It is not necessary to use this module as it is
+loaded automatically by the L<Bubblegum> class.
 
 =head1 METHODS
 

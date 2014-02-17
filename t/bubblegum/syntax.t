@@ -401,5 +401,226 @@ my @typelib = qw(
     can_ok 'utils', 'which';
     is 'Bubblegum::Exception', ref do { eval {raise 'wtf'}; $@ };
 }
+{
+    package misc::isas;
+    use Bubblegum::Syntax qw(
+        isa_aref isa_arrayref isa_bool isa_boolean isa_class isa_classname
+        isa_cref isa_coderef isa_def isa_defined isa_fh isa_filehandle isa_glob
+        isa_globref isa_href isa_hashref isa_int isa_integer isa_num isa_number
+        isa_obj isa_object isa_ref isa_reference isa_rref isa_regexpref isa_sref
+        isa_scalarref isa_str isa_string isa_nil isa_null isa_undef
+        isa_undefined isa_val isa_value
+    );
+    use Test::More;
+    can_ok 'misc::isas', 'isa_aref';
+    can_ok 'misc::isas', 'isa_arrayref';
+    can_ok 'misc::isas', 'isa_bool';
+    can_ok 'misc::isas', 'isa_boolean';
+    can_ok 'misc::isas', 'isa_class';
+    can_ok 'misc::isas', 'isa_classname';
+    can_ok 'misc::isas', 'isa_cref';
+    can_ok 'misc::isas', 'isa_coderef';
+    can_ok 'misc::isas', 'isa_def';
+    can_ok 'misc::isas', 'isa_defined';
+    can_ok 'misc::isas', 'isa_fh';
+    can_ok 'misc::isas', 'isa_filehandle';
+    can_ok 'misc::isas', 'isa_glob';
+    can_ok 'misc::isas', 'isa_globref';
+    can_ok 'misc::isas', 'isa_href';
+    can_ok 'misc::isas', 'isa_hashref';
+    can_ok 'misc::isas', 'isa_int';
+    can_ok 'misc::isas', 'isa_integer';
+    can_ok 'misc::isas', 'isa_num';
+    can_ok 'misc::isas', 'isa_number';
+    can_ok 'misc::isas', 'isa_obj';
+    can_ok 'misc::isas', 'isa_object';
+    can_ok 'misc::isas', 'isa_ref';
+    can_ok 'misc::isas', 'isa_reference';
+    can_ok 'misc::isas', 'isa_rref';
+    can_ok 'misc::isas', 'isa_regexpref';
+    can_ok 'misc::isas', 'isa_sref';
+    can_ok 'misc::isas', 'isa_scalarref';
+    can_ok 'misc::isas', 'isa_str';
+    can_ok 'misc::isas', 'isa_string';
+    can_ok 'misc::isas', 'isa_nil';
+    can_ok 'misc::isas', 'isa_null';
+    can_ok 'misc::isas', 'isa_undef';
+    can_ok 'misc::isas', 'isa_undefined';
+    can_ok 'misc::isas', 'isa_val';
+    can_ok 'misc::isas', 'isa_value';
+}
+{
+    package misc::nots;
+    use Bubblegum::Syntax qw(
+        not_aref not_arrayref not_bool not_boolean not_class not_classname
+        not_cref not_coderef not_def not_defined not_fh not_filehandle not_glob
+        not_globref not_href not_hashref not_int not_integer not_num not_number
+        not_obj not_object not_ref not_reference not_rref not_regexpref not_sref
+        not_scalarref not_str not_string not_nil not_null not_undef
+        not_undefined not_val not_value
+    );
+    use Test::More;
+    can_ok 'misc::nots', 'not_aref';
+    can_ok 'misc::nots', 'not_arrayref';
+    can_ok 'misc::nots', 'not_bool';
+    can_ok 'misc::nots', 'not_boolean';
+    can_ok 'misc::nots', 'not_class';
+    can_ok 'misc::nots', 'not_classname';
+    can_ok 'misc::nots', 'not_cref';
+    can_ok 'misc::nots', 'not_coderef';
+    can_ok 'misc::nots', 'not_def';
+    can_ok 'misc::nots', 'not_defined';
+    can_ok 'misc::nots', 'not_fh';
+    can_ok 'misc::nots', 'not_filehandle';
+    can_ok 'misc::nots', 'not_glob';
+    can_ok 'misc::nots', 'not_globref';
+    can_ok 'misc::nots', 'not_href';
+    can_ok 'misc::nots', 'not_hashref';
+    can_ok 'misc::nots', 'not_int';
+    can_ok 'misc::nots', 'not_integer';
+    can_ok 'misc::nots', 'not_num';
+    can_ok 'misc::nots', 'not_number';
+    can_ok 'misc::nots', 'not_obj';
+    can_ok 'misc::nots', 'not_object';
+    can_ok 'misc::nots', 'not_ref';
+    can_ok 'misc::nots', 'not_reference';
+    can_ok 'misc::nots', 'not_rref';
+    can_ok 'misc::nots', 'not_regexpref';
+    can_ok 'misc::nots', 'not_sref';
+    can_ok 'misc::nots', 'not_scalarref';
+    can_ok 'misc::nots', 'not_str';
+    can_ok 'misc::nots', 'not_string';
+    can_ok 'misc::nots', 'not_nil';
+    can_ok 'misc::nots', 'not_null';
+    can_ok 'misc::nots', 'not_undef';
+    can_ok 'misc::nots', 'not_undefined';
+    can_ok 'misc::nots', 'not_val';
+    can_ok 'misc::nots', 'not_value';
+}
+{
+    package misc::typesof;
+    use Bubblegum::Syntax qw(
+        typeof_aref typeof_arrayref typeof_bool typeof_boolean typeof_class
+        typeof_classname typeof_cref typeof_coderef typeof_def typeof_defined
+        typeof_fh typeof_filehandle typeof_glob typeof_globref typeof_href
+        typeof_hashref typeof_int typeof_integer typeof_num typeof_number
+        typeof_obj typeof_object typeof_ref typeof_reference typeof_rref
+        typeof_regexpref typeof_sref typeof_scalarref typeof_str typeof_string
+        typeof_nil typeof_null typeof_undef typeof_undefined typeof_val
+        typeof_value
+    );
+    use Test::More;
+    can_ok 'misc::typesof', 'typeof_aref';
+    can_ok 'misc::typesof', 'typeof_arrayref';
+    can_ok 'misc::typesof', 'typeof_bool';
+    can_ok 'misc::typesof', 'typeof_boolean';
+    can_ok 'misc::typesof', 'typeof_class';
+    can_ok 'misc::typesof', 'typeof_classname';
+    can_ok 'misc::typesof', 'typeof_cref';
+    can_ok 'misc::typesof', 'typeof_coderef';
+    can_ok 'misc::typesof', 'typeof_def';
+    can_ok 'misc::typesof', 'typeof_defined';
+    can_ok 'misc::typesof', 'typeof_fh';
+    can_ok 'misc::typesof', 'typeof_filehandle';
+    can_ok 'misc::typesof', 'typeof_glob';
+    can_ok 'misc::typesof', 'typeof_globref';
+    can_ok 'misc::typesof', 'typeof_href';
+    can_ok 'misc::typesof', 'typeof_hashref';
+    can_ok 'misc::typesof', 'typeof_int';
+    can_ok 'misc::typesof', 'typeof_integer';
+    can_ok 'misc::typesof', 'typeof_num';
+    can_ok 'misc::typesof', 'typeof_number';
+    can_ok 'misc::typesof', 'typeof_obj';
+    can_ok 'misc::typesof', 'typeof_object';
+    can_ok 'misc::typesof', 'typeof_ref';
+    can_ok 'misc::typesof', 'typeof_reference';
+    can_ok 'misc::typesof', 'typeof_rref';
+    can_ok 'misc::typesof', 'typeof_regexpref';
+    can_ok 'misc::typesof', 'typeof_sref';
+    can_ok 'misc::typesof', 'typeof_scalarref';
+    can_ok 'misc::typesof', 'typeof_str';
+    can_ok 'misc::typesof', 'typeof_string';
+    can_ok 'misc::typesof', 'typeof_nil';
+    can_ok 'misc::typesof', 'typeof_null';
+    can_ok 'misc::typesof', 'typeof_undef';
+    can_ok 'misc::typesof', 'typeof_undefined';
+    can_ok 'misc::typesof', 'typeof_val';
+    can_ok 'misc::typesof', 'typeof_value';
+}
+{
+    package misc::types;
+    use Bubblegum::Syntax qw(
+        type_aref type_arrayref type_bool type_boolean type_class type_classname
+        type_cref type_coderef type_def type_defined type_fh type_filehandle
+        type_glob type_globref type_href type_hashref type_int type_integer
+        type_num type_number type_obj type_object type_ref type_reference
+        type_rref type_regexpref type_sref type_scalarref type_str type_string
+        type_nil type_null type_undef type_undefined type_val type_value
+    );
+    use Test::More;
+    can_ok 'misc::types', 'type_aref';
+    can_ok 'misc::types', 'type_arrayref';
+    can_ok 'misc::types', 'type_bool';
+    can_ok 'misc::types', 'type_boolean';
+    can_ok 'misc::types', 'type_class';
+    can_ok 'misc::types', 'type_classname';
+    can_ok 'misc::types', 'type_cref';
+    can_ok 'misc::types', 'type_coderef';
+    can_ok 'misc::types', 'type_def';
+    can_ok 'misc::types', 'type_defined';
+    can_ok 'misc::types', 'type_fh';
+    can_ok 'misc::types', 'type_filehandle';
+    can_ok 'misc::types', 'type_glob';
+    can_ok 'misc::types', 'type_globref';
+    can_ok 'misc::types', 'type_href';
+    can_ok 'misc::types', 'type_hashref';
+    can_ok 'misc::types', 'type_int';
+    can_ok 'misc::types', 'type_integer';
+    can_ok 'misc::types', 'type_num';
+    can_ok 'misc::types', 'type_number';
+    can_ok 'misc::types', 'type_obj';
+    can_ok 'misc::types', 'type_object';
+    can_ok 'misc::types', 'type_ref';
+    can_ok 'misc::types', 'type_reference';
+    can_ok 'misc::types', 'type_rref';
+    can_ok 'misc::types', 'type_regexpref';
+    can_ok 'misc::types', 'type_sref';
+    can_ok 'misc::types', 'type_scalarref';
+    can_ok 'misc::types', 'type_str';
+    can_ok 'misc::types', 'type_string';
+    can_ok 'misc::types', 'type_nil';
+    can_ok 'misc::types', 'type_null';
+    can_ok 'misc::types', 'type_undef';
+    can_ok 'misc::types', 'type_undefined';
+    can_ok 'misc::types', 'type_val';
+    can_ok 'misc::types', 'type_value';
+}
+{
+    package misc::utils;
+    use Bubblegum::Syntax qw(
+        cwd date date_epoch date_format dump file find home merge load path
+        quote raise script unquote user user_info which
+    );
+    use Test::More;
+    can_ok 'misc::utils', 'cwd';
+    can_ok 'misc::utils', 'date';
+    can_ok 'misc::utils', 'date_epoch';
+    can_ok 'misc::utils', 'date_format';
+    can_ok 'misc::utils', 'dump';
+    can_ok 'misc::utils', 'file';
+    can_ok 'misc::utils', 'find';
+    can_ok 'misc::utils', 'home';
+    can_ok 'misc::utils', 'load';
+    can_ok 'misc::utils', 'merge';
+    can_ok 'misc::utils', 'path';
+    can_ok 'misc::utils', 'quote';
+    can_ok 'misc::utils', 'raise';
+    can_ok 'misc::utils', 'script';
+    can_ok 'misc::utils', 'unquote';
+    can_ok 'misc::utils', 'user';
+    can_ok 'misc::utils', 'user_info';
+    can_ok 'misc::utils', 'which';
+    is 'Bubblegum::Exception', ref do { eval {raise 'wtf'}; $@ };
+}
 
 done_testing;

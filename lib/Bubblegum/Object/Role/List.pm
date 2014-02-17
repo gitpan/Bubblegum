@@ -15,7 +15,7 @@ requires 'reverse';
 requires 'sort';
 requires 'tail';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub reduce {
     my $self = CORE::shift;

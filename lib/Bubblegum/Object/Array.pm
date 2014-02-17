@@ -15,7 +15,7 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One  ();
 use Scalar::Util ();
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 
@@ -398,13 +398,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -418,7 +420,9 @@ version 0.10
 Array methods work on array references. Users of these methods should be aware
 of the methods that modify the array reference itself as opposed to returning a
 new array reference. Unless stated, it may be safe to assume that the following
-methods copy, modify and return new array references based on their subjects.
+methods copy, modify and return new array references based on their subjects. It
+is not necessary to use this module as it is loaded automatically by the
+L<Bubblegum> class.
 
 =head1 METHODS
 

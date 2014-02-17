@@ -19,7 +19,7 @@ use parent 'autobox';
 
 requires 'import';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub prerequisites {
     my ($class, $target) = @_;

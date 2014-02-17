@@ -10,7 +10,6 @@ TODO
 cpanfile
 lib/Bubblegum.pm
 lib/Bubblegum/Class.pm
-lib/Bubblegum/Constraint.pm
 lib/Bubblegum/Exception.pm
 lib/Bubblegum/Object/Array.pm
 lib/Bubblegum/Object/Code.pm
@@ -45,7 +44,6 @@ lib/Bubblegum/Wrapper/Json.pm
 lib/Bubblegum/Wrapper/Yaml.pm
 t/bubblegum.t
 t/bubblegum/class.t
-t/bubblegum/constraint.t
 t/bubblegum/object/array.t
 t/bubblegum/object/code.t
 t/bubblegum/object/float.t

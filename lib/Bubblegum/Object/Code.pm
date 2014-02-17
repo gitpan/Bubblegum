@@ -7,7 +7,7 @@ use Bubblegum::Syntax -types;
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 
@@ -64,13 +64,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -81,7 +83,8 @@ version 0.10
 
 =head1 DESCRIPTION
 
-Code methods work on code references.
+Code methods work on code references. It is not necessary to use this module as
+it is loaded automatically by the L<Bubblegum> class.
 
 =head1 METHODS
 

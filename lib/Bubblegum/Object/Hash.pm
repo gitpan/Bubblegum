@@ -8,7 +8,7 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Keyed';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 
@@ -246,13 +246,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -266,7 +268,9 @@ version 0.10
 Hash methods work on hash references. Users of these methods should be aware
 of the methods that modify the array reference itself as opposed to returning a
 new array reference. Unless stated, it may be safe to assume that the following
-methods copy, modify and return new hash references based on their subjects.
+methods copy, modify and return new hash references based on their subjects. It
+is not necessary to use this module as it is loaded automatically by the
+L<Bubblegum> class.
 
 =head1 METHODS
 

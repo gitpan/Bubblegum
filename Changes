@@ -1,6 +1,12 @@
 Changelog for Bubblegum
 
-0.10 2014-02-15T15:15:03
+0.11 2014-02-17T07:42:40
+ - Fixed test failures for numbers.t on x64 arc, updated documentation.
+ - Removed Bubblegum::Constraint and added the contributors section of the
+   POD.
+ - Fixed POD errors.
+
+0.10 2014-02-15T15:10:48
  - Added syntax class providing type functions.
  - Relocated numeric coercion routines.
 

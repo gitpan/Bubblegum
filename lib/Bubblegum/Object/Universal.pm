@@ -6,7 +6,7 @@ use Bubblegum::Syntax -types, 'load', 'raise';
 
 use Class::Forward;
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 
 
@@ -47,13 +47,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -65,7 +67,8 @@ version 0.10
 =head1 DESCRIPTION
 
 Universal methods work on variables whose data meets the criteria for being
-defined.
+defined. It is not necessary to use this module as it is loaded automatically by
+the L<Bubblegum> class.
 
 =head1 METHODS
 

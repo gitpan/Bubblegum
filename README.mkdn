@@ -4,7 +4,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 # VERSION
 
-version 0.10
+version 0.11
 
 # SYNOPSIS
 
@@ -16,12 +16,6 @@ version 0.10
     has typeof_num, 'id';
     has typeof_str, 'firstname';
     has typeof_str, 'lastname';
-
-    has business => (
-        is   => 'ro',
-        isa  => typeof_object,
-        lazy => 1
-    );
 
     sub say_hello {
         my $self    = shift;
