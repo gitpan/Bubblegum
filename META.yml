@@ -41,5 +41,5 @@ resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
   homepage: http://metacpan.org/release/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: 0.11
+version: 0.12
 x_authority: cpan:AWNCORP

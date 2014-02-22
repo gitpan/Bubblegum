@@ -4,10 +4,10 @@ package Bubblegum::Object::Array;
 use Bubblegum::Class 'with';
 use Bubblegum::Syntax -types;
 
+with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Indexed';
 with 'Bubblegum::Object::Role::List';
 with 'Bubblegum::Object::Role::Ref';
-with 'Bubblegum::Object::Role::Defined';
 
 use Syntax::Keyword::Junction::All  ();
 use Syntax::Keyword::Junction::Any  ();
@@ -15,7 +15,7 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One  ();
 use Scalar::Util ();
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 
 
@@ -76,7 +76,7 @@ sub each_key {
 
 sub each_n_values {
     my $self   = CORE::shift;
-    my $number = $_[0] ? type_num  CORE::shift : 2;
+    my $number = $_[0] ? type_num CORE::shift : 2;
     my $code   = type_cref CORE::shift;
     my @values = @$self;
 
@@ -406,7 +406,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

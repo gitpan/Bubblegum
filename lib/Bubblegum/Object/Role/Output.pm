@@ -4,13 +4,11 @@ use Bubblegum::Role 'requires', 'with';
 
 with 'Bubblegum::Object::Role::Defined';
 
+our $VERSION = '0.12'; # VERSION
+
 requires 'print';
 requires 'printf';
 requires 'say';
 requires 'sayf';
-requires 'sprintf';
-requires 'ssayf';
-
-our $VERSION = '0.11'; # VERSION
 
 1;

@@ -1,12 +1,12 @@
 # ABSTRACT: Common Methods for Operating on Defined Values
 package Bubblegum::Object::Universal;
 
+use Class::Forward;
+
 use Bubblegum::Class 'with';
 use Bubblegum::Syntax -types, 'load', 'raise';
 
-use Class::Forward;
-
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 
 
@@ -55,7 +55,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

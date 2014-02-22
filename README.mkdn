@@ -4,7 +4,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 # VERSION
 
-version 0.11
+version 0.12
 
 # SYNOPSIS
 
@@ -13,12 +13,11 @@ version 0.11
     use Bubblegum::Class;
     use Bubblegum::Syntax -attr, -types, -typesof;
 
-    has typeof_num, 'id';
     has typeof_str, 'firstname';
     has typeof_str, 'lastname';
 
     sub say_hello {
-        my $self    = shift;
+        my $self    = type_obj shift;
         my $subject = type_str shift;
 
         return sprintf 'Hello %s. My name is %s, nice to meet you.',
@@ -108,6 +107,7 @@ using Bubblegum:
         10->typeof('null')                      # false
         10->typeof('num')                       # true
         10->typeof('str')                       # false
+        10->typeof('undef')                     # false
 
     # include Moo as your default object-system (optional)
 
@@ -139,7 +139,7 @@ higher-level of abstraction and consistency.
 - UTF-8 Encoding For All IO Operations
 - Modern Method Order Resolution
 - Modern Minimalistic Object System
-- Classified Optional Features and Enhancements
+- Optional Features and Enhancements
 
 # RATIONALE
 
@@ -153,6 +153,23 @@ of decisions a programmer has to make increases, their productivity decreases.
 Enforced consistency is a path many other programming languages and frameworks
 have adopted to great effect, so Bubblegum is one approach towards that end in
 Perl.
+
+## Bubblegum Syntax
+
+Additional features and enhancements can be enabled by using the
+[Bubblegum::Syntax](http://search.cpan.org/perldoc?Bubblegum::Syntax) module which exports type contraint functions, data
+validation functions and various utility functions. Hardcore Perl hackers around
+the world are working tirelessly around the clock to give us a better system for
+elegantly defining objects and classes using modern Perl best practices, ... but
+in the meantime, have some Bubblegum.
+
+    use Bubblegum;
+    use Bubblegum::Syntax -all;
+
+    # take a moment to reason about the following Perl example.
+
+    my $print = will '@output; say @output';
+    $print->curry(1..10)->call; # 12345678910
 
 ## Bubblegum Topology
 
@@ -216,10 +233,32 @@ example:
 
     # {"1":2,"3":{"4":{"7":{"8":9,"10":11},"5":6}}}
 
-Bubblegum ships with 5 wrappers, [Bubblegum::Wrapper::Digest](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Digest) for hashing,
-[Bubblegum::Wrapper::Dumper](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Dumper) for Perl serialization,
-[Bubblegum::Wrapper::Encoder](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Encoder) for content encoding, [Bubblegum::Wrapper::Json](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Json)
-for JSON serialization and [Bubblegum::Wrapper::Yaml](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Yaml) for YAML serialization.
+The follow list of wrappers are distributed with the Bubblegum distribution:
+
+### Digest Wrapper
+
+The Bubblegum digest wrapper, [Bubblegum::Wrapper::Digest](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Digest), provides access to
+various hashing algorithms to encode/decode messages.
+
+### Dumper Wrapper
+
+The Bubblegum data-dumper wrapper, [Bubblegum::Wrapper::Dumper](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Dumper), provides
+functionality to encode/decode perl data structures.
+
+### Encoder Wrapper
+
+The Bubblegum encoding wrapper, [Bubblegum::Wrapper::Encoder](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Encoder), provides access
+to content encoding/decoding functionality.
+
+### JSON Wrapper
+
+The Bubblegum json wrapper, [Bubblegum::Wrapper::Json](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Json), provides functionality
+to encode/decode perl data structures as JSON documents.
+
+### YAML Wrapper
+
+The Bubblegum yaml wrapper, [Bubblegum::Wrapper::Yaml](http://search.cpan.org/perldoc?Bubblegum::Wrapper::Yaml), provides functionality
+to encode/decode perl data structures as YAML documents.
 
 ## Bubblegum Data Type Operations
 

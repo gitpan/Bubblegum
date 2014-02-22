@@ -3,9 +3,9 @@ package Bubblegum::Object::Role::Item;
 use Bubblegum::Role 'requires';
 use Bubblegum::Syntax -types;
 
-requires 'defined';
+our $VERSION = '0.12'; # VERSION
 
-our $VERSION = '0.11'; # VERSION
+requires 'defined';
 
 sub class {
     my $self = CORE::shift;

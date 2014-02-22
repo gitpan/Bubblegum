@@ -1,14 +1,14 @@
 # ABSTRACT: Common Methods for Operating on Scalars
 package Bubblegum::Object::Scalar;
 
+use Scalar::Util ();
+
 use Bubblegum::Class 'with';
 use Bubblegum::Syntax -types;
 
-use Scalar::Util ();
-
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 
 
@@ -56,7 +56,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

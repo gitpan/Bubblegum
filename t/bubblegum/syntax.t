@@ -41,9 +41,9 @@ my @typelib = qw(
     ok isa_defined '';
     ok isa_defined 0;
     ok !isa_defined undef;
-    ok isa_fh do { open my $fh, '<', '/'; $fh };
+    ok isa_fh do { open my $fh, '<', \''; $fh };
     ok !isa_fh \'';
-    ok isa_filehandle do { open my $fh, '<', '/'; $fh };
+    ok isa_filehandle do { open my $fh, '<', \''; $fh };
     ok !isa_filehandle \'';
     ok isa_glob \*Test::More::EXPORT;
     ok !isa_glob \'';
@@ -140,9 +140,9 @@ my @typelib = qw(
     ok !not_defined '';
     ok !not_defined 0;
     ok not_defined undef;
-    ok !not_fh do { open my $fh, '<', '/'; $fh };
+    ok !not_fh do { open my $fh, '<', \''; $fh };
     ok not_fh \'';
-    ok !not_filehandle do { open my $fh, '<', '/'; $fh };
+    ok !not_filehandle do { open my $fh, '<', \''; $fh };
     ok not_filehandle \'';
     ok !not_glob \*Test::More::EXPORT;
     ok not_glob \'';
@@ -239,9 +239,9 @@ my @typelib = qw(
     ok defined type_defined '';
     ok defined type_defined 0;
     ok do { eval {type_defined undef}; $@ };
-    ok type_fh do { open my $fh, '<', '/'; $fh };
+    ok type_fh do { open my $fh, '<', \''; $fh };
     ok do { eval {type_fh \''}; $@ };
-    ok type_filehandle do { open my $fh, '<', '/'; $fh };
+    ok type_filehandle do { open my $fh, '<', \''; $fh };
     ok do { eval {type_filehandle \''}; $@ };
     ok type_glob \*Test::More::EXPORT;
     ok do { eval {type_glob \''}; $@ };
@@ -388,6 +388,7 @@ my @typelib = qw(
     can_ok 'utils', 'dump';
     can_ok 'utils', 'file';
     can_ok 'utils', 'find';
+    can_ok 'utils', 'here';
     can_ok 'utils', 'home';
     can_ok 'utils', 'load';
     can_ok 'utils', 'merge';
@@ -399,6 +400,7 @@ my @typelib = qw(
     can_ok 'utils', 'user';
     can_ok 'utils', 'user_info';
     can_ok 'utils', 'which';
+    can_ok 'utils', 'will';
     is 'Bubblegum::Exception', ref do { eval {raise 'wtf'}; $@ };
 }
 {
@@ -598,8 +600,8 @@ my @typelib = qw(
 {
     package misc::utils;
     use Bubblegum::Syntax qw(
-        cwd date date_epoch date_format dump file find home merge load path
-        quote raise script unquote user user_info which
+        cwd date date_epoch date_format dump file find here home merge load
+        path quote raise script unquote user user_info which will
     );
     use Test::More;
     can_ok 'misc::utils', 'cwd';
@@ -609,6 +611,7 @@ my @typelib = qw(
     can_ok 'misc::utils', 'dump';
     can_ok 'misc::utils', 'file';
     can_ok 'misc::utils', 'find';
+    can_ok 'misc::utils', 'here';
     can_ok 'misc::utils', 'home';
     can_ok 'misc::utils', 'load';
     can_ok 'misc::utils', 'merge';
@@ -620,6 +623,7 @@ my @typelib = qw(
     can_ok 'misc::utils', 'user';
     can_ok 'misc::utils', 'user_info';
     can_ok 'misc::utils', 'which';
+    can_ok 'misc::utils', 'will';
     is 'Bubblegum::Exception', ref do { eval {raise 'wtf'}; $@ };
 }
 

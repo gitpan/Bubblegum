@@ -1,17 +1,22 @@
+# ABSTRACT: Bubblegum Wrapper around YAML Serialization
 package Bubblegum::Wrapper::Yaml;
 
 use Bubblegum::Class;
+
 use YAML::Tiny ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
+
+
 
 sub decode {
     my $self = shift;
     my $yaml = YAML::Tiny->new;
     return $yaml->read_string($self->data);
 }
+
 
 sub encode {
     my $self = shift;
@@ -22,3 +27,57 @@ sub encode {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Bubblegum::Wrapper::Yaml - Bubblegum Wrapper around YAML Serialization
+
+=head1 VERSION
+
+version 0.12
+
+=head1 SYNOPSIS
+
+    use Bubblegum;
+
+    my $data = {1..3,{4,{5,6,7,{8,9,10,11}}}};
+
+    my $string  = $data->yaml->encode;
+    my $hashref = $string->yaml->decode;
+
+=head1 DESCRIPTION
+
+L<Bubblegum::Wrapper::Yaml> is a L<Bubblegum> wrapper which provides the
+ability to endcode/decode YAML data structures. It is not necessary to use
+this module as it is loaded automatically by the L<Bubblegum> class.
+
+=head1 METHODS
+
+=head2 decode
+
+The decode method deserializes the stringified YAML structure using the
+L<YAML::Tiny> module.
+
+=head2 encode
+
+The encode method serializes the Perl data structure using the L<YAML::Tiny>
+module.
+
+=head1 AUTHOR
+
+Al Newkirk <anewkirk@ana.io>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Al Newkirk.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

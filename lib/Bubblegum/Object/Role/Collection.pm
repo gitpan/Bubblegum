@@ -4,6 +4,8 @@ use Bubblegum::Role 'requires', 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
+our $VERSION = '0.12'; # VERSION
+
 requires 'defined';
 requires 'each';
 requires 'each_key';
@@ -16,7 +18,5 @@ requires 'keys';
 requires 'get';
 requires 'set';
 requires 'values';
-
-our $VERSION = '0.11'; # VERSION
 
 1;

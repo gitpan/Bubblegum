@@ -2,28 +2,33 @@
 package Bubblegum::Syntax;
 
 use 5.10.0;
-use utf8::all;
+
 use strict;
+use utf8::all;
 use warnings;
+
 use Bubblegum::Exception;
 use Try::Tiny;
-use Hash::Merge::Simple 'merge';
 
 use Class::Load ();
+use Cwd ();
 use Data::Dumper ();
-use File::HomeDir ();
-use File::Find::Rule ();
-use File::Which ();
 use DateTime::Tiny ();
+use File::Find::Rule ();
+use File::HomeDir ();
+use File::Spec ();
+use File::Which ();
 use Path::Tiny ();
 use Time::Format ();
 use Time::ParseDate ();
 use Type::Params ();
 use Types::Standard ();
 
+use Hash::Merge::Simple 'merge';
+
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 
 our $EXTS = {
@@ -67,6 +72,7 @@ our @EXPORT_OK = qw(
     dump
     file
     find
+    here
     home
     merge
     load
@@ -78,6 +84,7 @@ our @EXPORT_OK = qw(
     user
     user_info
     which
+    will
 );
 our %EXPORT_TAGS = (
     attr => sub {
@@ -115,6 +122,7 @@ our %EXPORT_TAGS = (
             dump
             file
             find
+            here
             home
             merge
             load
@@ -126,6 +134,7 @@ our %EXPORT_TAGS = (
             user
             user_info
             which
+            will
         )
     }
 );
@@ -238,6 +247,15 @@ sub find {
 }
 
 
+sub here {
+    return path(
+        File::Spec->rel2abs(
+            join '', (File::Spec->splitpath((caller 1)[1]))[0,1]
+        )
+    );
+}
+
+
 sub home {
     my $user = $ENV{USER} // user();
     my $func = $user ? 'users_home' : 'my_home';
@@ -299,6 +317,18 @@ sub which {
     return path(File::Which::which(@_));
 }
 
+
+sub will {
+    return eval sprintf
+        'sub {%s}',
+            join ';',
+                map { /^\s*\$\w+$/ ? "my$_=shift" : "$_" }
+                map { /^\s*\@\w+$/ ? "my$_=\@_"   : "$_" }
+                map { /^\s*\%\w+$/ ? "my$_=\@_"   : "$_" }
+            split /;/,
+            join ';', @_;
+}
+
 1;
 
 __END__
@@ -313,7 +343,7 @@ Bubblegum::Syntax - Common Helper Functions for Structuring Applications
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 
@@ -322,18 +352,16 @@ version 0.11
     use Bubblegum::Class;
     use Bubblegum::Syntax -attr, -typesof;
 
-    has typeof_href, 'config';
+    has typeof_obj, 'config';
 
     package main;
 
     use Bubblegum;
-    use Bubblegum::Syntax -utils;
+    use Bubblegum::Syntax -isas, -utils;
 
-    my $data = file('./config')->slurp;
+    my $data   = file('/tmp/config')->slurp;
     my $config = $data->yaml->decode if isa_str $data;
-
-    my $server = Server->new(config =>
-        $config->lookup('node1.webserver'));
+    my $server = Server->new(config => $config);
 
 =head1 DESCRIPTION
 
@@ -348,7 +376,7 @@ The cwd function returns a L<Path::Tiny> instance for operating on the current
 working directory.
 
     my $dir = cwd;
-    my @subdirs = $dir->children;
+    my @more = $dir->children;
 
 =head2 date
 
@@ -392,13 +420,21 @@ objects matching the specified criteria.
 
     my $texts = find './documents', '*.txt';
 
+=head2 here
+
+The here function returns a L<Path::Tiny> instance for operating on the directory
+of the file the function is called from.
+
+    my $dir = here;
+    my @more = $dir->children;
+
 =head2 home
 
 The home function returns a L<Path::Tiny> instance for operating on the current
 user's home directory.
 
     my $dir = home;
-    my @subdirs = $dir->children;
+    my @more = $dir->children;
 
 =head2 load
 
@@ -412,7 +448,7 @@ The path function returns a L<Path::Tiny> instance for operating on the
 directory specified.
 
     my $dir = path '/';
-    my @subdirs = $dir->children;
+    my @more = $dir->children;
 
 =head2 quote
 
@@ -459,6 +495,21 @@ The which function use L<File::Which> to return a L<Path::Tiny> instance for
 operating on the located executable program.
 
     my $mailer = which 'sendmail';
+
+=head2 will
+
+The will function will construct and return a code reference from a string or
+set of strings belonging to a single unit of execution. This function exists to
+make creating tiny routines from strings easier. This function is especially
+useful when used with methods that require code-references as arguments; e.g.
+callbacks and chained method calls. Note, if the string begins with a semi-colon
+separated list of variables, e.g. scalar, array or hash, then those variables
+will automatically be expanded and assigned data from the default array.
+
+    will '$output; say $output';
+
+    # is equivelent to
+    sub { my $output = shift; say $output; };
 
 =head1 EXPORTS
 
@@ -1149,6 +1200,10 @@ find
 
 =item *
 
+here
+
+=item *
+
 home
 
 =item *
@@ -1190,6 +1245,10 @@ user_info
 =item *
 
 which
+
+=item *
+
+will
 
 =back
 

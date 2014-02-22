@@ -5,7 +5,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 sub import {
     my $target = caller;
@@ -29,7 +29,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 
@@ -38,12 +38,11 @@ version 0.11
     use Bubblegum::Class;
     use Bubblegum::Syntax -attr, -types, -typesof;
 
-    has typeof_num, 'id';
     has typeof_str, 'firstname';
     has typeof_str, 'lastname';
 
     sub say_hello {
-        my $self    = shift;
+        my $self    = type_obj shift;
         my $subject = type_str shift;
 
         return sprintf 'Hello %s. My name is %s, nice to meet you.',
@@ -133,6 +132,7 @@ using Bubblegum:
         10->typeof('null')                      # false
         10->typeof('num')                       # true
         10->typeof('str')                       # false
+        10->typeof('undef')                     # false
 
     # include Moo as your default object-system (optional)
 
@@ -198,7 +198,7 @@ Modern Minimalistic Object System
 
 =item *
 
-Classified Optional Features and Enhancements
+Optional Features and Enhancements
 
 =back
 
@@ -214,6 +214,23 @@ of decisions a programmer has to make increases, their productivity decreases.
 Enforced consistency is a path many other programming languages and frameworks
 have adopted to great effect, so Bubblegum is one approach towards that end in
 Perl.
+
+=head2 Bubblegum Syntax
+
+Additional features and enhancements can be enabled by using the
+L<Bubblegum::Syntax> module which exports type contraint functions, data
+validation functions and various utility functions. Hardcore Perl hackers around
+the world are working tirelessly around the clock to give us a better system for
+elegantly defining objects and classes using modern Perl best practices, ... but
+in the meantime, have some Bubblegum.
+
+    use Bubblegum;
+    use Bubblegum::Syntax -all;
+
+    # take a moment to reason about the following Perl example.
+
+    my $print = will '@output; say @output';
+    $print->curry(1..10)->call; # 12345678910
 
 =head2 Bubblegum Topology
 
@@ -277,10 +294,32 @@ example:
 
     # {"1":2,"3":{"4":{"7":{"8":9,"10":11},"5":6}}}
 
-Bubblegum ships with 5 wrappers, L<Bubblegum::Wrapper::Digest> for hashing,
-L<Bubblegum::Wrapper::Dumper> for Perl serialization,
-L<Bubblegum::Wrapper::Encoder> for content encoding, L<Bubblegum::Wrapper::Json>
-for JSON serialization and L<Bubblegum::Wrapper::Yaml> for YAML serialization.
+The follow list of wrappers are distributed with the Bubblegum distribution:
+
+=head3 Digest Wrapper
+
+The Bubblegum digest wrapper, L<Bubblegum::Wrapper::Digest>, provides access to
+various hashing algorithms to encode/decode messages.
+
+=head3 Dumper Wrapper
+
+The Bubblegum data-dumper wrapper, L<Bubblegum::Wrapper::Dumper>, provides
+functionality to encode/decode perl data structures.
+
+=head3 Encoder Wrapper
+
+The Bubblegum encoding wrapper, L<Bubblegum::Wrapper::Encoder>, provides access
+to content encoding/decoding functionality.
+
+=head3 JSON Wrapper
+
+The Bubblegum json wrapper, L<Bubblegum::Wrapper::Json>, provides functionality
+to encode/decode perl data structures as JSON documents.
+
+=head3 YAML Wrapper
+
+The Bubblegum yaml wrapper, L<Bubblegum::Wrapper::Yaml>, provides functionality
+to encode/decode perl data structures as YAML documents.
 
 =head2 Bubblegum Data Type Operations
 

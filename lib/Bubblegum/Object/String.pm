@@ -1,17 +1,17 @@
 # ABSTRACT: Common Methods for Operating on Strings
 package Bubblegum::Object::String;
 
+use Scalar::Util ();
+
 use Bubblegum::Class 'with';
 use Bubblegum::Syntax -types;
-
-use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 
 
@@ -270,7 +270,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

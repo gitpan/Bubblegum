@@ -1,6 +1,18 @@
 Changelog for Bubblegum
 
-0.11 2014-02-17T07:42:40
+0.12 2014-02-22T06:54:49
+ - Added POD for core wrappers.
+ - Miscellaneous cleanup.
+ - Fixed cpantesters reported errors.
+ - Added object role tests.
+ - Added syntax section to POD in bubblegum.
+ - Updated synopsis in syntax.
+ - Replaced function is with will in syntax.
+ - Misc. updates to object roles.
+ - Added function is to syntax.
+ - Updated POD and added here function to syntax.
+
+0.11 2014-02-17T07:41:57
  - Fixed test failures for numbers.t on x64 arc, updated documentation.
  - Removed Bubblegum::Constraint and added the contributors section of the
    POD.

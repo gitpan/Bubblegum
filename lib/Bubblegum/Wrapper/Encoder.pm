@@ -1,13 +1,15 @@
+# ABSTRACT: Bubblegum Wrapper around Content Encoding
 package Bubblegum::Wrapper::Encoder;
 
 use Bubblegum::Class;
-use Bubblegum::Syntax 'raise';
 
+use Bubblegum::Syntax 'raise';
 use Encode 'find_encoding';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
+
 
 sub BUILD {
     my $self = shift;
@@ -15,6 +17,7 @@ sub BUILD {
     $self->data->typeof('str') or raise
         CORE::sprintf q(Wrapper package "%s" requires string data), ref $self;
 }
+
 
 sub decode {
     my $self = shift;
@@ -24,6 +27,7 @@ sub decode {
     return undef unless $decoder;
     return $decoder->decode($self->data);
 }
+
 
 sub encode {
     my $self = shift;
@@ -35,3 +39,55 @@ sub encode {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Bubblegum::Wrapper::Encoder - Bubblegum Wrapper around Content Encoding
+
+=head1 VERSION
+
+version 0.12
+
+=head1 SYNOPSIS
+
+    use Bubblegum;
+
+    my $data = '...';
+    $data->encoder->encode;
+
+=head1 DESCRIPTION
+
+L<Bubblegum::Wrapper::Encoder> is a L<Bubblegum> wrapper which provides access
+to content encoding using the encode/decode methods. It is not necessary to use
+this module as it is loaded automatically by the L<Bubblegum> class.
+
+=head1 METHODS
+
+=head2 decode
+
+The decode method decodes the encoded string data using the encoding specified.
+The default is utf-8 is no encoding is supplied.
+
+=head2 encode
+
+The encode method encodes the raw string data using the encoding specified.
+The default is utf-8 is no encoding is supplied.
+
+=head1 AUTHOR
+
+Al Newkirk <anewkirk@ana.io>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Al Newkirk.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

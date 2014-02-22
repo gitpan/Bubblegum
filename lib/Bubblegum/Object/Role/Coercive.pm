@@ -2,13 +2,13 @@ package Bubblegum::Object::Role::Coercive;
 
 use Bubblegum::Role 'requires';
 
+our $VERSION = '0.12'; # VERSION
+
 requires 'to_array';
 requires 'to_code';
 requires 'to_hash';
 requires 'to_integer';
 requires 'to_string';
-
-our $VERSION = '0.11'; # VERSION
 
 sub to_undef {
     return undef;

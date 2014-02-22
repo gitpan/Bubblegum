@@ -4,6 +4,8 @@ use Bubblegum::Role 'requires', 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
+our $VERSION = '0.12'; # VERSION
+
 requires 'eq';
 requires 'eqtv';
 requires 'gt';
@@ -11,8 +13,6 @@ requires 'gte';
 requires 'lt';
 requires 'lte';
 requires 'ne';
-
-our $VERSION = '0.11'; # VERSION
 
 sub equal {
     goto &eq;
