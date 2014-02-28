@@ -23,6 +23,10 @@ requires "autodie" => "0";
 requires "perl" => "v5.10.0";
 requires "utf8::all" => "0";
 
+on 'test' => sub {
+  requires "perl" => "v5.10.0";
+};
+
 on 'configure' => sub {
   requires "ExtUtils::MakeMaker" => "6.30";
 };

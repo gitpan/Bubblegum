@@ -346,6 +346,139 @@ my @typelib = qw(
     ok 'CODE' eq ref typeof_undefined;
 }
 {
+    package constraints;
+    use Bubblegum::Syntax -constraints;
+    use Test::More;
+    my @exports = map "_$_", @typelib;
+    can_ok 'constraints', $_ for @exports;
+    ok 'CODE' eq ref _aref;
+    ok 'CODE' eq ref _arrayref;
+    ok 'CODE' eq ref _bool;
+    ok 'CODE' eq ref _boolean;
+    ok 'CODE' eq ref _class;
+    ok 'CODE' eq ref _classname;
+    ok 'CODE' eq ref _cref;
+    ok 'CODE' eq ref _coderef;
+    ok 'CODE' eq ref _def;
+    ok 'CODE' eq ref _defined;
+    ok 'CODE' eq ref _fh;
+    ok 'CODE' eq ref _filehandle;
+    ok 'CODE' eq ref _glob;
+    ok 'CODE' eq ref _globref;
+    ok 'CODE' eq ref _href;
+    ok 'CODE' eq ref _hashref;
+    ok 'CODE' eq ref _int;
+    ok 'CODE' eq ref _integer;
+    ok 'CODE' eq ref _num;
+    ok 'CODE' eq ref _number;
+    ok 'CODE' eq ref _obj;
+    ok 'CODE' eq ref _object;
+    ok 'CODE' eq ref _ref;
+    ok 'CODE' eq ref _reference;
+    ok 'CODE' eq ref _rref;
+    ok 'CODE' eq ref _regexpref;
+    ok 'CODE' eq ref _sref;
+    ok 'CODE' eq ref _scalarref;
+    ok 'CODE' eq ref _str;
+    ok 'CODE' eq ref _string;
+    ok 'CODE' eq ref _nil;
+    ok 'CODE' eq ref _null;
+    ok 'CODE' eq ref _undef;
+    ok 'CODE' eq ref _undefined;
+    ok _aref([]);
+    ok do { eval {_aref('')}; $@ };
+    ok _arrayref([]);
+    ok do { eval {_arrayref('')}; $@ };
+    ok defined _bool(1);
+    ok defined _bool(0);
+    ok defined _bool('');
+    ok !_bool(undef);
+    ok do { eval {_bool(100)}; $@ };
+    ok defined _boolean(1);
+    ok defined _boolean(0);
+    ok defined _boolean('');
+    ok !_boolean(undef);
+    ok do { eval {_boolean(100)}; $@ };
+    ok _class('Test::More');
+    ok do { eval {_class('Acme::Widget')}; $@ };
+    ok _classname('Test::More');
+    ok do { eval {_classname('Acme::Widget')}; $@ };
+    ok _cref(sub {});
+    ok do { eval {_cref(undef)}; $@ };
+    ok _coderef(sub {});
+    ok do { eval {_coderef(undef)}; $@ };
+    ok defined _def('');
+    ok defined _def(0);
+    ok do { eval {_def(undef)}; $@ };
+    ok defined _defined('');
+    ok defined _defined(0);
+    ok do { eval {_defined(undef)}; $@ };
+    ok _fh(do { open my $fh, '<', \''; $fh });
+    ok do { eval {_fh(\'')}; $@ };
+    ok _filehandle(do { open my $fh, '<', \''; $fh });
+    ok do { eval {_filehandle(\'')}; $@ };
+    ok _glob(\*Test::More::EXPORT);
+    ok do { eval {_glob(\'')}; $@ };
+    ok _globref(\*Test::More::EXPORT);
+    ok do { eval {_globref(\'')}; $@ };
+    ok _href({});
+    ok do { eval {_href(\'')}; $@ };
+    ok _hashref({});
+    ok do { eval {_hashref(\'')}; $@ };
+    ok _int(12345);
+    ok do { eval {_int(123.45)}; $@ };
+    ok _integer(12345);
+    ok do { eval {_integer(123.45)}; $@ };
+    ok _num(12345);
+    ok _num(123.45);
+    ok defined _num(0);
+    ok do { eval {_num('')}; $@ };
+    ok _number(12345);
+    ok _number(123.45);
+    ok defined _number(0);
+    ok do { eval {_number('')}; $@ };
+    ok _obj(bless {}, main);
+    ok do { eval {_obj({})}; $@ };
+    ok _object(bless {}, main);
+    ok do { eval {_object({})}; $@ };
+    ok _ref(\'');
+    ok _ref({});
+    ok _ref([]);
+    ok do { eval {_ref('')}; $@ };
+    ok _reference(\'');
+    ok _reference({});
+    ok _reference([]);
+    ok do { eval {_reference('')}; $@ };
+    ok _rref(qr//);
+    ok do { eval {_rref(\'')}; $@ };
+    ok _regexpref(qr//);
+    ok do { eval {_regexpref(\'')}; $@ };
+    ok _sref(\'');
+    ok do { eval {_sref({})}; $@ };
+    ok do { eval {_sref('')}; $@ };
+    ok _scalarref(\'');
+    ok do { eval {_scalarref({})}; $@ };
+    ok do { eval {_scalarref('')}; $@ };
+    ok defined _str('');
+    ok defined _str(0);
+    ok do { eval {_str(undef)}; $@ };
+    ok defined _string('');
+    ok defined _string(0);
+    ok do { eval {_string(undef)}; $@ };
+    ok !_nil(undef);
+    ok do { eval {_nil('')}; $@ };
+    ok do { eval {_nil(0)}; $@ };
+    ok !_null(undef);
+    ok do { eval {_null('')}; $@ };
+    ok do { eval {_null(0)}; $@ };
+    ok !_undef(undef);
+    ok do { eval {_undef('')}; $@ };
+    ok do { eval {_undef(0)}; $@ };
+    ok !_undefined(undef);
+    ok do { eval {_undefined('')}; $@ };
+    ok do { eval {_undefined(0)}; $@ };
+}
+{
     package attrs;
     use Bubblegum::Class;
     use Bubblegum::Syntax -attr, -typesof;
@@ -404,6 +537,52 @@ my @typelib = qw(
     is 'Bubblegum::Exception', ref do { eval {raise 'wtf'}; $@ };
 }
 {
+    package misc::constraints;
+    use Bubblegum::Syntax qw(
+        _aref _arrayref _bool _boolean _class _classname _cref _coderef _def
+        _defined _fh _filehandle _glob _globref _href _hashref _int _integer
+        _num _number _obj _object _ref _reference _rref _regexpref _sref
+        _scalarref _str _string _nil _null _undef _undefined _val _value
+    );
+    use Test::More;
+    can_ok 'misc::constraints', '_aref';
+    can_ok 'misc::constraints', '_arrayref';
+    can_ok 'misc::constraints', '_bool';
+    can_ok 'misc::constraints', '_boolean';
+    can_ok 'misc::constraints', '_class';
+    can_ok 'misc::constraints', '_classname';
+    can_ok 'misc::constraints', '_cref';
+    can_ok 'misc::constraints', '_coderef';
+    can_ok 'misc::constraints', '_def';
+    can_ok 'misc::constraints', '_defined';
+    can_ok 'misc::constraints', '_fh';
+    can_ok 'misc::constraints', '_filehandle';
+    can_ok 'misc::constraints', '_glob';
+    can_ok 'misc::constraints', '_globref';
+    can_ok 'misc::constraints', '_href';
+    can_ok 'misc::constraints', '_hashref';
+    can_ok 'misc::constraints', '_int';
+    can_ok 'misc::constraints', '_integer';
+    can_ok 'misc::constraints', '_num';
+    can_ok 'misc::constraints', '_number';
+    can_ok 'misc::constraints', '_obj';
+    can_ok 'misc::constraints', '_object';
+    can_ok 'misc::constraints', '_ref';
+    can_ok 'misc::constraints', '_reference';
+    can_ok 'misc::constraints', '_rref';
+    can_ok 'misc::constraints', '_regexpref';
+    can_ok 'misc::constraints', '_sref';
+    can_ok 'misc::constraints', '_scalarref';
+    can_ok 'misc::constraints', '_str';
+    can_ok 'misc::constraints', '_string';
+    can_ok 'misc::constraints', '_nil';
+    can_ok 'misc::constraints', '_null';
+    can_ok 'misc::constraints', '_undef';
+    can_ok 'misc::constraints', '_undefined';
+    can_ok 'misc::constraints', '_val';
+    can_ok 'misc::constraints', '_value';
+}
+{
     package misc::isas;
     use Bubblegum::Syntax qw(
         isa_aref isa_arrayref isa_bool isa_boolean isa_class isa_classname
@@ -450,6 +629,166 @@ my @typelib = qw(
     can_ok 'misc::isas', 'isa_undefined';
     can_ok 'misc::isas', 'isa_val';
     can_ok 'misc::isas', 'isa_value';
+}
+{
+    package misc::minimal;
+    use Bubblegum::Syntax qw(
+        _aref _arrayref _bool _boolean _class _classname _cref _coderef _def
+        _defined _fh _filehandle _glob _globref _href _hashref _int _integer
+        _num _number _obj _object _ref _reference _rref _regexpref _sref
+        _scalarref _str _string _nil _null _undef _undefined _val _value
+        isa_aref isa_arrayref isa_bool isa_boolean isa_class isa_classname
+        isa_cref isa_coderef isa_def isa_defined isa_fh isa_filehandle isa_glob
+        isa_globref isa_href isa_hashref isa_int isa_integer isa_num isa_number
+        isa_obj isa_object isa_ref isa_reference isa_rref isa_regexpref isa_sref
+        isa_scalarref isa_str isa_string isa_nil isa_null isa_undef
+        isa_undefined isa_val isa_value not_aref not_arrayref not_bool
+        not_boolean not_class not_classname not_cref not_coderef not_def
+        not_defined not_fh not_filehandle not_glob not_globref not_href
+        not_hashref not_int not_integer not_num not_number not_obj not_object
+        not_ref not_reference not_rref not_regexpref not_sref not_scalarref
+        not_str not_string not_nil not_null not_undef not_undefined not_val
+        not_value
+    );
+    use Test::More;
+    can_ok 'misc::minimal', '_aref';
+    can_ok 'misc::minimal', '_arrayref';
+    can_ok 'misc::minimal', '_bool';
+    can_ok 'misc::minimal', '_boolean';
+    can_ok 'misc::minimal', '_class';
+    can_ok 'misc::minimal', '_classname';
+    can_ok 'misc::minimal', '_cref';
+    can_ok 'misc::minimal', '_coderef';
+    can_ok 'misc::minimal', '_def';
+    can_ok 'misc::minimal', '_defined';
+    can_ok 'misc::minimal', '_fh';
+    can_ok 'misc::minimal', '_filehandle';
+    can_ok 'misc::minimal', '_glob';
+    can_ok 'misc::minimal', '_globref';
+    can_ok 'misc::minimal', '_href';
+    can_ok 'misc::minimal', '_hashref';
+    can_ok 'misc::minimal', '_int';
+    can_ok 'misc::minimal', '_integer';
+    can_ok 'misc::minimal', '_num';
+    can_ok 'misc::minimal', '_number';
+    can_ok 'misc::minimal', '_obj';
+    can_ok 'misc::minimal', '_object';
+    can_ok 'misc::minimal', '_ref';
+    can_ok 'misc::minimal', '_reference';
+    can_ok 'misc::minimal', '_rref';
+    can_ok 'misc::minimal', '_regexpref';
+    can_ok 'misc::minimal', '_sref';
+    can_ok 'misc::minimal', '_scalarref';
+    can_ok 'misc::minimal', '_str';
+    can_ok 'misc::minimal', '_string';
+    can_ok 'misc::minimal', '_nil';
+    can_ok 'misc::minimal', '_null';
+    can_ok 'misc::minimal', '_undef';
+    can_ok 'misc::minimal', '_undefined';
+    can_ok 'misc::minimal', '_val';
+    can_ok 'misc::minimal', '_value';
+    can_ok 'misc::minimal', 'isa_aref';
+    can_ok 'misc::minimal', 'isa_arrayref';
+    can_ok 'misc::minimal', 'isa_bool';
+    can_ok 'misc::minimal', 'isa_boolean';
+    can_ok 'misc::minimal', 'isa_class';
+    can_ok 'misc::minimal', 'isa_classname';
+    can_ok 'misc::minimal', 'isa_cref';
+    can_ok 'misc::minimal', 'isa_coderef';
+    can_ok 'misc::minimal', 'isa_def';
+    can_ok 'misc::minimal', 'isa_defined';
+    can_ok 'misc::minimal', 'isa_fh';
+    can_ok 'misc::minimal', 'isa_filehandle';
+    can_ok 'misc::minimal', 'isa_glob';
+    can_ok 'misc::minimal', 'isa_globref';
+    can_ok 'misc::minimal', 'isa_href';
+    can_ok 'misc::minimal', 'isa_hashref';
+    can_ok 'misc::minimal', 'isa_int';
+    can_ok 'misc::minimal', 'isa_integer';
+    can_ok 'misc::minimal', 'isa_num';
+    can_ok 'misc::minimal', 'isa_number';
+    can_ok 'misc::minimal', 'isa_obj';
+    can_ok 'misc::minimal', 'isa_object';
+    can_ok 'misc::minimal', 'isa_ref';
+    can_ok 'misc::minimal', 'isa_reference';
+    can_ok 'misc::minimal', 'isa_rref';
+    can_ok 'misc::minimal', 'isa_regexpref';
+    can_ok 'misc::minimal', 'isa_sref';
+    can_ok 'misc::minimal', 'isa_scalarref';
+    can_ok 'misc::minimal', 'isa_str';
+    can_ok 'misc::minimal', 'isa_string';
+    can_ok 'misc::minimal', 'isa_nil';
+    can_ok 'misc::minimal', 'isa_null';
+    can_ok 'misc::minimal', 'isa_undef';
+    can_ok 'misc::minimal', 'isa_undefined';
+    can_ok 'misc::minimal', 'isa_val';
+    can_ok 'misc::minimal', 'isa_value';
+    can_ok 'misc::minimal', 'not_aref';
+    can_ok 'misc::minimal', 'not_arrayref';
+    can_ok 'misc::minimal', 'not_bool';
+    can_ok 'misc::minimal', 'not_boolean';
+    can_ok 'misc::minimal', 'not_class';
+    can_ok 'misc::minimal', 'not_classname';
+    can_ok 'misc::minimal', 'not_cref';
+    can_ok 'misc::minimal', 'not_coderef';
+    can_ok 'misc::minimal', 'not_def';
+    can_ok 'misc::minimal', 'not_defined';
+    can_ok 'misc::minimal', 'not_fh';
+    can_ok 'misc::minimal', 'not_filehandle';
+    can_ok 'misc::minimal', 'not_glob';
+    can_ok 'misc::minimal', 'not_globref';
+    can_ok 'misc::minimal', 'not_href';
+    can_ok 'misc::minimal', 'not_hashref';
+    can_ok 'misc::minimal', 'not_int';
+    can_ok 'misc::minimal', 'not_integer';
+    can_ok 'misc::minimal', 'not_num';
+    can_ok 'misc::minimal', 'not_number';
+    can_ok 'misc::minimal', 'not_obj';
+    can_ok 'misc::minimal', 'not_object';
+    can_ok 'misc::minimal', 'not_ref';
+    can_ok 'misc::minimal', 'not_reference';
+    can_ok 'misc::minimal', 'not_rref';
+    can_ok 'misc::minimal', 'not_regexpref';
+    can_ok 'misc::minimal', 'not_sref';
+    can_ok 'misc::minimal', 'not_scalarref';
+    can_ok 'misc::minimal', 'not_str';
+    can_ok 'misc::minimal', 'not_string';
+    can_ok 'misc::minimal', 'not_nil';
+    can_ok 'misc::minimal', 'not_null';
+    can_ok 'misc::minimal', 'not_undef';
+    can_ok 'misc::minimal', 'not_undefined';
+    can_ok 'misc::minimal', 'not_val';
+    can_ok 'misc::minimal', 'not_value';
+    package misc::minimal::class;
+    use Bubblegum::Class;
+    use Bubblegum::Syntax -minimal;
+    use Test::More;
+    # has [name];
+    has 'id';
+    # has [name], default;
+    has name => sub {'harry'};
+    # has type, [name];
+    has _str, 'email';
+    # has type, [name], default;
+    has _bool, employed => sub {1};
+    # has (normal interface)
+    has position => (
+        is       => 'rw',
+        required => 1
+    );
+    ok do { eval {misc::minimal::class->new}; $@ };
+    ok do { eval {misc::minimal::class->new(email => 12345)}; $@ };
+    ok do { eval {misc::minimal::class->new(employed => 'yes')}; $@ };
+    ok !do { eval {misc::minimal::class->new(position => 'janitor')}; $@ };
+    my $misc = misc::minimal::class->new(position => 'janitor');
+    is $misc->position, 'janitor';
+    is $misc->employed, 1;
+    is $misc->name, 'harry';
+    ok !$misc->email;
+    ok !$misc->id;
+    ok do { eval {$misc->email(undef)}; $@ };
+    ok do { eval {$misc->name('sally')}; $@ }; # read-only default
+    ok do { eval {$misc->email('root@local')}; $@ }; # read-only default
 }
 {
     package misc::nots;

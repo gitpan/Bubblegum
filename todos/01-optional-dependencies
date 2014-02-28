@@ -1,0 +1,27 @@
+# REWRITE OF NON-CRITICAL LIGHT DEPENDENCIES
+
+* - autobox
+* - autodie
+* - utf8::all
+
+o - DateTime::Tiny
+o - Exception::Tiny
+o - Exporter::Tiny
+o - JSON::Tiny
+o - Moo
+o - Path::Tiny
+o - Syntax::Keyword::Junction
+o - Try::Tiny
+o - Type::Tiny
+o - YAML::Tiny
+
+x - Class::Forward
+x - Class::Load
+x - File::Find::Rule
+x - File::HomeDir
+x - File::Which
+x - Hash::Merge::Simple
+x - Import::Into
+x - Module::Find
+x - Time::Format
+x - Time::ParseDate

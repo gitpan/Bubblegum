@@ -3,7 +3,7 @@ package Bubblegum::Object::Role::Item;
 use Bubblegum::Role 'requires';
 use Bubblegum::Syntax -types;
 
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 
 requires 'defined';
 

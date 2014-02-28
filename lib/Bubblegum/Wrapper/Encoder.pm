@@ -8,7 +8,7 @@ use Encode 'find_encoding';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 
 
 sub BUILD {
@@ -52,7 +52,7 @@ Bubblegum::Wrapper::Encoder - Bubblegum Wrapper around Content Encoding
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
@@ -63,8 +63,8 @@ version 0.12
 
 =head1 DESCRIPTION
 
-L<Bubblegum::Wrapper::Encoder> is a L<Bubblegum> wrapper which provides access
-to content encoding using the encode/decode methods. It is not necessary to use
+L<Bubblegum::Wrapper::Encoder> is a Bubblegum wrapper which provides access to
+content encoding using the encode/decode methods. It is not necessary to use
 this module as it is loaded automatically by the L<Bubblegum> class.
 
 =head1 METHODS

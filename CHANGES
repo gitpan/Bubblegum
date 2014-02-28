@@ -1,6 +1,14 @@
 Changelog for Bubblegum
 
-0.12 2014-02-22T06:54:49
+0.13 2014-02-28T06:22:51
+ - Updated Makefile and README.
+ - Added constraints and minimal tags to Bubblegum::Syntax.
+ - Miscellaneous cleanup of Bubblegum::Wrapper POD.
+ - Updated Makefile and README.
+ - Miscellaneous cleanup of Bubblegum::Syntax and Bubblegum POD.
+ - Added data accessor to Bubblegum::Exception.
+
+0.12 2014-02-22T06:53:06
  - Added POD for core wrappers.
  - Miscellaneous cleanup.
  - Fixed cpantesters reported errors.

@@ -2,20 +2,20 @@ NAME
     Bubblegum - Opinionated Modern Perl Development Framework
 
 VERSION
-    version 0.12
+    version 0.13
 
 SYNOPSIS
         package Person;
 
         use Bubblegum::Class;
-        use Bubblegum::Syntax -attr, -types, -typesof;
+        use Bubblegum::Syntax -minimal;
 
-        has typeof_str, 'firstname';
-        has typeof_str, 'lastname';
+        has _string, 'firstname';
+        has _string, 'lastname';
 
         sub say_hello {
-            my $self    = type_obj shift;
-            my $subject = type_str shift;
+            my $self    = _object shift;
+            my $subject = _string shift;
 
             return sprintf 'Hello %s. My name is %s, nice to meet you.',
                 $subject->titlecase, $self->firstname->titlecase;
@@ -41,6 +41,9 @@ DESCRIPTION
     available for testing and feedback and as such is subject to change.
 
         use Bubblegum;
+        # or Bubblegum::Class;
+        # or Bubblegum::Role
+        # or Bubblegum::Singleton;
 
     is equivalent to
 
@@ -108,9 +111,9 @@ DESCRIPTION
 
         # include Moo as your default object-system (optional)
 
-            use Bubblegum::Class;                   # with Moo
-            use Bubblegum::Role;                    # with Moo::Role
-            use Bubblegum::Singleton;               # with Moo + Cached Instance
+            use Bubblegum::Class;                   # Bubblegum w/ Moo
+            use Bubblegum::Role;                    # Bubblegum w/ Moo (Role)
+            use Bubblegum::Singleton;               # Bubblegum w/ Moo (Singleton)
 
 INTRODUCTION
     Bubblegum makes essential core features and common functionality readily
@@ -170,7 +173,7 @@ RATIONALE
     Bubblegum.
 
         use Bubblegum;
-        use Bubblegum::Syntax -all;
+        use Bubblegum::Syntax 'will';
 
         # take a moment to reason about the following Perl example.
 

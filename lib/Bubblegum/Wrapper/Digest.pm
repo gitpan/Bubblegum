@@ -10,7 +10,7 @@ use Bubblegum::Syntax 'raise';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 
 
 sub BUILD {
@@ -52,7 +52,7 @@ Bubblegum::Wrapper::Digest - Bubblegum Wrapper around Hashing Algorithms
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
@@ -63,7 +63,7 @@ version 0.12
 
 =head1 DESCRIPTION
 
-L<Bubblegum::Wrapper::Digest> is a L<Bubblegum> wrapper which provides access to
+L<Bubblegum::Wrapper::Digest> is a Bubblegum wrapper which provides access to
 various hashing algorithms to encode/decode messages. It is not necessary to use
 this module as it is loaded automatically by the L<Bubblegum> class.
 

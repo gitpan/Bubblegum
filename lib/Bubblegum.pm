@@ -5,7 +5,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 
 sub import {
     my $target = caller;
@@ -29,21 +29,21 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
     package Person;
 
     use Bubblegum::Class;
-    use Bubblegum::Syntax -attr, -types, -typesof;
+    use Bubblegum::Syntax -minimal;
 
-    has typeof_str, 'firstname';
-    has typeof_str, 'lastname';
+    has _string, 'firstname';
+    has _string, 'lastname';
 
     sub say_hello {
-        my $self    = type_obj shift;
-        my $subject = type_str shift;
+        my $self    = _object shift;
+        my $subject = _string shift;
 
         return sprintf 'Hello %s. My name is %s, nice to meet you.',
             $subject->titlecase, $self->firstname->titlecase;
@@ -69,6 +69,9 @@ no experimental features used. B<Note: This is an early release available for
 testing and feedback and as such is subject to change.>
 
     use Bubblegum;
+    # or Bubblegum::Class;
+    # or Bubblegum::Role
+    # or Bubblegum::Singleton;
 
 is equivalent to
 
@@ -136,9 +139,9 @@ using Bubblegum:
 
     # include Moo as your default object-system (optional)
 
-        use Bubblegum::Class;                   # with Moo
-        use Bubblegum::Role;                    # with Moo::Role
-        use Bubblegum::Singleton;               # with Moo + Cached Instance
+        use Bubblegum::Class;                   # Bubblegum w/ Moo
+        use Bubblegum::Role;                    # Bubblegum w/ Moo (Role)
+        use Bubblegum::Singleton;               # Bubblegum w/ Moo (Singleton)
 
 =head1 INTRODUCTION
 
@@ -225,7 +228,7 @@ elegantly defining objects and classes using modern Perl best practices, ... but
 in the meantime, have some Bubblegum.
 
     use Bubblegum;
-    use Bubblegum::Syntax -all;
+    use Bubblegum::Syntax 'will';
 
     # take a moment to reason about the following Perl example.
 

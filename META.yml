@@ -2,11 +2,12 @@
 abstract: 'Opinionated Modern Perl Development Framework'
 author:
   - 'Al Newkirk <anewkirk@ana.io>'
-build_requires: {}
+build_requires:
+  perl: v5.10.0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830'
+generated_by: 'Dist::Zilla version 5.013, CPAN::Meta::Converter version 2.132830'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -41,5 +42,5 @@ resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
   homepage: http://metacpan.org/release/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: 0.12
+version: 0.13
 x_authority: cpan:AWNCORP
