@@ -2,20 +2,20 @@ NAME
     Bubblegum - Opinionated Modern Perl Development Framework
 
 VERSION
-    version 0.13
+    version 0.14
 
 SYNOPSIS
         package Person;
 
         use Bubblegum::Class;
-        use Bubblegum::Syntax -minimal;
+        use Bubblegum::Syntax -types;
 
-        has _string, 'firstname';
-        has _string, 'lastname';
+        has 'firstname';
+        has 'lastname';
 
         sub say_hello {
-            my $self    = _object shift;
-            my $subject = _string shift;
+            my $self    = type_object shift;
+            my $subject = type_string shift;
 
             return sprintf 'Hello %s. My name is %s, nice to meet you.',
                 $subject->titlecase, $self->firstname->titlecase;
@@ -147,6 +147,8 @@ FEATURES
     *   Modern Method Order Resolution
 
     *   Modern Minimalistic Object System
+
+    *   Flexible Type Constraint System
 
     *   Optional Features and Enhancements
 

@@ -7,7 +7,7 @@ use Bubblegum::Syntax -types;
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 
 
@@ -34,7 +34,7 @@ sub rcurry {
 
 sub compose {
     my $self = CORE::shift;
-    my $next = type_cref CORE::shift;
+    my $next = type_coderef CORE::shift;
     my @args = @_;
     return (sub { $next->($self->(@_)) })->curry(@args);
 }
@@ -42,14 +42,14 @@ sub compose {
 
 sub disjoin {
     my $self = CORE::shift;
-    my $next = type_cref CORE::shift;
+    my $next = type_coderef CORE::shift;
     return sub { $self->(@_) || $next->(@_) };
 }
 
 
 sub conjoin {
     my $self = CORE::shift;
-    my $next = type_cref CORE::shift;
+    my $next = type_coderef CORE::shift;
     return sub { $self->(@_) && $next->(@_) };
 }
 
@@ -72,7 +72,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 

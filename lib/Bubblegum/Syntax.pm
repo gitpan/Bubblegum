@@ -28,7 +28,16 @@ use Hash::Merge::Simple 'merge';
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
+
+
+
+
+
+
+
+
+
 
 
 our $EXTS = {
@@ -343,21 +352,24 @@ Bubblegum::Syntax - Common Helper Functions for Structuring Applications
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
     package Server;
 
     use Bubblegum::Class;
-    use Bubblegum::Syntax -minimal;
+    use Bubblegum::Syntax -typesof;
 
-    has _hashref, 'config';
+    has config => (
+        is  => 'ro',
+        isa => typeof_hashref
+    );
 
     package main;
 
     use Bubblegum;
-    use Bubblegum::Syntax qw(file);
+    use Bubblegum::Syntax 'file';
 
     my $config = file('/tmp/config')->slurp->yaml->decode;
     my $server = Server->new(config => $config);

@@ -3,20 +3,19 @@ package Bubblegum::Object::Role::Item;
 use Bubblegum::Role 'requires';
 use Bubblegum::Syntax -types;
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 requires 'defined';
 
 sub class {
     my $self = CORE::shift;
     my $map  = $Bubblegum::Syntax::EXTS;
-
     return $map->{type($self)};
 }
 
 sub of {
     my $self = CORE::shift;
-    my $type = type_str CORE::shift;
+    my $type = type_string CORE::shift;
     my $map  = $Bubblegum::Syntax::EXTS;
 
     my $alias = {

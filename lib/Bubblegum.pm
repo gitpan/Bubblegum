@@ -5,7 +5,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 sub import {
     my $target = caller;
@@ -29,21 +29,21 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
     package Person;
 
     use Bubblegum::Class;
-    use Bubblegum::Syntax -minimal;
+    use Bubblegum::Syntax -types;
 
-    has _string, 'firstname';
-    has _string, 'lastname';
+    has 'firstname';
+    has 'lastname';
 
     sub say_hello {
-        my $self    = _object shift;
-        my $subject = _string shift;
+        my $self    = type_object shift;
+        my $subject = type_string shift;
 
         return sprintf 'Hello %s. My name is %s, nice to meet you.',
             $subject->titlecase, $self->firstname->titlecase;
@@ -198,6 +198,10 @@ Modern Method Order Resolution
 =item *
 
 Modern Minimalistic Object System
+
+=item *
+
+Flexible Type Constraint System
 
 =item *
 

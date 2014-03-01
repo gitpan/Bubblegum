@@ -8,7 +8,7 @@ use Bubblegum::Syntax -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 
 
@@ -32,7 +32,7 @@ sub or {
 
 sub repeat {
     my $self   = CORE::shift;
-    my $number = type_num CORE::shift;
+    my $number = type_number CORE::shift;
     return $self x $number;
 }
 
@@ -56,7 +56,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 

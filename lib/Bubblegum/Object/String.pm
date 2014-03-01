@@ -11,13 +11,13 @@ with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 
 
 sub eq {
     my $self  = CORE::shift;
-    my $other = type_str CORE::shift;
+    my $other = type_string CORE::shift;
 
     return $self eq $other ? 1 : 0;
 }
@@ -34,7 +34,7 @@ sub eqtv {
 
 sub format {
     my $self   = CORE::shift;
-    my $format = type_str CORE::shift;
+    my $format = type_string CORE::shift;
 
     return CORE::sprintf $format, $self;
 }
@@ -42,7 +42,7 @@ sub format {
 
 sub gt {
     my $self  = CORE::shift;
-    my $other = type_str CORE::shift;
+    my $other = type_string CORE::shift;
 
     return $self gt $other ? 1 : 0;
 }
@@ -50,7 +50,7 @@ sub gt {
 
 sub gte {
     my $self  = CORE::shift;
-    my $other = type_str CORE::shift;
+    my $other = type_string CORE::shift;
 
     return $self ge $other ? 1 : 0;
 }
@@ -58,7 +58,7 @@ sub gte {
 
 sub lt {
     my $self  = CORE::shift;
-    my $other = type_str CORE::shift;
+    my $other = type_string CORE::shift;
 
     return $self lt $other ? 1 : 0;
 }
@@ -66,7 +66,7 @@ sub lt {
 
 sub lte {
     my $self  = CORE::shift;
-    my $other = type_str CORE::shift;
+    my $other = type_string CORE::shift;
 
     return $self le $other ? 1 : 0;
 }
@@ -74,7 +74,7 @@ sub lte {
 
 sub ne {
     my $self  = CORE::shift;
-    my $other = type_str CORE::shift;
+    my $other = type_string CORE::shift;
 
     return $self ne $other ? 1 : 0;
 }
@@ -111,10 +111,10 @@ sub hex {
 
 sub index {
     my ($self, $substr, $pos) = @_;
-    type_str $substr;
+    type_string $substr;
     return CORE::index $self, $substr if scalar @_ == 2;
 
-    type_num $pos;
+    type_number $pos;
     return CORE::index $self, $substr, $pos
 }
 
@@ -156,10 +156,10 @@ sub reverse {
 
 sub rindex {
     my ($self, $substr, $pos) = @_;
-    type_str $substr;
+    type_string $substr;
     return CORE::rindex $self, $substr if !defined $pos;
 
-    type_num $pos;
+    type_number $pos;
     return CORE::rindex $self, $substr, $pos;
 }
 
@@ -175,10 +175,10 @@ sub snakecase {
 
 sub split {
     my ($self, $regexp, $limit) = @_;
-    type_rref $regexp;
+    type_regexpref $regexp;
     return [CORE::split /$regexp/, $self] if !defined $limit;
 
-    type_num $limit;
+    type_number $limit;
     return [CORE::split /$regexp/, $self, $limit];
 }
 
@@ -270,7 +270,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 

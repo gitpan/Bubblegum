@@ -5,12 +5,11 @@ use Bubblegum::Syntax -types;
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 sub do {
     my $self = CORE::shift;
-    my $code = type_cref CORE::shift;
-
+    my $code = type_coderef CORE::shift;
     local $_ = $self;
     return $code->($self);
 }

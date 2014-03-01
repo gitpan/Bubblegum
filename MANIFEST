@@ -7,7 +7,6 @@ META.yml
 Makefile.PL
 README
 README.mkdn
-TODO
 cpanfile
 lib/Bubblegum.pm
 lib/Bubblegum/Class.pm
@@ -74,8 +73,3 @@ t/bubblegum/wrapper/dumper.t
 t/bubblegum/wrapper/encoder.t
 t/bubblegum/wrapper/json.t
 t/bubblegum/wrapper/yaml.t
-tags
-todos/00-short-syntax
-todos/01-optional-dependencies
-todos/02-coercive-psuedo-objects
-todos/03-exporter

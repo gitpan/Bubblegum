@@ -8,7 +8,7 @@ use warnings;
 
 use base 'Exception::Tiny';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 sub data {
     return shift->{data};

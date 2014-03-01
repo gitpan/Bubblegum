@@ -8,13 +8,13 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 
 
 sub downto {
     my $self = CORE::shift;
-    my $other = type_num CORE::shift;
+    my $other = type_number CORE::shift;
 
     return [CORE::reverse $other..$self];
 }
@@ -22,7 +22,7 @@ sub downto {
 
 sub eq {
     my $self  = CORE::shift;
-    my $other = type_num CORE::shift;
+    my $other = type_number CORE::shift;
 
     return $self == $other ? 1 : 0;
 }
@@ -39,7 +39,7 @@ sub eqtv {
 
 sub format {
     my $self   = CORE::shift;
-    my $format = type_str CORE::shift;
+    my $format = type_string CORE::shift;
 
     return CORE::sprintf $format, $self;
 }
@@ -47,7 +47,7 @@ sub format {
 
 sub gt {
     my $self  = CORE::shift;
-    my $other = type_num CORE::shift;
+    my $other = type_number CORE::shift;
 
     return $self > $other ? 1 : 0;
 }
@@ -55,7 +55,7 @@ sub gt {
 
 sub gte {
     my $self  = CORE::shift;
-    my $other = type_num CORE::shift;
+    my $other = type_number CORE::shift;
 
     return $self >= $other ? 1 : 0;
 }
@@ -63,7 +63,7 @@ sub gte {
 
 sub lt {
     my $self  = CORE::shift;
-    my $other = type_num CORE::shift;
+    my $other = type_number CORE::shift;
 
     return $self < $other ? 1 : 0;
 }
@@ -71,7 +71,7 @@ sub lt {
 
 sub lte {
     my $self  = CORE::shift;
-    my $other = type_num CORE::shift;
+    my $other = type_number CORE::shift;
 
     return $self <= $other ? 1 : 0;
 }
@@ -79,7 +79,7 @@ sub lte {
 
 sub ne {
     my $self  = CORE::shift;
-    my $other = type_num CORE::shift;
+    my $other = type_number CORE::shift;
 
     return $self != $other ? 1 : 0;
 }
@@ -87,7 +87,7 @@ sub ne {
 
 sub to {
     my $self  = CORE::shift;
-    my $range = type_num CORE::shift;
+    my $range = type_number CORE::shift;
 
     return [$self..$range] if $self <= $range;
     return [CORE::reverse($range..$self)];
@@ -96,7 +96,7 @@ sub to {
 
 sub upto {
     my $self = CORE::shift;
-    my $other = type_num CORE::shift;
+    my $other = type_number CORE::shift;
 
     return [$self..$other];
 }
@@ -115,7 +115,7 @@ Bubblegum::Object::Integer - Common Methods for Operating on Integers
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 

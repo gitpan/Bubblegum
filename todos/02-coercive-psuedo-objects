@@ -1,6 +1,0 @@
-# COERCION FUNCTIONALITY ACROSS ROLES
-
-use Bubblegum::Syntax -coerce;
-1  + '';
-[] + [1];
-{} + {};

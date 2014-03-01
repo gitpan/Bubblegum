@@ -15,7 +15,7 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One  ();
 use Scalar::Util ();
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 
 
@@ -38,7 +38,7 @@ sub count {
 
 sub defined {
     my $self  = CORE::shift;
-    my $index = type_num CORE::shift;
+    my $index = type_number CORE::shift;
 
     return CORE::defined $self->[$index];
 }
@@ -46,7 +46,7 @@ sub defined {
 
 sub delete {
     my $self  = CORE::shift;
-    my $index = type_num CORE::shift;
+    my $index = type_number CORE::shift;
 
     return CORE::delete $self->[$index];
 }
@@ -54,7 +54,7 @@ sub delete {
 
 sub each {
     my $self = CORE::shift;
-    my $code = type_cref CORE::shift;
+    my $code = type_coderef CORE::shift;
 
     my $i=0;
     foreach my $value (@$self) {
@@ -67,7 +67,7 @@ sub each {
 
 sub each_key {
     my $self = CORE::shift;
-    my $code = type_cref CORE::shift;
+    my $code = type_coderef CORE::shift;
 
     $code->($_) for (0..$#{$self});
     return $self;
@@ -76,8 +76,8 @@ sub each_key {
 
 sub each_n_values {
     my $self   = CORE::shift;
-    my $number = $_[0] ? type_num CORE::shift : 2;
-    my $code   = type_cref CORE::shift;
+    my $number = $_[0] ? type_number CORE::shift : 2;
+    my $code   = type_coderef CORE::shift;
     my @values = @$self;
 
     $code->(CORE::splice @values, 0, $number) while @values;
@@ -87,7 +87,7 @@ sub each_n_values {
 
 sub each_value {
     my $self = CORE::shift;
-    my $code = type_cref CORE::shift;
+    my $code = type_coderef CORE::shift;
 
     $code->($self->[$_]) for (0..$#{$self});
     return $self;
@@ -104,7 +104,7 @@ sub empty {
 
 sub exists {
     my $self  = CORE::shift;
-    my $index = type_num CORE::shift;
+    my $index = type_number CORE::shift;
     return CORE::exists $self->[$index];
 }
 
@@ -117,14 +117,14 @@ sub first {
 
 sub get {
     my $self  = CORE::shift;
-    my $index = type_num CORE::shift;
+    my $index = type_number CORE::shift;
     return $self->[$index];
 }
 
 
 sub grep {
     my $self = CORE::shift;
-    my $code = type_cref CORE::shift;
+    my $code = type_coderef CORE::shift;
     return [CORE::grep { $code->($_) } @$self];
 }
 
@@ -148,7 +148,7 @@ sub iterator {
 
 sub join {
     my $self = CORE::shift;
-    my $separator = type_str CORE::shift if $_[0];
+    my $separator = type_string CORE::shift if $_[0];
     return CORE::join $separator // '', @$self;
 }
 
@@ -157,7 +157,7 @@ sub keyed {
     my $self = CORE::shift;
     my @keys = @_;
 
-    type_str $_ for @keys;
+    type_string $_ for @keys;
 
     my $i=0;
     return { CORE::map { $_ => $self->[$i++] } @keys };
@@ -190,7 +190,7 @@ sub list {
 
 sub map {
     my $self = CORE::shift;
-    my $code = type_cref CORE::shift;
+    my $code = type_coderef CORE::shift;
     return [CORE::map { $code->($_) } @$self];
 }
 
@@ -315,7 +315,7 @@ sub rsort {
 
 sub set {
     my $self  = CORE::shift;
-    my $index = type_num CORE::shift;
+    my $index = type_number CORE::shift;
     return $self->[$index] = CORE::shift;
 }
 
@@ -335,7 +335,7 @@ sub slice {
     my $self = CORE::shift;
     my @indicies = @_;
 
-    type_num $_ for @indicies;
+    type_number $_ for @indicies;
 
     return [@$self[@indicies]];
 }
@@ -343,7 +343,7 @@ sub slice {
 
 sub sort {
     my $self = CORE::shift;
-    my $code = type_cref CORE::shift if $_[0];
+    my $code = type_coderef CORE::shift if $_[0];
     $code ||= sub { $a cmp $b };
     return [CORE::sort { $code->($a, $b) } @$self];
 }
@@ -406,7 +406,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 

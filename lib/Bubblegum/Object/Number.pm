@@ -7,7 +7,7 @@ use Bubblegum::Syntax -types;
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 
 
@@ -19,7 +19,7 @@ sub abs {
 
 sub atan2 {
     my $self = CORE::shift;
-    my $x    = type_num CORE::shift;
+    my $x    = type_number CORE::shift;
     return CORE::atan2 $self, $x;
 }
 
@@ -32,7 +32,7 @@ sub cos {
 
 sub decr {
     my $self = CORE::shift;
-    my $n    = type_num CORE::shift if $_[0];
+    my $n    = type_number CORE::shift if $_[0];
     return $self - ($n || 1);
 }
 
@@ -51,7 +51,7 @@ sub hex {
 
 sub incr {
     my $self = CORE::shift;
-    my $n    = type_num CORE::shift if $_[0];
+    my $n    = type_number CORE::shift if $_[0];
     return $self + ($n || 1);
 }
 
@@ -70,7 +70,7 @@ sub log {
 
 sub mod {
     my $self    = CORE::shift;
-    my $divisor = type_num CORE::shift;
+    my $divisor = type_number CORE::shift;
     return $self % $divisor;
 }
 
@@ -83,7 +83,7 @@ sub neg {
 
 sub pow {
     my $self = CORE::shift;
-    my $n    = type_num CORE::shift;
+    my $n    = type_number CORE::shift;
     return $self ** $n;
 }
 
@@ -143,7 +143,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 

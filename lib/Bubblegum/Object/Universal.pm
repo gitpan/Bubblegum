@@ -6,23 +6,23 @@ use Class::Forward;
 use Bubblegum::Class 'with';
 use Bubblegum::Syntax -types, 'load', 'raise';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 
 
 sub instance {
     my $self  = CORE::shift;
     my $class = load 'Bubblegum::Object::Instance';
-    return type_obj $class->new(data => $self);
+    return type_object $class->new(data => $self);
 }
 
 
 sub wrapper {
     my $self    = CORE::shift;
-    my $name    = type_str CORE::shift;
+    my $name    = type_string CORE::shift;
     my $space   = 'Bubblegum::Wrapper';
     my $wrapper = Class::Forward->new(namespace => $space)->forward($name);
-    my $plugin  = type_class(load($wrapper));
+    my $plugin  = type_classname(load($wrapper));
     return $plugin->new(data => $self) if $plugin;
 }
 
@@ -55,7 +55,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
