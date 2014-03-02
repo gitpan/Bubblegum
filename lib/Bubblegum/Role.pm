@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.16'; # VERSION
 
 sub import {
     my $target = caller;
@@ -32,7 +32,7 @@ Bubblegum::Role - Class Component System for Bubblegum via Moo::Role
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -46,7 +46,7 @@ version 0.15
         return $self->balance($amount);
     }
 
-    sub withdrawl {
+    sub withdrawal {
         my $self = shift;
         my $amount = $self->balance - shift // 0;
         return $self->balance($amount);
@@ -61,7 +61,7 @@ version 0.15
 And elsewhere:
 
     my $account = BankAccount->new(balance => 100000);
-    say $account->withdrawl(1500);
+    say $account->withdrawal(1500);
 
 =head1 DESCRIPTION
 

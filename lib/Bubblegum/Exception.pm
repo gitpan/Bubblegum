@@ -9,7 +9,7 @@ use warnings;
 
 use base 'Exception::Tiny';
 
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.16'; # VERSION
 
 sub data {
     return shift->{data};
@@ -30,7 +30,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 

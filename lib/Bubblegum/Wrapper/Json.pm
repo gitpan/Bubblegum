@@ -7,7 +7,7 @@ use JSON::Tiny ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.16'; # VERSION
 
 
 
@@ -38,7 +38,7 @@ Bubblegum::Wrapper::Json - Bubblegum Wrapper around JSON Serialization
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 

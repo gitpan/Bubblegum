@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.16'; # VERSION
 
 sub import {
     my $target = caller;
@@ -30,7 +30,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -42,9 +42,9 @@ version 0.15
     has 'firstname';
     has 'lastname';
 
-    sub say_hello {
-        my $self    = type_object shift;
-        my $subject = type_string shift;
+    sub greet {
+        my ($self, $subject) =
+            (type_object shift, type_string shift);
 
         return sprintf 'Hello %s. My name is %s, nice to meet you.',
             $subject->titlecase, $self->firstname->titlecase;
@@ -53,7 +53,7 @@ version 0.15
 And elsewhere:
 
     my $jeff = Person->new(firstname => 'jeffrey');
-    say $jeff->say_hello('amanda');
+    say $jeff->greet('amanda');
 
 =head1 DESCRIPTION
 

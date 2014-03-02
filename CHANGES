@@ -1,6 +1,18 @@
 Changelog for Bubblegum
 
-0.15 2014-03-02T08:52:20
+0.16 2014-03-02T16:43:36
+ - Updated Makefile and README.
+ - Insignificant cosmetic changes.
+
+0.15 2014-03-02T08:52:37
+ - v0.15
+   
+    - Updated the README.
+    - Fixed hypocracy bug in Bubblegum::Object::Universal.
+    - Added POD for Bubblegum Class, Exception, Role and Singleton.
+    - Added -typing export group to Bubblegum::Syntax.
+    - Miscellaneous cleanup and fixed a bug in the universal autoload
+   routine.
  - Updated the README.
  - Fixed hypocracy bug in Bubblegum::Object::Universal.
  - Added POD for Bubblegum Class, Exception, Role and Singleton.
