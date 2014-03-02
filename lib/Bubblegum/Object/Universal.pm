@@ -6,7 +6,7 @@ use Class::Forward;
 use Bubblegum::Class 'with';
 use Bubblegum::Syntax -types, 'load', 'raise';
 
-our $VERSION = '0.14'; # VERSION
+our $VERSION = '0.15'; # VERSION
 
 
 
@@ -28,17 +28,21 @@ sub wrapper {
 
 sub AUTOLOAD {
     my $self  = shift;
-    my $class = __PACKAGE__;
-    my $name  = eval "\$${class}::AUTOLOAD" or die $@;
-    my ($method) = $name =~ /::([^:]+)$/;
+    my ($class, $method) = split /::(\w+)$/, our $AUTOLOAD;
 
-    if ($method) {
-        my $plugin = eval { wrapper($self, $method) };
+    # hypocracy bug
+    if ($self->can($method)) {
+        unshift @_, $self;
+        goto $self->can($method);
+    }
+
+    # try plugin
+    if (my $plugin = eval {wrapper($self, $method)}) {
         return $plugin->new(@_, data => $self) if $plugin;
     }
 
     raise CORE::sprintf q(Can't locate object method "%s" via package "%s"),
-        $method, ((ref $_[0] || $_[0]) || 'main');
+        $method, ((ref $self || $self) || 'main');
 }
 
 1;
@@ -55,7 +59,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 

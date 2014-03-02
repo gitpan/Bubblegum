@@ -2,13 +2,13 @@ NAME
     Bubblegum - Opinionated Modern Perl Development Framework
 
 VERSION
-    version 0.14
+    version 0.15
 
 SYNOPSIS
         package Person;
 
         use Bubblegum::Class;
-        use Bubblegum::Syntax -types;
+        use Bubblegum::Syntax -typing;
 
         has 'firstname';
         has 'lastname';

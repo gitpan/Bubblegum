@@ -10,7 +10,7 @@ use Bubblegum::Syntax 'raise';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.14'; # VERSION
+our $VERSION = '0.15'; # VERSION
 
 
 sub BUILD {
@@ -52,7 +52,7 @@ Bubblegum::Wrapper::Digest - Bubblegum Wrapper around Hashing Algorithms
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 

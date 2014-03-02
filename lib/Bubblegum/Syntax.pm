@@ -28,7 +28,8 @@ use Hash::Merge::Simple 'merge';
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.14'; # VERSION
+our $VERSION = '0.15'; # VERSION
+
 
 
 
@@ -131,7 +132,17 @@ our %EXPORT_TAGS = (
         my $name  = 'EXPORT_TAGS';
         my $tags  = \%{"${class}::${name}"};
         $tags->{attr}->(@_);
-        return @{$tags->{constraints}}, @{$tags->{isas}}, @{$tags->{nots}};
+        return @{$tags->{constraints}},
+            @{$tags->{isas}}, @{$tags->{nots}};
+    },
+    typing => sub {
+        no strict 'refs';
+        my $class = shift;
+        my $name  = 'EXPORT_TAGS';
+        my $tags  = \%{"${class}::${name}"};
+        $tags->{attr}->(@_);
+        return @{$tags->{types}}, @{$tags->{typesof}},
+            @{$tags->{isas}}, @{$tags->{nots}};
     },
     utils => sub {
         return @UTILS;
@@ -199,8 +210,9 @@ our %EXPORT_TAGS = (
                 push @EXPORT_OK, "_$name";
                 push @{$EXPORT_TAGS{constraints}}, "_$name";
                 *{"${package}::_${name}"} = sub (;*) {
-                    return $package->can("typeof_$name") if !@_;
-                    goto   $package->can("type_$name");
+                    !@_ # two-in-one function
+                    ? goto $package->can("typeof_$name")
+                    : goto $package->can("type_$name");
                 };
             }
         }
@@ -352,19 +364,16 @@ Bubblegum::Syntax - Common Helper Functions for Structuring Applications
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 
     package Server;
 
     use Bubblegum::Class;
-    use Bubblegum::Syntax -typesof;
+    use Bubblegum::Syntax -minimal;
 
-    has config => (
-        is  => 'ro',
-        isa => typeof_hashref
-    );
+    has _hashref, 'config';
 
     package main;
 
@@ -530,6 +539,18 @@ will automatically be expanded and assigned data from the default array.
     # is equivelent to
     sub { my $output = shift; say $output; };
 
+    # just as ...
+    will '$a;$b; return $b - $a';
+
+    # is equivelent to
+    sub { my $a = shift; my $b = shift; return $b - $a; };
+
+    # as well as ...
+    will '%a; return keys %a';
+
+    # is equivelent to
+    sub { my %a = @_; return keys %a; };
+
 =head1 EXPORTS
 
 By default, no functions are exported when using this package, all functionality
@@ -598,13 +619,12 @@ is the equivalent of:
 =head2 -contraints
 
 The constraints export group exports all functions which have the C<_> prefix
-and provides functionality similar to importing the L</-attr>, L</-types> and
-L</-typesof> export groups except that the functions it emits are abbreviated
-multi-purpose versions of the functions emitted by the -types and -typesof
-export groups. These functions take a single argument and perform fatal type
-checking, or, if invoked with no arguments returns a code reference to the fatal
-type checking routine. The following is a list of functions exported by this
-group:
+and provides functionality similar to importing the L</-types> and L</-typesof>
+export groups except that the functions it emits are abbreviated multi-purpose
+versions of the functions emitted by the -types and -typesof export groups.
+These functions take a single argument and perform fatal type checking, or, if
+invoked with no arguments returns a code reference to the fatal type checking
+routine. The following is a list of functions exported by this group:
 
 =over 4
 
@@ -894,9 +914,10 @@ isa_undefined
 
 =head2 -minimal
 
-The minimal export group is exports all functions from the L</-contraints>,
-L</-isas>, and L</-nots> export groups and the functionality provided by the
-L</-attr> tag.
+The minimal export group exports all functions from the L</-contraints>,
+L</-isas>, and L</-nots> export groups as well as the functionality provided by
+the L</-attr> tag. It is a means to export the simplest type-related
+functionality.
 
 =head2 -nots
 
@@ -1338,6 +1359,13 @@ typeof_undef
 typeof_undefined
 
 =back
+
+=head2 -typing
+
+The typing export group exports all functions from the L</-types>, L</-typesof>,
+L</-isas>, and L</-nots> export groups as well as the functionality provided by
+the L</-attr> tag. It is a means to export all type-related functions minus the
+multi-purpose functions provided by the L</-contraints> export group.
 
 =head2 -utils
 

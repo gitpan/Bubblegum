@@ -1,11 +1,12 @@
 # ABSTRACT: Opinionated Modern Perl Development Framework
 package Bubblegum;
 
+use 5.10.0;
 use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.14'; # VERSION
+our $VERSION = '0.15'; # VERSION
 
 sub import {
     my $target = caller;
@@ -29,14 +30,14 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 
     package Person;
 
     use Bubblegum::Class;
-    use Bubblegum::Syntax -types;
+    use Bubblegum::Syntax -typing;
 
     has 'firstname';
     has 'lastname';
