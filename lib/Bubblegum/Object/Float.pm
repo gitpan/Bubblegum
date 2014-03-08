@@ -5,7 +5,7 @@ use Bubblegum::Syntax -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.17'; # VERSION
+our $VERSION = '0.18'; # VERSION
 
 # needs formatting routines ... not implemented
 

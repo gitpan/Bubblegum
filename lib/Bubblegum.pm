@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.17'; # VERSION
+our $VERSION = '0.18'; # VERSION
 
 sub import {
     my $target = caller;
@@ -30,7 +30,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 SYNOPSIS
 
@@ -223,7 +223,7 @@ Enforced consistency is a path many other programming languages and frameworks
 have adopted to great effect, so Bubblegum is one approach towards that end in
 Perl.
 
-=head2 Bubblegum Expressiveness
+=head2 Bubblegum Syntax
 
 Additional features and enhancements can be enabled by using the
 L<Bubblegum::Syntax> module which exports type constraint functions, data
@@ -251,17 +251,16 @@ about pushing Perl boundaries.
     package SpaceShip;
 
     use Bubblegum;
+    use Bubblegum::Syntax -minimal;
+
     use Function::Parameters;
     use Try::Tiny;
 
-    use Bubblegum::Syntax -typing;
-
-    has typeof_string,
-        ['name', 'code'];
+    has _string 'name';
 
     method fire ($times) {
         return $self->name->format('The %s has fired %d times',
-            type_number $times);
+            _number $times);
     }
 
     package main;

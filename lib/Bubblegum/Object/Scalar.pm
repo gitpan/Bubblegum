@@ -8,7 +8,7 @@ use Bubblegum::Syntax -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.17'; # VERSION
+our $VERSION = '0.18'; # VERSION
 
 
 
@@ -56,7 +56,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 SYNOPSIS
 

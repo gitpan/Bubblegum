@@ -28,7 +28,7 @@ use Hash::Merge::Simple 'merge';
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.17'; # VERSION
+our $VERSION = '0.18'; # VERSION
 
 
 
@@ -362,7 +362,7 @@ Bubblegum::Syntax - Common Helper Functions for Structuring Applications
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 SYNOPSIS
 

@@ -2,7 +2,7 @@ package Bubblegum::Object::Role::Coercive;
 
 use Bubblegum::Role 'requires';
 
-our $VERSION = '0.17'; # VERSION
+our $VERSION = '0.18'; # VERSION
 
 requires 'to_array';
 requires 'to_code';
