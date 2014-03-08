@@ -19,6 +19,7 @@ can_ok 'Bubblegum::Object::String', 'format';
 subtest 'test the format method' => sub {
     my $string = 'bobama';
     is '/home/bobama/etc', $string->format('/home/%s/etc'); # /home/bobama/etc
+    is '/home/bobama/etc', $string->format('/home/%s/%s', 'etc'); # /home/bobama/etc
 };
 
 can_ok 'Bubblegum::Object::String', 'gt';

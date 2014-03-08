@@ -5,7 +5,7 @@ use Bubblegum::Syntax -types;
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 sub do {
     my $self = CORE::shift;

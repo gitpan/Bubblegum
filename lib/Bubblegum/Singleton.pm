@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 sub import {
     my $target = caller;
@@ -45,7 +45,7 @@ Bubblegum::Singleton - Singleton Pattern for Bubblegum via Moo
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 
@@ -53,23 +53,21 @@ version 0.16
 
     use Bubblegum::Singleton;
 
-    has 'options' => (
+    has hostname => (
         is      => 'rw',
-        default => sub {{
-            auto_restart => 1
-        }}
+        default => 'localhost'
     );
 
 And elsewhere:
 
     my $config = Configuration->new;
-    $config->options->{auto_restart} = 0;
+    $config->hostname('example.com');
 
     $config = Configuration->new;
-    say $config->options->{auto_restart}; # 0
+    say $config->example; # example.com
 
     $config = $config->renew;
-    say $config->options->{auto_restart}; # 1
+    say $config->hostname; # localhost
 
 =head1 DESCRIPTION
 

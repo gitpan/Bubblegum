@@ -1,6 +1,19 @@
 Changelog for Bubblegum
 
-0.16 2014-03-02T16:43:36
+0.17 2014-03-08T00:47:56
+ - Updated Makefile and README.
+ - Requiring the RFC-compliant JSON::Tiny 0.45.
+ - Fixed typos and updated POD in Bubblegum, Class, Exception, Role, and
+   Singleton.
+ - Fixed typos and updated POD in Bubblegum::Syntax; the raise function
+   defaults to $@.
+ - Fixed string formatting method agrument error.
+
+0.16 2014-03-02T16:44:07
+ - v0.16
+   
+    - Updated Makefile and README.
+    - Insignificant cosmetic changes.
  - Updated Makefile and README.
  - Insignificant cosmetic changes.
 

@@ -9,7 +9,7 @@ use warnings;
 
 use base 'Exception::Tiny';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 sub data {
     return shift->{data};
@@ -30,11 +30,11 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 
-    Bubblegum::Exception->throw('oh nooo');
+    Bubblegum::Exception->throw('oh nooo!!!');
 
 =head1 DESCRIPTION
 
@@ -49,11 +49,12 @@ catches the exception.
             message => 'you broke something',
             data    => $something
         );
-    } catch ($exception) {
+    }
+    catch ($exception) {
         if ($exception->data->isa('Something')) {
             $exception->rethrow;
         }
-    }
+    };
 
 =head1 AUTHOR
 

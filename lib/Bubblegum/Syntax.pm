@@ -28,7 +28,7 @@ use Hash::Merge::Simple 'merge';
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 
 
@@ -304,7 +304,7 @@ sub quote {
 
 sub raise {
     my $class = 'Bubblegum::Exception';
-    @_ = ($class, message => shift, data => shift);
+    @_ = ($class, message => shift // $@, data => shift);
     goto $class->can('throw');
 }
 
@@ -340,14 +340,12 @@ sub which {
 
 
 sub will {
-    return eval sprintf
-        'sub {%s}',
-            join ';',
-                map { /^\s*\$\w+$/ ? "my$_=shift" : "$_" }
-                map { /^\s*\@\w+$/ ? "my$_=\@_"   : "$_" }
-                map { /^\s*\%\w+$/ ? "my$_=\@_"   : "$_" }
-            split /;/,
-            join ';', @_;
+    return eval
+        sprintf 'sub {%s}', join ';',
+            map { /^\s*\$\w+$/ ? "my$_=shift" : "$_" }
+            map { /^\s*\@\w+$/ ? "my$_=\@_"   : "$_" }
+            map { /^\s*\%\w+$/ ? "my$_=\@_"   : "$_" }
+        split /;/, join ';', @_;
 }
 
 1;
@@ -364,7 +362,7 @@ Bubblegum::Syntax - Common Helper Functions for Structuring Applications
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 
@@ -385,8 +383,8 @@ version 0.16
 
 =head1 DESCRIPTION
 
-Bubblegum::Syntax is a sugar layer for L<Bubblegum> applications with a focus on
-minimalism and data integrity.
+Bubblegum::Syntax is a sugar layer for L<Bubblegum> applications with a focus
+on minimalism and data integrity.
 
 =head1 FUNCTIONS
 
@@ -401,21 +399,25 @@ working directory.
 =head2 date
 
 The date function returns a L<DateTime::Tiny> instance from an epoch or common
-date phrase, e.g. yesterday.
+date phrase, e.g. yesterday. The first argument should be a date string parsable
+by L<Time::ParseDate>, it defaults to C<now>.
 
     my $date = date 'this friday';
 
 =head2 date_epoch
 
 The date_epoch function returns an epoch string from a common date phrase, e.g.
-yesterday.
+yesterday. The first argument should be a date string parsable by
+L<Time::ParseDate>, it defaults to C<now>.
 
-    my $date = date 'next friday';
+    my $date = date_epoch 'next friday';
 
 =head2 date_format
 
 The date_format function returns a formatted date string from an epoch string
-and a L<Time::Format> template.
+and a L<Time::Format> template. The first argument should be an epoch date
+string; the second argument should be a date format string recognized by
+L<Time::Format>, it defaults to C<yyyy-mm-ddThh:mm:ss>.
 
     my $date = date_format time;
 
@@ -534,21 +536,25 @@ callbacks and chained method calls. Note, if the string begins with a semi-colon
 separated list of variables, e.g. scalar, array or hash, then those variables
 will automatically be expanded and assigned data from the default array.
 
+    my $print = will '$output; say $output' or raise;
+    $print->('hello world');
+
+    # generates a coderef
     will '$output; say $output';
 
-    # is equivelent to
+    # is equivalent to
     sub { my $output = shift; say $output; };
 
     # just as ...
     will '$a;$b; return $b - $a';
 
-    # is equivelent to
+    # is equivalent to
     sub { my $a = shift; my $b = shift; return $b - $a; };
 
     # as well as ...
     will '%a; return keys %a';
 
-    # is equivelent to
+    # is equivalent to
     sub { my %a = @_; return keys %a; };
 
 =head1 EXPORTS
@@ -616,7 +622,7 @@ is the equivalent of:
         default => sub {}
     );
 
-=head2 -contraints
+=head2 -constraints
 
 The constraints export group exports all functions which have the C<_> prefix
 and provides functionality similar to importing the L</-types> and L</-typesof>
@@ -914,7 +920,7 @@ isa_undefined
 
 =head2 -minimal
 
-The minimal export group exports all functions from the L</-contraints>,
+The minimal export group exports all functions from the L</-constraints>,
 L</-isas>, and L</-nots> export groups as well as the functionality provided by
 the L</-attr> tag. It is a means to export the simplest type-related
 functionality.
@@ -1365,7 +1371,7 @@ typeof_undefined
 The typing export group exports all functions from the L</-types>, L</-typesof>,
 L</-isas>, and L</-nots> export groups as well as the functionality provided by
 the L</-attr> tag. It is a means to export all type-related functions minus the
-multi-purpose functions provided by the L</-contraints> export group.
+multi-purpose functions provided by the L</-constraints> export group.
 
 =head2 -utils
 

@@ -7,7 +7,7 @@ use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 sub refaddr {
     my $self = type_reference CORE::shift;

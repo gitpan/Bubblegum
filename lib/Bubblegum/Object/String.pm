@@ -11,7 +11,7 @@ with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 
 
@@ -36,7 +36,7 @@ sub format {
     my $self   = CORE::shift;
     my $format = type_string CORE::shift;
 
-    return CORE::sprintf $format, $self;
+    return CORE::sprintf $format, $self, @_;
 }
 
 
@@ -270,7 +270,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 

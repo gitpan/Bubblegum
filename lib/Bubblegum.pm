@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 sub import {
     my $target = caller;
@@ -30,21 +30,21 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 
     package Person;
 
     use Bubblegum::Class;
-    use Bubblegum::Syntax -typing;
+    use Bubblegum::Syntax -minimal;
 
     has 'firstname';
     has 'lastname';
 
     sub greet {
         my ($self, $subject) =
-            (type_object shift, type_string shift);
+            (&_object, &_string);
 
         return sprintf 'Hello %s. My name is %s, nice to meet you.',
             $subject->titlecase, $self->firstname->titlecase;
@@ -223,10 +223,10 @@ Enforced consistency is a path many other programming languages and frameworks
 have adopted to great effect, so Bubblegum is one approach towards that end in
 Perl.
 
-=head2 Bubblegum Syntax
+=head2 Bubblegum Expressiveness
 
 Additional features and enhancements can be enabled by using the
-L<Bubblegum::Syntax> module which exports type contraint functions, data
+L<Bubblegum::Syntax> module which exports type constraint functions, data
 validation functions and various utility functions. Hardcore Perl hackers around
 the world are working tirelessly around the clock to give us a better system for
 elegantly defining objects and classes using modern Perl best practices, ... but
@@ -239,6 +239,35 @@ in the meantime, have some Bubblegum.
 
     my $print = will '@output; say @output';
     $print->curry(1..10)->call; # 12345678910
+
+Bubblegum is designed as a construction-kit; having it's feature-set
+compartmentalized in such a way as to allow the maximum amount of
+interoperability. Bubblegum can be used along-side any of the many
+object-systems or development frameworks, e.g. L<Moo>, L<Moose>, L<Moops>,
+L<Kavorka>, L<Functions::Parameters> and hopefully p5-mop (once it's added to
+the Perl 5 core). Perl is all about choice and expressiveness; Bubblegum is all
+about pushing Perl boundaries.
+
+    package SpaceShip;
+
+    use Bubblegum;
+    use Function::Parameters;
+    use Try::Tiny;
+
+    use Bubblegum::Syntax -typing;
+
+    has typeof_string,
+        ['name', 'code'];
+
+    method fire ($times) {
+        return $self->name->format('The %s has fired %d times',
+            type_number $times);
+    }
+
+    package main;
+
+    my $dstar = SpaceShip->new(name => 'DeathStar');
+    say $dstar->fire(100);
 
 =head2 Bubblegum Topology
 
@@ -290,7 +319,7 @@ evolve.
 
 A Bubblegum::Wrapper module exists to extend Bubblegum itself and further extend
 the functionality of native data types by letting the data bless itself into
-wrappers (plugins) in a chainable discoverable manner. It's also useful as a
+wrappers (plugins) in a chain-able discoverable manner. It's also useful as a
 technique for coercion and indirect object instantiation. The following is an
 example:
 
@@ -312,7 +341,7 @@ various hashing algorithms to encode/decode messages.
 =head3 Dumper Wrapper
 
 The Bubblegum data-dumper wrapper, L<Bubblegum::Wrapper::Dumper>, provides
-functionality to encode/decode perl data structures.
+functionality to encode/decode Perl data structures.
 
 =head3 Encoder Wrapper
 
@@ -322,12 +351,12 @@ to content encoding/decoding functionality.
 =head3 JSON Wrapper
 
 The Bubblegum json wrapper, L<Bubblegum::Wrapper::Json>, provides functionality
-to encode/decode perl data structures as JSON documents.
+to encode/decode Perl data structures as JSON documents.
 
 =head3 YAML Wrapper
 
 The Bubblegum yaml wrapper, L<Bubblegum::Wrapper::Yaml>, provides functionality
-to encode/decode perl data structures as YAML documents.
+to encode/decode Perl data structures as YAML documents.
 
 =head2 Bubblegum Data Type Operations
 

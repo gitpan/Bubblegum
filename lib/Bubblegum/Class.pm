@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 sub import {
     my $target = caller;
@@ -32,7 +32,7 @@ Bubblegum::Class - Object Orientation for Bubblegum via Moo
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 
@@ -40,7 +40,7 @@ version 0.16
 
     use Bubblegum::Class;
 
-    has 'balance' => (
+    has balance => (
         is      => 'rw',
         default => 0
     );

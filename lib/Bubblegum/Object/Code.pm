@@ -7,7 +7,7 @@ use Bubblegum::Syntax -types;
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.16'; # VERSION
+our $VERSION = '0.17'; # VERSION
 
 
 
@@ -72,7 +72,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 
