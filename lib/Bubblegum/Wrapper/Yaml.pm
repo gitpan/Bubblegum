@@ -7,7 +7,7 @@ use YAML::Tiny ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.18'; # VERSION
+our $VERSION = '0.19'; # VERSION
 
 
 
@@ -40,7 +40,7 @@ Bubblegum::Wrapper::Yaml - Bubblegum Wrapper around YAML Serialization
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 

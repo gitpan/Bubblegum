@@ -11,7 +11,7 @@ with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.18'; # VERSION
+our $VERSION = '0.19'; # VERSION
 
 
 
@@ -270,7 +270,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 

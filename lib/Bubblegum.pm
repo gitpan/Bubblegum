@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.18'; # VERSION
+our $VERSION = '0.19'; # VERSION
 
 sub import {
     my $target = caller;
@@ -30,7 +30,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 
@@ -46,8 +46,10 @@ version 0.18
         my ($self, $subject) =
             (&_object, &_string);
 
-        return sprintf 'Hello %s. My name is %s, nice to meet you.',
-            $subject->titlecase, $self->firstname->titlecase;
+        return $subject->titlecase->format(
+            'Hello %s. My name is %s, nice to meet you.',
+                $self->firstname->titlecase
+        );
     }
 
 And elsewhere:
@@ -256,7 +258,7 @@ about pushing Perl boundaries.
     use Function::Parameters;
     use Try::Tiny;
 
-    has _string 'name';
+    has _string, 'name';
 
     method fire ($times) {
         return $self->name->format('The %s has fired %d times',

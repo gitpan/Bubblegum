@@ -6,7 +6,7 @@ use Class::Forward;
 use Bubblegum::Class 'with';
 use Bubblegum::Syntax -types, 'load', 'raise';
 
-our $VERSION = '0.18'; # VERSION
+our $VERSION = '0.19'; # VERSION
 
 
 
@@ -59,7 +59,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 
