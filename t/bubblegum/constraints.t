@@ -1,5 +1,5 @@
 use Test::More;
-use Bubblegum::Syntax;
+use Bubblegum::Constraints;
 
 my @typelib = qw(
     aref arrayref bool boolean class classname cref coderef def defined fh
@@ -9,7 +9,7 @@ my @typelib = qw(
 );
 {
     package isas;
-    use Bubblegum::Syntax -isas;
+    use Bubblegum::Constraints -isas;
     use Test::More;
     my @exports = map "isa_$_", @typelib;
     can_ok 'isas', $_ for @exports;
@@ -108,7 +108,7 @@ my @typelib = qw(
 }
 {
     package nots;
-    use Bubblegum::Syntax -nots;
+    use Bubblegum::Constraints -nots;
     use Test::More;
     my @exports = map "not_$_", @typelib;
     can_ok 'nots', $_ for @exports;
@@ -207,7 +207,7 @@ my @typelib = qw(
 }
 {
     package types;
-    use Bubblegum::Syntax -types;
+    use Bubblegum::Constraints -types;
     use Test::More;
     my @exports = map "type_$_", @typelib;
     can_ok 'types', $_ for @exports;
@@ -306,7 +306,7 @@ my @typelib = qw(
 }
 {
     package typesof;
-    use Bubblegum::Syntax -typesof;
+    use Bubblegum::Constraints -typesof;
     use Test::More;
     my @exports = map "typeof_$_", @typelib;
     can_ok 'typesof', $_ for @exports;
@@ -347,7 +347,7 @@ my @typelib = qw(
 }
 {
     package constraints;
-    use Bubblegum::Syntax -constraints;
+    use Bubblegum::Constraints -constraints;
     use Test::More;
     my @exports = map "_$_", @typelib;
     can_ok 'constraints', $_ for @exports;
@@ -481,7 +481,7 @@ my @typelib = qw(
 {
     package attrs;
     use Bubblegum::Class;
-    use Bubblegum::Syntax -attr, -typesof;
+    use Bubblegum::Constraints -attr, -typesof;
     use Test::More;
     # has [name];
     has 'id';
@@ -511,34 +511,8 @@ my @typelib = qw(
     ok do { eval {$attrs->email('root@local')}; $@ }; # read-only default
 }
 {
-    package utils;
-    use Bubblegum::Syntax -utils;
-    use Test::More;
-    can_ok 'utils', 'cwd';
-    can_ok 'utils', 'date';
-    can_ok 'utils', 'date_epoch';
-    can_ok 'utils', 'date_format';
-    can_ok 'utils', 'dump';
-    can_ok 'utils', 'file';
-    can_ok 'utils', 'find';
-    can_ok 'utils', 'here';
-    can_ok 'utils', 'home';
-    can_ok 'utils', 'load';
-    can_ok 'utils', 'merge';
-    can_ok 'utils', 'path';
-    can_ok 'utils', 'quote';
-    can_ok 'utils', 'raise';
-    can_ok 'utils', 'script';
-    can_ok 'utils', 'unquote';
-    can_ok 'utils', 'user';
-    can_ok 'utils', 'user_info';
-    can_ok 'utils', 'which';
-    can_ok 'utils', 'will';
-    is 'Bubblegum::Exception', ref do { eval {raise 'wtf'}; $@ };
-}
-{
     package misc::constraints;
-    use Bubblegum::Syntax qw(
+    use Bubblegum::Constraints qw(
         _aref _arrayref _bool _boolean _class _classname _cref _coderef _def
         _defined _fh _filehandle _glob _globref _href _hashref _int _integer
         _num _number _obj _object _ref _reference _rref _regexpref _sref
@@ -584,7 +558,7 @@ my @typelib = qw(
 }
 {
     package misc::isas;
-    use Bubblegum::Syntax qw(
+    use Bubblegum::Constraints qw(
         isa_aref isa_arrayref isa_bool isa_boolean isa_class isa_classname
         isa_cref isa_coderef isa_def isa_defined isa_fh isa_filehandle isa_glob
         isa_globref isa_href isa_hashref isa_int isa_integer isa_num isa_number
@@ -632,7 +606,7 @@ my @typelib = qw(
 }
 {
     package misc::minimal;
-    use Bubblegum::Syntax qw(
+    use Bubblegum::Constraints qw(
         _aref _arrayref _bool _boolean _class _classname _cref _coderef _def
         _defined _fh _filehandle _glob _globref _href _hashref _int _integer
         _num _number _obj _object _ref _reference _rref _regexpref _sref
@@ -761,7 +735,7 @@ my @typelib = qw(
     can_ok 'misc::minimal', 'not_value';
     package misc::minimal::class;
     use Bubblegum::Class;
-    use Bubblegum::Syntax -minimal;
+    use Bubblegum::Constraints -minimal;
     use Test::More;
     # has [name];
     has 'id';
@@ -792,7 +766,7 @@ my @typelib = qw(
 }
 {
     package misc::nots;
-    use Bubblegum::Syntax qw(
+    use Bubblegum::Constraints qw(
         not_aref not_arrayref not_bool not_boolean not_class not_classname
         not_cref not_coderef not_def not_defined not_fh not_filehandle not_glob
         not_globref not_href not_hashref not_int not_integer not_num not_number
@@ -840,7 +814,7 @@ my @typelib = qw(
 }
 {
     package misc::typesof;
-    use Bubblegum::Syntax qw(
+    use Bubblegum::Constraints qw(
         typeof_aref typeof_arrayref typeof_bool typeof_boolean typeof_class
         typeof_classname typeof_cref typeof_coderef typeof_def typeof_defined
         typeof_fh typeof_filehandle typeof_glob typeof_globref typeof_href
@@ -890,7 +864,7 @@ my @typelib = qw(
 }
 {
     package misc::types;
-    use Bubblegum::Syntax qw(
+    use Bubblegum::Constraints qw(
         type_aref type_arrayref type_bool type_boolean type_class type_classname
         type_cref type_coderef type_def type_defined type_fh type_filehandle
         type_glob type_globref type_href type_hashref type_int type_integer
@@ -938,7 +912,7 @@ my @typelib = qw(
 }
 {
     package misc::typing;
-    use Bubblegum::Syntax qw(
+    use Bubblegum::Constraints qw(
         type_aref type_arrayref type_bool type_boolean type_class type_classname
         type_cref type_coderef type_def type_defined type_fh type_filehandle
         type_glob type_globref type_href type_hashref type_int type_integer
@@ -1112,7 +1086,7 @@ my @typelib = qw(
     can_ok 'misc::typing', 'not_value';
     package misc::typing::class;
     use Bubblegum::Class;
-    use Bubblegum::Syntax -typing;
+    use Bubblegum::Constraints -typing;
     use Test::More;
     # has [name];
     has 'id';
@@ -1140,35 +1114,6 @@ my @typelib = qw(
     ok do { eval {$misc->email(undef)}; $@ };
     ok do { eval {$misc->name('sally')}; $@ }; # read-only default
     ok do { eval {$misc->email('root@local')}; $@ }; # read-only default
-}
-{
-    package misc::utils;
-    use Bubblegum::Syntax qw(
-        cwd date date_epoch date_format dump file find here home merge load
-        path quote raise script unquote user user_info which will
-    );
-    use Test::More;
-    can_ok 'misc::utils', 'cwd';
-    can_ok 'misc::utils', 'date';
-    can_ok 'misc::utils', 'date_epoch';
-    can_ok 'misc::utils', 'date_format';
-    can_ok 'misc::utils', 'dump';
-    can_ok 'misc::utils', 'file';
-    can_ok 'misc::utils', 'find';
-    can_ok 'misc::utils', 'here';
-    can_ok 'misc::utils', 'home';
-    can_ok 'misc::utils', 'load';
-    can_ok 'misc::utils', 'merge';
-    can_ok 'misc::utils', 'path';
-    can_ok 'misc::utils', 'quote';
-    can_ok 'misc::utils', 'raise';
-    can_ok 'misc::utils', 'script';
-    can_ok 'misc::utils', 'unquote';
-    can_ok 'misc::utils', 'user';
-    can_ok 'misc::utils', 'user_info';
-    can_ok 'misc::utils', 'which';
-    can_ok 'misc::utils', 'will';
-    is 'Bubblegum::Exception', ref do { eval {raise 'wtf'}; $@ };
 }
 
 done_testing;

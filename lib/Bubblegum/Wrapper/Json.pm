@@ -2,25 +2,24 @@
 package Bubblegum::Wrapper::Json;
 
 use Bubblegum::Class;
-
-use JSON::Tiny ();
+use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.19'; # VERSION
+our $VERSION = '0.20'; # VERSION
 
 
 
 sub decode {
     my $self = shift;
-    my $json = JSON::Tiny->new;
+    my $json = load_class('JSON::Tiny', -version => 0.45)->new;
     return $json->decode($self->data);
 }
 
 
 sub encode {
     my $self = shift;
-    my $json = JSON::Tiny->new;
+    my $json = load_class('JSON::Tiny', -version => 0.45)->new;
     return $json->encode($self->data);
 }
 
@@ -38,7 +37,7 @@ Bubblegum::Wrapper::Json - Bubblegum Wrapper around JSON Serialization
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 SYNOPSIS
 
@@ -53,7 +52,9 @@ version 0.19
 
 L<Bubblegum::Wrapper::Json> is a Bubblegum wrapper which provides the ability to
 endcode/decode JSON data structures. It is not necessary to use this module as
-it is loaded automatically by the L<Bubblegum> class.
+it is loaded automatically by the L<Bubblegum> class. B<Note>, in order to use
+this wrapper you will need to have L<JSON::Tiny> installed which is not a
+required Bubblegum dependency and should have been installed separately.
 
 =head1 METHODS
 

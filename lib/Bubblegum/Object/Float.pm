@@ -1,11 +1,11 @@
 package Bubblegum::Object::Float;
 
 use Bubblegum::Class 'with';
-use Bubblegum::Syntax -types;
+use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.19'; # VERSION
+our $VERSION = '0.20'; # VERSION
 
 # needs formatting routines ... not implemented
 

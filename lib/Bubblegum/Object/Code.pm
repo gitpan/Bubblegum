@@ -2,12 +2,12 @@
 package Bubblegum::Object::Code;
 
 use Bubblegum::Class 'with';
-use Bubblegum::Syntax -types;
+use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.19'; # VERSION
+our $VERSION = '0.20'; # VERSION
 
 
 
@@ -72,7 +72,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 SYNOPSIS
 

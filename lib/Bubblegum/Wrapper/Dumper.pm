@@ -2,12 +2,11 @@
 package Bubblegum::Wrapper::Dumper;
 
 use Bubblegum::Class;
-
 use Data::Dumper ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.19'; # VERSION
+our $VERSION = '0.20'; # VERSION
 
 
 
@@ -37,7 +36,7 @@ Bubblegum::Wrapper::Dumper - Bubblegum Wrapper around Data Dumping
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 SYNOPSIS
 

@@ -1,13 +1,13 @@
 package Bubblegum::Object::Role::Ref;
 
 use Bubblegum::Role 'with';
-use Bubblegum::Syntax -types;
+use Bubblegum::Constraints -types;
 
 use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.19'; # VERSION
+our $VERSION = '0.20'; # VERSION
 
 sub refaddr {
     my $self = type_reference CORE::shift;

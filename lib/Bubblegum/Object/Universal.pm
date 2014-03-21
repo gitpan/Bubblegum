@@ -1,18 +1,20 @@
 # ABSTRACT: Common Methods for Operating on Defined Values
 package Bubblegum::Object::Universal;
 
+use Bubblegum::Exception;
 use Class::Forward;
 
 use Bubblegum::Class 'with';
-use Bubblegum::Syntax -types, 'load', 'raise';
+use Bubblegum::Constraints 'type_classname', 'type_object', 'type_string';
+use Class::Load 'load_class';
 
-our $VERSION = '0.19'; # VERSION
+our $VERSION = '0.20'; # VERSION
 
 
 
 sub instance {
     my $self  = CORE::shift;
-    my $class = load 'Bubblegum::Object::Instance';
+    my $class = load_class 'Bubblegum::Object::Instance';
     return type_object $class->new(data => $self);
 }
 
@@ -22,7 +24,7 @@ sub wrapper {
     my $name    = type_string CORE::shift;
     my $space   = 'Bubblegum::Wrapper';
     my $wrapper = Class::Forward->new(namespace => $space)->forward($name);
-    my $plugin  = type_classname(load($wrapper));
+    my $plugin  = type_classname(load_class($wrapper));
     return $plugin->new(data => $self) if $plugin;
 }
 
@@ -41,8 +43,12 @@ sub AUTOLOAD {
         return $plugin->new(@_, data => $self) if $plugin;
     }
 
-    raise CORE::sprintf q(Can't locate object method "%s" via package "%s"),
-        $method, ((ref $self || $self) || 'main');
+    Bubblegum::Exception->throw(
+        $method->format(
+            q(Can't locate object method "%s" via package "%s"),
+                ((ref $self || $self) || 'main')
+        )
+    );
 }
 
 1;
@@ -59,7 +65,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 SYNOPSIS
 

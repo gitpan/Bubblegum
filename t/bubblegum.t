@@ -11,6 +11,9 @@ is_deeply \@ARGV, [qw(føø bar bāz)],
 ok $INC{'Bubblegum.pm'},
     'Bubblegum loaded';
 
+ok $INC{'Bubblegum/Constraints.pm'},
+    'Bubblegum::Constraints loaded';
+
 ok $INC{'Bubblegum/Role.pm'},
     'Bubblegum::Role loaded';
 
@@ -79,9 +82,6 @@ ok $INC{'Bubblegum/Object/Role/Indexed.pm'},
 
 ok $INC{'Bubblegum/Object/Role/Collection.pm'},
     'Bubblegum::Object::Role::Collection loaded';
-
-ok $INC{'Bubblegum/Syntax.pm'},
-    'Bubblegum::Syntax loaded';
 
 ok !$INC{'Bubblegum/Wrapper/Digest.pm'},
     'Bubblegum::Wrapper::Digest is not loaded';

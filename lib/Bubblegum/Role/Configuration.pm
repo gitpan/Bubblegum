@@ -6,7 +6,7 @@ use strict;
 use utf8::all;
 use warnings;
 
-use Bubblegum::Syntax;
+use Bubblegum::Constraints;
 use Class::Forward;
 use Import::Into;
 use Moo::Role;
@@ -19,7 +19,7 @@ use Module::Find 'usesub';
 
 use parent 'autobox';
 
-our $VERSION = '0.19'; # VERSION
+our $VERSION = '0.20'; # VERSION
 
 requires 'import';
 
@@ -40,7 +40,7 @@ sub prerequisites {
     'English'->import::into($target, '-no_match_vars');
 
     # autobox
-    $target->SUPER::import(%{$Bubblegum::Syntax::EXTS});
+    $target->SUPER::import(%{$Bubblegum::Constraints::EXTS});
 }
 
 1;

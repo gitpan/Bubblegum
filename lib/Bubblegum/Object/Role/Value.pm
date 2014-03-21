@@ -1,11 +1,11 @@
 package Bubblegum::Object::Role::Value;
 
 use Bubblegum::Role 'with';
-use Bubblegum::Syntax -types;
+use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.19'; # VERSION
+our $VERSION = '0.20'; # VERSION
 
 sub do {
     my $self = CORE::shift;
