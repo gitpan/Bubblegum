@@ -26,6 +26,7 @@ my %WriteMakefileArgs = (
     "Exception::Tiny" => "v0.2.1",
     "Exporter::Tiny" => "0.030",
     "Import::Into" => "1.001001",
+    "Module::Find" => 0,
     "Moo" => "1.003001",
     "Syntax::Keyword::Junction" => "0.003007",
     "Try::Tiny" => "0.18",
@@ -35,7 +36,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => 0
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.20",
+  "VERSION" => "0.21",
   "test" => {
     "TESTS" => "t/*.t t/bubblegum/*.t t/bubblegum/object/*.t t/bubblegum/object/role/*.t t/bubblegum/role/*.t t/bubblegum/wrapper/*.t"
   }
@@ -48,6 +49,7 @@ my %FallbackPrereqs = (
   "Exception::Tiny" => "v0.2.1",
   "Exporter::Tiny" => "0.030",
   "Import::Into" => "1.001001",
+  "Module::Find" => 0,
   "Moo" => "1.003001",
   "Syntax::Keyword::Junction" => "0.003007",
   "Try::Tiny" => "0.18",

@@ -3,6 +3,7 @@ requires "Class::Load" => "0.21";
 requires "Exception::Tiny" => "v0.2.1";
 requires "Exporter::Tiny" => "0.030";
 requires "Import::Into" => "1.001001";
+requires "Module::Find" => "0";
 requires "Moo" => "1.003001";
 requires "Syntax::Keyword::Junction" => "0.003007";
 requires "Try::Tiny" => "0.18";

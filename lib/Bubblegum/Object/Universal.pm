@@ -8,7 +8,7 @@ use Bubblegum::Class 'with';
 use Bubblegum::Constraints 'type_classname', 'type_object', 'type_string';
 use Class::Load 'load_class';
 
-our $VERSION = '0.20'; # VERSION
+our $VERSION = '0.21'; # VERSION
 
 
 
@@ -65,7 +65,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.20
+version 0.21
 
 =head1 SYNOPSIS
 

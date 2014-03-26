@@ -1,6 +1,14 @@
 Changelog for Bubblegum
 
-0.20 2014-03-21T17:49:00
+0.21 2014-03-26T11:12:36
+ - Updated Makefile and README.
+ - Miscellaneous cleanup and fixed missing dependency.
+
+0.20 2014-03-21T17:49:18
+ - v0.20
+   
+    - Trimmed dependencies and broke Bubblegum::Syntax out into a separate
+      dist.
  - Trimmed dependencies and broke Bubblegum::Syntax out into a separate
    dist.
 

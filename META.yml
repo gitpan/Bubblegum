@@ -19,6 +19,7 @@ requires:
   Exception::Tiny: v0.2.1
   Exporter::Tiny: 0.030
   Import::Into: 1.001001
+  Module::Find: 0
   Moo: 1.003001
   Syntax::Keyword::Junction: 0.003007
   Try::Tiny: 0.18
@@ -31,5 +32,5 @@ resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
   homepage: http://metacpan.org/release/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: 0.20
+version: 0.21
 x_authority: cpan:AWNCORP

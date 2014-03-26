@@ -15,7 +15,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.20'; # VERSION
+our $VERSION = '0.21'; # VERSION
 
 
 our $EXTS = {
@@ -53,54 +53,9 @@ my $TYPES = {
 
 our @EXPORT_OK;
 our %EXPORT_TAGS = (
-    attr => sub {
-        no strict 'refs';
-        no warnings 'redefine';
-        my $args   = pop;
-        my $target = $args->{into};
-        my $maker  = $target->can('has') or return;
-        *{"${target}::has"} = sub {
-            my $type    = shift if isa_coderef($_[0]);
-            my $names   = isa_aref($_[0]) ? $_[0] : [$_[0]];
-            my $builder = $_[1] if isa_coderef($_[1]);
-            if ((@_ == 1 xor @_ == 2) && $names) {
-                for my $name (@{$names}) {
-                    my %props = (is => 'ro');
-                    if ($type) {
-                        $props{isa} = $type;
-                    }
-                    if ($builder) {
-                        $props{builder} = "_build_${name}";
-                        *{"${target}::$props{builder}"} = $builder;
-                    }
-                    $maker->($name => (%props));
-                }
-            }
-            else {
-                $maker->(@_);
-            }
-            return;
-        };
-        return;
-    },
-    minimal => sub {
-        no strict 'refs';
-        my $class = shift;
-        my $name  = 'EXPORT_TAGS';
-        my $tags  = \%{"${class}::${name}"};
-        $tags->{attr}->(@_);
-        return @{$tags->{constraints}},
-            @{$tags->{isas}}, @{$tags->{nots}};
-    },
-    typing => sub {
-        no strict 'refs';
-        my $class = shift;
-        my $name  = 'EXPORT_TAGS';
-        my $tags  = \%{"${class}::${name}"};
-        $tags->{attr}->(@_);
-        return @{$tags->{types}}, @{$tags->{typesof}},
-            @{$tags->{isas}}, @{$tags->{nots}};
-    },
+    attr    => \&_handle_attr,
+    minimal => \&_handle_minimal,
+    typing  => \&_handle_typing,
 );
 {
     no strict 'refs';
@@ -173,6 +128,60 @@ our %EXPORT_TAGS = (
     }
 }
 
+sub _handle_attr {
+    no strict 'refs';
+    no warnings 'redefine';
+    my $args   = pop;
+    my $target = $args->{into};
+    my $maker  = $target->can('has') or return;
+
+    *{"${target}::has"} = sub {
+        my $type    = shift if isa_coderef($_[0]);
+        my $names   = isa_aref($_[0]) ? $_[0] : [$_[0]];
+        my $builder = $_[1] if isa_coderef($_[1]);
+        if ((@_ == 1 xor @_ == 2) && $names) {
+            for my $name (@{$names}) {
+                my %props = (is => 'ro');
+                if ($type) {
+                    $props{isa} = $type;
+                }
+                if ($builder) {
+                    $props{builder} = "_build_${name}";
+                    *{"${target}::$props{builder}"} = $builder;
+                }
+                $maker->($name => (%props));
+            }
+        }
+        else {
+            $maker->(@_);
+        }
+        return;
+    };
+    return;
+}
+
+sub _handle_minimal {
+    no strict 'refs';
+    my $class = shift;
+    my $name  = 'EXPORT_TAGS';
+    my $tags  = \%{"${class}::${name}"};
+
+    $tags->{attr}->(@_);
+    return @{$tags->{constraints}},
+        @{$tags->{isas}}, @{$tags->{nots}};
+}
+
+sub _handle_typing {
+    no strict 'refs';
+    my $class = shift;
+    my $name  = 'EXPORT_TAGS';
+    my $tags  = \%{"${class}::${name}"};
+
+    $tags->{attr}->(@_);
+    return @{$tags->{types}}, @{$tags->{typesof}},
+        @{$tags->{isas}}, @{$tags->{nots}};
+}
+
 
 
 
@@ -196,7 +205,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.20
+version 0.21
 
 =head1 SYNOPSIS
 
@@ -205,7 +214,7 @@ version 0.20
     use Bubblegum::Class;
     use Bubblegum::Constraints -typing;
 
-    has typeof_hashref, config => sub {
+    has typeof_object, config => sub {
         # load config data
     };
 
