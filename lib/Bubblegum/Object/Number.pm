@@ -7,15 +7,12 @@ use Bubblegum::Constraints -types;
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub abs {
     my $self = CORE::shift;
     return CORE::abs $self;
 }
-
 
 sub atan2 {
     my $self = CORE::shift;
@@ -23,12 +20,10 @@ sub atan2 {
     return CORE::atan2 $self, $x;
 }
 
-
 sub cos {
     my $self = CORE::shift;
     return CORE::cos $self;
 }
-
 
 sub decr {
     my $self = CORE::shift;
@@ -36,18 +31,15 @@ sub decr {
     return $self - ($n || 1);
 }
 
-
 sub exp {
     my $self = CORE::shift;
     return CORE::exp $self;
 }
 
-
 sub hex {
     my $self = CORE::shift;
     return CORE::sprintf '%#x', $self;
 }
-
 
 sub incr {
     my $self = CORE::shift;
@@ -55,18 +47,15 @@ sub incr {
     return $self + ($n || 1);
 }
 
-
 sub int {
     my $self = CORE::shift;
     return CORE::int $self;
 }
 
-
 sub log {
     my $self = CORE::shift;
     return CORE::log $self;
 }
-
 
 sub mod {
     my $self    = CORE::shift;
@@ -74,12 +63,10 @@ sub mod {
     return $self % $divisor;
 }
 
-
 sub neg {
     my $self = CORE::shift;
     return -$self;
 }
-
 
 sub pow {
     my $self = CORE::shift;
@@ -87,42 +74,35 @@ sub pow {
     return $self ** $n;
 }
 
-
 sub sin {
     my $self = CORE::shift;
     return CORE::sin $self;
 }
-
 
 sub sqrt {
     my $self = CORE::shift;
     return CORE::sqrt $self;
 }
 
-
 sub to_array {
     my $self = CORE::shift;
     return [$self];
 }
-
 
 sub to_code {
     my $self = CORE::shift;
     return sub {$self};
 }
 
-
 sub to_hash {
     my $self = CORE::shift;
     return {$self=>$self};
 }
 
-
 sub to_integer {
     my $self = CORE::shift;
     return $self;
 }
-
 
 sub to_string {
     my $self = CORE::shift;
@@ -143,7 +123,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -314,6 +294,8 @@ The to_integer method is used for coercion and simply returns the subject.
 
 The to_string method is used for coercion and simply returns the stringified
 version of the subject.
+
+=encoding utf8
 
 =head1 AUTHOR
 

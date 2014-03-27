@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.21'; # VERSION
+our $VERSION = '0.22'; # VERSION
 
 sub import {
     my $target = caller;
@@ -30,7 +30,6 @@ sub import {
     }
 }
 
-
 1;
 
 __END__
@@ -45,7 +44,7 @@ Bubblegum::Singleton - Singleton Pattern for Bubblegum via Moo
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -90,6 +89,8 @@ is equivalent to
     use utf8::all;
     use mro 'c3';
     use Moo;
+
+=encoding utf8
 
 =head1 AUTHOR
 

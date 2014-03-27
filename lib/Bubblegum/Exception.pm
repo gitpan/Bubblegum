@@ -3,18 +3,72 @@ package Bubblegum::Exception;
 
 use 5.10.0;
 
-use strict;
-use utf8::all;
-use warnings;
+use Data::Dumper ();
+use Scalar::Util ();
 
-use base 'Exception::Tiny';
+use Moo 'has';
+use overload bool => sub {1}, q{""} => 'as_string', fallback => 1;
 
-our $VERSION = '0.21'; # VERSION
+our $VERSION = '0.22'; # VERSION
 
-sub data {
-    return shift->{data};
+has file => (
+    is       => 'ro',
+    required => 1
+);
+
+has line => (
+    is       => 'ro',
+    required => 1
+);
+
+has message => (
+    is       => 'ro',
+    required => 1
+);
+
+has package => (
+    is       => 'ro',
+    required => 1
+);
+
+has subroutine => (
+    is       => 'ro',
+    required => 1
+);
+
+sub throw {
+    my $class = shift;
+    my %args  = @_ == 1 ? (message => $_[0]) : @_;
+
+    $args{message} = "An unknown error occurred in class ($class)"
+        unless defined $args{message} && $args{message} ne '';
+
+    $args{subroutine} = (caller(1))[3];
+    ($args{package}, $args{file}, $args{line}) = caller(0);
+
+    die $class->new(%args);
 }
 
+sub rethrow {
+    die shift;
+}
+
+sub as_string {
+    my $self = shift;
+    sprintf '%s at %s line %s.', $self->message, $self->file, $self->line;
+}
+
+sub dump {
+    local $Data::Dumper::Terse = 1;
+    Data::Dumper::Dumper(shift);
+}
+
+sub caught {
+    my($class, $e) = @_;
+    return if ref $class;
+    return unless Scalar::Util::blessed($e) && UNIVERSAL::isa($e, $class);
+    return $e;
+}
 
 1;
 
@@ -30,7 +84,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -46,15 +100,17 @@ catches the exception.
 
     try {
         Bubblegum::Exception->throw(
-            message => 'you broke something',
-            data    => $something
+            message => 'you broke something'
         );
     }
     catch ($exception) {
-        if ($exception->data->isa('Something')) {
+        if (Bubblegum::Exception->caught($exception)) {
+            # you belong to me
             $exception->rethrow;
         }
     };
+
+=encoding utf8
 
 =head1 AUTHOR
 

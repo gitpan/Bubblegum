@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.21'; # VERSION
+our $VERSION = '0.22'; # VERSION
 
 sub import {
     my $target = caller;
@@ -14,7 +14,6 @@ sub import {
 
     $class->prerequisites($target);
 }
-
 
 1;
 
@@ -30,7 +29,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -145,6 +144,8 @@ using Bubblegum:
         use Bubblegum::Class;                   # Bubblegum w/ Moo
         use Bubblegum::Role;                    # Bubblegum w/ Moo (Role)
         use Bubblegum::Singleton;               # Bubblegum w/ Moo (Singleton)
+
+=encoding utf8
 
 =head1 INTRODUCTION
 

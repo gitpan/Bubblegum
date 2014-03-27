@@ -5,8 +5,8 @@ use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.21'; # VERSION
+our $VERSION = '0.22'; # VERSION
 
-# needs formatting routines ... not implemented
+# needs formatting routines ... not implemented yet
 
 1;

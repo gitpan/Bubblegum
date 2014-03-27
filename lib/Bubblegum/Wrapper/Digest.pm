@@ -10,8 +10,7 @@ use Bubblegum::Exception;
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.21'; # VERSION
-
+our $VERSION = '0.22'; # VERSION
 
 sub BUILD {
     my $self = shift;
@@ -20,7 +19,6 @@ sub BUILD {
             ref($self)->format('Wrapper package "%s" requires string data')
         );
 }
-
 
 sub encode {
     my $self = shift;
@@ -53,7 +51,7 @@ Bubblegum::Wrapper::Digest - Bubblegum Wrapper around Hashing Algorithms
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -84,6 +82,8 @@ the default hashing algorithm is md5_hex;
     $data->digest->encode('sha1_hex');
     $data->digest->encode('hmac_sha1');
     $data->digest->encode('hmac_sha1_hex');
+
+=encoding utf8
 
 =head1 AUTHOR
 

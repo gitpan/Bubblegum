@@ -6,16 +6,13 @@ use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub decode {
     my $self = shift;
     my $json = load_class('JSON::Tiny', -version => 0.45)->new;
     return $json->decode($self->data);
 }
-
 
 sub encode {
     my $self = shift;
@@ -37,7 +34,7 @@ Bubblegum::Wrapper::Json - Bubblegum Wrapper around JSON Serialization
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -67,6 +64,8 @@ L<JSON::Tiny> module.
 
 The encode method serializes the Perl data structure using the L<JSON::Tiny>
 module.
+
+=encoding utf8
 
 =head1 AUTHOR
 

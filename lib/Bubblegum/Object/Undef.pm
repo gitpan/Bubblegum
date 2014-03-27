@@ -5,9 +5,7 @@ use Bubblegum::Class 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub defined {
     return 0
@@ -27,7 +25,7 @@ Bubblegum::Object::Undef - Common Methods for Operating on Undefined Values
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -50,6 +48,8 @@ by the L<Bubblegum> class.
     $nothing->defined ? 'Yes' : 'No'; # No
 
 The defined method always returns false.
+
+=encoding utf8
 
 =head1 AUTHOR
 

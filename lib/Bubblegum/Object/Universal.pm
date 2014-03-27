@@ -8,16 +8,13 @@ use Bubblegum::Class 'with';
 use Bubblegum::Constraints 'type_classname', 'type_object', 'type_string';
 use Class::Load 'load_class';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub instance {
     my $self  = CORE::shift;
     my $class = load_class 'Bubblegum::Object::Instance';
     return type_object $class->new(data => $self);
 }
-
 
 sub wrapper {
     my $self    = CORE::shift;
@@ -65,7 +62,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -107,6 +104,8 @@ an instance. Please see any one of the core Bubblegum wrappers, e.g.,
 L<Bubblegum::Wrapper::Digest>, L<Bubblegum::Wrapper::Dumper>,
 L<Bubblegum::Wrapper::Encoder>, L<Bubblegum::Wrapper::Json> or
 L<Bubblegum::Wrapper::Yaml>.
+
+=encoding utf8
 
 =head1 AUTHOR
 

@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.21'; # VERSION
+our $VERSION = '0.22'; # VERSION
 
 sub import {
     my $target = caller;
@@ -16,7 +16,6 @@ sub import {
     $class->prerequisites($target);
     Moo::Role->import::into($target, @export);
 }
-
 
 1;
 
@@ -32,7 +31,7 @@ Bubblegum::Role - Class Component System for Bubblegum via Moo::Role
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -89,6 +88,8 @@ is equivalent to
     use utf8::all;
     use mro 'c3';
     use Moo::Role;
+
+=encoding utf8
 
 =head1 AUTHOR
 

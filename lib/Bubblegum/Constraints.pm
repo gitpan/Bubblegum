@@ -7,7 +7,6 @@ use strict;
 use utf8::all;
 use warnings;
 
-use Bubblegum::Exception;
 use Try::Tiny;
 
 use Type::Params ();
@@ -15,8 +14,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.21'; # VERSION
-
+our $VERSION = '0.22'; # VERSION
 
 our $EXTS = {
     ARRAY     => 'Bubblegum::Object::Array',
@@ -131,6 +129,7 @@ our %EXPORT_TAGS = (
 sub _handle_attr {
     no strict 'refs';
     no warnings 'redefine';
+
     my $args   = pop;
     my $target = $args->{into};
     my $maker  = $target->can('has') or return;
@@ -145,9 +144,11 @@ sub _handle_attr {
                 if ($type) {
                     $props{isa} = $type;
                 }
-                if ($builder) {
+                if ($builder or $builder = $target->can("_build_${name}")) {
                     $props{builder} = "_build_${name}";
-                    *{"${target}::$props{builder}"} = $builder;
+                    unless ($target->can("_build_${name}")) {
+                        *{"${target}::$props{builder}"} = $builder;
+                    }
                 }
                 $maker->($name => (%props));
             }
@@ -162,6 +163,7 @@ sub _handle_attr {
 
 sub _handle_minimal {
     no strict 'refs';
+
     my $class = shift;
     my $name  = 'EXPORT_TAGS';
     my $tags  = \%{"${class}::${name}"};
@@ -173,6 +175,7 @@ sub _handle_minimal {
 
 sub _handle_typing {
     no strict 'refs';
+
     my $class = shift;
     my $name  = 'EXPORT_TAGS';
     my $tags  = \%{"${class}::${name}"};
@@ -181,15 +184,6 @@ sub _handle_typing {
     return @{$tags->{types}}, @{$tags->{typesof}},
         @{$tags->{isas}}, @{$tags->{nots}};
 }
-
-
-
-
-
-
-
-
-
 
 1;
 
@@ -205,7 +199,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -215,7 +209,7 @@ version 0.21
     use Bubblegum::Constraints -typing;
 
     has typeof_object, config => sub {
-        # load config data
+        # build config data
     };
 
 =head1 DESCRIPTION
@@ -224,13 +218,6 @@ Bubblegum::Constraints is the standard type-checking library for L<Bubblegum>
 applications with a focus on minimalism and data integrity.
 
 =head1 EXPORTS
-
-By default, no functions are exported when using this package, all functionality
-desired will need to be explicitly requested, and because many functions belong
-to a particular group of functions there are export tags which can be used to
-export sets of functions by group name. Any function can also be exported
-individually. The following are a list of functions and groups currently
-available:
 
 =head2 -attr
 
@@ -291,6 +278,28 @@ is the equivalent of:
     );
 
     sub _build_attr2 {
+        # ...
+    }
+
+also note, attribute builders are implied if a method is discovered with a name
+matching the pattern C<_build_${attribute_name}>, for example:
+
+    use Bubblegum::Constraints -attr;
+
+    has 'attr1';
+
+    sub _build_attr1 {
+        # ...
+    }
+
+is the equivalent of:
+
+    has 'attr1' => (
+        is      => 'ro',
+        builder => '_build_attr1',
+    );
+
+    sub _build_attr1 {
         # ...
     }
 
@@ -1044,6 +1053,17 @@ The typing export group exports all functions from the L</-types>, L</-typesof>,
 L</-isas>, and L</-nots> export groups as well as the functionality provided by
 the L</-attr> tag. It is a means to export all type-related functions minus the
 multi-purpose functions provided by the L</-constraints> export group.
+
+=encoding utf8
+
+=head1 EXPORTS
+
+By default, no functions are exported when using this package, all functionality
+desired will need to be explicitly requested, and because many functions belong
+to a particular group of functions there are export tags which can be used to
+export sets of functions by group name. Any function can also be exported
+individually. The following are a list of functions and groups currently
+available:
 
 =head1 AUTHOR
 

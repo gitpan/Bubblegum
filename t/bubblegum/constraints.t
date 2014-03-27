@@ -1101,6 +1101,9 @@ my @typelib = qw(
         is       => 'rw',
         required => 1
     );
+    # has w/builder implied
+    has 'duties';
+    sub _build_duties {['live','love','prosper']}
     ok do { eval {misc::typing::class->new}; $@ };
     ok do { eval {misc::typing::class->new(email => 12345)}; $@ };
     ok do { eval {misc::typing::class->new(employed => 'yes')}; $@ };
@@ -1109,6 +1112,7 @@ my @typelib = qw(
     is $misc->position, 'janitor';
     is $misc->employed, 1;
     is $misc->name, 'harry';
+    is_deeply $misc->duties, ['live','love','prosper'];
     ok !$misc->email;
     ok !$misc->id;
     ok do { eval {$misc->email(undef)}; $@ };

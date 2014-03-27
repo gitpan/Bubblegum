@@ -6,16 +6,13 @@ use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub decode {
     my $self = shift;
     my $yaml = load_class('YAML::Tiny', -version => 1.56)->new;
     return $yaml->read_string($self->data);
 }
-
 
 sub encode {
     my $self = shift;
@@ -39,7 +36,7 @@ Bubblegum::Wrapper::Yaml - Bubblegum Wrapper around YAML Serialization
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -69,6 +66,8 @@ L<YAML::Tiny> module.
 
 The encode method serializes the Perl data structure using the L<YAML::Tiny>
 module.
+
+=encoding utf8
 
 =head1 AUTHOR
 

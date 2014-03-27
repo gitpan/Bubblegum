@@ -8,14 +8,11 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Keyed';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub aslice {
     goto &array_slice;
 }
-
 
 sub array_slice {
     my $self = CORE::shift;
@@ -23,20 +20,17 @@ sub array_slice {
     return [@{$self}{@keys}];
 }
 
-
 sub defined {
     my $self = CORE::shift;
     my $key  = type_string CORE::shift;
     return CORE::defined $self->{$key};
 }
 
-
 sub delete {
     my $self = CORE::shift;
     my $key  = type_string CORE::shift;
     return CORE::delete $self->{$key};
 }
-
 
 sub each {
     my $self = CORE::shift;
@@ -49,7 +43,6 @@ sub each {
     return $self;
 }
 
-
 sub each_key {
     my $self = CORE::shift;
     my $code = type_coderef CORE::shift;
@@ -57,7 +50,6 @@ sub each_key {
     $code->($_) for CORE::keys %$self;
     return $self;
 }
-
 
 sub each_n_values {
     my $self   = CORE::shift;
@@ -69,7 +61,6 @@ sub each_n_values {
     return $self;
 }
 
-
 sub each_value {
     my $self = CORE::shift;
     my $code = type_coderef CORE::shift;
@@ -78,20 +69,17 @@ sub each_value {
     return $self;
 }
 
-
 sub empty {
     my $self = CORE::shift;
     CORE::delete @$self{CORE::keys%$self};
     return $self;
 }
 
-
 sub exists {
     my $self = CORE::shift;
     my $key  = type_string CORE::shift;
     return CORE::exists $self->{$key};
 }
-
 
 sub filter_exclude {
     my $self = CORE::shift;
@@ -102,7 +90,6 @@ sub filter_exclude {
         CORE::grep { not CORE::exists $i{$_} } CORE::keys %$self};
 }
 
-
 sub filter_include {
     my $self = CORE::shift;
     my @keys = map { type_string $_ } @_;
@@ -111,13 +98,11 @@ sub filter_include {
         @keys};
 }
 
-
 sub get {
     my $self = CORE::shift;
     my $key  = type_string CORE::shift;
     return $self->{$key};
 }
-
 
 sub hash_slice {
     my $self = CORE::shift;
@@ -125,11 +110,9 @@ sub hash_slice {
     return {CORE::map { $_ => $self->{$_} } @keys};
 }
 
-
 sub hslice {
     goto &hash_slice;
 }
-
 
 sub invert {
     my $self = CORE::shift;
@@ -148,7 +131,6 @@ sub invert {
     return $self;
 }
 
-
 sub iterator {
     my $self = CORE::shift;
     my @keys = CORE::keys %{$self};
@@ -160,12 +142,10 @@ sub iterator {
     }
 }
 
-
 sub keys {
     my $self = CORE::shift;
     return [CORE::keys %$self];
 }
-
 
 sub lookup {
     my $self = CORE::shift;
@@ -184,23 +164,19 @@ sub lookup {
     return $node;
 }
 
-
 sub pairs {
     goto &pairs_array;
 }
-
 
 sub pairs_array {
     my $self = CORE::shift;
     return [CORE::map { [ $_, $self->{$_} ] } CORE::keys %$self];
 }
 
-
 sub list {
     my $self = CORE::shift;
     return %$self;
 }
-
 
 sub merge {
     my $self = CORE::shift;
@@ -208,13 +184,11 @@ sub merge {
     return {%$self, %$hash};
 }
 
-
 sub reset {
     my $self = CORE::shift;
     @$self{CORE::keys%$self}=();
     return $self;
 }
-
 
 sub reverse {
     my $self = CORE::shift;
@@ -227,13 +201,11 @@ sub reverse {
     return {CORE::reverse %$temp};
 }
 
-
 sub set {
     my $self = CORE::shift;
     my $key  = type_string CORE::shift;
     return $self->{$key} = CORE::shift;
 }
-
 
 sub values {
     my $self = CORE::shift;
@@ -254,7 +226,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -521,6 +493,8 @@ argument.
 
 The values method returns an array reference consisting of the values of the
 elements in the subject.
+
+=encoding utf8
 
 =head1 AUTHOR
 

@@ -11,9 +11,7 @@ with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub eq {
     my $self  = CORE::shift;
@@ -21,7 +19,6 @@ sub eq {
 
     return $self eq $other ? 1 : 0;
 }
-
 
 sub eqtv {
     my $self  = CORE::shift;
@@ -31,14 +28,12 @@ sub eqtv {
     return ($self->type eq $other->type && $self eq $other) ? 1 : 0;
 }
 
-
 sub format {
     my $self   = CORE::shift;
     my $format = type_string CORE::shift;
 
     return CORE::sprintf $format, $self, @_;
 }
-
 
 sub gt {
     my $self  = CORE::shift;
@@ -47,14 +42,12 @@ sub gt {
     return $self gt $other ? 1 : 0;
 }
 
-
 sub gte {
     my $self  = CORE::shift;
     my $other = type_string CORE::shift;
 
     return $self ge $other ? 1 : 0;
 }
-
 
 sub lt {
     my $self  = CORE::shift;
@@ -63,7 +56,6 @@ sub lt {
     return $self lt $other ? 1 : 0;
 }
 
-
 sub lte {
     my $self  = CORE::shift;
     my $other = type_string CORE::shift;
@@ -71,14 +63,12 @@ sub lte {
     return $self le $other ? 1 : 0;
 }
 
-
 sub ne {
     my $self  = CORE::shift;
     my $other = type_string CORE::shift;
 
     return $self ne $other ? 1 : 0;
 }
-
 
 sub camelcase {
     my $self = CORE::shift;
@@ -88,13 +78,11 @@ sub camelcase {
     return $self;
 }
 
-
 sub chomp {
     my $self = CORE::shift;
     CORE::chomp $self;
     return $self;
 }
-
 
 sub chop {
     my $self = CORE::shift;
@@ -102,12 +90,10 @@ sub chop {
     return $self;
 }
 
-
 sub hex {
     my $self = CORE::shift;
     return CORE::hex $self;
 }
-
 
 sub index {
     my ($self, $substr, $pos) = @_;
@@ -118,41 +104,34 @@ sub index {
     return CORE::index $self, $substr, $pos
 }
 
-
 sub lc {
     my $self = CORE::shift;
     return CORE::lc $self;
 }
-
 
 sub lcfirst {
     my $self = CORE::shift;
     return CORE::lcfirst $self;
 }
 
-
 sub length {
     my $self = CORE::shift;
     return CORE::length $self;
 }
-
 
 sub lines {
     my $self = CORE::shift;
     return [CORE::split /\n+/, $self];
 }
 
-
 sub lowercase {
     goto &lc
 }
-
 
 sub reverse {
     my $self = CORE::shift;
     return CORE::reverse $self;
 }
-
 
 sub rindex {
     my ($self, $substr, $pos) = @_;
@@ -163,7 +142,6 @@ sub rindex {
     return CORE::rindex $self, $substr, $pos;
 }
 
-
 sub snakecase {
     my $self = CORE::shift;
     $self = CORE::lc("$self");
@@ -171,7 +149,6 @@ sub snakecase {
     $self =~ s/[^a-zA-Z0-9]+//g;
     return $self;
 }
-
 
 sub split {
     my ($self, $regexp, $limit) = @_;
@@ -182,13 +159,11 @@ sub split {
     return [CORE::split /$regexp/, $self, $limit];
 }
 
-
 sub strip {
     my $self = CORE::shift;
     $self =~ s/\s{2,}/ /g;
     return $self;
 }
-
 
 sub titlecase {
     my $self = CORE::shift;
@@ -196,36 +171,30 @@ sub titlecase {
     return $self;
 }
 
-
 sub to_array {
     my $self = CORE::shift;
     return ["$self"];
 }
-
 
 sub to_code {
     my $self = CORE::shift;
     return sub {"$self"};
 }
 
-
 sub to_hash {
     my $self = CORE::shift;
     return {"$self"=>"$self"};
 }
-
 
 sub to_integer {
     my $self = CORE::shift;
     return Scalar::Util::looks_like_number($self) ? 0 + $self : 0;
 }
 
-
 sub to_string {
     my $self = CORE::shift;
     return $self;
 }
-
 
 sub trim {
     my $self = CORE::shift;
@@ -233,23 +202,19 @@ sub trim {
     return $self;
 }
 
-
 sub uc {
     my $self = CORE::shift;
     return CORE::uc $self;
 }
-
 
 sub ucfirst {
     my $self = CORE::shift;
     return CORE::ucfirst $self;
 }
 
-
 sub uppercase {
     goto &uc;
 }
-
 
 sub words {
     my $self = CORE::shift;
@@ -270,7 +235,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -606,6 +571,8 @@ The uppercase method is an alias to the uc method.
 The words method splits the subject into a list of strings, separating each
 group of characters by 1 or more consecutive spaces, and returns that list as an
 array reference.
+
+=encoding utf8
 
 =head1 AUTHOR
 

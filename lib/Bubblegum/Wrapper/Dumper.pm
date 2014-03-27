@@ -6,15 +6,12 @@ use Data::Dumper ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub decode {
     my $self = shift;
     return eval $self->data;
 }
-
 
 sub encode {
     my $self = shift;
@@ -36,7 +33,7 @@ Bubblegum::Wrapper::Dumper - Bubblegum Wrapper around Data Dumping
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -64,6 +61,8 @@ L<Data::Dumper> module.
 
 The encode method serializes the Perl data structure using the L<Data::Dumper>
 module with the following options; Indent=0, Sortkeys=1, and Terse=1.
+
+=encoding utf8
 
 =head1 AUTHOR
 

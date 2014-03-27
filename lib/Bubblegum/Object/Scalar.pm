@@ -8,34 +8,28 @@ use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub and {
     my ($self, $other) =  @_;
     return $self && $other;
 }
 
-
 sub not {
     my ($self) =  @_;
     return !$self;
 }
-
 
 sub or {
     my ($self, $other) =  @_;
     return $self || $other;
 }
 
-
 sub repeat {
     my $self   = CORE::shift;
     my $number = type_number CORE::shift;
     return $self x $number;
 }
-
 
 sub xor {
     my ($self, $other) =  @_;
@@ -56,7 +50,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -127,6 +121,8 @@ of times specified by the argument.
 The xor method performs an exclusive OR operation using the subject as the
 lvalue and the argument as the rvalue and returns true if either but not both
 is true.
+
+=encoding utf8
 
 =head1 AUTHOR
 

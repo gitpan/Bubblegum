@@ -15,26 +15,21 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One  ();
 use Scalar::Util ();
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub all {
     my $self = CORE::shift;
     return Syntax::Keyword::Junction::All->new(@$self);
 }
 
-
 sub any {
     my $self = CORE::shift;
     return Syntax::Keyword::Junction::Any->new(@$self);
 }
 
-
 sub count {
     goto &length;
 }
-
 
 sub defined {
     my $self  = CORE::shift;
@@ -43,14 +38,12 @@ sub defined {
     return CORE::defined $self->[$index];
 }
 
-
 sub delete {
     my $self  = CORE::shift;
     my $index = type_number CORE::shift;
 
     return CORE::delete $self->[$index];
 }
-
 
 sub each {
     my $self = CORE::shift;
@@ -64,7 +57,6 @@ sub each {
     return $self;
 }
 
-
 sub each_key {
     my $self = CORE::shift;
     my $code = type_coderef CORE::shift;
@@ -72,7 +64,6 @@ sub each_key {
     $code->($_) for (0..$#{$self});
     return $self;
 }
-
 
 sub each_n_values {
     my $self   = CORE::shift;
@@ -84,7 +75,6 @@ sub each_n_values {
     return $self;
 }
 
-
 sub each_value {
     my $self = CORE::shift;
     my $code = type_coderef CORE::shift;
@@ -93,7 +83,6 @@ sub each_value {
     return $self;
 }
 
-
 sub empty {
     my $self = CORE::shift;
 
@@ -101,19 +90,16 @@ sub empty {
     return $self;
 }
 
-
 sub exists {
     my $self  = CORE::shift;
     my $index = type_number CORE::shift;
     return CORE::exists $self->[$index];
 }
 
-
 sub first {
     my $self = CORE::shift;
     return $self->[0];
 }
-
 
 sub get {
     my $self  = CORE::shift;
@@ -121,19 +107,16 @@ sub get {
     return $self->[$index];
 }
 
-
 sub grep {
     my $self = CORE::shift;
     my $code = type_coderef CORE::shift;
     return [CORE::grep { $code->($_) } @$self];
 }
 
-
 sub head {
     my $self = CORE::shift;
     return $self->[0];
 }
-
 
 sub iterator {
     my $self = CORE::shift;
@@ -145,13 +128,11 @@ sub iterator {
     }
 }
 
-
 sub join {
     my $self = CORE::shift;
     my $separator = type_string CORE::shift if $_[0];
     return CORE::join $separator // '', @$self;
 }
-
 
 sub keyed {
     my $self = CORE::shift;
@@ -163,37 +144,31 @@ sub keyed {
     return { CORE::map { $_ => $self->[$i++] } @keys };
 }
 
-
 sub keys {
     my $self = CORE::shift;
     return [0 .. $#{$self}];
 }
-
 
 sub last {
     my $self = CORE::shift;
     return $self->[-1];
 }
 
-
 sub length {
     my $self = CORE::shift;
     return CORE::scalar @$self;
 }
-
 
 sub list {
     my $self = CORE::shift;
     return (@$self);
 }
 
-
 sub map {
     my $self = CORE::shift;
     my $code = type_coderef CORE::shift;
     return [CORE::map { $code->($_) } @$self];
 }
-
 
 sub max {
     my $self = CORE::shift;
@@ -210,7 +185,6 @@ sub max {
     return $max;
 }
 
-
 sub min {
     my $self = CORE::shift;
     my $min;
@@ -226,12 +200,10 @@ sub min {
     return $min;
 }
 
-
 sub none {
     my $self = CORE::shift;
     return Syntax::Keyword::Junction::None->new(@$self);
 }
-
 
 sub nsort {
     my $self = CORE::shift;
@@ -239,17 +211,14 @@ sub nsort {
     return $self->sort($code);
 }
 
-
 sub one {
     my $self = CORE::shift;
     return Syntax::Keyword::Junction::One->new(@$self);
 }
 
-
 sub pairs {
     goto &pairs_array;
 }
-
 
 sub pairs_array {
     my $self = CORE::shift;
@@ -257,19 +226,16 @@ sub pairs_array {
     return [CORE::map +[$i++, $_], @$self];
 }
 
-
 sub pairs_hash {
     my $self = CORE::shift;
     my $i=0;
     return {CORE::map {$i++ => $_} @$self};
 }
 
-
 sub pop {
     my $self = CORE::shift;
     return CORE::pop @$self;
 }
-
 
 sub push {
     my $self = CORE::shift;
@@ -279,18 +245,15 @@ sub push {
     return $self;
 }
 
-
 sub random {
     my $self = CORE::shift;
     return @$self[rand(1+$#{$self})];
 }
 
-
 sub reverse {
     my $self = CORE::shift;
     return [CORE::reverse @$self];
 }
-
 
 sub rotate {
     my $self = CORE::shift;
@@ -298,13 +261,11 @@ sub rotate {
     return $self;
 }
 
-
 sub rnsort {
     my $self = CORE::shift;
     my $code = sub { $b <=> $a };
     return $self->sort($code);
 }
-
 
 sub rsort {
     my $self = CORE::shift;
@@ -312,24 +273,20 @@ sub rsort {
     return $self->sort($code);
 }
 
-
 sub set {
     my $self  = CORE::shift;
     my $index = type_number CORE::shift;
     return $self->[$index] = CORE::shift;
 }
 
-
 sub shift {
     my $self = CORE::shift;
     return CORE::shift @$self;
 }
 
-
 sub size {
     goto &length;
 }
-
 
 sub slice {
     my $self = CORE::shift;
@@ -340,14 +297,12 @@ sub slice {
     return [@$self[@indicies]];
 }
 
-
 sub sort {
     my $self = CORE::shift;
     my $code = type_coderef CORE::shift if $_[0];
     $code ||= sub { $a cmp $b };
     return [CORE::sort { $code->($a, $b) } @$self];
 }
-
 
 sub sum {
     my $self = CORE::shift;
@@ -363,12 +318,10 @@ sub sum {
     return $sum;
 }
 
-
 sub tail {
     my $self = CORE::shift;
     return [@$self[1 .. $#$self]];
 }
-
 
 sub unique {
     my $self = CORE::shift;
@@ -377,7 +330,6 @@ sub unique {
     return [CORE::grep { not $seen{$_}++ } @$self];
 }
 
-
 sub unshift {
     my $self = CORE::shift;
     my @args = @_;
@@ -385,7 +337,6 @@ sub unshift {
     CORE::unshift @$self, @args;
     return $self;
 }
-
 
 sub values {
     my $self = CORE::shift;
@@ -406,7 +357,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -849,6 +800,8 @@ returns itself. Note, this method modifies the subject.
 The values method returns an array reference consisting of the elements in the
 subject. This method essentially copies the content of the subject into a new
 container.
+
+=encoding utf8
 
 =head1 AUTHOR
 

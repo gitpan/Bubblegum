@@ -8,9 +8,7 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.21'; # VERSION
-
-
+our $VERSION = '0.22'; # VERSION
 
 sub downto {
     my $self = CORE::shift;
@@ -19,14 +17,12 @@ sub downto {
     return [CORE::reverse $other..$self];
 }
 
-
 sub eq {
     my $self  = CORE::shift;
     my $other = type_number CORE::shift;
 
     return $self == $other ? 1 : 0;
 }
-
 
 sub eqtv {
     my $self  = CORE::shift;
@@ -36,14 +32,12 @@ sub eqtv {
     return ($self->type eq $other->type && $self == $other) ? 1 : 0;
 }
 
-
 sub format {
     my $self   = CORE::shift;
     my $format = type_string CORE::shift;
 
     return CORE::sprintf $format, $self;
 }
-
 
 sub gt {
     my $self  = CORE::shift;
@@ -52,14 +46,12 @@ sub gt {
     return $self > $other ? 1 : 0;
 }
 
-
 sub gte {
     my $self  = CORE::shift;
     my $other = type_number CORE::shift;
 
     return $self >= $other ? 1 : 0;
 }
-
 
 sub lt {
     my $self  = CORE::shift;
@@ -68,14 +60,12 @@ sub lt {
     return $self < $other ? 1 : 0;
 }
 
-
 sub lte {
     my $self  = CORE::shift;
     my $other = type_number CORE::shift;
 
     return $self <= $other ? 1 : 0;
 }
-
 
 sub ne {
     my $self  = CORE::shift;
@@ -84,7 +74,6 @@ sub ne {
     return $self != $other ? 1 : 0;
 }
 
-
 sub to {
     my $self  = CORE::shift;
     my $range = type_number CORE::shift;
@@ -92,7 +81,6 @@ sub to {
     return [$self..$range] if $self <= $range;
     return [CORE::reverse($range..$self)];
 }
-
 
 sub upto {
     my $self = CORE::shift;
@@ -115,7 +103,7 @@ Bubblegum::Object::Integer - Common Methods for Operating on Integers
 
 =head1 VERSION
 
-version 0.21
+version 0.22
 
 =head1 SYNOPSIS
 
@@ -244,6 +232,8 @@ the argument, the range generated will be from least to greatest.
 The upto method returns an array reference containing a range of integers
 from the subject to the argument. Assumes the subject is lesser than the
 argument.
+
+=encoding utf8
 
 =head1 AUTHOR
 
