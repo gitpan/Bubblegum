@@ -14,7 +14,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.22'; # VERSION
+our $VERSION = '0.23'; # VERSION
 
 our $EXTS = {
     ARRAY     => 'Bubblegum::Object::Array',
@@ -199,7 +199,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.22
+version 0.23
 
 =head1 SYNOPSIS
 
@@ -216,6 +216,13 @@ version 0.22
 
 Bubblegum::Constraints is the standard type-checking library for L<Bubblegum>
 applications with a focus on minimalism and data integrity.
+
+By default, no functions are exported when using this package, all functionality
+desired will need to be explicitly requested, and because many functions belong
+to a particular group of functions there are export tags which can be used to
+export sets of functions by group name. Any function can also be exported
+individually. The following are a list of functions and groups currently
+available:
 
 =head1 EXPORTS
 
@@ -1055,15 +1062,6 @@ the L</-attr> tag. It is a means to export all type-related functions minus the
 multi-purpose functions provided by the L</-constraints> export group.
 
 =encoding utf8
-
-=head1 EXPORTS
-
-By default, no functions are exported when using this package, all functionality
-desired will need to be explicitly requested, and because many functions belong
-to a particular group of functions there are export tags which can be used to
-export sets of functions by group name. Any function can also be exported
-individually. The following are a list of functions and groups currently
-available:
 
 =head1 AUTHOR
 

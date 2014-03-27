@@ -7,7 +7,7 @@ use Bubblegum::Constraints -types;
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.22'; # VERSION
+our $VERSION = '0.23'; # VERSION
 
 sub call {
     my $self = CORE::shift;
@@ -64,7 +64,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.22
+version 0.23
 
 =head1 SYNOPSIS
 

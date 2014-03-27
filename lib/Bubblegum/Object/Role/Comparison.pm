@@ -4,7 +4,7 @@ use Bubblegum::Role 'requires', 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
-our $VERSION = '0.22'; # VERSION
+our $VERSION = '0.23'; # VERSION
 
 requires 'eq';
 requires 'eqtv';

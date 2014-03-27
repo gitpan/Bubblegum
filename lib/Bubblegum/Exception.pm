@@ -9,7 +9,7 @@ use Scalar::Util ();
 use Moo 'has';
 use overload bool => sub {1}, q{""} => 'as_string', fallback => 1;
 
-our $VERSION = '0.22'; # VERSION
+our $VERSION = '0.23'; # VERSION
 
 has file => (
     is       => 'ro',
@@ -84,7 +84,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.22
+version 0.23
 
 =head1 SYNOPSIS
 
@@ -93,10 +93,7 @@ version 0.22
 =head1 DESCRIPTION
 
 Bubblegum::Exception provides a general purpose exception object to be thrown
-and caught and rethrow. This module is derives from L<Exception::Tiny> and
-provides all the functionality found in that module. Additionally, this module
-allows you to include arbitrary data which can be access by the block which
-catches the exception.
+and caught and rethrow.
 
     try {
         Bubblegum::Exception->throw(
