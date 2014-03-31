@@ -3,7 +3,7 @@ package Bubblegum::Object::Instance;
 
 use Bubblegum::Class;
 
-our $VERSION = '0.23'; # VERSION
+our $VERSION = '0.24'; # VERSION
 
 has 'data' => (
     is => 'ro'
@@ -23,7 +23,7 @@ Bubblegum::Object::Instance - Generic Container Class for Passing Data
 
 =head1 VERSION
 
-version 0.23
+version 0.24
 
 =head1 SYNOPSIS
 

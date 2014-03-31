@@ -7,7 +7,7 @@ use Bubblegum::Constraints -types;
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.23'; # VERSION
+our $VERSION = '0.24'; # VERSION
 
 sub abs {
     my $self = CORE::shift;
@@ -123,7 +123,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.23
+version 0.24
 
 =head1 SYNOPSIS
 

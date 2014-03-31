@@ -8,7 +8,7 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Keyed';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.23'; # VERSION
+our $VERSION = '0.24'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -226,7 +226,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.23
+version 0.24
 
 =head1 SYNOPSIS
 

@@ -6,7 +6,7 @@ use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.23'; # VERSION
+our $VERSION = '0.24'; # VERSION
 
 sub decode {
     my $self = shift;
@@ -36,7 +36,7 @@ Bubblegum::Wrapper::Yaml - Bubblegum Wrapper around YAML Serialization
 
 =head1 VERSION
 
-version 0.23
+version 0.24
 
 =head1 SYNOPSIS
 

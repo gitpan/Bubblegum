@@ -5,7 +5,7 @@ use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.23'; # VERSION
+our $VERSION = '0.24'; # VERSION
 
 requires 'defined';
 requires 'grep';
