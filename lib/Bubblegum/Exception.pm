@@ -2,14 +2,15 @@
 package Bubblegum::Exception;
 
 use 5.10.0;
+use Devel::StackTrace;
 
 use Data::Dumper ();
 use Scalar::Util ();
 
 use Moo 'has';
-use overload bool => sub {1}, q{""} => 'as_string', fallback => 1;
+use overload bool => sub {1}, '""' => 'as_string', fallback => 1;
 
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 has file => (
     is       => 'ro',
@@ -31,9 +32,19 @@ has package => (
     required => 1
 );
 
+has stacktrace => (
+    is      => 'ro',
+    default => sub { Devel::StackTrace->new }
+);
+
 has subroutine => (
     is       => 'ro',
     required => 1
+);
+
+has verbose => (
+    is      => 'rw',
+    default => 0
 );
 
 sub throw {
@@ -54,13 +65,21 @@ sub rethrow {
 }
 
 sub as_string {
-    my $self = shift;
-    sprintf '%s at %s line %s.', $self->message, $self->file, $self->line;
+    my $self   = shift;
+    my $output = '%s at %s line %s';
+    my @params = ($self->message, $self->file, $self->line);
+
+    if ($self->verbose) {
+        $output .= ":\n%s";
+        push @params, $self->stacktrace->as_string;
+    }
+
+    return sprintf $output, @params;
 }
 
 sub dump {
     local $Data::Dumper::Terse = 1;
-    Data::Dumper::Dumper(shift);
+    return Data::Dumper::Dumper(shift);
 }
 
 sub caught {
@@ -84,7 +103,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 
@@ -97,7 +116,8 @@ and caught and rethrow.
 
     try {
         Bubblegum::Exception->throw(
-            message => 'you broke something'
+            message => 'you broke something',
+            verbose => 1
         );
     }
     catch ($exception) {

@@ -14,7 +14,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 our $EXTS = {
     ARRAY     => 'Bubblegum::Object::Array',
@@ -56,7 +56,6 @@ our %EXPORT_TAGS = (
     typing  => \&_handle_typing,
 );
 {
-    no strict 'refs';
     my $package  = __PACKAGE__;
     my $compiler = Type::Params->can('compile');
     while (my($class, $names) = each %{$TYPES}) {
@@ -64,66 +63,90 @@ our %EXPORT_TAGS = (
         my $validation = $compiler->($validator->());
         for my $name (@{$names}) {
             # generate isas
-            {
-                my $name = "isa_$name";
-                push @EXPORT_OK, $name;
-                push @{$EXPORT_TAGS{isas}}, $name;
-                *{"${package}::${name}"} = sub (;*) {
-                    my $data = shift;
-                    return eval { $validation->($data) } || 0;
-                };
-            }
+            _generatefor_isas($package, $name, $validation);
+
             # generate nots
-            {
-                my $name = "not_$name";
-                push @EXPORT_OK, $name;
-                push @{$EXPORT_TAGS{nots}}, $name;
-                *{"${package}::${name}"} = sub (;*) {
-                    my $data = shift;
-                    return ! eval { $validation->($data) } || 0;
-                };
-            }
+            _generatefor_nots($package, $name, $validation);
+
             # generate types
-            {
-                my $name = "type_$name";
-                push @EXPORT_OK, $name;
-                push @{$EXPORT_TAGS{types}}, $name;
-                *{"${package}::${name}"} = sub (;*) {
-                    my $data = shift;
-                    my $context = [caller(0)];
-                    try {
-                        $validation->($data);
-                        return $data;
-                    } catch {
-                        my $error = $_[0];
-                        $error->{context}{package} = $context->[0];
-                        $error->{context}{file}    = $context->[1];
-                        $error->{context}{line}    = $context->[2];
-                        die $error;
-                    };
-                };
-            }
+            _generatefor_types($package, $name, $validation);
+
             # generate typeofs
-            {
-                my $name = "typeof_$name";
-                push @EXPORT_OK, $name;
-                push @{$EXPORT_TAGS{typesof}}, $name;
-                *{"${package}::${name}"} = sub () {
-                    return $validation;
-                };
-            }
+            _generatefor_typeofs($package, $name, $validation);
+
             # generate for constraints
-            {
-                push @EXPORT_OK, "_$name";
-                push @{$EXPORT_TAGS{constraints}}, "_$name";
-                *{"${package}::_${name}"} = sub (;*) {
-                    !@_ # two-in-one function
-                    ? goto $package->can("typeof_$name")
-                    : goto $package->can("type_$name");
-                };
-            }
+            _generatefor_constraints($package, $name, $validation);
         }
     }
+}
+
+sub _generatefor_isas {
+    no strict 'refs';
+    my ($package, $name, $validation) = @_;
+    $name = "isa_$name";
+    push @EXPORT_OK, $name;
+    push @{$EXPORT_TAGS{isas}}, $name;
+    *{"${package}::${name}"} = sub (;*) {
+        my $data = shift;
+        return eval { $validation->($data) } || 0;
+    };
+}
+
+sub _generatefor_nots {
+    no strict 'refs';
+    my ($package, $name, $validation) = @_;
+    $name = "not_$name";
+    push @EXPORT_OK, $name;
+    push @{$EXPORT_TAGS{nots}}, $name;
+    *{"${package}::${name}"} = sub (;*) {
+        my $data = shift;
+        return ! eval { $validation->($data) } || 0;
+    };
+}
+
+sub _generatefor_types {
+    no strict 'refs';
+    my ($package, $name, $validation) = @_;
+    $name = "type_$name";
+    push @EXPORT_OK, $name;
+    push @{$EXPORT_TAGS{types}}, $name;
+    *{"${package}::${name}"} = sub (;*) {
+        my $data = shift;
+        my $context = [caller(0)];
+        try {
+            $validation->($data);
+            return $data;
+        } catch {
+            my $error = $_[0];
+            $error->{context}{package} = $context->[0];
+            $error->{context}{file}    = $context->[1];
+            $error->{context}{line}    = $context->[2];
+            die $error;
+        };
+    };
+}
+
+sub _generatefor_typeofs {
+    no strict 'refs';
+    my ($package, $name, $validation) = @_;
+    $name = "typeof_$name";
+    push @EXPORT_OK, $name;
+    push @{$EXPORT_TAGS{typesof}}, $name;
+    *{"${package}::${name}"} = sub () {
+        return $validation;
+    };
+}
+
+sub _generatefor_constraints {
+    no strict 'refs';
+    my ($package, $name, $validation) = @_;
+    push @EXPORT_OK, "_$name";
+    push @{$EXPORT_TAGS{constraints}}, "_$name";
+    *{"${package}::_${name}"} = sub (;*) {
+        !@_ # two-in-one function
+        ? goto $package->can("typeof_$name")
+        : goto $package->can("type_$name");
+    };
 }
 
 sub _handle_attr {
@@ -200,7 +223,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 

@@ -19,7 +19,7 @@ use Module::Find 'usesub';
 
 use parent 'autobox';
 
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 requires 'import';
 

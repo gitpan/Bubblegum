@@ -1,6 +1,13 @@
 Changelog for Bubblegum
 
-0.24 2014-03-31T12:39:01
+0.25 2014-04-04T03:43:26
+ - Updated POD, README, and Makefile.
+ - Made exceptions more verbose and refactored constraints slightly.
+
+0.24 2014-03-31T12:39:16
+ - v0.24
+   
+    - Fix Bubblegum::Constraints implied attribute builder feature.
  - Fix Bubblegum::Constraints implied attribute builder feature.
 
 0.23 2014-03-27T22:28:31

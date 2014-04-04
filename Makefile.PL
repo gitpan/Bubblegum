@@ -23,6 +23,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Class::Forward" => "0.100006",
     "Class::Load" => "0.21",
+    "Devel::StackTrace" => "1.31",
     "Exporter::Tiny" => "0.030",
     "Import::Into" => "1.001001",
     "Module::Find" => 0,
@@ -35,7 +36,7 @@ my %WriteMakefileArgs = (
     "utf8::all" => 0
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.24",
+  "VERSION" => "0.25",
   "test" => {
     "TESTS" => "t/*.t t/bubblegum/*.t t/bubblegum/object/*.t t/bubblegum/object/role/*.t t/bubblegum/role/*.t t/bubblegum/wrapper/*.t"
   }
@@ -45,6 +46,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Class::Forward" => "0.100006",
   "Class::Load" => "0.21",
+  "Devel::StackTrace" => "1.31",
   "Exporter::Tiny" => "0.030",
   "Import::Into" => "1.001001",
   "Module::Find" => 0,

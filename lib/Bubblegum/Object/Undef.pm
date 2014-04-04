@@ -5,7 +5,7 @@ use Bubblegum::Class 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 sub defined {
     return 0
@@ -25,7 +25,7 @@ Bubblegum::Object::Undef - Common Methods for Operating on Undefined Values
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 

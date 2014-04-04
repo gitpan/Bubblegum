@@ -1,5 +1,6 @@
 requires "Class::Forward" => "0.100006";
 requires "Class::Load" => "0.21";
+requires "Devel::StackTrace" => "1.31";
 requires "Exporter::Tiny" => "0.030";
 requires "Import::Into" => "1.001001";
 requires "Module::Find" => "0";

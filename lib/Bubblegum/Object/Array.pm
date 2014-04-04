@@ -15,7 +15,7 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One  ();
 use Scalar::Util ();
 
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -357,7 +357,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 
