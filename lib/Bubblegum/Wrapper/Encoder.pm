@@ -1,6 +1,7 @@
 # ABSTRACT: Bubblegum Wrapper around Content Encoding
 package Bubblegum::Wrapper::Encoder;
 
+use 5.10.0;
 use Bubblegum::Class;
 use Bubblegum::Exception;
 
@@ -8,13 +9,16 @@ use Encode 'find_encoding';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub BUILD {
     my $self = shift;
     $self->data->typeof('str')
         or Bubblegum::Exception->throw(
-            ref($self)->format('Wrapper package "%s" requires string data')
+            verbose => 1,
+            message => ref($self)->format(
+                'Wrapper package "%s" requires string data'
+            ),
         );
 }
 
@@ -50,7 +54,7 @@ Bubblegum::Wrapper::Encoder - Bubblegum Wrapper around Content Encoding
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 

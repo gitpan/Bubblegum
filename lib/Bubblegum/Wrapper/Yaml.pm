@@ -1,12 +1,13 @@
 # ABSTRACT: Bubblegum Wrapper around YAML Serialization
 package Bubblegum::Wrapper::Yaml;
 
+use 5.10.0;
 use Bubblegum::Class;
 use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub decode {
     my $self = shift;
@@ -36,7 +37,7 @@ Bubblegum::Wrapper::Yaml - Bubblegum Wrapper around YAML Serialization
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 

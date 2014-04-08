@@ -1,9 +1,10 @@
 package Bubblegum::Object::Role::Item;
 
+use 5.10.0;
 use Bubblegum::Role 'requires';
 use Bubblegum::Constraints -types;
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 requires 'defined';
 

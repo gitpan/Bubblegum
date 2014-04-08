@@ -1,11 +1,12 @@
 # ABSTRACT: Common Methods for Operating on Undefined Values
 package Bubblegum::Object::Undef;
 
+use 5.10.0;
 use Bubblegum::Class 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub defined {
     return 0
@@ -25,7 +26,7 @@ Bubblegum::Object::Undef - Common Methods for Operating on Undefined Values
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
@@ -50,6 +51,14 @@ by the L<Bubblegum> class.
 The defined method always returns false.
 
 =encoding utf8
+
+=head1 SEE ALSO
+
+L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
+L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
+L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
+L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
+L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
 
 =head1 AUTHOR
 

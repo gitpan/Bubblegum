@@ -1,6 +1,7 @@
 # ABSTRACT: Common Methods for Operating on Strings
 package Bubblegum::Object::String;
 
+use 5.10.0;
 use Scalar::Util ();
 
 use Bubblegum::Class 'with';
@@ -11,7 +12,7 @@ with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub eq {
     my $self  = CORE::shift;
@@ -235,7 +236,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
@@ -573,6 +574,14 @@ group of characters by 1 or more consecutive spaces, and returns that list as an
 array reference.
 
 =encoding utf8
+
+=head1 SEE ALSO
+
+L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
+L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
+L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
+L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
+L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
 
 =head1 AUTHOR
 

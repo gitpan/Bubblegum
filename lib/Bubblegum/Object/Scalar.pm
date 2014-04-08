@@ -1,6 +1,7 @@
 # ABSTRACT: Common Methods for Operating on Scalars
 package Bubblegum::Object::Scalar;
 
+use 5.10.0;
 use Scalar::Util ();
 
 use Bubblegum::Class 'with';
@@ -8,7 +9,7 @@ use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub and {
     my ($self, $other) =  @_;
@@ -50,7 +51,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
@@ -123,6 +124,14 @@ lvalue and the argument as the rvalue and returns true if either but not both
 is true.
 
 =encoding utf8
+
+=head1 SEE ALSO
+
+L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
+L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
+L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
+L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
+L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
 
 =head1 AUTHOR
 

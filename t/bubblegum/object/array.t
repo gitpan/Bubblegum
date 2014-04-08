@@ -16,6 +16,13 @@ subtest 'test the any method' => sub {
     ok $array->any > 3; # 1; true
 };
 
+can_ok 'Bubblegum::Object::Array', 'clear';
+subtest 'test the clear method' => sub {
+    my $addr = refaddr(my $array = ['a'..'g']);
+    $array->clear; # []
+    ok $addr == refaddr($array) && !@{$array};
+};
+
 can_ok 'Bubblegum::Object::Array', 'count';
 subtest 'test the count method' => sub {
     my $array = [1..5];
@@ -127,10 +134,30 @@ subtest 'test the grep method' => sub {
     });
 };
 
+can_ok 'Bubblegum::Object::Array', 'hashify';
+subtest 'test the hashify method' => sub {
+    my $array = [1..5];
+    is_deeply $array->hashify, {1=>1,2=>1,3=>1,4=>1,5=>1};
+};
+
 can_ok 'Bubblegum::Object::Array', 'head';
 subtest 'test the head method' => sub {
     my $array = [1..5];
     is $array->head, 1; # 1
+};
+
+# undocumented
+can_ok 'Bubblegum::Object::Array', 'indirect';
+subtest 'test the indirect method' => sub {
+    {
+        my $array  = [1..5];
+        my $values = $array->indirect(map => '$x; $x + 1');
+        is_deeply $values, [qw(2 3 4 5 6)];
+    }
+    {
+        my $array = [1..5];
+        is_deeply [3,4,5], $array->indirect(grep => 'shift >= 3');
+    }
 };
 
 can_ok 'Bubblegum::Object::Array', 'iterator';

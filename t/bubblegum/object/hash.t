@@ -1,5 +1,6 @@
 use Bubblegum;
 use Test::More;
+use Scalar::Util qw(refaddr);
 
 can_ok 'Bubblegum::Object::Hash', 'aslice';
 subtest 'test the aslice method' => sub {
@@ -13,6 +14,14 @@ subtest 'test the array_slice method' => sub {
     my $hash = {1..8};
     is_deeply $hash->array_slice(1,3), [2,4]; # [2,4]
     is_deeply $hash->array_slice(5,7), [6,8]; # [6,8]
+};
+
+can_ok 'Bubblegum::Object::Hash', 'clear';
+subtest 'test the clear method' => sub {
+    my $addr = refaddr(my $hash = {1..8});
+    $hash->clear; # {}
+    ok $addr == refaddr($hash);
+    is_deeply $hash, {};
 };
 
 can_ok 'Bubblegum::Object::Hash', 'defined';
@@ -76,8 +85,9 @@ subtest 'test the each_value method' => sub {
 
 can_ok 'Bubblegum::Object::Hash', 'empty';
 subtest 'test the empty method' => sub {
-    my $hash = {1..8};
+    my $addr = refaddr(my $hash = {1..8});
     $hash->empty; # {}
+    ok $addr == refaddr($hash);
     is_deeply $hash, {};
 };
 
@@ -120,6 +130,12 @@ subtest 'test the hslice method' => sub {
     my $hash = {1..8};
     my $data = $hash->hslice(1,3); # {1=>2,3=>4}
     is_deeply $data, {1=>2,3=>4};
+};
+
+# undocumented
+can_ok 'Bubblegum::Object::Hash', 'indirect';
+subtest 'test the indirect method' => sub {
+    ok 1; # needs use-case
 };
 
 can_ok 'Bubblegum::Object::Hash', 'invert';

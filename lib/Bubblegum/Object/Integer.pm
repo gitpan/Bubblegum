@@ -1,6 +1,7 @@
 # ABSTRACT: Common Methods for Operating on Integers
 package Bubblegum::Object::Integer;
 
+use 5.10.0;
 use Bubblegum::Class 'with';
 use Bubblegum::Constraints -types;
 
@@ -8,7 +9,7 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Comparison';
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub downto {
     my $self = CORE::shift;
@@ -103,7 +104,7 @@ Bubblegum::Object::Integer - Common Methods for Operating on Integers
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
@@ -234,6 +235,14 @@ from the subject to the argument. Assumes the subject is lesser than the
 argument.
 
 =encoding utf8
+
+=head1 SEE ALSO
+
+L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
+L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
+L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
+L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
+L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
 
 =head1 AUTHOR
 

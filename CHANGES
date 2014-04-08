@@ -1,73 +1,54 @@
 Changelog for Bubblegum
 
-0.25 2014-04-04T03:43:26
+0.26 2014-04-08T05:37:03
+ - Updated dist.ini.
+ - Updated POD, README, and Makefile.
+ - Added experimental indirect method/role.
+ - Made all exception throwing verbose; All modules use 5.10.0 explicitly;
+   Added clear and hashify methods to B::O::Array; Added clear method to
+   B::O::Hash; Update B::O namespace POD with SEE ALSO sections.
+
+0.25 2014-04-04T03:43:43
+ - v0.25
  - Updated POD, README, and Makefile.
  - Made exceptions more verbose and refactored constraints slightly.
 
 0.24 2014-03-31T12:39:16
  - v0.24
-   
-    - Fix Bubblegum::Constraints implied attribute builder feature.
  - Fix Bubblegum::Constraints implied attribute builder feature.
 
 0.23 2014-03-27T22:28:31
  - v0.23
-   
-    - Updated Makefile and README.
-    - Removed Exception::Tiny dependency, updated POD for Bubblegum
-      Constraints and Exception.
  - Updated Makefile and README.
  - Removed Exception::Tiny dependency, updated POD for Bubblegum
    Constraints and Exception.
 
 0.22 2014-03-27T21:52:07
  - v0.22
-   
-    - Updated Makefile and README.
-    - Various refactoring of POD and functions.
-    - Allow Bubblegum::Constraints -attr to deduce a builder.
  - Updated Makefile and README.
  - Various refactoring of POD and functions.
  - Allow Bubblegum::Constraints -attr to deduce a builder.
 
 0.21 2014-03-26T11:12:51
  - v0.21
-   
-    - Updated Makefile and README.
-    - Miscellaneous cleanup and fixed missing dependency.
  - Updated Makefile and README.
  - Miscellaneous cleanup and fixed missing dependency.
 
 0.20 2014-03-21T17:49:18
  - v0.20
-   
-    - Trimmed dependencies and broke Bubblegum::Syntax out into a separate
-      dist.
  - Trimmed dependencies and broke Bubblegum::Syntax out into a separate
    dist.
 
 0.19 2014-03-11T23:09:56
  - v0.19
-   
-    - Miscellaneous cosmetic changes.
  - Miscellaneous cosmetic changes.
 
 0.18 2014-03-08T21:27:55
  - v0.18
-   
-    - Miscellaneous cosmetic changes.
  - Miscellaneous cosmetic changes.
 
 0.17 2014-03-08T00:49:53
  - v0.17
-   
-    - Updated Makefile and README.
-    - Requiring the RFC-compliant JSON::Tiny 0.45.
-    - Fixed typos and updated POD in Bubblegum, Class, Exception, Role, and
-      Singleton.
-    - Fixed typos and updated POD in Bubblegum::Syntax; the raise function
-      defaults to $@.
-    - Fixed string formatting method agrument error.
  - Updated Makefile and README.
  - Requiring the RFC-compliant JSON::Tiny 0.45.
  - Fixed typos and updated POD in Bubblegum, Class, Exception, Role, and
@@ -78,21 +59,11 @@ Changelog for Bubblegum
 
 0.16 2014-03-02T16:44:07
  - v0.16
-   
-    - Updated Makefile and README.
-    - Insignificant cosmetic changes.
  - Updated Makefile and README.
  - Insignificant cosmetic changes.
 
 0.15 2014-03-02T08:52:37
  - v0.15
-   
-    - Updated the README.
-    - Fixed hypocracy bug in Bubblegum::Object::Universal.
-    - Added POD for Bubblegum Class, Exception, Role and Singleton.
-    - Added -typing export group to Bubblegum::Syntax.
-    - Miscellaneous cleanup and fixed a bug in the universal autoload
-   routine.
  - Updated the README.
  - Fixed hypocracy bug in Bubblegum::Object::Universal.
  - Added POD for Bubblegum Class, Exception, Role and Singleton.
@@ -101,23 +72,13 @@ Changelog for Bubblegum
 
 0.14 2014-03-01T04:53:00
  - v0.14
-   
-    - Many miscellaneous cosmetic changes.
  - Many miscellaneous cosmetic changes.
 
 0.13 2014-02-28T06:23:09
  - v0.13
-   
-    - Updated Makefile and README.
-    - Added constraints and minimal tags to Bubblegum::Syntax.
-    - Miscellaneous cleanup of Bubblegum::Wrapper POD.
-    - Updated Makefile and README.
-    - Miscellaneous cleanup of Bubblegum::Syntax and Bubblegum POD.
-    - Added data accessor to Bubblegum::Exception.
  - Updated Makefile and README.
  - Added constraints and minimal tags to Bubblegum::Syntax.
  - Miscellaneous cleanup of Bubblegum::Wrapper POD.
- - Updated Makefile and README.
  - Miscellaneous cleanup of Bubblegum::Syntax and Bubblegum POD.
  - Added data accessor to Bubblegum::Exception.
 
@@ -152,8 +113,8 @@ Changelog for Bubblegum
  - Updated .gitignore.
 
 0.08 2014-02-03T00:56:01
- - Added additional test coverage and fixes.
  - Fixed homedir test in t/bubblegum/environment.t.
+ - Added additional test coverage and fixes.
  - Updated dist.ini.
  - Updated gitignore.
  - Add INSTALL file to the repo.

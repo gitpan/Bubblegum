@@ -1,11 +1,12 @@
 package Bubblegum::Object::Role::List;
 
+use 5.10.0;
 use Bubblegum::Role 'requires', 'with';
 use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 requires 'defined';
 requires 'grep';

@@ -1,13 +1,14 @@
 # ABSTRACT: Common Methods for Operating on Code References
 package Bubblegum::Object::Code;
 
+use 5.10.0;
 use Bubblegum::Class 'with';
 use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub call {
     my $self = CORE::shift;
@@ -64,7 +65,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
@@ -160,6 +161,14 @@ The next method is an alias to the call method. The naming is especially useful
 (i.e. helps with readability) when used with closure-based iterators.
 
 =encoding utf8
+
+=head1 SEE ALSO
+
+L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
+L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
+L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
+L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
+L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
 
 =head1 AUTHOR
 

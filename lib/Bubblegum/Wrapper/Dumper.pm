@@ -1,12 +1,13 @@
 # ABSTRACT: Bubblegum Wrapper around Data Dumping
 package Bubblegum::Wrapper::Dumper;
 
+use 5.10.0;
 use Bubblegum::Class;
 use Data::Dumper ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub decode {
     my $self = shift;
@@ -33,7 +34,7 @@ Bubblegum::Wrapper::Dumper - Bubblegum Wrapper around Data Dumping
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 

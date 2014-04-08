@@ -14,7 +14,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 our $EXTS = {
     ARRAY     => 'Bubblegum::Object::Array',
@@ -223,7 +223,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 

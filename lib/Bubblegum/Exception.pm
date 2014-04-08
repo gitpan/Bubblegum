@@ -10,7 +10,7 @@ use Scalar::Util ();
 use Moo 'has';
 use overload bool => sub {1}, '""' => 'as_string', fallback => 1;
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 has file => (
     is       => 'ro',
@@ -70,7 +70,7 @@ sub as_string {
     my @params = ($self->message, $self->file, $self->line);
 
     if ($self->verbose) {
-        $output .= ":\n%s";
+        $output .= ":\n\n%s";
         push @params, $self->stacktrace->as_string;
     }
 
@@ -103,7 +103,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 

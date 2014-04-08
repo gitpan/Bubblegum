@@ -1,9 +1,10 @@
 # ABSTRACT: Generic Container Class for Passing Data
 package Bubblegum::Object::Instance;
 
+use 5.10.0;
 use Bubblegum::Class;
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 has 'data' => (
     is => 'ro'
@@ -23,7 +24,7 @@ Bubblegum::Object::Instance - Generic Container Class for Passing Data
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
@@ -48,6 +49,14 @@ L<Bubblegum> class.
 The data attribute holds some arbitrary value to be operated on.
 
 =encoding utf8
+
+=head1 SEE ALSO
+
+L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
+L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
+L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
+L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
+L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
 
 =head1 AUTHOR
 

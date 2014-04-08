@@ -1,10 +1,12 @@
 # ABSTRACT: Common Methods for Operating on Array References
 package Bubblegum::Object::Array;
 
+use 5.10.0;
 use Bubblegum::Class 'with';
 use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Defined';
+with 'Bubblegum::Object::Role::Indirect';
 with 'Bubblegum::Object::Role::Indexed';
 with 'Bubblegum::Object::Role::List';
 with 'Bubblegum::Object::Role::Ref';
@@ -15,7 +17,7 @@ use Syntax::Keyword::Junction::None ();
 use Syntax::Keyword::Junction::One  ();
 use Scalar::Util ();
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -25,6 +27,10 @@ sub all {
 sub any {
     my $self = CORE::shift;
     return Syntax::Keyword::Junction::Any->new(@$self);
+}
+
+sub clear {
+    goto &empty;
 }
 
 sub count {
@@ -111,6 +117,17 @@ sub grep {
     my $self = CORE::shift;
     my $code = type_coderef CORE::shift;
     return [CORE::grep { $code->($_) } @$self];
+}
+
+sub hashify {
+    my $self = CORE::shift;
+    my $temp = {};
+
+    for (CORE::grep { CORE::defined $_ } @$self) {
+        $temp->{$_} = 1;
+    }
+
+    return $temp;
 }
 
 sub head {
@@ -357,7 +374,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =head1 SYNOPSIS
 
@@ -394,6 +411,13 @@ criteria set by the operand and rvalue.
 
 The any method returns true if any of the elements in the subject meet the
 criteria set by the operand and rvalue.
+
+=head2 clear
+
+    my $array = ['a'..'g'];
+    $array->clear; # []
+
+The clear method is an alias to the empty method.
 
 =head2 count
 
@@ -517,6 +541,15 @@ The grep method iterates over each element in the subject, executing the
 code reference supplied in the argument, passing the routine the value at the
 current position in the loop and returning a new array reference containing
 the elements for which the argument evaluated true.
+
+=head2 hashify
+
+    my $array = [1..5];
+    $array->hashify; # {1=>1,2=>1,3=>1,4=>1,5=>1}
+
+The hashify method returns a hash reference where the elements of subject become
+the hash keys and the corresponding values are assigned a value of 1. Note,
+undefined elements will be dropped.
 
 =head2 head
 
@@ -802,6 +835,14 @@ subject. This method essentially copies the content of the subject into a new
 container.
 
 =encoding utf8
+
+=head1 SEE ALSO
+
+L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
+L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
+L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
+L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
+L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
 
 =head1 AUTHOR
 

@@ -2,7 +2,7 @@ NAME
     Bubblegum - Opinionated Modern Perl Development Framework
 
 VERSION
-    version 0.25
+    version 0.26
 
 SYNOPSIS
         package Person;
