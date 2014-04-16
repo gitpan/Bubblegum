@@ -10,7 +10,7 @@ use Scalar::Util ();
 use Moo 'has';
 use overload bool => sub {1}, '""' => 'as_string', fallback => 1;
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 has file => (
     is       => 'ro',
@@ -103,7 +103,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 SYNOPSIS
 

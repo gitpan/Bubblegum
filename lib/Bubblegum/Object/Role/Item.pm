@@ -4,7 +4,7 @@ use 5.10.0;
 use Bubblegum::Role 'requires';
 use Bubblegum::Constraints -types;
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 requires 'defined';
 

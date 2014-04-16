@@ -119,4 +119,7 @@ ok $INC{'Bubblegum/Wrapper/Json.pm'},
 ok $INC{'Bubblegum/Wrapper/Yaml.pm'},
     'Bubblegum::Wrapper::Yaml is loaded';
 
+ok ! main->can($_), "method ($_) not found"
+    for qw(after around before has does extends meta requires with);
+
 done_testing;

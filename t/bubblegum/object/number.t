@@ -1,6 +1,8 @@
 use Bubblegum;
 use Test::More;
 
+ok ! main->isa('Moo::Object'), 'class not an object';
+
 can_ok 'Bubblegum::Object::Number', 'abs';
 subtest 'test the abs method' => sub {
     my $number = 12;

@@ -1,6 +1,8 @@
 use Bubblegum;
 use Test::More;
 
+ok ! main->isa('Moo::Object'), 'class not an object';
+
 can_ok 'Bubblegum::Object::Code', 'call';
 subtest 'test the call method' => sub {
     my $code = sub { (shift // 0) + 1 };

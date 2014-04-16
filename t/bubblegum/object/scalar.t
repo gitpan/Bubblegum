@@ -1,6 +1,8 @@
 use Bubblegum;
 use Test::More;
 
+ok ! main->isa('Moo::Object'), 'class not an object';
+
 can_ok 'Bubblegum::Object::Scalar', 'and';
 subtest 'test the and method' => sub {
     my $variable = 12345;

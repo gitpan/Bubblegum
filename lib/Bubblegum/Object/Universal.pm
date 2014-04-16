@@ -10,7 +10,9 @@ use Bubblegum::Constraints 'type_classname', 'type_object', 'type_string';
 use Class::Load 'load_class';
 use Scalar::Util 'blessed';
 
-our $VERSION = '0.26'; # VERSION
+our @ISA = (); # non-object
+
+our $VERSION = '0.27'; # VERSION
 
 sub instance {
     my $self  = CORE::shift;
@@ -71,7 +73,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 SYNOPSIS
 

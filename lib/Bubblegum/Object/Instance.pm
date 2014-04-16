@@ -4,7 +4,9 @@ package Bubblegum::Object::Instance;
 use 5.10.0;
 use Bubblegum::Class;
 
-our $VERSION = '0.26'; # VERSION
+our @ISA = (); # non-object
+
+our $VERSION = '0.27'; # VERSION
 
 has 'data' => (
     is => 'ro'
@@ -24,7 +26,7 @@ Bubblegum::Object::Instance - Generic Container Class for Passing Data
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 SYNOPSIS
 

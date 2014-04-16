@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 sub import {
     my $target = caller;
@@ -29,7 +29,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 SYNOPSIS
 
@@ -226,14 +226,18 @@ Enforced consistency is a path many other programming languages and frameworks
 have adopted to great effect, so Bubblegum is one approach towards that end in
 Perl.
 
-=head2 Bubblegum Syntax
+=head2 Bubblegum Add-Ons
 
 Additional features and enhancements can be enabled by using the
-L<Bubblegum::Constraints> module which exports type constraint functions, data
-validation functions and various utility functions. Hardcore Perl hackers around
-the world are working tirelessly around the clock to give us a better system for
-elegantly defining objects and classes using modern Perl best practices, ... but
-in the meantime, have some Bubblegum.
+L<Bubblegum::Constraints> module which exports type constraint and validation
+functions, and the L<Bubblegum::Functions> module which exports various utility
+functions. Bubblegum is designed as a construction-kit; having it's
+feature-set compartmentalized in such a way as to allow the maximum amount of
+interoperability. Bubblegum can be used along-side any of the many
+object-systems. Hardcore Perl hackers around the world are working tirelessly
+around the clock to give us a better system for elegantly defining objects and
+classes using modern Perl best practices, ... but in the meantime, have some
+Bubblegum.
 
     use Bubblegum;
     use Bubblegum::Functions 'will';
@@ -242,34 +246,6 @@ in the meantime, have some Bubblegum.
 
     my $print = will '@output; say @output';
     $print->curry(1..10)->call; # 12345678910
-
-Bubblegum is designed as a construction-kit; having it's feature-set
-compartmentalized in such a way as to allow the maximum amount of
-interoperability. Bubblegum can be used along-side any of the many
-object-systems or development frameworks, e.g. L<Moo>, L<Moose>, L<Moops>,
-L<Kavorka>, L<Functions::Parameters> and hopefully p5-mop (once it's added to
-the Perl 5 core). Perl is all about choice and expressiveness; Bubblegum is all
-about pushing Perl boundaries.
-
-    package SpaceShip;
-
-    use Bubblegum;
-    use Bubblegum::Constraints -minimal;
-
-    use Function::Parameters;
-    use Try::Tiny;
-
-    has _string, 'name';
-
-    method fire ($times) {
-        return $self->name->format('The %s has fired %d times',
-            _number $times);
-    }
-
-    package main;
-
-    my $dstar = SpaceShip->new(name => 'DeathStar');
-    say $dstar->fire(100);
 
 =head2 Bubblegum Topology
 

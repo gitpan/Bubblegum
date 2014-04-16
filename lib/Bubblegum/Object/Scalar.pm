@@ -9,7 +9,9 @@ use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.26'; # VERSION
+our @ISA = (); # non-object
+
+our $VERSION = '0.27'; # VERSION
 
 sub and {
     my ($self, $other) =  @_;
@@ -51,7 +53,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 SYNOPSIS
 

@@ -2,6 +2,8 @@ use Bubblegum;
 use Test::More;
 use Scalar::Util qw(refaddr);
 
+ok ! main->isa('Moo::Object'), 'class not an object';
+
 can_ok 'Bubblegum::Object::Array', 'all';
 subtest 'test the all method' => sub {
     my $array = [2..5];

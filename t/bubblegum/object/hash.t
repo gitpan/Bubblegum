@@ -2,6 +2,8 @@ use Bubblegum;
 use Test::More;
 use Scalar::Util qw(refaddr);
 
+ok ! main->isa('Moo::Object'), 'class not an object';
+
 can_ok 'Bubblegum::Object::Hash', 'aslice';
 subtest 'test the aslice method' => sub {
     my $hash = {1..8};

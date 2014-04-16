@@ -1,6 +1,8 @@
 use Bubblegum;
 use Test::More;
 
+ok ! main->isa('Moo::Object'), 'class not an object';
+
 can_ok 'Bubblegum::Object::Integer', 'downto';
 subtest 'test the downto method' => sub {
     my $int = 10;

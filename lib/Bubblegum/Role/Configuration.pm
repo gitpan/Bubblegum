@@ -6,12 +6,11 @@ use strict;
 use utf8::all;
 use warnings;
 
-use Bubblegum::Constraints;
-use Class::Forward;
 use Import::Into;
 use Moo::Role;
-use Try::Tiny;
 
+use Bubblegum::Constraints ();
+use Class::Forward ();
 use feature ();
 use mro ();
 
@@ -19,7 +18,7 @@ use Module::Find 'usesub';
 
 use parent 'autobox';
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 requires 'import';
 
@@ -33,14 +32,14 @@ sub prerequisites {
 
     # imports
     'strict'->import::into($target);
-    'warnings'->import::into($target, 'FATAL', 'all');
+    'warnings'->import::into($target);
     'autodie'->import::into($target, ':all');
     'feature'->import::into($target, ':5.10');
     'utf8::all'->import::into($target);
     'English'->import::into($target, '-no_match_vars');
 
     # autobox
-    $target->SUPER::import(%{$Bubblegum::Constraints::EXTS});
+    $target->autobox::import(%{$Bubblegum::Constraints::EXTS});
 }
 
 1;

@@ -1,6 +1,8 @@
 use Bubblegum;
 use Test::More;
 
+ok ! main->isa('Moo::Object'), 'class not an object';
+
 can_ok 'Bubblegum::Object::String', 'eq';
 subtest 'test the eq method' => sub {
     my $string = 'User';
