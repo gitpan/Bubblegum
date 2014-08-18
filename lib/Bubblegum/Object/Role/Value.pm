@@ -6,7 +6,7 @@ use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.28'; # VERSION
+our $VERSION = '0.29'; # VERSION
 
 sub do {
     my $self = CORE::shift;

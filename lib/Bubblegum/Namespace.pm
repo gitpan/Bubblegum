@@ -6,7 +6,7 @@ use strict;
 use utf8::all;
 use warnings;
 
-our $VERSION = '0.28'; # VERSION
+our $VERSION = '0.29'; # VERSION
 
 our $DefaultTypes = {
     ARRAY     => 'Bubblegum::Object::Array',

@@ -8,7 +8,7 @@ use Class::Load ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.28'; # VERSION
+our $VERSION = '0.29'; # VERSION
 
 sub digest {
     my $self  = CORE::shift;
@@ -62,7 +62,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.28
+version 0.29
 
 =head1 SYNOPSIS
 
@@ -159,6 +159,15 @@ L<Bubblegum::Wrapper::Yaml>.
 The yaml method blesses the subject into the wrapper class,
 L<Bubblegum::Object::Yaml>, and returns an instance. Please see
 L<Bubblegum::Object::Yaml> for more information.
+
+=encoding utf8
+
+=head1 TYPE VALIDATION
+
+All data type objects have access to type checking and validation methods which
+can be call to help ensure data integrity. The following is a list of standard
+type checking and validation methods whose routines map to those corresponding
+in the L<Types::Standard> library.
 
 =head2 asa_aref
 
@@ -736,15 +745,6 @@ the method will return false.
 
 The value method checks that the caller is a value. If the caller is not a
 value, the method will return false.
-
-=encoding utf8
-
-=head2 Type Validation
-
-All data type objects have access to type checking and validation methods which
-can be call to help ensure data integrity. The following is a list of standard
-type checking and validation methods whose routines map to those corresponding
-in the L<Types::Standard> library.
 
 =head1 SEE ALSO
 

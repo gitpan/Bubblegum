@@ -6,7 +6,7 @@ use Bubblegum::Class;
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.28'; # VERSION
+our $VERSION = '0.29'; # VERSION
 
 has 'data' => (
     is => 'ro'
@@ -26,7 +26,7 @@ Bubblegum::Object::Instance - Generic Container Class for Passing Data
 
 =head1 VERSION
 
-version 0.28
+version 0.29
 
 =head1 SYNOPSIS
 
