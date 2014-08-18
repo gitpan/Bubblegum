@@ -6,7 +6,7 @@ use Bubblegum::Namespace;
 
 use Types::Standard ();
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 requires 'defined';
 

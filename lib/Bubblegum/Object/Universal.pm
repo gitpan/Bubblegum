@@ -8,7 +8,7 @@ use Class::Load ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 sub digest {
     my $self  = CORE::shift;
@@ -62,7 +62,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 SYNOPSIS
 
@@ -162,12 +162,12 @@ L<Bubblegum::Object::Yaml> for more information.
 
 =encoding utf8
 
-=head1 TYPE VALIDATION
+=head1 TYPE ASSERTION METHODS
 
-All data type objects have access to type checking and validation methods which
-can be call to help ensure data integrity. The following is a list of standard
-type checking and validation methods whose routines map to those corresponding
-in the L<Types::Standard> library.
+All data type objects have access to type assertions methods which can be call
+on to help ensure data integrity and prevent invalid usage patterns. The
+following is a list of standard type assertion methods whose routines map to
+those corresponding in the L<Types::Standard> library.
 
 =head2 asa_aref
 
@@ -456,6 +456,13 @@ the program will die.
 
 The value method asserts that the caller is a value. If the caller is not a
 value, the program will die.
+
+=head1 TYPE CHECKING METHODS
+
+All data type objects have access to type checking methods which can be call on
+to help control the flow of operations. The following is a list of standard type
+checking methods whose routines map to those corresponding in the
+L<Types::Standard> library.
 
 =head2 isa_aref
 

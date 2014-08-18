@@ -14,7 +14,30 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
+
+sub append {
+    return $_[0] = CORE::join ' ', map type_string($_), @_;
+}
+
+sub concat {
+    return $_[0] = CORE::join '', map type_string($_), @_;
+}
+
+sub contains {
+    my $self  = CORE::shift;
+    my $other = CORE::shift;
+
+    if (Bubblegum::Constraints::isa_regexpref($other)) {
+        return $self =~ $other ? 1 : 0;
+    }
+
+    if (Bubblegum::Constraints::isa_string($other)) {
+        return CORE::index($self, $other) < 0 ? 0 : 1;
+    }
+
+    return 0;
+}
 
 sub eq {
     my $self  = CORE::shift;
@@ -238,7 +261,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 SYNOPSIS
 
@@ -258,6 +281,37 @@ based on their subjects. It is not necessary to use this module as it is loaded
 automatically by the L<Bubblegum> class.
 
 =head1 METHODS
+
+=head2 append
+
+    my $string = 'firstname';
+    $string->append('lastname'); # firstname lastname
+
+The append method modifies and returns the subject with the argument list
+appended to it separated using spaces.
+
+=head2 concat
+
+    my $string = 'ABC';
+    $string->concat('DEF', 'GHI'); # ABCDEFGHI
+
+The concat method modifies and returns the subject with the argument list
+appended to it.
+
+=head2 contains
+
+    my $string = 'Nullam ultrices placerat nibh vel malesuada.';
+    $string->contains('trices'); # 1; true
+    $string->contains('itrices'); # 0; false
+
+    $string->contains(qr/trices/); # 1; true
+    $string->contains(qr/itrices/); # 0; false
+
+The contains method searches the subject for the string specified in the
+argument and returns true if found, otherwise returns false. If the argument is
+a string, the search will be performed using the core index function. If the
+argument is a regular expression reference, the search will be performed using
+the regular expression engine.
 
 =head2 eq
 

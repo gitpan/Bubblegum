@@ -2,7 +2,7 @@ NAME
     Bubblegum - Opinionated Modern Perl Development Framework
 
 VERSION
-    version 0.29
+    version 0.30
 
 SYNOPSIS
         package Person;
@@ -113,14 +113,14 @@ DESCRIPTION
             10->eq($ten)                            # true, same as above
             "10"->type                              # string
             (10)->type                              # integer
-            10->typeof('aref')                      # false
-            10->typeof('cref')                      # false
-            10->typeof('href')                      # false
-            10->typeof('int')                       # true
+            10->typeof('array')                     # false
+            10->typeof('code')                      # false
+            10->typeof('hash')                      # false
+            10->typeof('integer')                   # true
             10->typeof('nil')                       # false
             10->typeof('null')                      # false
-            10->typeof('num')                       # true
-            10->typeof('str')                       # false
+            10->typeof('number')                    # true
+            10->typeof('string')                    # false
             10->typeof('undef')                     # false
 
         # include Moo as your default object-system (optional)
@@ -148,11 +148,7 @@ FEATURES
 
     *   Core Functions Throw Exceptions
 
-    *   Autoboxing With Consistent Functions Names
-
-    *   File and Path Utilities
-
-    *   Date and Time Utilities
+    *   Autoboxing With Consistent Function Names
 
     *   Encoding and Decoding Utilities
 
@@ -162,9 +158,9 @@ FEATURES
 
     *   Modern Minimalistic Object System
 
-    *   Flexible Type Constraint System
+    *   Functional and Object-Oriented Type Checking
 
-    *   Optional Features and Enhancements
+    *   Extendable with Optional Features and Enhancements
 
 RATIONALE
     The TIMTOWTDI (there is more than one way to do it) motto has been a
@@ -371,6 +367,9 @@ RATIONALE
 
 AUTHOR
     Al Newkirk <anewkirk@ana.io>
+
+CONTRIBUTOR
+    Toby Inkster <tobyink@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2013 by Al Newkirk.

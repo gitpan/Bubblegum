@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 sub import {
     my $target = caller;
@@ -31,7 +31,7 @@ Bubblegum::Role - Class Component System for Bubblegum via Moo::Role
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 SYNOPSIS
 
@@ -80,10 +80,10 @@ is equivalent to
 
     use 5.10.0;
     use strict;
+    use warnings;
     use autobox;
     use autodie ':all';
     use feature ':5.10';
-    use warnings FATAL => 'all';
     use English -no_match_vars;
     use utf8::all;
     use mro 'c3';

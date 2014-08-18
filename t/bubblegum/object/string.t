@@ -3,6 +3,29 @@ use Test::More;
 
 ok ! main->isa('Moo::Object'), 'class not an object';
 
+can_ok 'Bubblegum::Object::String', 'append';
+subtest 'test the append method' => sub {
+    my $string = 'firstname';
+    is 'firstname lastname', $string->append('lastname'); # firstname lastname
+    is 'firstname lastname', $string; # firstname lastname
+};
+
+can_ok 'Bubblegum::Object::String', 'concat';
+subtest 'test the concat method' => sub {
+    my $string = 'ABC';
+    is 'ABCDEFGHI', $string->concat('DEF', 'GHI'); # ABCDEFGHI
+    is 'ABCDEFGHI', $string; # ABCDEFGHI
+};
+
+can_ok 'Bubblegum::Object::String', 'contains';
+subtest 'test the contains method' => sub {
+    my $string = 'Nullam ultrices placerat nibh vel malesuada.';
+    is 1, $string->contains('trices'); # 1; true
+    is 0, $string->contains('itrices'); # 0; false
+    is 1, $string->contains(qr/trices/); # 1; true
+    is 0, $string->contains(qr/itrices/); # 0; false
+};
+
 can_ok 'Bubblegum::Object::String', 'eq';
 subtest 'test the eq method' => sub {
     my $string = 'User';

@@ -11,7 +11,7 @@ with 'Bubblegum::Object::Role::Ref';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -233,7 +233,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 SYNOPSIS
 

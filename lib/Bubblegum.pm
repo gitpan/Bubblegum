@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 sub import {
     my $target = caller;
@@ -29,7 +29,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 SYNOPSIS
 
@@ -141,14 +141,14 @@ using Bubblegum:
         10->eq($ten)                            # true, same as above
         "10"->type                              # string
         (10)->type                              # integer
-        10->typeof('aref')                      # false
-        10->typeof('cref')                      # false
-        10->typeof('href')                      # false
-        10->typeof('int')                       # true
+        10->typeof('array')                     # false
+        10->typeof('code')                      # false
+        10->typeof('hash')                      # false
+        10->typeof('integer')                   # true
         10->typeof('nil')                       # false
         10->typeof('null')                      # false
-        10->typeof('num')                       # true
-        10->typeof('str')                       # false
+        10->typeof('number')                    # true
+        10->typeof('string')                    # false
         10->typeof('undef')                     # false
 
     # include Moo as your default object-system (optional)
@@ -189,15 +189,7 @@ Core Functions Throw Exceptions
 
 =item *
 
-Autoboxing With Consistent Functions Names
-
-=item *
-
-File and Path Utilities
-
-=item *
-
-Date and Time Utilities
+Autoboxing With Consistent Function Names
 
 =item *
 
@@ -217,11 +209,11 @@ Modern Minimalistic Object System
 
 =item *
 
-Flexible Type Constraint System
+Functional and Object-Oriented Type Checking
 
 =item *
 
-Optional Features and Enhancements
+Extendable with Optional Features and Enhancements
 
 =back
 
@@ -444,6 +436,10 @@ handling around your specific use-cases.
 =head1 AUTHOR
 
 Al Newkirk <anewkirk@ana.io>
+
+=head1 CONTRIBUTOR
+
+Toby Inkster <tobyink@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

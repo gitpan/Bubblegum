@@ -7,11 +7,12 @@ use Scalar::Util ();
 use Bubblegum::Class 'with';
 use Bubblegum::Constraints -types;
 
+with 'Bubblegum::Object::Role::Output';
 with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 sub and {
     my ($self, $other) =  @_;
@@ -28,15 +29,25 @@ sub or {
     return $self || $other;
 }
 
+sub print {
+    my $self = CORE::shift;
+    return CORE::print $self, @_;
+}
+
 sub repeat {
     my $self   = CORE::shift;
     my $number = type_number CORE::shift;
     return $self x $number;
 }
 
+sub say {
+    my $self = CORE::shift;
+    return print($self, @_, "\n");
+}
+
 sub xor {
     my ($self, $other) =  @_;
-    return ($self xor $other) ? 1 : 0;
+    return ($self CORE::xor $other) ? 1 : 0;
 }
 
 1;
@@ -53,7 +64,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 SYNOPSIS
 
@@ -104,6 +115,17 @@ of using bang (!) and return true (1) or false (empty string).
 The or method performs a short-circuit logical OR operation using the subject
 as the lvalue and the argument as the rvalue and returns the first truthy value.
 
+=head2 print
+
+    my $variable = 12345;
+    $variable->print(6789); # 123456789
+
+    $variable = 'yes';
+    $variable->print('no'); # yesno
+
+The print method prints the scalar value to the filehandle specified, defaulting
+to STDOUT, and returns true is successful.
+
 =head2 repeat
 
     my $variable = 12345;
@@ -114,6 +136,17 @@ as the lvalue and the argument as the rvalue and returns the first truthy value.
 
 The repeat method returns a string consisting of the subject repeated the number
 of times specified by the argument.
+
+=head2 say
+
+    my $variable = 12345;
+    $variable->say(6789); # 123456789\n
+
+    $variable = 'yes';
+    $variable->say('no'); # yesno\n
+
+The say method prints the scalar value with a newline appended to the filehandle
+specified, defaulting to STDOUT, and returns true is successful.
 
 =head2 xor
 

@@ -60,6 +60,7 @@ t/bubblegum/object/role/indexed.t
 t/bubblegum/object/role/item.t
 t/bubblegum/object/role/keyed.t
 t/bubblegum/object/role/list.t
+t/bubblegum/object/role/output.t
 t/bubblegum/object/role/ref.t
 t/bubblegum/object/role/value.t
 t/bubblegum/object/scalar.t

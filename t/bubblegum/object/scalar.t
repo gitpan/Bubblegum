@@ -29,12 +29,26 @@ subtest 'test the or method' => sub {
     is 56789, $variable->or(56789); # 56789
 };
 
+can_ok 'Bubblegum::Object::Scalar', 'print';
+subtest 'test the print method' => sub {
+    my $variable = '';
+    is 1, $variable->print; # ''
+    is 1, $variable->print(''); # ''
+};
+
 can_ok 'Bubblegum::Object::Scalar', 'repeat';
 subtest 'test the repeat method' => sub {
     my $variable = 12345;
     is 1234512345, $variable->repeat(2); # 1234512345
     $variable = 'yes';
     is 'yesyes', $variable->repeat(2); # yesyes
+};
+
+can_ok 'Bubblegum::Object::Scalar', 'say';
+subtest 'test the say method' => sub {
+    my $variable = '';
+    is 1, $variable->say; # ''
+    is 1, $variable->say(''); # ''
 };
 
 can_ok 'Bubblegum::Object::Scalar', 'xor';
