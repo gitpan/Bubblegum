@@ -148,20 +148,6 @@ subtest 'test the head method' => sub {
     is $array->head, 1; # 1
 };
 
-# undocumented
-can_ok 'Bubblegum::Object::Array', 'indirect';
-subtest 'test the indirect method' => sub {
-    {
-        my $array  = [1..5];
-        my $values = $array->indirect(map => '$x; $x + 1');
-        is_deeply $values, [qw(2 3 4 5 6)];
-    }
-    {
-        my $array = [1..5];
-        is_deeply [3,4,5], $array->indirect(grep => 'shift >= 3');
-    }
-};
-
 can_ok 'Bubblegum::Object::Array', 'iterator';
 subtest 'test the iterator method' => sub {
     my $array  = [1..5];

@@ -14,20 +14,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.27'; # VERSION
-
-our $EXTS = {
-    ARRAY     => 'Bubblegum::Object::Array',
-    CODE      => 'Bubblegum::Object::Code',
-    FLOAT     => 'Bubblegum::Object::Float',
-    HASH      => 'Bubblegum::Object::Hash',
-    INTEGER   => 'Bubblegum::Object::Integer',
-    NUMBER    => 'Bubblegum::Object::Number',
-    SCALAR    => 'Bubblegum::Object::Scalar',
-    STRING    => 'Bubblegum::Object::String',
-    UNDEF     => 'Bubblegum::Object::Undef',
-    UNIVERSAL => 'Bubblegum::Object::Universal',
-};
+our $VERSION = '0.28'; # VERSION
 
 my $TYPES = {
     ArrayRef   => [qw(aref arrayref)],
@@ -223,7 +210,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.27
+version 0.28
 
 =head1 SYNOPSIS
 

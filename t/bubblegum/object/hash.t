@@ -134,12 +134,6 @@ subtest 'test the hslice method' => sub {
     is_deeply $data, {1=>2,3=>4};
 };
 
-# undocumented
-can_ok 'Bubblegum::Object::Hash', 'indirect';
-subtest 'test the indirect method' => sub {
-    ok 1; # needs use-case
-};
-
 can_ok 'Bubblegum::Object::Hash', 'invert';
 subtest 'test the invert method' => sub {
     my $hash = {1..8,9,undef,10,''};

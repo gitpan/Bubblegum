@@ -98,11 +98,11 @@ ok !$INC{'Bubblegum/Wrapper/Json.pm'},
 ok !$INC{'Bubblegum/Wrapper/Yaml.pm'},
     'Bubblegum::Wrapper::Yaml is not loaded';
 
-ok ref ([])->digest,  'Bubblegum::Wrapper::Digest invoked';
-ok ref ([])->dumper,  'Bubblegum::Wrapper::Dumper invoked';
-ok ref ([])->encoder, 'Bubblegum::Wrapper::Encoder invoked';
-ok ref ([])->json,    'Bubblegum::Wrapper::Json invoked';
-ok ref ([])->yaml,    'Bubblegum::Wrapper::Yaml invoked';
+ok ''->digest,  'Bubblegum::Wrapper::Digest invoked';
+ok []->dumper,  'Bubblegum::Wrapper::Dumper invoked';
+ok ''->encoder, 'Bubblegum::Wrapper::Encoder invoked';
+ok []->json,    'Bubblegum::Wrapper::Json invoked';
+ok []->yaml,    'Bubblegum::Wrapper::Yaml invoked';
 
 ok $INC{'Bubblegum/Wrapper/Digest.pm'},
     'Bubblegum::Wrapper::Digest is loaded';

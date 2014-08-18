@@ -1,6 +1,15 @@
 Changelog for Bubblegum
 
-0.27 2014-04-16T07:39:01
+0.28 2014-08-18T08:42:29
+ - Added documentation destined for type checking and assertions, as well
+   as wrappers, to Bubblegum::Object::Universal.
+ - Removed AUTOLOADing, Added standard assertions to
+   Bubblegum::Object::Role::Item, Started depreciating
+   Bubblegum::Constraints.
+ - Added tests and documentation to support the rebasing concept.
+
+0.27 2014-04-16T07:39:18
+ - v0.27
  - Updated POD, README, and Makefile.
  - Fix to prevent autoboxing from creating Moo objects.
  - Removed all-fatal warnings configuration.

@@ -12,6 +12,7 @@ lib/Bubblegum.pm
 lib/Bubblegum/Class.pm
 lib/Bubblegum/Constraints.pm
 lib/Bubblegum/Exception.pm
+lib/Bubblegum/Namespace.pm
 lib/Bubblegum/Object/Array.pm
 lib/Bubblegum/Object/Code.pm
 lib/Bubblegum/Object/Float.pm
@@ -24,7 +25,6 @@ lib/Bubblegum/Object/Role/Collection.pm
 lib/Bubblegum/Object/Role/Comparison.pm
 lib/Bubblegum/Object/Role/Defined.pm
 lib/Bubblegum/Object/Role/Indexed.pm
-lib/Bubblegum/Object/Role/Indirect.pm
 lib/Bubblegum/Object/Role/Item.pm
 lib/Bubblegum/Object/Role/Keyed.pm
 lib/Bubblegum/Object/Role/List.pm
@@ -74,3 +74,15 @@ t/bubblegum/wrapper/dumper.t
 t/bubblegum/wrapper/encoder.t
 t/bubblegum/wrapper/json.t
 t/bubblegum/wrapper/yaml.t
+t/myapp.t
+t/myapp/lib/MyApp/Core.pm
+t/myapp/lib/MyApp/Core/Object/Array.pm
+t/myapp/lib/MyApp/Core/Object/Code.pm
+t/myapp/lib/MyApp/Core/Object/Float.pm
+t/myapp/lib/MyApp/Core/Object/Hash.pm
+t/myapp/lib/MyApp/Core/Object/Integer.pm
+t/myapp/lib/MyApp/Core/Object/Number.pm
+t/myapp/lib/MyApp/Core/Object/Scalar.pm
+t/myapp/lib/MyApp/Core/Object/String.pm
+t/myapp/lib/MyApp/Core/Object/Undef.pm
+t/myapp/lib/MyApp/Core/Object/Universal.pm

@@ -6,7 +6,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.27'; # VERSION
+our $VERSION = '0.28'; # VERSION
 
 sub import {
     my $target = caller;
@@ -29,26 +29,38 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.27
+version 0.28
 
 =head1 SYNOPSIS
 
     package Person;
 
     use Bubblegum::Class;
-    use Bubblegum::Constraints -minimal;
 
-    has 'firstname';
-    has 'lastname';
+    has 'firstname' => (
+        is       => 'ro',
+        required => 1
+    );
+
+    has 'lastname' => (
+        is       => 'ro',
+        required => 0
+    );
 
     sub greet {
-        my ($self, $subject) =
-            (&_object, &_string);
+        my $self = shift;
+        my $subject = shift;
 
-        return $subject->titlecase->format(
-            'Hello %s. My name is %s, nice to meet you.',
-                $self->firstname->titlecase
-        );
+        # fatal assertions
+        $self->asa_object;
+        $subject->asa_string;
+
+        $subject = $subject->titlecase;
+
+        my $target = $self->firstname->titlecase;
+        my $greeting = "Hello %s. My name is %s, nice to meet you.";
+
+        return $subject->format($greeting, $target);
     }
 
 And elsewhere:
@@ -79,10 +91,10 @@ is equivalent to
 
     use 5.10.0;
     use strict;
+    use warnings;
     use autobox;
     use autodie ':all';
     use feature ':5.10';
-    use warnings FATAL => 'all';
     use English -no_match_vars;
     use utf8::all;
     use mro 'c3';
@@ -293,50 +305,7 @@ evolve.
                +- CODE
                     [ROLE] VALUE
 
-=head2 Bubblegum Wrappers
-
-A Bubblegum::Wrapper module exists to extend Bubblegum itself and further extend
-the functionality of native data types by letting the data bless itself into
-wrappers (plugins) in a chain-able discoverable manner. It's also useful as a
-technique for coercion and indirect object instantiation. The following is an
-example:
-
-    use Bubblegum;
-
-    my $hash = {1..3,{4,{5,6,7,{8,9,10,11}}}};
-    my $json = $hash->json; # load Bubblegum::Wrapper::Json dynamically
-    say $json->encode;      # encode the hash as json
-
-    # {"1":2,"3":{"4":{"7":{"8":9,"10":11},"5":6}}}
-
-The follow list of wrappers are distributed with the Bubblegum distribution:
-
-=head3 Digest Wrapper
-
-The Bubblegum digest wrapper, L<Bubblegum::Wrapper::Digest>, provides access to
-various hashing algorithms to encode/decode messages.
-
-=head3 Dumper Wrapper
-
-The Bubblegum data-dumper wrapper, L<Bubblegum::Wrapper::Dumper>, provides
-functionality to encode/decode Perl data structures.
-
-=head3 Encoder Wrapper
-
-The Bubblegum encoding wrapper, L<Bubblegum::Wrapper::Encoder>, provides access
-to content encoding/decoding functionality.
-
-=head3 JSON Wrapper
-
-The Bubblegum json wrapper, L<Bubblegum::Wrapper::Json>, provides functionality
-to encode/decode Perl data structures as JSON documents.
-
-=head3 YAML Wrapper
-
-The Bubblegum yaml wrapper, L<Bubblegum::Wrapper::Yaml>, provides functionality
-to encode/decode Perl data structures as YAML documents.
-
-=head2 Bubblegum Data Type Operations
+=head2 Bubblegum Type Operations
 
 The following classes have methods which can be invoked by variables containing
 data of a type corresponding with the type the class is designed to handle.
@@ -387,6 +356,90 @@ for more information on operations associated with undefined variables.
 Universal operations work on all data which meets the criteria for being
 defined. Please see L<Bubblegum::Object::Universal> for more information on
 operations associated with array references.
+
+=head2 Bubblegum Wrappers
+
+A Bubblegum::Wrapper module exists to extend Bubblegum itself and further extend
+the functionality of native data types by letting the data bless itself into
+wrappers (plugins) in a chain-able discoverable manner. It's also useful as a
+technique for coercion and indirect object instantiation. The following is an
+example:
+
+    use Bubblegum;
+
+    my $hash = {1..3,{4,{5,6,7,{8,9,10,11}}}};
+    my $json = $hash->json; # load Bubblegum::Wrapper::Json dynamically
+    say $json->encode;      # encode the hash as json
+
+    # {"1":2,"3":{"4":{"7":{"8":9,"10":11},"5":6}}}
+
+The follow list of wrappers are distributed with the Bubblegum distribution:
+
+=head3 Digest Wrapper
+
+The Bubblegum digest wrapper, L<Bubblegum::Wrapper::Digest>, provides access to
+various hashing algorithms to encode/decode messages.
+
+=head3 Dumper Wrapper
+
+The Bubblegum data-dumper wrapper, L<Bubblegum::Wrapper::Dumper>, provides
+functionality to encode/decode Perl data structures.
+
+=head3 Encoder Wrapper
+
+The Bubblegum encoding wrapper, L<Bubblegum::Wrapper::Encoder>, provides access
+to content encoding/decoding functionality.
+
+=head3 JSON Wrapper
+
+The Bubblegum json wrapper, L<Bubblegum::Wrapper::Json>, provides functionality
+to encode/decode Perl data structures as JSON documents.
+
+=head3 YAML Wrapper
+
+The Bubblegum yaml wrapper, L<Bubblegum::Wrapper::Yaml>, provides functionality
+to encode/decode Perl data structures as YAML documents.
+
+=head2 Extending Bubblegum
+
+As an alternative to using Bubblegum wrappers, you can rebase (i.e. extend) the
+Bubblegum framework directly, and customize it for your application-specific
+usages. The following is an example of how you can accomplish this:
+
+    package MyApp::Core;
+
+    use parent 'Bubblegum';
+
+    use Bubblegum::Namespace Array     => 'MyApp::Core::Object::Array';
+    use Bubblegum::Namespace Code      => 'MyApp::Core::Object::Code';
+    use Bubblegum::Namespace Float     => 'MyApp::Core::Object::Float';
+    use Bubblegum::Namespace Hash      => 'MyApp::Core::Object::Hash';
+    use Bubblegum::Namespace Integer   => 'MyApp::Core::Object::Integer';
+    use Bubblegum::Namespace Number    => 'MyApp::Core::Object::Number';
+    use Bubblegum::Namespace Scalar    => 'MyApp::Core::Object::Scalar';
+    use Bubblegum::Namespace String    => 'MyApp::Core::Object::String';
+    use Bubblegum::Namespace Undef     => 'MyApp::Core::Object::Undef';
+    use Bubblegum::Namespace Universal => 'MyApp::Core::Object::Universal';
+
+    1;
+
+The example above creates an application-specific package derived from Bubblegum
+and changes the default Bubblegum object class namespaces to application-specific
+ones. Each class will need to be derived from its respective Bubblegum
+counterpart, for example:
+
+    package MyApp::Core::Object::Array;
+
+    use parent 'Bubblegum::Object::Array';
+
+    sub pushpop {
+        push @{(shift)}, pop @{(shift)};
+    }
+
+    1;
+
+This allows you to add and/or override object methods and tailor object type
+handling around your specific use-cases.
 
 =head1 AUTHOR
 
