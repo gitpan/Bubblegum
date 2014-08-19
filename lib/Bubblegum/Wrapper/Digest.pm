@@ -3,7 +3,6 @@ package Bubblegum::Wrapper::Digest;
 
 use 5.10.0;
 use Bubblegum::Class;
-
 use Digest::MD5 ();
 use Digest::SHA ();
 
@@ -11,7 +10,7 @@ use Bubblegum::Exception;
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub BUILD {
     my $self = shift;
@@ -55,7 +54,7 @@ Bubblegum::Wrapper::Digest - Bubblegum Wrapper around Hashing Algorithms
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

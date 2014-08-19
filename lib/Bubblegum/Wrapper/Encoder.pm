@@ -2,6 +2,8 @@
 package Bubblegum::Wrapper::Encoder;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Class;
 use Bubblegum::Exception;
 
@@ -9,7 +11,7 @@ use Encode 'find_encoding';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub BUILD {
     my $self = shift;
@@ -54,7 +56,7 @@ Bubblegum::Wrapper::Encoder - Bubblegum Wrapper around Content Encoding
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

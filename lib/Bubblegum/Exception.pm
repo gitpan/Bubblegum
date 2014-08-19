@@ -2,6 +2,8 @@
 package Bubblegum::Exception;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Devel::StackTrace;
 
 use Data::Dumper ();
@@ -10,7 +12,7 @@ use Scalar::Util ();
 use Moo 'has';
 use overload bool => sub {1}, '""' => 'as_string', fallback => 1;
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 has file => (
     is       => 'ro',
@@ -103,7 +105,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

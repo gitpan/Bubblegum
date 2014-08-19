@@ -1,11 +1,13 @@
 package Bubblegum::Object::Role::Comparison;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Role 'requires', 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 requires 'eq';
 requires 'eqtv';

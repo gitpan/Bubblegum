@@ -1,12 +1,14 @@
 package Bubblegum::Object::Role::Item;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Role 'requires';
 use Bubblegum::Namespace;
 
 use Types::Standard ();
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 requires 'defined';
 

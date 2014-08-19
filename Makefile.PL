@@ -33,10 +33,11 @@ my %WriteMakefileArgs = (
     "Type::Tiny" => "0.032",
     "autobox" => 0,
     "autodie" => 0,
+    "namespace::autoclean" => "0.19",
     "utf8::all" => 0
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.30",
+  "VERSION" => "0.31",
   "test" => {
     "TESTS" => "t/*.t t/bubblegum/*.t t/bubblegum/object/*.t t/bubblegum/object/role/*.t t/bubblegum/role/*.t t/bubblegum/wrapper/*.t"
   }
@@ -56,6 +57,7 @@ my %FallbackPrereqs = (
   "Type::Tiny" => "0.032",
   "autobox" => 0,
   "autodie" => 0,
+  "namespace::autoclean" => "0.19",
   "utf8::all" => 0
 );
 

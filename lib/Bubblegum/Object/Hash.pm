@@ -2,8 +2,11 @@
 package Bubblegum::Object::Hash;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints -types;
+use Bubblegum::Constraints 'type_string', 'type_coderef', 'type_number',
+  'type_hashref';
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Keyed';
@@ -11,7 +14,7 @@ with 'Bubblegum::Object::Role::Ref';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -233,7 +236,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

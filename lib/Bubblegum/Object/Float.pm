@@ -1,14 +1,15 @@
 package Bubblegum::Object::Float;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints -types;
 
 with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 # needs formatting routines ... not implemented yet
 

@@ -2,10 +2,12 @@
 package Bubblegum::Object::String;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Scalar::Util ();
 
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints -types;
+use Bubblegum::Constraints 'type_string', 'type_regexpref', 'type_number';
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Comparison';
@@ -14,7 +16,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub append {
     return $_[0] = CORE::join ' ', map type_string($_), @_;
@@ -261,7 +263,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

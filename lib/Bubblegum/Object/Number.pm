@@ -2,15 +2,17 @@
 package Bubblegum::Object::Number;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints -types;
+use Bubblegum::Constraints 'type_number';
 
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub abs {
     my $self = CORE::shift;
@@ -126,7 +128,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

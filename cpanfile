@@ -10,6 +10,7 @@ requires "Try::Tiny" => "0.18";
 requires "Type::Tiny" => "0.032";
 requires "autobox" => "0";
 requires "autodie" => "0";
+requires "namespace::autoclean" => "0.19";
 requires "perl" => "v5.10.0";
 requires "utf8::all" => "0";
 

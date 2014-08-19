@@ -1,12 +1,14 @@
 package Bubblegum::Object::Role::List;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Role 'requires', 'with';
-use Bubblegum::Constraints -types;
+use Bubblegum::Constraints 'type_coderef', 'type_arrayref';
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 requires 'defined';
 requires 'grep';

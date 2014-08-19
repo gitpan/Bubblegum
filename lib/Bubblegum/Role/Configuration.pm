@@ -1,6 +1,7 @@
 package Bubblegum::Role::Configuration;
 
 use 5.10.0;
+use namespace::autoclean;
 
 use strict;
 use utf8::all;
@@ -17,7 +18,7 @@ use Module::Find 'usesub';
 
 use parent 'autobox';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 requires 'import';
 

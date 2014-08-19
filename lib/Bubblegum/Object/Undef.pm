@@ -2,13 +2,15 @@
 package Bubblegum::Object::Undef;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Class 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub defined {
     return 0
@@ -28,7 +30,7 @@ Bubblegum::Object::Undef - Common Methods for Operating on Undefined Values
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

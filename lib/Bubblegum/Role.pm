@@ -2,11 +2,13 @@
 package Bubblegum::Role;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub import {
     my $target = caller;
@@ -31,7 +33,7 @@ Bubblegum::Role - Class Component System for Bubblegum via Moo::Role
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

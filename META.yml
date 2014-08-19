@@ -26,13 +26,14 @@ requires:
   Type::Tiny: 0.032
   autobox: 0
   autodie: 0
+  namespace::autoclean: 0.19
   perl: v5.10.0
   utf8::all: 0
 resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
   homepage: http://metacpan.org/release/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: 0.30
+version: 0.31
 x_authority: cpan:AWNCORP
 x_contributors:
   - 'Toby Inkster <tobyink@cpan.org>'

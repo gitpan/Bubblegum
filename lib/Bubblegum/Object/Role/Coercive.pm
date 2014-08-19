@@ -1,9 +1,11 @@
 package Bubblegum::Object::Role::Coercive;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Role 'requires';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 requires 'to_array';
 requires 'to_code';

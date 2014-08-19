@@ -2,12 +2,14 @@
 package Bubblegum::Wrapper::Json;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Class;
 use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub decode {
     my $self = shift;
@@ -35,7 +37,7 @@ Bubblegum::Wrapper::Json - Bubblegum Wrapper around JSON Serialization
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

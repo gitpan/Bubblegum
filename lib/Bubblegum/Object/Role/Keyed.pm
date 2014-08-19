@@ -1,10 +1,12 @@
 package Bubblegum::Object::Role::Keyed;
 
 use 5.10.0;
+use namespace::autoclean;
+
 use Bubblegum::Role 'with';
 
 with 'Bubblegum::Object::Role::Collection';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 1;

@@ -2,13 +2,14 @@
 package Bubblegum::Object::Universal;
 
 use 5.10.0;
+use namespace::autoclean;
 
 use Bubblegum::Namespace;
-use Class::Load ();
+use Class::Load 'load_class';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 sub digest {
     my $self  = CORE::shift;
@@ -28,7 +29,7 @@ sub encoder {
 sub instance {
     my $self  = CORE::shift;
     my $class = $$Bubblegum::Namespace::ExtendedTypes{'INSTANCE'};
-    return Class::Load::load_class($class)->new(data => $self);
+    return load_class($class)->new(data => $self);
 }
 
 sub json {
@@ -40,7 +41,7 @@ sub wrapper {
     my $self  = CORE::shift;
     my $class = CORE::shift;
     my $wrapper = $$Bubblegum::Namespace::ExtendedTypes{'WRAPPER'};
-    return Class::Load::load_class(join('::', $wrapper, $class))->new(data => $self);
+    return load_class(join('::', $wrapper, $class))->new(data => $self);
 }
 
 sub yaml {
@@ -62,7 +63,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 SYNOPSIS
 

@@ -1,6 +1,13 @@
 Changelog for Bubblegum
 
-0.30 2014-08-18T17:39:48
+0.31 2014-08-19T09:24:00
+ - Updated POD, README, and Makefile.
+ - Completely refactored Bubblegum::Contraints, Update related
+   documentation, Added namespace::autoclean to classes importing
+   functions.
+
+0.30 2014-08-18T17:40:29
+ - v0.30
  - Updated Contributors List, POD, README, and Makefile
  - Updated POD, README, and Makefile.
  - Updated miscellaneous sections of documentation.
