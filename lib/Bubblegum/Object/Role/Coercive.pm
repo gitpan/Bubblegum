@@ -5,7 +5,7 @@ use namespace::autoclean;
 
 use Bubblegum::Role 'requires';
 
-our $VERSION = '0.31'; # VERSION
+our $VERSION = '0.32'; # VERSION
 
 requires 'to_array';
 requires 'to_code';

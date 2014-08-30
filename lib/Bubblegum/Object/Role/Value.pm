@@ -8,7 +8,7 @@ use Bubblegum::Constraints 'type_coderef';
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.31'; # VERSION
+our $VERSION = '0.32'; # VERSION
 
 sub do {
     my $self = CORE::shift;

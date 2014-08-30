@@ -14,21 +14,33 @@ use Bubblegum::Namespace ();
 use feature ();
 use mro ();
 
-use Module::Find 'usesub';
-
+use Class::Load 'load_class';
 use parent 'autobox';
 
-our $VERSION = '0.31'; # VERSION
+our $VERSION = '0.32'; # VERSION
 
 requires 'import';
 
 sub prerequisites {
     my ($class, $target) = @_;
-    my $ignore = ($target =~ /^Bubblegum::Object/);
 
-    # config
+    # autoload
+    unless (my $ignore = ($target =~ /^Bubblegum::Object/)) {
+        load_class 'Bubblegum::Object::Undef';
+        load_class 'Bubblegum::Object::Array';
+        load_class 'Bubblegum::Object::Code';
+        load_class 'Bubblegum::Object::Float';
+        load_class 'Bubblegum::Object::Hash';
+        load_class 'Bubblegum::Object::Instance';
+        load_class 'Bubblegum::Object::Integer';
+        load_class 'Bubblegum::Object::Number';
+        load_class 'Bubblegum::Object::Scalar';
+        load_class 'Bubblegum::Object::String';
+        load_class 'Bubblegum::Object::Universal';
+    }
+
+    # resolution
     mro::set_mro $target, 'c3';
-    usesub Bubblegum::Object unless $ignore;
 
     # imports
     'strict'    ->import::into($target);

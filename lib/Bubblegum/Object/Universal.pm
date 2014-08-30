@@ -9,7 +9,7 @@ use Class::Load 'load_class';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.31'; # VERSION
+our $VERSION = '0.32'; # VERSION
 
 sub digest {
     my $self  = CORE::shift;
@@ -63,7 +63,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.31
+version 0.32
 
 =head1 SYNOPSIS
 
@@ -83,35 +83,35 @@ the L<Bubblegum> class.
 =head2 digest
 
     my $thing = '...';
-    $thing->digest; # bless({'data' => '...'}, 'Bubblegum::Object::Digest')
+    $thing->digest; # bless({'data' => '...'}, 'Bubblegum::Wrapper::Digest')
 
     my $data = $thing->digest->data;
 
 The digest method blesses the subject into the wrapper class,
-L<Bubblegum::Object::Digest>, and returns an instance. Please see
-L<Bubblegum::Object::Digest> for more information.
+L<Bubblegum::Wrapper::Digest>, and returns an instance. Please see
+L<Bubblegum::Wrapper::Digest> for more information.
 
 =head2 dumper
 
     my $thing = '...';
-    $thing->dumper; # bless({'data' => '...'}, 'Bubblegum::Object::Dumper')
+    $thing->dumper; # bless({'data' => '...'}, 'Bubblegum::Wrapper::Dumper')
 
     my $data = $thing->dumper->data;
 
 The dumper method blesses the subject into the wrapper class,
-L<Bubblegum::Object::Dumper>, and returns an instance. Please see
-L<Bubblegum::Object::Dumper> for more information.
+L<Bubblegum::Wrapper::Dumper>, and returns an instance. Please see
+L<Bubblegum::Wrapper::Dumper> for more information.
 
 =head2 encoder
 
     my $thing = '...';
-    $thing->encoder; # bless({'data' => '...'}, 'Bubblegum::Object::Encoder')
+    $thing->encoder; # bless({'data' => '...'}, 'Bubblegum::Wrapper::Encoder')
 
     my $data = $thing->encoder->data;
 
 The encoder method blesses the subject into the wrapper class,
-L<Bubblegum::Object::Encoder>, and returns an instance. Please see
-L<Bubblegum::Object::Encoder> for more information.
+L<Bubblegum::Wrapper::Encoder>, and returns an instance. Please see
+L<Bubblegum::Wrapper::Encoder> for more information.
 
 =head2 instance
 
@@ -127,13 +127,13 @@ L<Bubblegum::Object::Instance> for more information.
 =head2 json
 
     my $thing = '...';
-    $thing->json; # bless({'data' => '...'}, 'Bubblegum::Object::Json')
+    $thing->json; # bless({'data' => '...'}, 'Bubblegum::Wrapper::Json')
 
     my $data = $thing->json->data;
 
 The json method blesses the subject into the wrapper class,
-L<Bubblegum::Object::Json>, and returns an instance. Please see
-L<Bubblegum::Object::Json> for more information.
+L<Bubblegum::Wrapper::Json>, and returns an instance. Please see
+L<Bubblegum::Wrapper::Json> for more information.
 
 =head2 wrapper
 
@@ -153,13 +153,13 @@ L<Bubblegum::Wrapper::Yaml>.
 =head2 yaml
 
     my $thing = '...';
-    $thing->yaml; # bless({'data' => '...'}, 'Bubblegum::Object::Yaml')
+    $thing->yaml; # bless({'data' => '...'}, 'Bubblegum::Wrapper::Yaml')
 
     my $data = $thing->yaml->data;
 
 The yaml method blesses the subject into the wrapper class,
-L<Bubblegum::Object::Yaml>, and returns an instance. Please see
-L<Bubblegum::Object::Yaml> for more information.
+L<Bubblegum::Wrapper::Yaml>, and returns an instance. Please see
+L<Bubblegum::Wrapper::Yaml> for more information.
 
 =encoding utf8
 
