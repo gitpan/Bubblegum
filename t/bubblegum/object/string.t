@@ -88,20 +88,24 @@ can_ok 'Bubblegum::Object::String', 'camelcase';
 subtest 'test the camelcase method' => sub {
     my $string = 'hello world';
     is 'HelloWorld', $string->camelcase; # HelloWorld
+    is 'HelloWorld', $string; # HelloWorld
     $string = 'HELLO WORLD';
     is 'HelloWorld', $string->camelcase; # HelloWorld
+    is 'HelloWorld', $string; # HelloWorld
 };
 
 can_ok 'Bubblegum::Object::String', 'chomp';
 subtest 'test the chomp method' => sub {
     my $string = "name, age, dob, email\n";
     is 'name, age, dob, email', $string->chomp; # name, age, dob, email
+    is 'name, age, dob, email', $string; # name, age, dob, email
 };
 
 can_ok 'Bubblegum::Object::String', 'chop';
 subtest 'test the chop method' => sub {
     my $string = "this is just a test.";
     is 'this is just a test', $string->chop; # this is just a test
+    is 'this is just a test', $string; # this is just a test
 };
 
 can_ok 'Bubblegum::Object::String', 'hex';
@@ -177,6 +181,7 @@ can_ok 'Bubblegum::Object::String', 'snakecase';
 subtest 'test the snakecase method' => sub {
     my $string = 'hello world';
     is 'helloWorld', $string->snakecase; # helloWorld
+    is 'helloWorld', $string; # helloWorld
 };
 
 can_ok 'Bubblegum::Object::String', 'split';
@@ -192,12 +197,14 @@ can_ok 'Bubblegum::Object::String', 'strip';
 subtest 'test the strip method' => sub {
     my $string = 'one,  two,  three';
     is 'one, two, three', $string->strip; # one, two, three
+    is 'one, two, three', $string; # one, two, three
 };
 
 can_ok 'Bubblegum::Object::String', 'titlecase';
 subtest 'test the titlecase method' => sub {
     my $string = 'mr. wellington III';
     is 'Mr. Wellington III', $string->titlecase; # Mr. Wellington III
+    is 'Mr. Wellington III', $string; # Mr. Wellington III
 };
 
 can_ok 'Bubblegum::Object::String', 'to_array';
@@ -239,6 +246,7 @@ can_ok 'Bubblegum::Object::String', 'trim';
 subtest 'test the trim method' => sub {
     my $string = ' system is   ready   ';
     is 'system is   ready', $string->trim; # system is   ready
+    is 'system is   ready', $string; # system is   ready
 };
 
 can_ok 'Bubblegum::Object::String', 'uc';

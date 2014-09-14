@@ -11,6 +11,7 @@ with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Indexed';
 with 'Bubblegum::Object::Role::List';
 with 'Bubblegum::Object::Role::Ref';
+with 'Bubblegum::Object::Role::Output';
 
 use Syntax::Keyword::Junction::All  ();
 use Syntax::Keyword::Junction::Any  ();
@@ -20,7 +21,7 @@ use Scalar::Util ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -257,6 +258,11 @@ sub pop {
     return CORE::pop @$self;
 }
 
+sub print {
+    my $self = CORE::shift;
+    return CORE::print @$self, @_;
+}
+
 sub push {
     my $self = CORE::shift;
     my @args = @_;
@@ -291,6 +297,11 @@ sub rsort {
     my $self = CORE::shift;
     my $code = sub { $b cmp $a };
     return $self->sort($code);
+}
+
+sub say {
+    my $self = CORE::shift;
+    return print(@$self, @_, "\n");
 }
 
 sub set {
@@ -377,7 +388,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -709,6 +720,15 @@ corresponds to the index and value of each element in the subject.
 The pop method returns the last element of the subject shortening it by one. Note,
 this method modifies the subject.
 
+=head2 print
+
+    my $array = [1..5];
+    $array->print; # 12345
+    $array->print(6789); # 123456789
+
+The print method prints the array values to STDOUT, and returns true if
+successful.
+
 =head2 push
 
     my $array = [1..5];
@@ -739,7 +759,9 @@ subject in reverse order.
     $array->rotate; # [3,4,5,1,2]
     $array->rotate; # [4,5,1,2,3]
 
-The rotate method rotates the elements in the subject such that first elements becomes the last element and the second element becomes the first element each time this method is called. Note, this method modifies the subject.
+The rotate method rotates the elements in the subject such that first elements
+becomes the last element and the second element becomes the first element each
+time this method is called. Note, this method modifies the subject.
 
 =head2 rnsort
 
@@ -756,6 +778,15 @@ subject sorted numerically in reverse.
 
 The rsort method returns an array reference containing the values in the subject
 sorted alphanumerically in reverse.
+
+=head2 say
+
+    my $array = [1..5];
+    $array->say; # 12345\n
+    $array->say(6789); # 123456789\n
+
+The say method prints the array values with a newline appended to STDOUT, and
+returns true if successful.
 
 =head2 set
 
@@ -836,8 +867,6 @@ returns itself. Note, this method modifies the subject.
 The values method returns an array reference consisting of the elements in the
 subject. This method essentially copies the content of the subject into a new
 container.
-
-=encoding utf8
 
 =head1 SEE ALSO
 

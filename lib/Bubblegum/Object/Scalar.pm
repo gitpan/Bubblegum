@@ -14,7 +14,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub and {
     my ($self, $other) =  @_;
@@ -66,7 +66,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -125,8 +125,8 @@ as the lvalue and the argument as the rvalue and returns the first truthy value.
     $variable = 'yes';
     $variable->print('no'); # yesno
 
-The print method prints the scalar value to the filehandle specified, defaulting
-to STDOUT, and returns true is successful.
+The print method prints the scalar value to STDOUT, and returns true if
+successful.
 
 =head2 repeat
 
@@ -147,8 +147,8 @@ of times specified by the argument.
     $variable = 'yes';
     $variable->say('no'); # yesno\n
 
-The say method prints the scalar value with a newline appended to the filehandle
-specified, defaulting to STDOUT, and returns true is successful.
+The say method prints the scalar value with a newline appended to STDOUT, and
+returns true if successful.
 
 =head2 xor
 
@@ -159,8 +159,6 @@ specified, defaulting to STDOUT, and returns true is successful.
 The xor method performs an exclusive OR operation using the subject as the
 lvalue and the argument as the rvalue and returns true if either but not both
 is true.
-
-=encoding utf8
 
 =head1 SEE ALSO
 

@@ -64,4 +64,18 @@ subtest 'test the next method' => sub {
     is 3, $code->next(2); # 3
 };
 
+can_ok 'Bubblegum::Object::Code', 'print';
+subtest 'test the print method' => sub {
+    my $code = sub{''};
+    is 1, $code->print; # ''
+    is 1, $code->print(''); # ''
+};
+
+can_ok 'Bubblegum::Object::Code', 'say';
+subtest 'test the say method' => sub {
+    my $code = sub{''};
+    is 1, $code->say; # ''
+    is 1, $code->say(''); # ''
+};
+
 done_testing;

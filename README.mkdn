@@ -4,7 +4,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 # VERSION
 
-version 0.32
+version 0.33
 
 # STATUS
 
@@ -31,6 +31,7 @@ version 0.32
         my $subject = shift;
 
         # fatal assertions
+        $self->asa_object;
         $subject->asa_string;
 
         $subject = $subject->titlecase;
@@ -380,9 +381,10 @@ handling around your specific use-cases.
 
 Al Newkirk <anewkirk@ana.io>
 
-# CONTRIBUTOR
+# CONTRIBUTORS
 
-Toby Inkster <tobyink@cpan.org>
+- Toby Inkster <tobyink@cpan.org>
+- Сергей Романов <sromanov-dev@yandex.ru>
 
 # COPYRIGHT AND LICENSE
 

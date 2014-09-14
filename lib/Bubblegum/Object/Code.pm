@@ -9,10 +9,11 @@ use Bubblegum::Constraints 'type_coderef';
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
+with 'Bubblegum::Object::Role::Output';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub call {
     my $self = CORE::shift;
@@ -55,6 +56,16 @@ sub next {
     goto &call;
 }
 
+sub print {
+    my $self = CORE::shift;
+    return CORE::print $self->(@_);
+}
+
+sub say {
+    my $self = CORE::shift;
+    return print($self->(@_), "\n");
+}
+
 1;
 
 __END__
@@ -69,7 +80,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -164,7 +175,23 @@ argument as the rvalue.
 The next method is an alias to the call method. The naming is especially useful
 (i.e. helps with readability) when used with closure-based iterators.
 
-=encoding utf8
+=head2 print
+
+    my $code = sub {(1234, @_)};
+    $code->print; # 12345
+    $code->print(6789); # 123456789
+
+The print method prints the return value of the code reference to STDOUT, and
+returns true if successful.
+
+=head2 say
+
+    my $code = sub {(1234, @_)};
+    $code->print; # 12345\n
+    $code->print(6789); # 123456789\n
+
+The say method prints the return value of the code reference with a newline
+appended to STDOUT, and returns true if successful.
 
 =head1 SEE ALSO
 

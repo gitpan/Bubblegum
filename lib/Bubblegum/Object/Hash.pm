@@ -11,10 +11,11 @@ use Bubblegum::Constraints 'type_string', 'type_coderef', 'type_number',
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Keyed';
 with 'Bubblegum::Object::Role::Ref';
+with 'Bubblegum::Object::Role::Output';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -183,6 +184,11 @@ sub pairs_array {
     return [CORE::map { [ $_, $self->{$_} ] } CORE::keys %$self];
 }
 
+sub print {
+    my $self = CORE::shift;
+    return CORE::print %$self, @_;
+}
+
 sub list {
     my $self = CORE::shift;
     return %$self;
@@ -211,6 +217,11 @@ sub reverse {
     return {CORE::reverse %$temp};
 }
 
+sub say {
+    my $self = CORE::shift;
+    return print(%$self, @_, "\n");
+}
+
 sub set {
     my $self = CORE::shift;
     my $key  = type_string CORE::shift;
@@ -236,7 +247,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -462,6 +473,15 @@ The pairs_array method returns an array reference consisting of array references
 where each sub array reference has two elements corresponding to the key and
 value of each element in the subject.
 
+=head2 print
+
+    my $hash = {1..8};
+    $hash->print; # 12345678
+    $hash->print(9); # 123456789
+
+The print method prints the hash keys and values to STDOUT, and returns true if
+successful.
+
 =head2 list
 
     my $hash = {1..8};
@@ -492,6 +512,15 @@ The reset method returns nullifies the value of each element in the subject.
 The reverse method returns a hash reference consisting of the subject's keys and
 values inverted. Note, keys with undefined values will be dropped.
 
+=head2 say
+
+    my $hash = {1..8};
+    $hash->say; # 12345678\n
+    $hash->say(9); # 123456789\n
+
+The say method prints the hash keys and values with a newline appended to
+STDOUT, and returns true if successful.
+
 =head2 set
 
     my $hash = {1..8};
@@ -510,8 +539,6 @@ argument.
 
 The values method returns an array reference consisting of the values of the
 elements in the subject.
-
-=encoding utf8
 
 =head1 SEE ALSO
 

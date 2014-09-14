@@ -11,7 +11,7 @@ use Encode 'find_encoding';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub BUILD {
     my $self = shift;
@@ -56,7 +56,7 @@ Bubblegum::Wrapper::Encoder - Bubblegum Wrapper around Content Encoding
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -82,8 +82,6 @@ The default is utf-8 is no encoding is supplied.
 
 The encode method encodes the raw string data using the encoding specified.
 The default is utf-8 is no encoding is supplied.
-
-=encoding utf8
 
 =head1 AUTHOR
 

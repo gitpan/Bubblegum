@@ -283,10 +283,18 @@ subtest 'test the pop method' => sub {
     is $array->pop, undef; # undef
 };
 
+can_ok 'Bubblegum::Object::Array', 'print';
+subtest 'test the print method' => sub {
+    my $array = [];
+    is 1, $array->print; # ''
+    is 1, $array->print(''); # ''
+};
+
 can_ok 'Bubblegum::Object::Array', 'push';
 subtest 'test the push method' => sub {
     my $array = [1..5];
     is_deeply $array->push(6,7,8), [1,2,3,4,5,6,7,8]; # [1,2,3,4,5,6,7,8]
+    is_deeply $array, [1,2,3,4,5,6,7,8]; # [1,2,3,4,5,6,7,8]
 };
 
 can_ok 'Bubblegum::Object::Array', 'random';
@@ -314,6 +322,7 @@ subtest 'test the rotate method' => sub {
     is_deeply $array->rotate, [qw(2 3 4 5 1)]; # [2,3,4,5,1]
     is_deeply $array->rotate, [qw(3 4 5 1 2)]; # [3,4,5,1,2]
     is_deeply $array->rotate, [qw(4 5 1 2 3)]; # [4,5,1,2,3]
+    is_deeply $array, [qw(4 5 1 2 3)]; # [4,5,1,2,3]
 };
 
 can_ok 'Bubblegum::Object::Array', 'rnsort';
@@ -326,6 +335,13 @@ can_ok 'Bubblegum::Object::Array', 'rsort';
 subtest 'test the rsort method' => sub {
     my $array = ['a'..'d'];
     is_deeply $array->rsort, [qw(d c b a)]; # ['d','c','b','a']
+};
+
+can_ok 'Bubblegum::Object::Array', 'say';
+subtest 'test the say method' => sub {
+    my $array = [];
+    is 1, $array->say; # ''
+    is 1, $array->say(''); # ''
 };
 
 can_ok 'Bubblegum::Object::Array', 'set';
@@ -343,6 +359,7 @@ subtest 'test the shift method' => sub {
     is $array->shift, 3; # 3
     is $array->shift, 4; # 4
     is $array->shift, 5; # 5
+    is_deeply $array, [];
 };
 
 can_ok 'Bubblegum::Object::Array', 'size';
@@ -387,6 +404,7 @@ subtest 'test the unshift method' => sub {
     my $array = [1..5];
     is_deeply $array->unshift(-2,-1,0),
         [-2,-1,0,1,2,3,4,5]; # [-2,-1,0,1,2,3,4,5]
+    is_deeply $array, [-2,-1,0,1,2,3,4,5]; # [-2,-1,0,1,2,3,4,5]
 };
 
 can_ok 'Bubblegum::Object::Array', 'values';

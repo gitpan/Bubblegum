@@ -17,9 +17,14 @@ use mro ();
 use Class::Load 'load_class';
 use parent 'autobox';
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 requires 'import';
+
+BEGIN {
+    use Bubblegum::Object::Universal; # tisk tisk
+    push @UNIVERSAL::ISA, 'Bubblegum::Object::Universal';
+}
 
 sub prerequisites {
     my ($class, $target) = @_;

@@ -8,7 +8,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub import {
     my $target = caller;
@@ -31,7 +31,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -54,6 +54,7 @@ version 0.32
         my $subject = shift;
 
         # fatal assertions
+        $self->asa_object;
         $subject->asa_string;
 
         $subject = $subject->titlecase;
@@ -157,8 +158,6 @@ using Bubblegum:
         use Bubblegum::Class;                   # Bubblegum w/ Moo
         use Bubblegum::Role;                    # Bubblegum w/ Moo (Role)
         use Bubblegum::Singleton;               # Bubblegum w/ Moo (Singleton)
-
-=encoding utf8
 
 =head1 INTRODUCTION
 
@@ -438,9 +437,19 @@ handling around your specific use-cases.
 
 Al Newkirk <anewkirk@ana.io>
 
-=head1 CONTRIBUTOR
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
 
 Toby Inkster <tobyink@cpan.org>
+
+=item *
+
+Сергей Романов <sromanov-dev@yandex.ru>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

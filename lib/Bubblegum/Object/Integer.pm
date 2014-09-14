@@ -13,7 +13,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub downto {
     my $self = CORE::shift;
@@ -108,7 +108,7 @@ Bubblegum::Object::Integer - Common Methods for Operating on Integers
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -237,8 +237,6 @@ the argument, the range generated will be from least to greatest.
 The upto method returns an array reference containing a range of integers
 from the subject to the argument. Assumes the subject is lesser than the
 argument.
-
-=encoding utf8
 
 =head1 SEE ALSO
 

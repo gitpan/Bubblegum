@@ -16,7 +16,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub append {
     return $_[0] = CORE::join ' ', map type_string($_), @_;
@@ -99,23 +99,20 @@ sub ne {
 }
 
 sub camelcase {
-    my $self = CORE::shift;
-    $self = CORE::ucfirst(CORE::lc("$self"));
-    $self =~ s/[^a-zA-Z0-9]+([a-z])/\U$1/g;
-    $self =~ s/[^a-zA-Z0-9]+//g;
-    return $self;
+    $_[0] = CORE::ucfirst(CORE::lc("$_[0]"));
+    $_[0] =~ s/[^a-zA-Z0-9]+([a-z])/\U$1/g;
+    $_[0] =~ s/[^a-zA-Z0-9]+//g;
+    return $_[0];
 }
 
 sub chomp {
-    my $self = CORE::shift;
-    CORE::chomp $self;
-    return $self;
+    CORE::chomp $_[0];
+    return $_[0];
 }
 
 sub chop {
-    my $self = CORE::shift;
-    CORE::chop $self;
-    return $self;
+    CORE::chop $_[0];
+    return $_[0];
 }
 
 sub hex {
@@ -171,11 +168,10 @@ sub rindex {
 }
 
 sub snakecase {
-    my $self = CORE::shift;
-    $self = CORE::lc("$self");
-    $self =~ s/[^a-zA-Z0-9]+([a-z])/\U$1/g;
-    $self =~ s/[^a-zA-Z0-9]+//g;
-    return $self;
+    $_[0] = CORE::lc("$_[0]");
+    $_[0] =~ s/[^a-zA-Z0-9]+([a-z])/\U$1/g;
+    $_[0] =~ s/[^a-zA-Z0-9]+//g;
+    return $_[0];
 }
 
 sub split {
@@ -188,15 +184,13 @@ sub split {
 }
 
 sub strip {
-    my $self = CORE::shift;
-    $self =~ s/\s{2,}/ /g;
-    return $self;
+    $_[0] =~ s/\s{2,}/ /g;
+    return $_[0];
 }
 
 sub titlecase {
-    my $self = CORE::shift;
-    $self =~ s/\b(\w)/\U$1/g;
-    return $self;
+    $_[0] =~ s/\b(\w)/\U$1/g;
+    return $_[0];
 }
 
 sub to_array {
@@ -225,9 +219,8 @@ sub to_string {
 }
 
 sub trim {
-    my $self = CORE::shift;
-    $self =~ s/^\s+|\s+$//g;
-    return $self;
+    $_[0] =~ s/^\s+|\s+$//g;
+    return $_[0];
 }
 
 sub uc {
@@ -263,7 +256,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -630,8 +623,6 @@ The uppercase method is an alias to the uc method.
 The words method splits the subject into a list of strings, separating each
 group of characters by 1 or more consecutive spaces, and returns that list as an
 array reference.
-
-=encoding utf8
 
 =head1 SEE ALSO
 

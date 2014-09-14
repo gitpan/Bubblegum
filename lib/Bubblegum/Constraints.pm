@@ -11,7 +11,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 our @EXPORT_OK;
 our %EXPORT_TAGS;
@@ -742,7 +742,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -1859,8 +1859,6 @@ value, the function will cause the program to die.
 The typeof_value function returns a type constraint in the form of a code
 reference which asserts that the argument is a value. If the argument is not a
 value, the function will cause the program to die.
-
-=encoding utf8
 
 =head1 AUTHOR
 

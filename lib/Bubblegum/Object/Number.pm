@@ -12,7 +12,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub abs {
     my $self = CORE::shift;
@@ -128,7 +128,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -299,8 +299,6 @@ The to_integer method is used for coercion and simply returns the subject.
 
 The to_string method is used for coercion and simply returns the stringified
 version of the subject.
-
-=encoding utf8
 
 =head1 SEE ALSO
 

@@ -9,7 +9,7 @@ use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub decode {
     my $self = shift;
@@ -37,7 +37,7 @@ Bubblegum::Wrapper::Json - Bubblegum Wrapper around JSON Serialization
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -67,8 +67,6 @@ L<JSON::Tiny> module.
 
 The encode method serializes the Perl data structure using the L<JSON::Tiny>
 module.
-
-=encoding utf8
 
 =head1 AUTHOR
 

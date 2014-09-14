@@ -136,8 +136,9 @@ subtest 'test the hslice method' => sub {
 
 can_ok 'Bubblegum::Object::Hash', 'invert';
 subtest 'test the invert method' => sub {
-    my $hash = {1..8,9,undef,10,''};
+    my $addr = refaddr(my $hash = {1..8,9,undef,10,''});
     my $data = $hash->invert; # {''=>10,2=>1,4=>3,6=>5,8=>7}
+    ok $addr == refaddr($hash);
     is_deeply $data, {''=>10,2=>1,4=>3,6=>5,8=>7};
 };
 
@@ -202,6 +203,13 @@ subtest 'test the merge method' => sub {
     is_deeply $data, {1=>2,3=>4,5=>6,7=>7,9=>9};
 };
 
+can_ok 'Bubblegum::Object::Hash', 'print';
+subtest 'test the print method' => sub {
+    my $hash = {};
+    is 1, $hash->print; # ''
+    is 1, $hash->print(''); # ''
+};
+
 can_ok 'Bubblegum::Object::Hash', 'reset';
 subtest 'test the reset method' => sub {
     my $hash = {1..8};
@@ -214,6 +222,13 @@ subtest 'test the reverse method' => sub {
     my $hash = {1..8,9,undef};
     my $data = $hash->reverse; # {8=>7,6=>5,4=>3,2=>1}
     is_deeply $data, {8=>7,6=>5,4=>3,2=>1};
+};
+
+can_ok 'Bubblegum::Object::Hash', 'say';
+subtest 'test the say method' => sub {
+    my $hash = {};
+    is 1, $hash->say; # ''
+    is 1, $hash->say(''); # ''
 };
 
 can_ok 'Bubblegum::Object::Hash', 'set';

@@ -10,7 +10,7 @@ use Bubblegum::Exception;
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub BUILD {
     my $self = shift;
@@ -54,7 +54,7 @@ Bubblegum::Wrapper::Digest - Bubblegum Wrapper around Hashing Algorithms
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
@@ -85,8 +85,6 @@ the default hashing algorithm is md5_hex;
     $data->digest->encode('sha1_hex');
     $data->digest->encode('hmac_sha1');
     $data->digest->encode('hmac_sha1_hex');
-
-=encoding utf8
 
 =head1 AUTHOR
 

@@ -1,6 +1,15 @@
 Changelog for Bubblegum
 
-0.32 2014-08-30T19:39:46
+0.33 2014-09-14T15:25:06
+ - Updated POD, README, and Makefile.
+ - Added the output role to all data types.
+ - Added tests and changes to ensure methods that modify their subject work
+   as intended.
+ - Relocated isa and asa constraints and made them available to UNIVERSAL.
+ - Changed PWP::Encoding to PWP::SingleEncoding.
+
+0.32 2014-08-30T19:40:01
+ - v0.32
  - Updated POD, README, and Makefile.
  - Faster mechanism for importing and configuring, Replaced custom
    Bubblegum::Exception with Throwable::Error version, Removed
