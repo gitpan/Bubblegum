@@ -21,7 +21,7 @@ use Scalar::Util ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.33'; # VERSION
+our $VERSION = '0.34'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -388,7 +388,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.33
+version 0.34
 
 =head1 SYNOPSIS
 

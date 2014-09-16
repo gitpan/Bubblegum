@@ -43,6 +43,7 @@ lib/Bubblegum/Wrapper/Dumper.pm
 lib/Bubblegum/Wrapper/Encoder.pm
 lib/Bubblegum/Wrapper/Json.pm
 lib/Bubblegum/Wrapper/Yaml.pm
+lib/gum.pm
 t/bubblegum.t
 t/bubblegum/class.t
 t/bubblegum/constraints.t
@@ -75,6 +76,12 @@ t/bubblegum/wrapper/dumper.t
 t/bubblegum/wrapper/encoder.t
 t/bubblegum/wrapper/json.t
 t/bubblegum/wrapper/yaml.t
+t/gum.t
+t/gum/class.t
+t/gum/isas.t
+t/gum/role.t
+t/gum/singleton.t
+t/gum/types.t
 t/myapp.t
 t/myapp/lib/MyApp/Core.pm
 t/myapp/lib/MyApp/Core/Object/Array.pm

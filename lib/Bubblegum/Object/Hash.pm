@@ -15,7 +15,7 @@ with 'Bubblegum::Object::Role::Output';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.33'; # VERSION
+our $VERSION = '0.34'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -247,7 +247,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.33
+version 0.34
 
 =head1 SYNOPSIS
 
@@ -455,7 +455,7 @@ The lookup method returns the value of the element in the subject whose key
 corresponds to the key specified in the argument. The key can be a string which
 references (using dot-notation) nested keys within the subject. This method will
 return undefined if the value is undef or the location expressed in the argument
-can not be resolved.
+can not be resolved. Please note, keys containing dots (periods) are not handled.
 
 =head2 pairs
 

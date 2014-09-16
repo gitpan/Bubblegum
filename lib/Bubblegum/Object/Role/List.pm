@@ -8,7 +8,7 @@ use Bubblegum::Constraints 'type_coderef', 'type_arrayref';
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.33'; # VERSION
+our $VERSION = '0.34'; # VERSION
 
 requires 'defined';
 requires 'grep';

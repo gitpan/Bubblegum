@@ -1,6 +1,11 @@
 Changelog for Bubblegum
 
-0.33 2014-09-14T15:25:06
+0.34 2014-09-16T00:59:29
+ - Updated POD, README, and Makefile.
+ - Added the gum shoehorn module.
+
+0.33 2014-09-14T15:25:25
+ - v0.33
  - Updated POD, README, and Makefile.
  - Added the output role to all data types.
  - Added tests and changes to ensure methods that modify their subject work

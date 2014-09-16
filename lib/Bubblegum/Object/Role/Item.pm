@@ -6,7 +6,7 @@ use namespace::autoclean;
 use Bubblegum::Role 'requires';
 use Bubblegum::Namespace;
 
-our $VERSION = '0.33'; # VERSION
+our $VERSION = '0.34'; # VERSION
 
 requires 'defined';
 

@@ -9,17 +9,17 @@ use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.33'; # VERSION
+our $VERSION = '0.34'; # VERSION
 
 sub decode {
     my $self = shift;
-    my $yaml = load_class('YAML::Tiny', -version => 1.56)->new;
+    my $yaml = load_class('YAML::Tiny', {-version => 1.56})->new;
     return $yaml->read_string($self->data);
 }
 
 sub encode {
     my $self = shift;
-    my $yaml = load_class('YAML::Tiny', -version => 1.56)->new;
+    my $yaml = load_class('YAML::Tiny', {-version => 1.56})->new;
 
     $yaml->[0] = $self->data; # hack
     return $yaml->write_string($self->data);
@@ -39,7 +39,7 @@ Bubblegum::Wrapper::Yaml - Bubblegum Wrapper around YAML Serialization
 
 =head1 VERSION
 
-version 0.33
+version 0.34
 
 =head1 SYNOPSIS
 
