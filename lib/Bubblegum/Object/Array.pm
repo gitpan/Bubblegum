@@ -6,6 +6,7 @@ use namespace::autoclean;
 
 use Bubblegum::Class 'with';
 use Bubblegum::Constraints -isas, -types;
+use Scalar::Util 'looks_like_number';
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Indexed';
@@ -14,15 +15,14 @@ with 'Bubblegum::Object::Role::Ref';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Output';
 
-use Syntax::Keyword::Junction::All  ();
-use Syntax::Keyword::Junction::Any  ();
+use Syntax::Keyword::Junction::All ();
+use Syntax::Keyword::Junction::Any ();
 use Syntax::Keyword::Junction::None ();
-use Syntax::Keyword::Junction::One  ();
-use Scalar::Util ();
+use Syntax::Keyword::Junction::One ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.35'; # VERSION
+our $VERSION = '0.36'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -199,7 +199,7 @@ sub max {
     for my $val (@$self) {
         next if CORE::ref($val);
         next if ! CORE::defined($val);
-        next if ! Scalar::Util::looks_like_number($val);
+        next if ! looks_like_number($val);
         $max //= $val;
         $max = $val if $val > $max;
     }
@@ -214,7 +214,7 @@ sub min {
     for my $val (@$self) {
         next if CORE::ref($val);
         next if ! CORE::defined($val);
-        next if ! Scalar::Util::looks_like_number($val);
+        next if ! looks_like_number($val);
         $min //= $val;
         $min = $val if $val < $min;
     }
@@ -343,7 +343,7 @@ sub sum {
     for my $val (@$self) {
         next if CORE::ref($val);
         next if !CORE::defined($val);
-        next if !Scalar::Util::looks_like_number($val);
+        next if !looks_like_number($val);
         $sum += $val;
     }
 
@@ -389,7 +389,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.35
+version 0.36
 
 =head1 SYNOPSIS
 

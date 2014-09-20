@@ -5,12 +5,15 @@ use 5.10.0;
 use namespace::autoclean;
 
 use Bubblegum::Namespace;
-use Class::Load 'load_class';
+
+use Scalar::Util ();
 use Types::Standard ();
+
+use Class::Load 'load_class';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.35'; # VERSION
+our $VERSION = '0.36'; # VERSION
 
 *asa_aref       = \&Types::Standard::assert_ArrayRef;
 *asa_arrayref   = \&Types::Standard::assert_ArrayRef;
@@ -111,6 +114,16 @@ sub json {
     return wrapper($self, 'Json');
 }
 
+sub refaddr {
+    my $self = type_reference CORE::shift;
+    return Scalar::Util::refaddr $self;
+}
+
+sub reftype {
+    my $self = type_reference CORE::shift;
+    return Scalar::Util::reftype $self;
+}
+
 sub wrapper {
     my $self  = CORE::shift;
     my $class = CORE::shift;
@@ -137,7 +150,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.35
+version 0.36
 
 =head1 SYNOPSIS
 

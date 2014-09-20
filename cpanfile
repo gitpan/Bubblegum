@@ -1,5 +1,6 @@
 requires "Class::Load" => "0.21";
 requires "Exporter::Tiny" => "0.030";
+requires "Hash::Merge::Simple" => "0.051";
 requires "IPC::System::Simple" => "1.25";
 requires "Import::Into" => "1.001001";
 requires "Moo" => "1.003001";

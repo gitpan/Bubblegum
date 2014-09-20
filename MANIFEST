@@ -20,6 +20,7 @@ lib/Bubblegum/Object/Hash.pm
 lib/Bubblegum/Object/Instance.pm
 lib/Bubblegum/Object/Integer.pm
 lib/Bubblegum/Object/Number.pm
+lib/Bubblegum/Object/Prototype.pm
 lib/Bubblegum/Object/Role/Coercive.pm
 lib/Bubblegum/Object/Role/Collection.pm
 lib/Bubblegum/Object/Role/Comparison.pm
@@ -35,6 +36,7 @@ lib/Bubblegum/Object/Scalar.pm
 lib/Bubblegum/Object/String.pm
 lib/Bubblegum/Object/Undef.pm
 lib/Bubblegum/Object/Universal.pm
+lib/Bubblegum/Prototype.pm
 lib/Bubblegum/Role.pm
 lib/Bubblegum/Role/Configuration.pm
 lib/Bubblegum/Singleton.pm

@@ -1,6 +1,15 @@
 Changelog for Bubblegum
 
-0.35 2014-09-20T03:50:50
+0.36 2014-09-20T16:00:08
+ - Updated POD, README, and Makefile.
+ - Added new dependencies to dist.ini.
+ - Added/started functionality to support prototype-based programming.
+ - Miscellaneous cleanup in Array.pm.
+ - Added deep hash merging to Hash.pm via Hash::Merg::Simple.
+ - Added undocumented reftype and refaddr methods to Universal.
+
+0.35 2014-09-20T03:51:08
+ - v0.35
  - Updated POD, README, and Makefile.
  - Added undocumented and untested yet complete, standardized explicit
    coercion methods.

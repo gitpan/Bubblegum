@@ -16,6 +16,7 @@ name: Bubblegum
 requires:
   Class::Load: '0.21'
   Exporter::Tiny: '0.030'
+  Hash::Merge::Simple: '0.051'
   IPC::System::Simple: '1.25'
   Import::Into: '1.001001'
   Moo: '1.003001'
@@ -31,7 +32,7 @@ resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
   homepage: http://metacpan.org/release/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: '0.35'
+version: '0.36'
 x_authority: cpan:AWNCORP
 x_contributors:
   - 'Toby Inkster <tobyink@cpan.org>'

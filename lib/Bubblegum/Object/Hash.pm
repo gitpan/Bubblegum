@@ -13,9 +13,11 @@ with 'Bubblegum::Object::Role::Ref';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Output';
 
+use Hash::Merge::Simple ();
+
 our @ISA = (); # non-object
 
-our $VERSION = '0.35'; # VERSION
+our $VERSION = '0.36'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -197,7 +199,7 @@ sub list {
 sub merge {
     my $self = CORE::shift;
     my $hash = type_hashref CORE::shift;
-    return {%$self, %$hash};
+    return Hash::Merge::Simple::clone_merge($self, $hash);
 }
 
 sub reset {
@@ -247,7 +249,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.35
+version 0.36
 
 =head1 SYNOPSIS
 
@@ -495,7 +497,8 @@ The list method returns the elements in the subject as a list.
     $hash->merge({7,7,9,9}); # {1=>2,3=>4,5=>6,7=>7,9=>9}
 
 The list method returns a hash reference where the elements in the subject and
-the elements in the argument are joined (i.e. a shallow-merge).
+the elements in the argument are joined. The operation performs a deep merge and
+clones the datasets to ensure no side-effects.
 
 =head2 reset
 

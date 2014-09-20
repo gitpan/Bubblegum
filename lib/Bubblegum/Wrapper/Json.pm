@@ -9,7 +9,7 @@ use Class::Load 'load_class';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.35'; # VERSION
+our $VERSION = '0.36'; # VERSION
 
 sub decode {
     my $self = shift;
@@ -37,7 +37,7 @@ Bubblegum::Wrapper::Json - Bubblegum Wrapper around JSON Serialization
 
 =head1 VERSION
 
-version 0.35
+version 0.36
 
 =head1 SYNOPSIS
 

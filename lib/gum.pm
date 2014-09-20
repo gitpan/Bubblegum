@@ -4,7 +4,7 @@ package gum;
 use 5.10.0;
 use Import::Into;
 
-our $VERSION = '0.35'; # VERSION
+our $VERSION = '0.36'; # VERSION
 
 sub import {
     my $target = caller;
@@ -28,6 +28,10 @@ sub import {
     else {
         require 'Bubblegum.pm';
         'Bubblegum'->import::into($target);
+    }
+    if ($flags{proto} or $flags{prototype}) {
+        require 'Bubblegum/Prototype.pm';
+        'Bubblegum::Prototype'->import::into($target);
     }
 
     my @exports = ();
@@ -56,7 +60,7 @@ gum - Convenient Shoehorn for Bubblegum
 
 =head1 VERSION
 
-version 0.35
+version 0.36
 
 =head1 SYNOPSIS
 
@@ -82,6 +86,15 @@ bubblegum class usage
 is equivalent to
 
     use Bubblegum::Class;
+    use Bubblegum::Constraints -types, -isas;
+
+bubblegum prototype usage
+
+    use gum -proto, -types, -isas;
+
+is equivalent to
+
+    use Bubblegum::Prototype;
     use Bubblegum::Constraints -types, -isas;
 
 bubblegum role usage

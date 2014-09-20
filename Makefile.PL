@@ -22,6 +22,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Class::Load" => "0.21",
     "Exporter::Tiny" => "0.030",
+    "Hash::Merge::Simple" => "0.051",
     "IPC::System::Simple" => "1.25",
     "Import::Into" => "1.001001",
     "Moo" => "1.003001",
@@ -33,7 +34,7 @@ my %WriteMakefileArgs = (
     "namespace::autoclean" => "0.19",
     "utf8::all" => 0
   },
-  "VERSION" => "0.35",
+  "VERSION" => "0.36",
   "test" => {
     "TESTS" => "t/*.t t/bubblegum/*.t t/bubblegum/object/*.t t/bubblegum/object/role/*.t t/bubblegum/role/*.t t/bubblegum/wrapper/*.t t/gum/*.t"
   }
@@ -43,6 +44,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Class::Load" => "0.21",
   "Exporter::Tiny" => "0.030",
+  "Hash::Merge::Simple" => "0.051",
   "IPC::System::Simple" => "1.25",
   "Import::Into" => "1.001001",
   "Moo" => "1.003001",
