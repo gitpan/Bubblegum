@@ -1,6 +1,17 @@
 Changelog for Bubblegum
 
-0.34 2014-09-16T00:59:29
+0.35 2014-09-20T03:50:50
+ - Updated POD, README, and Makefile.
+ - Added undocumented and untested yet complete, standardized explicit
+   coercion methods.
+ - Standardize object imports from the constraints class.
+ - Corrected contributors list.
+ - Corrected a typo.
+ - Add ability for all methods which accept a regexp parameter to accept a
+   string. Added a search-and-replace method.
+
+0.34 2014-09-16T00:59:55
+ - v0.34
  - Updated POD, README, and Makefile.
  - Added the gum shoehorn module.
 

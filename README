@@ -2,7 +2,7 @@ NAME
     Bubblegum - Opinionated Modern Perl Development Framework
 
 VERSION
-    version 0.34
+    version 0.35
 
 SYNOPSIS
         package Person;
@@ -371,7 +371,7 @@ AUTHOR
 CONTRIBUTORS
     *   Toby Inkster <tobyink@cpan.org>
 
-    *   Сергей Романов <sromanov-dev@yandex.ru>
+    *   Сергей Романов <sromanov@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2013 by Al Newkirk.

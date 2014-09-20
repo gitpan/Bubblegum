@@ -4,10 +4,9 @@ package Bubblegum::Object::String;
 use 5.10.0;
 use namespace::autoclean;
 
-use Scalar::Util ();
-
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints 'type_string', 'type_regexpref', 'type_number';
+use Bubblegum::Constraints -isas, -types;
+use Scalar::Util 'looks_like_number';
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Comparison';
@@ -16,7 +15,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 sub append {
     return $_[0] = CORE::join ' ', map type_string($_), @_;
@@ -30,11 +29,11 @@ sub contains {
     my $self  = CORE::shift;
     my $other = CORE::shift;
 
-    if (Bubblegum::Constraints::isa_regexpref($other)) {
+    if (isa_regexpref($other)) {
         return $self =~ $other ? 1 : 0;
     }
 
-    if (Bubblegum::Constraints::isa_string($other)) {
+    if (isa_string($other)) {
         return CORE::index($self, $other) < 0 ? 0 : 1;
     }
 
@@ -153,6 +152,18 @@ sub lowercase {
     goto &lc
 }
 
+sub replace {
+    my ($self, $regexp, $other, $mods) = @_;
+
+    $mods = CORE::defined $mods ? type_string $mods : '';
+    if (!isa_regexpref($regexp) && isa_string($regexp)) {
+        $regexp = CORE::quotemeta $regexp;
+    }
+
+    CORE::eval("sub { \$_[0] =~ s/$regexp/$other/$mods }")->($_[0]);
+    return $self = $_[0];
+}
+
 sub reverse {
     my $self = CORE::shift;
     return CORE::reverse $self;
@@ -176,7 +187,11 @@ sub snakecase {
 
 sub split {
     my ($self, $regexp, $limit) = @_;
-    type_regexpref $regexp;
+
+    if (!isa_regexpref($regexp) && isa_string($regexp)) {
+        $regexp = CORE::quotemeta $regexp;
+    }
+
     return [CORE::split /$regexp/, $self] if !defined $limit;
 
     type_number $limit;
@@ -191,31 +206,6 @@ sub strip {
 sub titlecase {
     $_[0] =~ s/\b(\w)/\U$1/g;
     return $_[0];
-}
-
-sub to_array {
-    my $self = CORE::shift;
-    return ["$self"];
-}
-
-sub to_code {
-    my $self = CORE::shift;
-    return sub {"$self"};
-}
-
-sub to_hash {
-    my $self = CORE::shift;
-    return {"$self"=>"$self"};
-}
-
-sub to_integer {
-    my $self = CORE::shift;
-    return Scalar::Util::looks_like_number($self) ? 0 + $self : 0;
-}
-
-sub to_string {
-    my $self = CORE::shift;
-    return $self;
 }
 
 sub trim {
@@ -256,7 +246,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.34
+version 0.35
 
 =head1 SYNOPSIS
 
@@ -474,6 +464,19 @@ The lines method breaks the subject into pieces, split on 1 or more newline char
 
 The lowercase method is an alias to the lc method.
 
+=head2 replace
+
+    my $string = 'Hello World';
+    $string->replace('World', 'Universe'); # Hello Universe
+    $string->replace('world', 'Universe', 'i'); # Hello Universe
+    $string->replace(qr/world/i, 'Universe'); # Hello Universe
+    $string->replace(qr/.*/, 'Nada'); # Nada
+
+The replace method performs a smart search and replace operation and returns the
+modified string (if any modification occurred). This method optionally takes a
+replacement modifier as it's final argument. Note, this operation expects the
+2nd argument to be a replacement String. Note, this method modifies the subject.
+
 =head2 reverse
 
     my $string = 'dlrow ,olleH';
@@ -517,14 +520,16 @@ modifies the subject.
 =head2 split
 
     my $string = 'name, age, dob, email';
+    $string->split(', '); # ['name', 'age', 'dob', 'email']
+    $string->split(', ', 2); # ['name', 'age, dob, email']
     $string->split(qr/\,\s*/); # ['name', 'age', 'dob', 'email']
     $string->split(qr/\,\s*/, 2); # ['name', 'age, dob, email']
 
 The split method splits the subject into a list of strings, separating each
-chunk by the argument (regexp object), and returns that list as an array
-reference. This method optionally takes a second argument which would be the
-limit (number of matches to capture). Note, this operation expects the 1st
-argument to be a Regexp object.
+chunk by the argument (string or regexp object), and returns that list as an
+array reference. This method optionally takes a second argument which would be
+the limit (number of matches to capture). Note, this operation expects the 1st
+argument to be a Regexp object or a String.
 
 =head2 strip
 

@@ -119,10 +119,10 @@ subtest 'test the to_hash method' => sub {
     is_deeply $int->to_hash, { 1 => 1 }; # { 1 => 1 }
 };
 
-can_ok 'Bubblegum::Object::Number', 'to_integer';
-subtest 'test the to_integer method' => sub {
+can_ok 'Bubblegum::Object::Number', 'to_number';
+subtest 'test the to_number method' => sub {
     my $int = 1;
-    is 1, $int->to_integer; # 1
+    is 1, $int->to_number; # 1
 };
 
 can_ok 'Bubblegum::Object::Number', 'to_string';

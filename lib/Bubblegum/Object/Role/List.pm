@@ -4,11 +4,11 @@ use 5.10.0;
 use namespace::autoclean;
 
 use Bubblegum::Role 'requires', 'with';
-use Bubblegum::Constraints 'type_coderef', 'type_arrayref';
+use Bubblegum::Constraints -isas, -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 requires 'defined';
 requires 'grep';

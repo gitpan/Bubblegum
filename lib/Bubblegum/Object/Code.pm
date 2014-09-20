@@ -5,15 +5,16 @@ use 5.10.0;
 use namespace::autoclean;
 
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints 'type_coderef';
+use Bubblegum::Constraints -isas, -types;
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Ref';
+with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Output';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 sub call {
     my $self = CORE::shift;
@@ -80,7 +81,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.34
+version 0.35
 
 =head1 SYNOPSIS
 

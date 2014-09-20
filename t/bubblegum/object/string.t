@@ -156,6 +156,27 @@ subtest 'test the lowercase method' => sub {
     is 'exciting', $string->lowercase; # exciting
 };
 
+can_ok 'Bubblegum::Object::String', 'replace';
+subtest 'test the replace method' => sub {
+    my $string;
+
+    $string = 'Hello World';
+    is $string->replace('World', 'Universe'),
+        'Hello Universe'; # Hello Universe
+
+    $string = 'Hello World';
+    is $string->replace('world', 'Universe', 'i'),
+        'Hello Universe'; # Hello Universe
+
+    $string = 'Hello World';
+    is $string->replace(qr/world/i, 'Universe'),
+        'Hello Universe'; # Hello Universe
+
+    $string = 'Hello World';
+    is $string->replace(qr/.*/, 'Nada'),
+        'Nada'; # Nada
+};
+
 can_ok 'Bubblegum::Object::String', 'reverse';
 subtest 'test the reverse method' => sub {
     my $string = 'dlrow ,olleH';
@@ -191,6 +212,10 @@ subtest 'test the split method' => sub {
         ['name', 'age', 'dob', 'email'];
     is_deeply $string->split(qr/\,\s*/, 2), # ['name', 'age, dob, email']
         ['name', 'age, dob, email'];
+    is_deeply $string->split(', '), # ['name', 'age', 'dob', 'email']
+        ['name', 'age', 'dob', 'email'];
+    is_deeply $string->split(', ', 2), # ['name', 'age, dob, email']
+        ['name', 'age, dob, email'];
 };
 
 can_ok 'Bubblegum::Object::String', 'strip';
@@ -223,17 +248,17 @@ subtest 'test the to_code method' => sub {
 can_ok 'Bubblegum::Object::String', 'to_hash';
 subtest 'test the to_hash method' => sub {
     my $string = 'uniform';
-    is_deeply $string->to_hash, # { 'uniform' => 'uniform' }
-        { 'uniform' => 'uniform' };
+    is_deeply $string->to_hash, # { 'uniform' => 1 }
+        { 'uniform' => 1 };
 };
 
-can_ok 'Bubblegum::Object::String', 'to_integer';
-subtest 'test the to_integer method' => sub {
+can_ok 'Bubblegum::Object::String', 'to_number';
+subtest 'test the to_number method' => sub {
     my $string = 'uniform';
-    is 0, $string->to_integer; # 0
+    is 0, $string->to_number; # 0
 
     $string = '123';
-    is 123, $string->to_integer; # 123
+    is 123, $string->to_number; # 123
 };
 
 can_ok 'Bubblegum::Object::String', 'to_string';

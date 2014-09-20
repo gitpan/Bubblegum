@@ -4,13 +4,13 @@ use 5.10.0;
 use namespace::autoclean;
 
 use Bubblegum::Role 'with';
-use Bubblegum::Constraints 'type_reference';
+use Bubblegum::Constraints -isas, -types;
 
 use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 sub refaddr {
     my $self = type_reference CORE::shift;
@@ -19,7 +19,7 @@ sub refaddr {
 
 sub reftype {
     my $self = type_reference CORE::shift;
-    return CORE::ref $self;
+    return Scalar::Util::reftype $self;
 }
 
 1;

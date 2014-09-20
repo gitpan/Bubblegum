@@ -4,17 +4,15 @@ package Bubblegum::Object::Scalar;
 use 5.10.0;
 use namespace::autoclean;
 
-use Scalar::Util ();
-
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints 'type_number';
+use Bubblegum::Constraints -isas, -types;
 
 with 'Bubblegum::Object::Role::Output';
 with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 sub and {
     my ($self, $other) =  @_;
@@ -66,7 +64,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.34
+version 0.35
 
 =head1 SYNOPSIS
 

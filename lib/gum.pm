@@ -4,7 +4,7 @@ package gum;
 use 5.10.0;
 use Import::Into;
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 sub import {
     my $target = caller;
@@ -56,7 +56,7 @@ gum - Convenient Shoehorn for Bubblegum
 
 =head1 VERSION
 
-version 0.34
+version 0.35
 
 =head1 SYNOPSIS
 
@@ -64,7 +64,7 @@ version 0.34
 
 =head1 DESCRIPTION
 
-This module is a I<shoehorn> for Bubblegum. It merely serves a convenient means
+This module is a I<shoehorn> for Bubblegum. It merely serves as convenient means
 of loading and configuring L<Bubblegum>. B<Note: This is an early release
 available for testing and feedback and as such is subject to change.>
 

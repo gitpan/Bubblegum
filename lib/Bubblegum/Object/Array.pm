@@ -5,12 +5,13 @@ use 5.10.0;
 use namespace::autoclean;
 
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints 'type_string', 'type_coderef', 'type_number';
+use Bubblegum::Constraints -isas, -types;
 
 with 'Bubblegum::Object::Role::Defined';
 with 'Bubblegum::Object::Role::Indexed';
 with 'Bubblegum::Object::Role::List';
 with 'Bubblegum::Object::Role::Ref';
+with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Output';
 
 use Syntax::Keyword::Junction::All  ();
@@ -21,7 +22,7 @@ use Scalar::Util ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -388,7 +389,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.34
+version 0.35
 
 =head1 SYNOPSIS
 

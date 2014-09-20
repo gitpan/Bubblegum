@@ -10,7 +10,7 @@ use Types::Standard ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 *asa_aref       = \&Types::Standard::assert_ArrayRef;
 *asa_arrayref   = \&Types::Standard::assert_ArrayRef;
@@ -137,7 +137,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.34
+version 0.35
 
 =head1 SYNOPSIS
 

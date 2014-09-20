@@ -5,14 +5,14 @@ use 5.10.0;
 use namespace::autoclean;
 
 use Bubblegum::Class 'with';
-use Bubblegum::Constraints 'type_number';
+use Bubblegum::Constraints -isas, -types;
 
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.34'; # VERSION
+our $VERSION = '0.35'; # VERSION
 
 sub abs {
     my $self = CORE::shift;
@@ -89,31 +89,6 @@ sub sqrt {
     return CORE::sqrt $self;
 }
 
-sub to_array {
-    my $self = CORE::shift;
-    return [$self];
-}
-
-sub to_code {
-    my $self = CORE::shift;
-    return sub {$self};
-}
-
-sub to_hash {
-    my $self = CORE::shift;
-    return {$self=>$self};
-}
-
-sub to_integer {
-    my $self = CORE::shift;
-    return $self;
-}
-
-sub to_string {
-    my $self = CORE::shift;
-    return "$self";
-}
-
 1;
 
 __END__
@@ -128,7 +103,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.34
+version 0.35
 
 =head1 SYNOPSIS
 
