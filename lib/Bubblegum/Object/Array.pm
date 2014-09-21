@@ -22,7 +22,7 @@ use Syntax::Keyword::Junction::One ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.36'; # VERSION
+our $VERSION = '0.37'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -389,7 +389,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.36
+version 0.37
 
 =head1 SYNOPSIS
 

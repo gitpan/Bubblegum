@@ -29,7 +29,9 @@ sub build_class {
     my $common = "Bubblegum::Object::Prototype";
     my $base   = shift // $common;
     my $name   = sprintf '%s::__ANON__::%04d', $common, ++$serial;
-    eval join ';', ("package $name", "use Bubblegum::Class", "extends '$base'");
+    my $extend = $base->isa($common) || $base eq $common ?
+        "extends '$base'" : "use base '$base'";
+    eval join ';', ("package $name", "use Bubblegum::Class", $extend);
     croak $@ if $@;
     return $name;
 }
@@ -55,7 +57,7 @@ sub build_properties {
     my ($class, %properties) = @_;
     $class = ref($class) || $class;
     while (my ($key, $val) = each %properties) {
-        build_method $class, $key, $val and next if $val->isa_coderef;
+        build_method $class, $key, $val and next if $val and $val->isa_coderef;
         build_attribute $class, $key, ref $val ? sub { $val } : $val;
     }
 }
@@ -79,7 +81,7 @@ Bubblegum::Prototype - Prototype-based Programming for Bubblegum
 
 =head1 VERSION
 
-version 0.36
+version 0.37
 
 =head1 SYNOPSIS
 
@@ -115,6 +117,7 @@ version 0.36
 
     if ($papa && $mama && $baby && $baby->begets($papa)) {
         my $statement = 'The %s said, "%s"';
+
         $papa->name->titlecase->format($statement, $papa->responds)->say;
         $mama->name->titlecase->format($statement, $mama->responds)->say;
         $baby->name->titlecase->format($statement, $baby->responds)->say;
@@ -129,21 +132,17 @@ version 0.36
 Bubblegum::Prototype implements a thin prototype-like layer on top of the
 L<Bubblegum> development framework. This module allows you to develop using a
 prototype-based style while leveraging the L<Moo> and/or L<Moose> object
-systems. Bubblegum::Prototype allows you to create, mutate, and extend classes
-with very little code.
-
-Prototype-based programming is a style of object-oriented programming in which
-classes are not present, and behavior reuse (known as inheritance in
-class-based languages) is performed via a process of cloning existing objects
-that serve as prototypes.
-
-Due to familiarity with class-based languages such as Java, many programmers
-assume that object-oriented programming is synonymous with class-based
-programming. However, class-based programming is just one kind of
-object-oriented programming style, and other varieties exist such as
-role-oriented, aspect-oriented and prototype-based programming. A prominent
-example of a prototype-based programming language is ECMAScript (a.k.a.
-JavaScript or JScript).
+systems, and the Bubblegum framework. Bubblegum::Prototype allows you to create,
+mutate, and extend classes with very little code. Prototype-based programming is
+a style of object-oriented programming in which classes are not present, and
+behavior reuse (known as inheritance in class-based languages) is performed via
+a process of cloning existing objects that serve as prototypes. Due to
+familiarity with class-based languages such as Java, many programmers assume
+that object-oriented programming is synonymous with class-based programming.
+However, class-based programming is just one kind of object-oriented programming
+style, and other varieties exist such as role-oriented, aspect-oriented and
+prototype-based programming. A prominent example of a prototype-based
+programming language is ECMAScript (a.k.a. JavaScript or JScript).
 
 =head2 OVERVIEW
 
@@ -152,7 +151,7 @@ JavaScript or JScript).
 The object function, exported by Bubblegum::Prototype, creates an anonymous
 class object (blessed hashref), derived from L<Bubblegum::Object::Prototype>.
 The function can optionally take a list of key/value pairs. The keys with values
-which are code references will be implemented as class subroutines, otherwise
+which are code references will be implemented as class methods, otherwise
 will be implemented as class attributes.
 
     my $shrek = object
@@ -181,16 +180,16 @@ The thing being extended does not have to be an existing prototype, you can
 actually extend any class or blessed object you like (provided that the
 underlying structure is a hashref). You don't even have to preload the module,
 simply pass the class name to the extend function, along with any parameters you
-would like the class to be instantiated with. Please not that what is returned
+would like the class to be instantiated with. Please note that what is returned
 is not an instance of the class specified, instead, what will be returned is a
 prototype derived from the class specified.
 
-    my $film_search = extend 'Movie::Film' => (
-        search => $shrek2->name,
+    my $imdb_search = extend 'IMDB::Film' => (
+        crit => $shrek2->name,
     );
 
     $shrek2 = extend $shrek2 => (
-        film_search => $film_search,
+        imdb_search => $imdb_search,
     );
 
 Any objects created via prototype can be further extended using the mixin_class
@@ -205,7 +204,7 @@ add to them.
     $film_search->mixin_class('mock_search');
 
 The mixin_role method modifies the subject using role composition. Please note
-that applying a role will not overwrite existing methods. if you desire to
+that applying a role will not overwrite existing methods. If you desire to
 overwrite existing methods, please extend the object, then apply the roles
 desired.
 

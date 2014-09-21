@@ -13,7 +13,7 @@ use Class::Load 'load_class';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.36'; # VERSION
+our $VERSION = '0.37'; # VERSION
 
 *asa_aref       = \&Types::Standard::assert_ArrayRef;
 *asa_arrayref   = \&Types::Standard::assert_ArrayRef;
@@ -115,13 +115,11 @@ sub json {
 }
 
 sub refaddr {
-    my $self = type_reference CORE::shift;
-    return Scalar::Util::refaddr $self;
+    return Scalar::Util::refaddr CORE::shift;
 }
 
 sub reftype {
-    my $self = type_reference CORE::shift;
-    return Scalar::Util::reftype $self;
+    return Scalar::Util::reftype CORE::shift;
 }
 
 sub wrapper {
@@ -150,7 +148,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.36
+version 0.37
 
 =head1 SYNOPSIS
 

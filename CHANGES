@@ -1,6 +1,12 @@
 Changelog for Bubblegum
 
-0.36 2014-09-20T16:00:08
+0.37 2014-09-21T15:39:57
+ - Updated POD, README, and Makefile.
+ - Modified Prototype.pm to better support extending non-prototype classes.
+ - Fixed a bug in Universal created in the previous release.
+
+0.36 2014-09-20T16:00:25
+ - v0.36
  - Updated POD, README, and Makefile.
  - Added new dependencies to dist.ini.
  - Added/started functionality to support prototype-based programming.

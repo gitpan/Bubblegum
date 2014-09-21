@@ -1,5 +1,5 @@
 # Base Class for Anonymous Bubblegum Prototype Objects
-package Bubblegum::Prototype::Object;
+package Bubblegum::Object::Prototype;
 
 use Bubblegum::Class;
 
