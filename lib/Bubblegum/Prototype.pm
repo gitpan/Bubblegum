@@ -81,7 +81,7 @@ Bubblegum::Prototype - Prototype-based Programming for Bubblegum
 
 =head1 VERSION
 
-version 0.37
+version 0.38
 
 =head1 SYNOPSIS
 
@@ -142,7 +142,9 @@ that object-oriented programming is synonymous with class-based programming.
 However, class-based programming is just one kind of object-oriented programming
 style, and other varieties exist such as role-oriented, aspect-oriented and
 prototype-based programming. A prominent example of a prototype-based
-programming language is ECMAScript (a.k.a. JavaScript or JScript).
+programming language is ECMAScript (a.k.a. JavaScript or JScript). B<Note: This
+is an early release available for testing and feedback and as such is subject to
+change.>
 
 =head2 OVERVIEW
 

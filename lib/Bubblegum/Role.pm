@@ -8,7 +8,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.37'; # VERSION
+our $VERSION = '0.38'; # VERSION
 
 sub import {
     my $target = caller;
@@ -33,7 +33,7 @@ Bubblegum::Role - Class Component System for Bubblegum via Moo::Role
 
 =head1 VERSION
 
-version 0.37
+version 0.38
 
 =head1 SYNOPSIS
 
@@ -75,6 +75,8 @@ Bubblegum::Role provides an object orientated system for defining class
 components (often referred to as traits or roles) by way of L<Moo::Role>; and
 activates all of the options enabled by the L<Bubblegum> module. Using this
 module allows you to define Moo roles as if you were using Moo::Role directly.
+B<Note: This is an early release available for testing and feedback and as such
+is subject to change.>
 
     use Bubblegum::Role;
 

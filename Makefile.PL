@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     "namespace::autoclean" => "0.19",
     "utf8::all" => 0
   },
-  "VERSION" => "0.37",
+  "VERSION" => "0.38",
   "test" => {
     "TESTS" => "t/*.t t/bubblegum/*.t t/bubblegum/object/*.t t/bubblegum/object/role/*.t t/bubblegum/role/*.t t/bubblegum/wrapper/*.t t/gum/*.t"
   }

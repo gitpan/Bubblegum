@@ -1,6 +1,13 @@
 Changelog for Bubblegum
 
-0.37 2014-09-21T15:39:57
+0.38 2014-09-22T00:14:58
+ - Updated POD, README, and Makefile.
+ - Added DEMOLISH method which reaps anonymous packages.
+ - Added disclaimer to all top-level components.
+ - Prevent memory leak caused by anonymous package creation.
+
+0.37 2014-09-21T15:40:16
+ - v0.37
  - Updated POD, README, and Makefile.
  - Modified Prototype.pm to better support extending non-prototype classes.
  - Fixed a bug in Universal created in the previous release.

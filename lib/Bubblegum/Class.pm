@@ -8,7 +8,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.37'; # VERSION
+our $VERSION = '0.38'; # VERSION
 
 sub import {
     my $target = caller;
@@ -33,7 +33,7 @@ Bubblegum::Class - Object Orientation for Bubblegum via Moo
 
 =head1 VERSION
 
-version 0.37
+version 0.38
 
 =head1 SYNOPSIS
 
@@ -61,7 +61,9 @@ And elsewhere:
 
 Bubblegum::Class provides object orientation for your classes by way of L<Moo>
 and activates all of the options enabled by the L<Bubblegum> module. Using this
-module allows you to define classes as if you were using Moo directly.
+module allows you to define classes as if you were using Moo directly. B<Note:
+This is an early release available for testing and feedback and as such is
+subject to change.>
 
     use Bubblegum::Class;
 

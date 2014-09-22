@@ -10,7 +10,7 @@ extends 'Throwable::Error';
 use Data::Dumper ();
 use Scalar::Util ();
 
-our $VERSION = '0.37'; # VERSION
+our $VERSION = '0.38'; # VERSION
 
 sub rethrow {
     die shift;
@@ -42,7 +42,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.37
+version 0.38
 
 =head1 SYNOPSIS
 
@@ -51,8 +51,10 @@ version 0.37
 =head1 DESCRIPTION
 
 Bubblegum::Exception provides a general purpose exception object to be thrown
-and caught and rethrow. Bubblegum::Exception extends L<Throwable::Error>,
-please review its documentation for addition usage information.
+and caught and rethrow. Bubblegum::Exception extends L<Throwable::Error>, please
+review its documentation for addition usage information. B<Note: This is an
+early release available for testing and feedback and as such is subject to
+change.>
 
     try {
         Bubblegum::Exception->throw(

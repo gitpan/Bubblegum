@@ -11,7 +11,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.37'; # VERSION
+our $VERSION = '0.38'; # VERSION
 
 our @EXPORT_OK;
 our %EXPORT_TAGS;
@@ -742,7 +742,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.37
+version 0.38
 
 =head1 SYNOPSIS
 
@@ -761,8 +761,9 @@ version 0.37
 
 Bubblegum::Constraints is the standard type-checking library for L<Bubblegum>
 applications with a focus on minimalism and data integrity. This library derives
-its type validation from L<Types::Standard>, the L<Type::Tiny> standard
-library.
+its type validation from L<Types::Standard>, the L<Type::Tiny> standard library.
+B<Note: This is an early release available for testing and feedback and as such
+is subject to change.>
 
 By default, no functions are exported when using this package, all functionality
 desired will need to be explicitly requested, and because many functions belong
