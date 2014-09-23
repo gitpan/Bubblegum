@@ -1,6 +1,12 @@
 Changelog for Bubblegum
 
-0.38 2014-09-22T00:14:58
+0.39 2014-09-23T03:44:06
+ - Updated POD, README, and Makefile.
+ - Relocated prototype functionality. Added a prototype package (meta)
+   class. Miscellaneous cleanup and better structure.
+
+0.38 2014-09-22T00:15:16
+ - v0.38
  - Updated POD, README, and Makefile.
  - Added DEMOLISH method which reaps anonymous packages.
  - Added disclaimer to all top-level components.

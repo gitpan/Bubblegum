@@ -17,7 +17,7 @@ use Hash::Merge::Simple ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.38'; # VERSION
+our $VERSION = '0.39'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -249,7 +249,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.38
+version 0.39
 
 =head1 SYNOPSIS
 
