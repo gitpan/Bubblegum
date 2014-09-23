@@ -1,6 +1,11 @@
 Changelog for Bubblegum
 
-0.39 2014-09-23T03:44:06
+0.40 2014-09-23T04:09:19
+ - Updated POD, README, and Makefile.
+ - Miscellaneous update.
+
+0.39 2014-09-23T03:44:50
+ - v0.39
  - Updated POD, README, and Makefile.
  - Relocated prototype functionality. Added a prototype package (meta)
    class. Miscellaneous cleanup and better structure.

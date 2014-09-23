@@ -81,7 +81,7 @@ Bubblegum::Prototype - Prototype-based Programming for Bubblegum
 
 =head1 VERSION
 
-version 0.39
+version 0.40
 
 =head1 SYNOPSIS
 
@@ -209,8 +209,8 @@ The mixin method, using the class key, upgrades the subject using multiple
 inheritance. Please note that calling this method more than once will replace
 your superclasses, not add to them.
 
-    # replaces existing superclass for testing
-    $film_search->proto->mixin(class => 'mock_search');
+    # replaces existing superclass with testing superclass
+    $film_search->proto->mixin(class => 'testing');
 
 The mixin method, using the role key, modifies the subject using role
 composition. Please note that applying a role will not overwrite existing
@@ -219,21 +219,23 @@ then apply the roles desired.
 
     # add credentials and request methods dynamically
     $film_search->proto->mixin(role => 'authorization');
-    $film_search->proto->mixin(role => 'director_search');
+    $film_search->proto->mixin(role => 'advanced_search');
 
 One of the very cool and interesting practices that this style of programming
 encourages is modifying class definitions at runtime. This is achieved using
-standard modern Perl object system idioms. For example:
+standard modern Perl object system operations. For example:
 
-    $shrek2->proto->make(snark => sub {
-        warn 'Better out than in I always say'
+    $shrek2->proto->make(quote => sub {
+        'Better out than in I always say'
     });
 
     my $shrek3 = extend $shrek2;
-    $shrek3->proto->around(snark => sub {
+    $shrek3->proto->around(quote => sub {
         my ($orig, $self, $comment) = @_;
-        $comment->say and $self->$orig(@args);
-    })
+        $comment->say and $self->$orig(@args)->say;
+    });
+
+    $shrek3->quote('Oh! Excuse me');
 
 =head1 AUTHOR
 

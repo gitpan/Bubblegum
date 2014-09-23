@@ -7,7 +7,7 @@ use Data::Dumper ();
 
 use Bubblegum::Role 'requires';
 
-our $VERSION = '0.39'; # VERSION
+our $VERSION = '0.40'; # VERSION
 
 my $coercable = {
     'UNDEF' => {

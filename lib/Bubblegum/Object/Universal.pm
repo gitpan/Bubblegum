@@ -13,7 +13,7 @@ use Class::Load 'load_class';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.39'; # VERSION
+our $VERSION = '0.40'; # VERSION
 
 *asa_aref       = \&Types::Standard::assert_ArrayRef;
 *asa_arrayref   = \&Types::Standard::assert_ArrayRef;
@@ -148,7 +148,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.39
+version 0.40
 
 =head1 SYNOPSIS
 
