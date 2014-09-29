@@ -8,7 +8,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub import {
     my $target = caller;
@@ -33,7 +33,7 @@ Bubblegum::Class - Object Orientation for Bubblegum via Moo
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 

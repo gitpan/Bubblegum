@@ -7,15 +7,15 @@ ok ! main->isa('Moo::Object'), 'class not an object';
 can_ok 'Bubblegum::Object::Array', 'all';
 subtest 'test the all method' => sub {
     my $array = [2..5];
-    ok $array->all > 1; # 1; true
-    ok !($array->all > 3); # 0; false
+    ok $array->all('$a > 1'); # 1; true
+    ok !$array->all('$a > 3'); # 0; false
 };
 
 can_ok 'Bubblegum::Object::Array', 'any';
 subtest 'test the any method' => sub {
     my $array = [2..5];
-    ok !($array->any > 5); # 0; false
-    ok $array->any > 3; # 1; true
+    ok !$array->any('$a > 5'); # 0; false
+    ok $array->any('$a > 3'); # 1; true
 };
 
 can_ok 'Bubblegum::Object::Array', 'clear';
@@ -233,8 +233,8 @@ subtest 'test the min method' => sub {
 can_ok 'Bubblegum::Object::Array', 'none';
 subtest 'test the none method' => sub {
     my $array = [2..5];
-    ok $array->none <= 1; # 1; true
-    ok !($array->none <= 2); # 0; false
+    ok $array->none('$a <= 1'); # 1; true
+    ok !$array->none('$a <= 2'); # 0; false
 };
 
 can_ok 'Bubblegum::Object::Array', 'nsort';
@@ -246,9 +246,9 @@ subtest 'test the nsort method' => sub {
 can_ok 'Bubblegum::Object::Array', 'one';
 subtest 'test the one method' => sub {
     my $array = [2..5,7,7];
-    ok $array->one == 5; # 1; true
-    ok !($array->one == 6); # 0; false
-    ok !($array->one == 7); # 0; false
+    ok $array->one('$a == 5'); # 1; true
+    ok !$array->one('$a == 6'); # 0; false
+    ok !$array->one('$a == 7'); # 0; false
 };
 
 can_ok 'Bubblegum::Object::Array', 'pairs';

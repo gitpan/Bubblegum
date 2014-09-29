@@ -1,6 +1,10 @@
 Changelog for Bubblegum
 
-0.42 2014-09-29T04:31:24
+0.43 2014-09-29T18:47:08
+ - Removed Syntax::Keyword::Junction and Hash::Merge::Simple dependencies.
+
+0.42 2014-09-29T04:31:41
+ - v0.42
  - Updated POD, README, and Makefile.
  - Miscellaneous documentation updates.
 

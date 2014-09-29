@@ -81,7 +81,7 @@ Bubblegum::Prototype - Prototype-based Programming for Bubblegum
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 

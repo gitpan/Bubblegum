@@ -11,7 +11,7 @@ use Bubblegum::Exception;
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub BUILD {
     my $self = shift;
@@ -33,9 +33,9 @@ sub encode {
     my $sha = [qw(sha1_base64 sha1 sha1_hex)];
     my $hmc = [qw(hmac_sha1 hmac_sha1_hex)];
 
-    $encoder = 'Digest::MD5' if $md5->one eq $type;
-    $encoder = 'Digest::SHA' if $sha->one eq $type;
-    $encoder = 'Digest::SHA' if $hmc->one eq $type;
+    $encoder = 'Digest::MD5' if $md5->one('$a eq $b', $type);
+    $encoder = 'Digest::SHA' if $sha->one('$a eq $b', $type);
+    $encoder = 'Digest::SHA' if $hmc->one('$a eq $b', $type);
 
     return undef unless $encoder;
     return $encoder->can($type)->($self->data);
@@ -55,7 +55,7 @@ Bubblegum::Wrapper::Digest - Bubblegum Wrapper around Hashing Algorithms
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 

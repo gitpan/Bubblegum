@@ -14,7 +14,7 @@ with 'Bubblegum::Object::Role::Output';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub call {
     my $self = CORE::shift;
@@ -81,7 +81,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 
@@ -194,7 +194,7 @@ returns true if successful.
 The say method prints the return value of the code reference with a newline
 appended to STDOUT, and returns true if successful.
 
-=head1 COERCIVE METHODS
+=head1 COERCIONS
 
 =head2 to_array
 

@@ -10,7 +10,7 @@ use Encode 'find_encoding';
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub BUILD {
     my $self = shift;
@@ -55,7 +55,7 @@ Bubblegum::Wrapper::Encoder - Bubblegum Wrapper around Content Encoding
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 

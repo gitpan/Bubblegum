@@ -10,7 +10,7 @@ use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub refaddr {
     return Scalar::Util::refaddr

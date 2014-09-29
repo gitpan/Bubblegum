@@ -17,7 +17,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub append {
     return $_[0] = CORE::join ' ', map type_string($_), @_;
@@ -256,7 +256,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 
@@ -649,7 +649,7 @@ The words method splits the subject into a list of strings, separating each
 group of characters by 1 or more consecutive spaces, and returns that list as an
 array reference.
 
-=head1 COERCIVE METHODS
+=head1 COERCIONS
 
 =head2 to_array
 

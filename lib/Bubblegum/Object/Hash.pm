@@ -13,11 +13,11 @@ with 'Bubblegum::Object::Role::Ref';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Output';
 
-use Hash::Merge::Simple ();
+use Clone 'clone';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -53,7 +53,7 @@ sub each {
     type_coderef $code;
 
     for my $key (CORE::keys %$self) {
-      $code->($key, $self->{$key});
+      $code->($key, $self->{$key}, @_);
     }
 
     return $self;
@@ -66,7 +66,7 @@ sub each_key {
     $code = $code->codify if isa_string $code;
     type_coderef $code;
 
-    $code->($_) for CORE::keys %$self;
+    $code->($_, @_) for CORE::keys %$self;
     return $self;
 }
 
@@ -79,7 +79,7 @@ sub each_n_values {
     type_coderef $code;
 
     my @values = CORE::values %$self;
-    $code->(CORE::splice @values, 0, $number) while @values;
+    $code->(CORE::splice(@values, 0, $number), @_) while @values;
     return $self;
 }
 
@@ -90,7 +90,7 @@ sub each_value {
     $code = $code->codify if isa_string $code;
     type_coderef $code;
 
-    $code->($_) for CORE::values %$self;
+    $code->($_, @_) for CORE::values %$self;
     return $self;
 }
 
@@ -210,8 +210,26 @@ sub list {
 
 sub merge {
     my $self = CORE::shift;
-    my $hash = type_hashref CORE::shift;
-    return Hash::Merge::Simple::clone_merge($self, $hash);
+    my @hashes = CORE::map type_hashref($_), @_;
+
+    return clone $self unless @hashes;
+    return clone merge($self, merge(@hashes)) if @hashes > 1;
+
+    my ($right) = @hashes;
+
+    my %merge = %$self;
+    for my $key (CORE::keys %$right) {
+        my ($hr, $hl) = CORE::map { ref $$_{$key} eq 'HASH' }
+            $right, $self;
+        if ($hr and $hl){
+            $merge{$key} = merge($self->{$key}, $right->{$key})
+        }
+        else {
+            $merge{$key} = $right->{$key}
+        }
+    }
+
+    return clone \%merge;
 }
 
 sub reset {
@@ -261,7 +279,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 
@@ -509,8 +527,8 @@ The list method returns the elements in the subject as a list.
     $hash->merge({7,7,9,9}); # {1=>2,3=>4,5=>6,7=>7,9=>9}
 
 The list method returns a hash reference where the elements in the subject and
-the elements in the argument are joined. The operation performs a deep merge and
-clones the datasets to ensure no side-effects.
+the elements in the argument(s) are merged. This operation performs a deep merge
+and clones the datasets to ensure no side-effects.
 
 =head2 reset
 
@@ -555,7 +573,7 @@ argument.
 The values method returns an array reference consisting of the values of the
 elements in the subject.
 
-=head1 COERCIVE METHODS
+=head1 COERCIONS
 
 =head2 to_array
 

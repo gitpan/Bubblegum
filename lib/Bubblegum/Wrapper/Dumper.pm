@@ -8,7 +8,7 @@ use Data::Dumper ();
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub decode {
     my $self = shift;
@@ -35,7 +35,7 @@ Bubblegum::Wrapper::Dumper - Bubblegum Wrapper around Data Dumping
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 

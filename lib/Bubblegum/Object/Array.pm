@@ -16,23 +16,30 @@ with 'Bubblegum::Object::Role::Ref';
 with 'Bubblegum::Object::Role::Coercive';
 with 'Bubblegum::Object::Role::Output';
 
-use Syntax::Keyword::Junction::All ();
-use Syntax::Keyword::Junction::Any ();
-use Syntax::Keyword::Junction::None ();
-use Syntax::Keyword::Junction::One ();
-
 our @ISA = (); # non-object
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub all {
     my $self = CORE::shift;
-    return Syntax::Keyword::Junction::All->new(@$self);
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
+    my $found = CORE::grep { $code->($_, @_) } @$self;
+    return $found == @$self ? 1 : 0;
 }
 
 sub any {
     my $self = CORE::shift;
-    return Syntax::Keyword::Junction::Any->new(@$self);
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
+    my $found = CORE::grep { $code->($_, @_) } @$self;
+    return $found ? 1 : 0;
 }
 
 sub clear {
@@ -66,7 +73,7 @@ sub each {
 
     my $i=0;
     foreach my $value (@$self) {
-        $code->($i, $value); $i++;
+        $code->($i, $value, @_); $i++;
     }
 
     return $self;
@@ -79,7 +86,7 @@ sub each_key {
     $code = $code->codify if isa_string $code;
     type_coderef $code;
 
-    $code->($_) for (0..$#{$self});
+    $code->($_, @_) for (0..$#{$self});
     return $self;
 }
 
@@ -93,7 +100,7 @@ sub each_n_values {
 
     my @values = @$self;
 
-    $code->(CORE::splice @values, 0, $number) while @values;
+    $code->(CORE::splice(@values, 0, $number), @_) while @values;
     return $self;
 }
 
@@ -104,7 +111,7 @@ sub each_value {
     $code = $code->codify if isa_string $code;
     type_coderef $code;
 
-    $code->($self->[$_]) for (0..$#{$self});
+    $code->($self->[$_], @_) for (0..$#{$self});
     return $self;
 }
 
@@ -139,7 +146,7 @@ sub grep {
     $code = $code->codify if isa_string $code;
     type_coderef $code;
 
-    return [CORE::grep { $code->($_) } @$self];
+    return [CORE::grep { $code->($_, @_) } @$self];
 }
 
 sub hashify {
@@ -211,7 +218,7 @@ sub map {
     $code = $code->codify if isa_string $code;
     type_coderef $code;
 
-    return [CORE::map { $code->($_) } @$self];
+    return [CORE::map { $code->($_, @_) } @$self];
 }
 
 sub max {
@@ -246,7 +253,13 @@ sub min {
 
 sub none {
     my $self = CORE::shift;
-    return Syntax::Keyword::Junction::None->new(@$self);
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
+    my $found = CORE::grep { $code->($_, @_) } @$self;
+    return $found ? 0 : 1;
 }
 
 sub nsort {
@@ -257,7 +270,13 @@ sub nsort {
 
 sub one {
     my $self = CORE::shift;
-    return Syntax::Keyword::Junction::One->new(@$self);
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
+    my $found = CORE::grep { $code->($_, @_) } @$self;
+    return $found == 1 ? 1 : 0;
 }
 
 sub pairs {
@@ -285,7 +304,7 @@ sub part {
 
     my $result = [[],[]];
     foreach my $value (@$self) {
-        my $slot = $code->($value) ? $$result[0] : $$result[1];
+        my $slot = $code->($value, @_) ? $$result[0] : $$result[1];
         CORE::push @$slot, $value;
     }
 
@@ -427,7 +446,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 
@@ -450,8 +469,8 @@ L<Bubblegum> class.
 =head2 all
 
     my $array = [2..5];
-    $array->all > 1; # 1; true
-    $array->all > 3; # 0; false
+    $array->all('$a > 1'); # 1; true
+    $array->all('$a > 3'); # 0; false
 
 The all method returns true if all of the elements in the subject meet the
 criteria set by the operand and rvalue.
@@ -459,8 +478,8 @@ criteria set by the operand and rvalue.
 =head2 any
 
     my $array = [2..5];
-    $array->any > 5; # 0; false
-    $array->any > 3; # 1; true
+    $array->any('$a > 5'); # 0; false
+    $array->any('$a > 3'); # 1; true
 
 The any method returns true if any of the elements in the subject meet the
 criteria set by the operand and rvalue.
@@ -704,8 +723,8 @@ value. All non-numerical element are skipped during the evaluation process.
 =head2 none
 
     my $array = [2..5];
-    $array->none <= 1; # 1; true
-    $array->none <= 2; # 0; false
+    $array->none('$a <= 1'); # 1; true
+    $array->none('$a <= 2'); # 0; false
 
 The none method returns true if none of the elements in the subject meet the
 criteria set by the operand and rvalue.
@@ -721,8 +740,8 @@ sorted numerically.
 =head2 one
 
     my $array = [2..5];
-    $array->one == 5; # 1; true
-    $array->one == 6; # 0; false
+    $array->one('$a == 5'); # 1; true
+    $array->one('$a == 6'); # 0; false
 
 The one method returns true if only one of the elements in the subject meet the
 criteria set by the operand and rvalue.
@@ -917,7 +936,7 @@ The values method returns an array reference consisting of the elements in the
 subject. This method essentially copies the content of the subject into a new
 container.
 
-=head1 COERCIVE METHODS
+=head1 COERCIONS
 
 =head2 to_array
 

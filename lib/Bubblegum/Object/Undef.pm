@@ -11,7 +11,7 @@ with 'Bubblegum::Object::Role::Coercive';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.42'; # VERSION
+our $VERSION = '0.43'; # VERSION
 
 sub defined {
     return 0
@@ -31,7 +31,7 @@ Bubblegum::Object::Undef - Common Methods for Operating on Undefined Values
 
 =head1 VERSION
 
-version 0.42
+version 0.43
 
 =head1 SYNOPSIS
 
@@ -55,7 +55,7 @@ by the L<Bubblegum> class.
 
 The defined method always returns false.
 
-=head1 COERCIVE METHODS
+=head1 COERCIONS
 
 =head2 to_array
 
