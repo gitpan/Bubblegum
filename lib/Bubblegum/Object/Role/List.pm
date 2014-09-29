@@ -8,7 +8,7 @@ use Bubblegum::Constraints -isas, -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 requires 'defined';
 requires 'grep';
@@ -22,10 +22,15 @@ requires 'tail';
 
 sub reduce {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
     my $a    = [0 .. $#{$self}];
     my $acc  = $a->head;
     $a->tail->map(sub { $acc = $code->($acc, $_) });
+
     return $acc;
 }
 

@@ -1,6 +1,18 @@
 Changelog for Bubblegum
 
-0.40 2014-09-23T04:09:19
+0.41 2014-09-28T23:59:20
+ - Updated POD, README, and Makefile.
+ - Added test and documentation for the partition method.
+ - Added partition method to Array.pm.
+ - Added undocumented codification of strings within methods that expect
+   coderefs.
+ - Miscellaneous updates.
+ - Added codify method to String.pm
+ - Miscellaneous cleanup.
+ - Added tests for the coercive role.
+
+0.40 2014-09-23T04:09:36
+ - v0.40
  - Updated POD, README, and Makefile.
  - Miscellaneous update.
 

@@ -10,7 +10,7 @@ extends 'Throwable::Error';
 use Data::Dumper ();
 use Scalar::Util ();
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 sub rethrow {
     die shift;
@@ -24,7 +24,8 @@ sub dumper {
 sub caught {
     my($class, $e) = @_;
     return if ref $class;
-    return unless Scalar::Util::blessed($e) && UNIVERSAL::isa($e, $class);
+    return unless Scalar::Util::blessed($e)
+        && UNIVERSAL::isa($e, $class);
     return $e;
 }
 
@@ -42,7 +43,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.40
+version 0.41
 
 =head1 SYNOPSIS
 

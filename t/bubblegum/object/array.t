@@ -272,6 +272,13 @@ subtest 'test the pairs_hash method' => sub {
         {0=>1,1=>2,2=>3,3=>4,4=>5}; # {0=>1,1=>2,2=>3,3=>4,4=>5}
 };
 
+can_ok 'Bubblegum::Object::Array', 'part';
+subtest 'test the part method' => sub {
+    my $array = [1..10];
+    is_deeply $array->part(sub { shift > 5 }),
+        [[6, 7, 8, 9, 10], [1, 2, 3, 4, 5]]; # [[6, 7, 8, 9, 10], [1, 2, 3, 4, 5]]
+};
+
 can_ok 'Bubblegum::Object::Array', 'pop';
 subtest 'test the pop method' => sub {
     my $array = [1..5];

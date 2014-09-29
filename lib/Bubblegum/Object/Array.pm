@@ -6,6 +6,7 @@ use namespace::autoclean;
 
 use Bubblegum::Class 'with';
 use Bubblegum::Constraints -isas, -types;
+
 use Scalar::Util 'looks_like_number';
 
 with 'Bubblegum::Object::Role::Defined';
@@ -22,7 +23,7 @@ use Syntax::Keyword::Junction::One ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -58,7 +59,10 @@ sub delete {
 
 sub each {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
 
     my $i=0;
     foreach my $value (@$self) {
@@ -70,7 +74,10 @@ sub each {
 
 sub each_key {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
 
     $code->($_) for (0..$#{$self});
     return $self;
@@ -79,7 +86,11 @@ sub each_key {
 sub each_n_values {
     my $self   = CORE::shift;
     my $number = $_[0] ? type_number CORE::shift : 2;
-    my $code   = type_coderef CORE::shift;
+    my $code   = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
     my @values = @$self;
 
     $code->(CORE::splice @values, 0, $number) while @values;
@@ -88,7 +99,10 @@ sub each_n_values {
 
 sub each_value {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
 
     $code->($self->[$_]) for (0..$#{$self});
     return $self;
@@ -120,7 +134,11 @@ sub get {
 
 sub grep {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
     return [CORE::grep { $code->($_) } @$self];
 }
 
@@ -188,7 +206,11 @@ sub list {
 
 sub map {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
     return [CORE::map { $code->($_) } @$self];
 }
 
@@ -252,6 +274,22 @@ sub pairs_hash {
     my $self = CORE::shift;
     my $i=0;
     return {CORE::map {$i++ => $_} @$self};
+}
+
+sub part {
+    my $self = CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
+    my $result = [[],[]];
+    foreach my $value (@$self) {
+        my $slot = $code->($value) ? $$result[0] : $$result[1];
+        CORE::push @$slot, $value;
+    }
+
+    return $result;
 }
 
 sub pop {
@@ -389,7 +427,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.40
+version 0.41
 
 =head1 SYNOPSIS
 
@@ -712,6 +750,16 @@ value of each element in the subject.
 
 The pairs_hash method returns a hash reference where each key and value pairs
 corresponds to the index and value of each element in the subject.
+
+=head2 part
+
+    my $array = [1..10];
+    $array->part(sub { shift > 5 }); # [[6, 7, 8, 9, 10], [1, 2, 3, 4, 5]]
+
+The part method iterates over each element in the subject, executing the
+code reference supplied in the argument, using the result of the code reference
+to partition to subject into two distinct array references. This method returns
+an array reference containing exactly two array references.
 
 =head2 pop
 

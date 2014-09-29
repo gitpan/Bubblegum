@@ -57,6 +57,7 @@ t/bubblegum/object/hash.t
 t/bubblegum/object/instance.t
 t/bubblegum/object/integer.t
 t/bubblegum/object/number.t
+t/bubblegum/object/role/coercive.t
 t/bubblegum/object/role/collection.t
 t/bubblegum/object/role/comparison.t
 t/bubblegum/object/role/defined.t

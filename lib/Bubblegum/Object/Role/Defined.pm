@@ -7,7 +7,7 @@ use Bubblegum::Role 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 sub defined {
     return 1

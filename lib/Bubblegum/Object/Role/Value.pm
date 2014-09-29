@@ -8,11 +8,15 @@ use Bubblegum::Constraints -isas, -types;
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 sub do {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
+
     local $_ = $self;
     return $code->($self);
 }

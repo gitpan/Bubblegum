@@ -2,12 +2,11 @@ package Bubblegum::Object::Role::Coercive;
 
 use 5.10.0;
 use namespace::autoclean;
-use Carp ();
-use Data::Dumper ();
+use Bubblegum::Role;
 
-use Bubblegum::Role 'requires';
+use Carp 'confess';
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 my $coercable = {
     'UNDEF' => {
@@ -22,9 +21,9 @@ my $coercable = {
         'UNDEF'  => sub { undef },
         'CODE'   => sub { $_[0] },
         'ARRAY'  => sub { [$_[0]] },
-        'NUMBER' => sub { Carp::confess 'Not able to coerce code to number' },
-        'HASH'   => sub { Carp::confess 'Not able to coerce code to hash' },
-        'STRING' => sub { Carp::confess 'Not able to coerce code to string' },
+        'NUMBER' => sub { confess 'code to number coercion not possible' },
+        'HASH'   => sub { confess 'code to hash coercion not possible' },
+        'STRING' => sub { confess 'code to string coercion not possible' },
     },
     'NUMBER' => {
         'UNDEF'  => sub { undef },
@@ -36,12 +35,11 @@ my $coercable = {
     },
     'HASH' => {
         'UNDEF'  => sub { undef },
-        'CODE'   => sub { sub { $_[0] } },
+        'CODE'   => sub { my $this = $_[0]; sub { $this } },
         'NUMBER' => sub { keys %{$_[0]} },
         'HASH'   => sub { $_[0] },
         'ARRAY'  => sub { [$_[0]] },
-        'STRING' => sub { Data::Dumper->new([$_[0]])->Indent(0)
-                            ->Sortkeys(1)->Terse(1)->Dump },
+        'STRING' => sub { $_[0]->dump },
     },
     'ARRAY' => {
         'UNDEF'  => sub { undef },
@@ -49,8 +47,7 @@ my $coercable = {
         'NUMBER' => sub { scalar @{$_[0]} },
         'HASH'   => sub { +{ (@{$_[0]} % 2) ? (@{$_[0]}, undef) : @{$_[0]} } },
         'ARRAY'  => sub { $_[0] },
-        'STRING' => sub { Data::Dumper->new([$_[0]])->Indent(0)
-                            ->Sortkeys(1)->Terse(1)->Dump },
+        'STRING' => sub { $_[0]->dump },
     },
     'STRING' => {
         'UNDEF'  => sub { undef },
@@ -100,10 +97,21 @@ sub to_string {
     return $coercable->{$type}{$coerce}->($self);
 }
 
-*to_a = \&to_array;
-*to_c = \&to_code;
-*to_h = \&to_hash;
-*to_n = \&to_number;
-*to_s = \&to_string;
+sub to_undef {
+    my $self = shift;
+    my $coerce = 'UNDEF';
+    return unless my $type = $self->type;
+    return $coercable->{$type}{$coerce}->($self);
+}
+
+{
+    no warnings 'once';
+    *to_a = \&to_array;
+    *to_c = \&to_code;
+    *to_h = \&to_hash;
+    *to_n = \&to_number;
+    *to_s = \&to_string;
+    *to_u = \&to_undef;
+}
 
 1;

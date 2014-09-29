@@ -6,6 +6,8 @@ use namespace::autoclean;
 
 use Bubblegum::Class 'with';
 use Bubblegum::Constraints -isas, -types;
+
+use Carp 'confess';
 use Scalar::Util 'looks_like_number';
 
 with 'Bubblegum::Object::Role::Defined';
@@ -15,10 +17,18 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 sub append {
     return $_[0] = CORE::join ' ', map type_string($_), @_;
+}
+
+sub codify {
+    my $self = CORE::shift || 'return(@_)';
+    my $vars = sprintf 'my (%s) = @_;', join ',', map "\$$_", 'a'..'z';
+    my $code = sprintf 'use gum; sub { %s return do { %s } }', $vars, $self;
+    my $ref  = eval $code or confess $@;
+    return $ref;
 }
 
 sub concat {
@@ -246,7 +256,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.40
+version 0.41
 
 =head1 SYNOPSIS
 
@@ -274,6 +284,16 @@ automatically by the L<Bubblegum> class.
 
 The append method modifies and returns the subject with the argument list
 appended to it separated using spaces.
+
+=head2 codify
+
+    my $string = '$b > $a';
+    my $code = $string->codify;
+    $code->(0,1); # 1
+    $code->(1,1); # 0
+
+The codify method converts the subject into a code reference which evaluates the
+subject as an expression and returns the result.
 
 =head2 concat
 

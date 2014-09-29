@@ -10,6 +10,18 @@ subtest 'test the append method' => sub {
     is 'firstname lastname', $string; # firstname lastname
 };
 
+can_ok 'Bubblegum::Object::String', 'codify';
+subtest 'test the codify method' => sub {
+    my $string = '$b > $a';
+    is ref $string->codify, 'CODE';
+    is 1, $string->codify->(0, 1); # 1
+    is '', $string->codify->(1, 1); # 0
+    $string = '$b > $a && !$c';
+    is ref $string->codify, 'CODE';
+    is 1, $string->codify->(0, 1, 0); # 1
+    is '', $string->codify->(1, 1, 1); # 0
+};
+
 can_ok 'Bubblegum::Object::String', 'concat';
 subtest 'test the concat method' => sub {
     my $string = 'ABC';

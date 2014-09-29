@@ -6,7 +6,7 @@ use strict;
 use utf8::all;
 use warnings;
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 our $DefaultTypes = {
     ARRAY     => 'Bubblegum::Object::Array',
@@ -30,7 +30,8 @@ our $ExtendedTypes = {
 
 sub import {
     my $class = shift;
-    my %args  = ((@_ == 1) && 'HASH' eq ref $_[0]) ? %{shift()} : @_;
+    my %args  = ((@_ == 1) &&
+        'HASH' eq ref $_[0]) ? %{shift()} : @_;
 
     for my $type (keys %args) {
         my $class = $args{$type};

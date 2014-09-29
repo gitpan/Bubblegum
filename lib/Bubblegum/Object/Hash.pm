@@ -17,7 +17,7 @@ use Hash::Merge::Simple ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.40'; # VERSION
+our $VERSION = '0.41'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -47,7 +47,10 @@ sub delete {
 
 sub each {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
 
     for my $key (CORE::keys %$self) {
       $code->($key, $self->{$key});
@@ -58,7 +61,10 @@ sub each {
 
 sub each_key {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
 
     $code->($_) for CORE::keys %$self;
     return $self;
@@ -67,7 +73,10 @@ sub each_key {
 sub each_n_values {
     my $self   = CORE::shift;
     my $number = $_[0] ? type_number CORE::shift : 2;
-    my $code   = type_coderef CORE::shift;
+    my $code   = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
 
     my @values = CORE::values %$self;
     $code->(CORE::splice @values, 0, $number) while @values;
@@ -76,7 +85,10 @@ sub each_n_values {
 
 sub each_value {
     my $self = CORE::shift;
-    my $code = type_coderef CORE::shift;
+    my $code = CORE::shift;
+
+    $code = $code->codify if isa_string $code;
+    type_coderef $code;
 
     $code->($_) for CORE::values %$self;
     return $self;
@@ -249,7 +261,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.40
+version 0.41
 
 =head1 SYNOPSIS
 
