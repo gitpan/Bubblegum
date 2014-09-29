@@ -14,7 +14,7 @@ with 'Bubblegum::Object::Role::Output';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub call {
     my $self = CORE::shift;
@@ -81,7 +81,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 
@@ -194,13 +194,149 @@ returns true if successful.
 The say method prints the return value of the code reference with a newline
 appended to STDOUT, and returns true if successful.
 
+=head1 COERCIVE METHODS
+
+=head2 to_array
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_array; # [sub { "foobar" }]
+
+The to_array method coerces a number to an array value. This method returns an
+array reference using the subject as the first element.
+
+=head2 to_a
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_a; # [sub { "foobar" }]
+
+The to_a method coerces a number to an array value. This method returns an array
+reference using the subject as the first element.
+
+=head2 to_code
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_code; # sub { "foobar" }
+
+The to_code method coerces a number to a code value. The code reference, when
+executed, will return the subject.
+
+=head2 to_c
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_c; # sub { "foobar" }
+
+The to_c method coerces a number to a code value. The code reference, when
+executed, will return the subject.
+
+=head2 to_hash
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_hash; # die 'code to hash coercion n/a'
+
+The to_hash method coerces a number to a hash value. This method will die as
+uncoercible.
+
+=head2 to_h
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_h; # die 'code to hash coercion n/a'
+
+The to_h method coerces a number to a hash value. This method will die as
+uncoercible.
+
+=head2 to_number
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_number; # die 'code to number coercion n/a'
+
+The to_number method coerces a number to a number value. This method will die as
+uncoercible.
+
+=head2 to_n
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_n; # die 'code to number coercion n/a'
+
+The to_n method coerces a number to a number value. This method will die as
+uncoercible.
+
+=head2 to_string
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_string; # die 'code to string coercion n/a'
+
+The to_string method coerces a number to a string value. This method will die as
+uncoercible.
+
+=head2 to_s
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_s; # die 'code to string coercion n/a'
+
+The to_s method coerces a number to a string value. This method will die as
+uncoercible.
+
+=head2 to_undef
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_undef; # undef
+
+The to_undef method coerces a number to an undef value. This method merely
+returns an undef value.
+
+=head2 to_u
+
+    my $code = sub { "foobar" };
+    my $result = $code->to_u; # undef
+
+The to_u method coerces a number to an undef value. This method merely returns
+an undef value.
+
 =head1 SEE ALSO
 
-L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
-L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
-L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
-L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
-L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
+=over 4
+
+=item *
+
+L<Bubblegum::Object::Array>
+
+=item *
+
+L<Bubblegum::Object::Code>
+
+=item *
+
+L<Bubblegum::Object::Hash>
+
+=item *
+
+L<Bubblegum::Object::Instance>
+
+=item *
+
+L<Bubblegum::Object::Integer>
+
+=item *
+
+L<Bubblegum::Object::Number>
+
+=item *
+
+L<Bubblegum::Object::Scalar>
+
+=item *
+
+L<Bubblegum::Object::String>
+
+=item *
+
+L<Bubblegum::Object::Undef>
+
+=item *
+
+L<Bubblegum::Object::Universal>
+
+=back
 
 =head1 AUTHOR
 

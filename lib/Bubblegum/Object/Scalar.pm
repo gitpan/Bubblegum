@@ -12,7 +12,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub and {
     my ($self, $other) =  @_;
@@ -64,7 +64,7 @@ Bubblegum::Object::Scalar - Common Methods for Operating on Scalars
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 
@@ -160,11 +160,49 @@ is true.
 
 =head1 SEE ALSO
 
-L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
-L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
-L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
-L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
-L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
+=over 4
+
+=item *
+
+L<Bubblegum::Object::Array>
+
+=item *
+
+L<Bubblegum::Object::Code>
+
+=item *
+
+L<Bubblegum::Object::Hash>
+
+=item *
+
+L<Bubblegum::Object::Instance>
+
+=item *
+
+L<Bubblegum::Object::Integer>
+
+=item *
+
+L<Bubblegum::Object::Number>
+
+=item *
+
+L<Bubblegum::Object::Scalar>
+
+=item *
+
+L<Bubblegum::Object::String>
+
+=item *
+
+L<Bubblegum::Object::Undef>
+
+=item *
+
+L<Bubblegum::Object::Universal>
+
+=back
 
 =head1 AUTHOR
 

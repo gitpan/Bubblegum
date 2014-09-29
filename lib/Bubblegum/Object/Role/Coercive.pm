@@ -6,7 +6,7 @@ use Bubblegum::Role;
 
 use Carp 'confess';
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 my $coercable = {
     'UNDEF' => {

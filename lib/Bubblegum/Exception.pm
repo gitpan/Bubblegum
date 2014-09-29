@@ -10,7 +10,7 @@ extends 'Throwable::Error';
 use Data::Dumper ();
 use Scalar::Util ();
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub rethrow {
     die shift;
@@ -43,7 +43,7 @@ Bubblegum::Exception - General Purpose Exception Class for Bubblegum
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 

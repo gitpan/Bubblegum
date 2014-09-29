@@ -8,7 +8,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub import {
     my $target = caller;
@@ -31,7 +31,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 
@@ -44,11 +44,6 @@ version 0.41
         required => 1
     );
 
-    has 'lastname' => (
-        is       => 'ro',
-        required => 0
-    );
-
     sub greet {
         my $self = shift;
         my $subject = shift;
@@ -58,7 +53,6 @@ version 0.41
         $subject->asa_string;
 
         $subject = $subject->titlecase;
-
         my $target = $self->firstname->titlecase;
         my $greeting = "Hello %s. My name is %s, nice to meet you.";
 
@@ -68,7 +62,7 @@ version 0.41
 And elsewhere:
 
     my $jeff = Person->new(firstname => 'jeffrey');
-    say $jeff->greet('amanda');
+    $jeff->greet('amanda')->say;
 
 =head1 DESCRIPTION
 
@@ -86,6 +80,7 @@ testing and feedback and as such is subject to change.>
 
     use Bubblegum;
     # or Bubblegum::Class;
+    # or Bubblegum::Prototype
     # or Bubblegum::Role
     # or Bubblegum::Singleton;
 
@@ -123,7 +118,7 @@ using Bubblegum:
     # arrays
 
         my $alpha = ['a'..'z'];
-        my $map   = $alpha->keyed(1..26);       # { 1=>'a', 2='b', ...}
+        my $map   = $alpha->keyed(1..26);       # { 1=>'a', 2='b', ... }
 
     # hashes
 
@@ -156,6 +151,7 @@ using Bubblegum:
     # include Moo as your default object-system (optional)
 
         use Bubblegum::Class;                   # Bubblegum w/ Moo
+        use Bubblegum::Prototype;               # Bubblegum w/ Moo (Prototype)
         use Bubblegum::Role;                    # Bubblegum w/ Moo (Role)
         use Bubblegum::Singleton;               # Bubblegum w/ Moo (Singleton)
 
@@ -185,11 +181,11 @@ Enforces Strict Syntax and Enables Warnings
 
 =item *
 
-Core Functions Throw Exceptions
+Exception Handling for Type Operations
 
 =item *
 
-Autoboxing With Consistent Function Names
+Extendable Component-Based Autoboxing
 
 =item *
 
@@ -230,26 +226,27 @@ Enforced consistency is a path many other programming languages and frameworks
 have adopted to great effect, so Bubblegum is one approach towards that end in
 Perl.
 
-=head2 Bubblegum Add-Ons
+=head2 Bubblegum Extras
 
-Additional features and enhancements can be enabled by using the
-L<Bubblegum::Constraints> module which exports type constraint and validation
-functions, and the L<Bubblegum::Functions> module which exports various utility
-functions. Bubblegum is designed as a construction-kit; having it's
-feature-set compartmentalized in such a way as to allow the maximum amount of
+Additional features and enhancements can be enabled by using utility packages
+such as L<Bubblegum::Constraints>, which exports type constraint and validation
+functions. Bubblegum is a Perl development framework; having it's feature-set
+compartmentalized in such a way as to allow the maximum amount of
 interoperability. Bubblegum can be used along-side any of the many
-object-systems. Hardcore Perl hackers around the world are working tirelessly
-around the clock to give us a better system for elegantly defining objects and
-classes using modern Perl best practices, ... but in the meantime, have some
-Bubblegum.
+object-systems.
 
-    use Bubblegum;
-    use Bubblegum::Functions 'will';
+    use Bubblegum::Class;
+    use Bubblegum::Constraints -isas;
 
-    # take a moment to reason about the following Perl example.
+    sub BUILDARGS {
+        my $class = shift;
+        my $data  = isa_hashref $_[0] ? $_[0] : {@_};
 
-    my $print = will '@output; say @output';
-    $print->curry(1..10)->call; # 12345678910
+        # do stuff
+        # ...
+
+        return $data;
+    }
 
 =head2 Bubblegum Topology
 

@@ -1,6 +1,11 @@
 Changelog for Bubblegum
 
-0.41 2014-09-28T23:59:20
+0.42 2014-09-29T04:31:24
+ - Updated POD, README, and Makefile.
+ - Miscellaneous documentation updates.
+
+0.41 2014-09-28T23:59:38
+ - v0.41
  - Updated POD, README, and Makefile.
  - Added test and documentation for the partition method.
  - Added partition method to Array.pm.

@@ -8,7 +8,7 @@ use Bubblegum::Constraints -isas, -types;
 
 with 'Bubblegum::Object::Role::Value';
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 requires 'defined';
 requires 'grep';

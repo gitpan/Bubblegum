@@ -12,7 +12,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub abs {
     my $self = CORE::shift;
@@ -103,7 +103,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 
@@ -275,13 +275,151 @@ The to_integer method is used for coercion and simply returns the subject.
 The to_string method is used for coercion and simply returns the stringified
 version of the subject.
 
+=head1 COERCIVE METHODS
+
+=head2 to_array
+
+    my $number = 5;
+    my $result = $number->to_array; # [5]
+
+The to_array method coerces a number to an array value. This method returns an
+array reference using the subject as the first element.
+
+=head2 to_a
+
+    my $number = 5;
+    my $result = $number->to_a; # [5]
+
+The to_a method coerces a number to an array value. This method returns an array
+reference using the subject as the first element.
+
+=head2 to_code
+
+    my $number = 5;
+    my $result = $number->to_code; # sub { $number }
+
+The to_code method coerces a number to a code value. The code reference, when
+executed, will return the subject.
+
+=head2 to_c
+
+    my $number = 5;
+    my $result = $number->to_c; # sub { $number }
+
+The to_c method coerces a number to a code value. The code reference, when
+executed, will return the subject.
+
+=head2 to_hash
+
+    my $number = 5;
+    my $result = $number->to_hash; # {5=>1}
+
+The to_hash method coerces a number to a hash value. This method returns a hash
+reference with a single element using the subject as the key, and the number 1
+as the value.
+
+=head2 to_h
+
+    my $number = 5;
+    my $result = $number->to_h; # {5=>1}
+
+The to_h method coerces a number to a hash value. This method returns a hash
+reference with a single element using the subject as the key, and the number 1
+as the value.
+
+=head2 to_number
+
+    my $number = 5;
+    my $result = $number->to_number; # 5
+
+The to_number method coerces a number to a number value. This method merely
+returns the subject.
+
+=head2 to_n
+
+    my $number = 5;
+    my $result = $number->to_n; # 5
+
+The to_n method coerces a number to a number value. This method merely returns
+the subject.
+
+=head2 to_string
+
+    my $number = 5;
+    my $result = $number->to_string; # '5'
+
+The to_string method coerces a number to a string value. This method returns a
+string representation of the subject.
+
+=head2 to_s
+
+    my $number = 5;
+    my $result = $number->to_s; # '5'
+
+The to_s method coerces a number to a string value. This method returns a string
+representation of the subject.
+
+=head2 to_undef
+
+    my $number = 5;
+    my $result = $number->to_undef; # undef
+
+The to_undef method coerces a number to an undef value. This method merely
+returns an undef value.
+
+=head2 to_u
+
+    my $number = 5;
+    my $result = $number->to_u; # undef
+
+The to_u method coerces a number to an undef value. This method merely returns
+an undef value.
+
 =head1 SEE ALSO
 
-L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
-L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
-L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
-L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
-L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
+=over 4
+
+=item *
+
+L<Bubblegum::Object::Array>
+
+=item *
+
+L<Bubblegum::Object::Code>
+
+=item *
+
+L<Bubblegum::Object::Hash>
+
+=item *
+
+L<Bubblegum::Object::Instance>
+
+=item *
+
+L<Bubblegum::Object::Integer>
+
+=item *
+
+L<Bubblegum::Object::Number>
+
+=item *
+
+L<Bubblegum::Object::Scalar>
+
+=item *
+
+L<Bubblegum::Object::String>
+
+=item *
+
+L<Bubblegum::Object::Undef>
+
+=item *
+
+L<Bubblegum::Object::Universal>
+
+=back
 
 =head1 AUTHOR
 

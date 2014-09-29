@@ -9,7 +9,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 # needs formatting routines ... not implemented yet
 

@@ -10,16 +10,16 @@ use Scalar::Util ();
 
 with 'Bubblegum::Object::Role::Defined';
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub refaddr {
-    my $self = type_reference CORE::shift;
-    return Scalar::Util::refaddr $self;
+    return Scalar::Util::refaddr
+        type_reference CORE::shift;
 }
 
 sub reftype {
-    my $self = type_reference CORE::shift;
-    return Scalar::Util::reftype $self;
+    return Scalar::Util::reftype
+        type_reference CORE::shift;
 }
 
 1;

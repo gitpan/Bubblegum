@@ -23,7 +23,7 @@ use Syntax::Keyword::Junction::One ();
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub all {
     my $self = CORE::shift;
@@ -427,7 +427,7 @@ Bubblegum::Object::Array - Common Methods for Operating on Array References
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 
@@ -917,13 +917,149 @@ The values method returns an array reference consisting of the elements in the
 subject. This method essentially copies the content of the subject into a new
 container.
 
+=head1 COERCIVE METHODS
+
+=head2 to_array
+
+    my $array  = [1..5];
+    my $result = $array->to_array; # [1,2,3,4,5]
+
+The to_array method coerces an array to a array value. This method merely
+returns the subject.
+
+=head2 to_a
+
+    my $array  = [1..5];
+    my $result = $array->to_a; # [1,2,3,4,5]
+
+The to_a method coerces an array to an array value. This method merely returns
+the subject.
+
+=head2 to_code
+
+    my $array  = [1..5];
+    my $result = $array->to_code; # sub { $array }
+
+The to_code method coerces an array to a code value. The code reference, when
+executed, will return the subject.
+
+=head2 to_c
+
+    my $array  = [1..5];
+    my $result = $array->to_c; # sub { $array }
+
+The to_c method coerces an array to a code value. The code reference, when
+executed, will return the subject.
+
+=head2 to_hash
+
+    my $array  = [1..5];
+    my $result = $array->to_hash; # {1=>2,3=>4,5=>undef}
+
+The to_hash method coerces an array to a hash value. If the subject has an odd
+number of elements, an undefined value is appended to balance the set.
+
+=head2 to_h
+
+    my $array  = [1..5];
+    my $result = $array->to_h; # {1=>2,3=>4,5=>undef}
+
+The to_h method coerces an array to a hash value. If the subject has an odd
+number of elements, an undefined value is appended to balance the set.
+
+=head2 to_number
+
+    my $array  = [1..5];
+    my $result = $array->to_number; # 5
+
+The to_number method coerces an array to a number value. This method merely
+returns the numbers of elements in the subject.
+
+=head2 to_n
+
+    my $array  = [1..5];
+    my $result = $array->to_n; # 5
+
+The to_n method coerces an array to a number value. This method merely returns
+the numbers of elements in the subject.
+
+=head2 to_string
+
+    my $array  = [1..5];
+    my $result = $array->to_string; # '[1,2,3,4,5]'
+
+The to_string method coerces an array to a string value. This method returns a
+string representation of the subject.
+
+=head2 to_s
+
+    my $array  = [1..5];
+    my $result = $array->to_s; # '[1,2,3,4,5]'
+
+The to_s method coerces an array to a string value. This method returns a string
+representation of the subject.
+
+=head2 to_undef
+
+    my $array  = [1..5];
+    my $result = $array->to_undef; # undef
+
+The to_undef method coerces an array to a undef value. This method merely
+returns an undef value.
+
+=head2 to_u
+
+    my $array  = [1..5];
+    my $result = $array->to_u; # undef
+
+The to_u method coerces an array to an undefined value. This method merely
+returns an undef value.
+
 =head1 SEE ALSO
 
-L<Bubblegum::Object::Array>, L<Bubblegum::Object::Code>,
-L<Bubblegum::Object::Hash>, L<Bubblegum::Object::Instance>,
-L<Bubblegum::Object::Integer>, L<Bubblegum::Object::Number>,
-L<Bubblegum::Object::Scalar>, L<Bubblegum::Object::String>,
-L<Bubblegum::Object::Undef>, L<Bubblegum::Object::Universal>,
+=over 4
+
+=item *
+
+L<Bubblegum::Object::Array>
+
+=item *
+
+L<Bubblegum::Object::Code>
+
+=item *
+
+L<Bubblegum::Object::Hash>
+
+=item *
+
+L<Bubblegum::Object::Instance>
+
+=item *
+
+L<Bubblegum::Object::Integer>
+
+=item *
+
+L<Bubblegum::Object::Number>
+
+=item *
+
+L<Bubblegum::Object::Scalar>
+
+=item *
+
+L<Bubblegum::Object::String>
+
+=item *
+
+L<Bubblegum::Object::Undef>
+
+=item *
+
+L<Bubblegum::Object::Universal>
+
+=back
 
 =head1 AUTHOR
 

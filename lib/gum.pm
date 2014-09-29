@@ -4,7 +4,7 @@ package gum;
 use 5.10.0;
 use Import::Into;
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub import {
     my $target = caller;
@@ -60,7 +60,7 @@ gum - Convenient Shoehorn for Bubblegum
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 
@@ -72,6 +72,10 @@ This module is a I<shoehorn> for Bubblegum. It merely serves as convenient means
 of loading and configuring L<Bubblegum>. B<Note: This is an early release
 available for testing and feedback and as such is subject to change.>
 
+    use gum;
+
+or
+
     use gum -types, -isas;
 
 is equivalent to
@@ -80,6 +84,10 @@ is equivalent to
     use Bubblegum::Constraints -types, -isas;
 
 bubblegum class usage
+
+    use gum -class;
+
+or
 
     use gum -class, -types, -isas;
 
@@ -90,6 +98,10 @@ is equivalent to
 
 bubblegum prototype usage
 
+    use gum -proto;
+
+or
+
     use gum -proto, -types, -isas;
 
 is equivalent to
@@ -98,6 +110,10 @@ is equivalent to
     use Bubblegum::Constraints -types, -isas;
 
 bubblegum role usage
+
+    use gum -role;
+
+or
 
     use gum -role, -types, -isas;
 
@@ -108,6 +124,10 @@ is equivalent to
 
 bubblegum singleton usage
 
+    use gum -singleton;
+
+or
+
     use gum -singleton, -types, -isas;
 
 is equivalent to
@@ -115,7 +135,7 @@ is equivalent to
     use Bubblegum::Singleton;
     use Bubblegum::Constraints -types, -isas;
 
-all of which is equivalent to
+all of which is automatically enables
 
     use 5.10.0;
     use strict;
@@ -135,6 +155,7 @@ level of abstraction. Bubblegum will also default to including L<Moo> as an
 object system. For example:
 
     use Bubblegum::Class;                   # Bubblegum w/ Moo
+    use Bubblegum::Prototype;               # Bubblegum w/ Moo (Prototype)
     use Bubblegum::Role;                    # Bubblegum w/ Moo (Role)
     use Bubblegum::Singleton;               # Bubblegum w/ Moo (Singleton)
 

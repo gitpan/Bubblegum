@@ -11,7 +11,7 @@ use Bubblegum::Exception;
 
 extends 'Bubblegum::Object::Instance';
 
-our $VERSION = '0.41'; # VERSION
+our $VERSION = '0.42'; # VERSION
 
 sub BUILD {
     my $self = shift;
@@ -55,7 +55,7 @@ Bubblegum::Wrapper::Digest - Bubblegum Wrapper around Hashing Algorithms
 
 =head1 VERSION
 
-version 0.41
+version 0.42
 
 =head1 SYNOPSIS
 
