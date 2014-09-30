@@ -1,6 +1,5 @@
 requires "Class::Load" => "0.21";
 requires "Exporter::Tiny" => "0.030";
-requires "IPC::System::Simple" => "1.25";
 requires "Import::Into" => "1.001001";
 requires "Moo" => "1.003001";
 requires "Throwable" => "0.200011";

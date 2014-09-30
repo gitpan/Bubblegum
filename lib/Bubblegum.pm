@@ -8,7 +8,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.43'; # VERSION
+our $VERSION = '0.44'; # VERSION
 
 sub import {
     my $target = caller;
@@ -31,7 +31,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.43
+version 0.44
 
 =head1 SYNOPSIS
 
@@ -294,7 +294,7 @@ evolve.
                +- CODE
                     [ROLE] VALUE
 
-=head2 Bubblegum Type Operations
+=head2 Bubblegum Operations
 
 The following classes have methods which can be invoked by variables containing
 data of a type corresponding with the type the class is designed to handle.

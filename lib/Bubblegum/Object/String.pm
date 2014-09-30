@@ -17,7 +17,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.43'; # VERSION
+our $VERSION = '0.44'; # VERSION
 
 sub append {
     return $_[0] = CORE::join ' ', map type_string($_), @_;
@@ -256,7 +256,7 @@ Bubblegum::Object::String - Common Methods for Operating on Strings
 
 =head1 VERSION
 
-version 0.43
+version 0.44
 
 =head1 SYNOPSIS
 

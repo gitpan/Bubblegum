@@ -14,7 +14,7 @@ use Class::Load 'load_class';
 our @ISA = (); # non-object
 my  $TYPES = $Bubblegum::Namespace::ExtendedTypes;
 
-our $VERSION = '0.43'; # VERSION
+our $VERSION = '0.44'; # VERSION
 
 sub digest {
     my $self = CORE::shift;
@@ -165,7 +165,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.43
+version 0.44
 
 =head1 SYNOPSIS
 
@@ -263,7 +263,7 @@ The yaml method blesses the subject into the wrapper class,
 L<Bubblegum::Wrapper::Yaml>, and returns an instance. Please see
 L<Bubblegum::Wrapper::Yaml> for more information.
 
-=head1 TYPE ASSERTION METHODS
+=head1 ASSERTIONS
 
 All data type objects have access to type assertions methods which can be call
 on to help ensure data integrity and prevent invalid usage patterns. The
@@ -558,7 +558,7 @@ the program will die.
 The value method asserts that the caller is a value. If the caller is not a
 value, the program will die.
 
-=head1 TYPE CHECKING METHODS
+=head1 VALIDATIONS
 
 All data type objects have access to type checking methods which can be call on
 to help control the flow of operations. The following is a list of standard type

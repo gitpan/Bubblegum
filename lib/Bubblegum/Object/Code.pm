@@ -14,7 +14,7 @@ with 'Bubblegum::Object::Role::Output';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.43'; # VERSION
+our $VERSION = '0.44'; # VERSION
 
 sub call {
     my $self = CORE::shift;
@@ -81,7 +81,7 @@ Bubblegum::Object::Code - Common Methods for Operating on Code References
 
 =head1 VERSION
 
-version 0.43
+version 0.44
 
 =head1 SYNOPSIS
 

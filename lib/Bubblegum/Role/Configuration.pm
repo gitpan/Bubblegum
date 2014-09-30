@@ -14,10 +14,10 @@ use Bubblegum::Namespace ();
 use feature ();
 use mro ();
 
-use Class::Load 'load_class';
+use Class::Load 'load_class', 'try_load_class';
 use parent 'autobox';
 
-our $VERSION = '0.43'; # VERSION
+our $VERSION = '0.44'; # VERSION
 
 requires 'import';
 
@@ -47,11 +47,15 @@ sub prerequisites {
     # resolution
     mro::set_mro $target, 'c3';
 
+    # ipc handler
+    my $ipc = try_load_class 'IPC::System::Simple';
+
     # imports
     'strict'    ->import::into($target);
     'warnings'  ->import::into($target);
     'utf8::all' ->import::into($target);
-    'autodie'   ->import::into($target, ':all');
+    'autodie'   ->import::into($target, ':all') if $ipc;
+    'autodie'   ->import::into($target, ':default') if !$ipc;
     'feature'   ->import::into($target, ':5.10');
     'English'   ->import::into($target, '-no_match_vars');
 

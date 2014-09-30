@@ -7,7 +7,7 @@ use Bubblegum::Role 'requires', 'with';
 
 with 'Bubblegum::Object::Role::Item';
 
-our $VERSION = '0.43'; # VERSION
+our $VERSION = '0.44'; # VERSION
 
 requires 'defined';
 requires 'each';

@@ -4,7 +4,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 # VERSION
 
-version 0.43
+version 0.44
 
 # STATUS
 
@@ -238,7 +238,7 @@ evolve.
                +- CODE
                     [ROLE] VALUE
 
-## Bubblegum Type Operations
+## Bubblegum Operations
 
 The following classes have methods which can be invoked by variables containing
 data of a type corresponding with the type the class is designed to handle.
