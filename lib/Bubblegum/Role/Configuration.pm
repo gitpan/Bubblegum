@@ -17,7 +17,7 @@ use mro ();
 use Class::Load 'load_class', 'try_load_class';
 use parent 'autobox';
 
-our $VERSION = '0.44'; # VERSION
+our $VERSION = '0.45'; # VERSION
 
 requires 'import';
 

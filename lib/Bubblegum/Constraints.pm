@@ -11,7 +11,7 @@ use Types::Standard ();
 
 use base 'Exporter::Tiny';
 
-our $VERSION = '0.44'; # VERSION
+our $VERSION = '0.45'; # VERSION
 
 our @EXPORT_OK;
 our %EXPORT_TAGS;
@@ -742,7 +742,7 @@ Bubblegum::Constraints - Type and Constraints Library for Bubblegum
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 

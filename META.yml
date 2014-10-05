@@ -15,6 +15,7 @@ meta-spec:
 name: Bubblegum
 requires:
   Class::Load: '0.21'
+  Clone: '0'
   Exporter::Tiny: '0.030'
   Import::Into: '1.001001'
   Moo: '1.003001'
@@ -29,7 +30,7 @@ resources:
   bugtracker: https://github.com/alnewkirk/Bubblegum/issues
   homepage: http://metacpan.org/release/Bubblegum/
   repository: git://github.com/alnewkirk/Bubblegum.git
-version: '0.44'
+version: '0.45'
 x_authority: cpan:AWNCORP
 x_contributors:
   - 'Toby Inkster <tobyink@cpan.org>'

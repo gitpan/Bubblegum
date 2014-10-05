@@ -11,7 +11,7 @@ with 'Bubblegum::Object::Role::Coercive';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.44'; # VERSION
+our $VERSION = '0.45'; # VERSION
 
 sub defined {
     return 0
@@ -31,7 +31,7 @@ Bubblegum::Object::Undef - Common Methods for Operating on Undefined Values
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 

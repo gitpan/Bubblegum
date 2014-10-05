@@ -1,6 +1,11 @@
 Changelog for Bubblegum
 
-0.44 2014-09-30T00:19:32
+0.45 2014-10-05T12:08:30
+ - Updated POD, README, and Makefile.
+ - Added missing Clone dependency.
+
+0.44 2014-09-30T00:21:30
+ - v0.44
  - Updated POD, README, and Makefile.
  - Miscellaneous POD updates.
  - Removed hard IPC::System::Simple dependency.

@@ -4,7 +4,7 @@ package gum;
 use 5.10.0;
 use Import::Into;
 
-our $VERSION = '0.44'; # VERSION
+our $VERSION = '0.45'; # VERSION
 
 sub import {
     my $target = caller;
@@ -60,7 +60,7 @@ gum - Convenient Shoehorn for Bubblegum
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 

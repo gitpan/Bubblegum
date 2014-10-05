@@ -17,7 +17,7 @@ use Clone 'clone';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.44'; # VERSION
+our $VERSION = '0.45'; # VERSION
 
 sub aslice {
     goto &array_slice;
@@ -279,7 +279,7 @@ Bubblegum::Object::Hash - Common Methods for Operating on Hash References
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 

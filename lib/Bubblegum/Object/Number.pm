@@ -12,7 +12,7 @@ with 'Bubblegum::Object::Role::Value';
 
 our @ISA = (); # non-object
 
-our $VERSION = '0.44'; # VERSION
+our $VERSION = '0.45'; # VERSION
 
 sub abs {
     my $self = CORE::shift;
@@ -103,7 +103,7 @@ Bubblegum::Object::Number - Common Methods for Operating on Numbers
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 

@@ -8,7 +8,7 @@ use Moo 'with';
 
 with 'Bubblegum::Role::Configuration';
 
-our $VERSION = '0.44'; # VERSION
+our $VERSION = '0.45'; # VERSION
 
 sub import {
     my $target = caller;
@@ -31,7 +31,7 @@ Bubblegum - Opinionated Modern Perl Development Framework
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 

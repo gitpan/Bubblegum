@@ -1,4 +1,5 @@
 requires "Class::Load" => "0.21";
+requires "Clone" => "0";
 requires "Exporter::Tiny" => "0.030";
 requires "Import::Into" => "1.001001";
 requires "Moo" => "1.003001";

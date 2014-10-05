@@ -14,7 +14,7 @@ use Class::Load 'load_class';
 our @ISA = (); # non-object
 my  $TYPES = $Bubblegum::Namespace::ExtendedTypes;
 
-our $VERSION = '0.44'; # VERSION
+our $VERSION = '0.45'; # VERSION
 
 sub digest {
     my $self = CORE::shift;
@@ -165,7 +165,7 @@ Bubblegum::Object::Universal - Common Methods for Operating on Defined Values
 
 =head1 VERSION
 
-version 0.44
+version 0.45
 
 =head1 SYNOPSIS
 
